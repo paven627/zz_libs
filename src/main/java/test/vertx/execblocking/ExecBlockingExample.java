@@ -5,19 +5,19 @@ import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
 
-/*
- * @author <a href="http://tfox.org">Tim Fox</a>
- */
+
+
 public class ExecBlockingExample extends AbstractVerticle {
 
   // Convenience method so you can run it in your IDE
   public static void main(String[] args) {
+	  //  vertx core-example 项目中的方法
 //    Runner.runExample(ExecBlockingExample.class);
 	  
 	  VertxOptions options = new VertxOptions();
 	  options.setInternalBlockingPoolSize(10);		//  阻塞任务线程池
 	  options.setWorkerPoolSize(10); 
-	  options.setEventLoopPoolSize(2);		// 
+	  options.setEventLoopPoolSize(2);		//  
 	  
 	  Vertx vert = Vertx.vertx(options);
 	  DeploymentOptions op = new DeploymentOptions();

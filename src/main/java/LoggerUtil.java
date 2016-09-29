@@ -23,7 +23,7 @@ public class LoggerUtil {
 
 	public void warn(String info) {
 		logger.warn(info);
-	}
+	} 
 
 	public void error(String info) {
 		logger.error(info);
