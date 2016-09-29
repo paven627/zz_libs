@@ -1,2 +1,0 @@
-原本的日期显示: ${date}
-格式化后的日期: $sdf.format($date)

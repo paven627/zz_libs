@@ -1,7 +1,0 @@
-#foreach($key in  $maps.keySet())
-	#set($p = $maps.get($key))  
-	$velocityCount : $key : $p.id = $p.name == $p.say()
-#end
-
-========================
-
