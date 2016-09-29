@@ -1,0 +1,4 @@
+#foreach($person in  $persons)
+	$person.id = $person.name<br />
+	$velocityCount
+#end

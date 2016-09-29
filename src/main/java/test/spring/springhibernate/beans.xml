@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:p="http://www.springframework.org/schema/p"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-2.5.xsd  
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+<!-- 使用XML配置Spring中事务管理 -->
+
+	
+<!--		 注解  -->
+	<context:annotation-config/>
+	<!-- 扫描@Component 注解,加入到Spring管理器中 -->
+	<context:component-scan base-package="com.dengbin"/>
+	<aop:aspectj-autoproxy/>
+
+<!-- 使用注解的事务管理 	-->
+<!--	<tx:annotation-driven/>-->
+
+<!-- 数据源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/test"/>
+		<property name="username" value="root"/>
+		<property name="password" value="admin"/>
+	</bean>
+	
+<!-- SessionFactory引用数据源 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialet">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<list><value>com.dengbin.model</value></list>
+		</property>
+	</bean>
+
+<!-- 事务管理,引用sessionFactory -->
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+<!-- 配置切面,连接通知和事务管理类,受此事务管理类管理的类中的方法,都会使用此通知 	-->
+	<aop:config>
+		<aop:pointcut id="serviceCut" expression="execution(public * com.dengbin.service..*.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceCut"/>
+	</aop:config>
+
+<!-- 配置通知,引用事务管理类 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+<!--		 受此事务管理的所有get开头的方法使用只读事务 -->
+			<tx:method name="get*" read-only="true"/>  
+			<tx:method name="*" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	
+</beans>

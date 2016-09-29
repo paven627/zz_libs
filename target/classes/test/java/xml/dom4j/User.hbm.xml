@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gbk" ?>
+<hibernate-mapping>
+	<class name="name" table="t_user">
+		<property name="username">
+			<dataType>
+				<name>数据类型</name>
+				<value>string</value>
+			</dataType>
+		</property>
+		<property name="password"><![CDATA[
+			****************
+			****<<awera饿啊>>**
+			***************
+			]]></property>
+	</class>
+</hibernate-mapping>

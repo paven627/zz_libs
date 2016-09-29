@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:amq="http://activemq.apache.org/schema/core"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://activemq.apache.org/schema/core
+    http://activemq.apache.org/schema/core/activemq-core-5.5.0.xsd">
+
+
+	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<!-- 告诉连接工厂,消息中介的位置 ,默认61616-->
+		<property name="brokerURL" value="tcp://localhost:61616" />
+	</bean>
+
+	<bean id="myTopic" class="org.apache.activemq.command.ActiveMQTopic">
+		<constructor-arg index="0" value="test.topic"></constructor-arg>
+	</bean>
+
+	<bean id="myQueue" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0" value="test.queue" />
+	</bean>
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="defaultDestination" ref="myQueue"></property>
+	</bean>
+
+	<!-- 不使用转换器,发送文本消息 -->
+	<bean id="senderQueue" class="spring.noconverter.QueueMsg">
+		<property name="jmsTemplate" ref="jmsTemplate" />
+	</bean>
+
+
+	<!--  使用转换器 -->
+	<bean id="sender2" class="spring.converter.sender.QueueMsg">
+		<property name="jmsTemplate" ref="jmsTemplate2" />
+	</bean>
+	<bean id="jmsTemplate2" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="defaultDestination" ref="myQueue"></property>
+		<property name="messageConverter">
+			<bean class="spring.converter.converter.UserConverter">
+			</bean>
+		</property>
+	</bean>
+</beans>

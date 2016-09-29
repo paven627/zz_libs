@@ -1,0 +1,79 @@
+package test.java.concurrent.lock;
+
+import java.util.Random;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+
+/**
+ * ��д�������,����3����ȡ��ȡ����߳�,3����ȡд����߳�,�������ȡ֮ǰ�߳���ͣ1��,�Ա�
+ * �����߳�ִ��,���Ϊ,һ���̻߳�ȡ��ȡ��ʱ,�����߳���Ȼ���Ի�ȡ��ȡ��,�����Զ�ȡ���,
+ * ��ȡд����̲߳���д���. ��д����߳���ȡ��д��֮��,�����ȡ���̺߳�д���̶߳�������
+ * �������
+ * 
+ */
+public class ReadWriteLockTest {
+	public static void main(String[] args) {
+		final Queue3 q3 = new Queue3();
+		// ��3�������߳�
+		for (int i = 0; i < 3; i++) {
+			new Thread() {
+				public void run() {
+					while (true) {
+						q3.read();
+					}
+				}
+
+			}.start();
+			// д���߳�
+			new Thread() {
+				public void run() {
+					while (true) {
+						q3.write(new Random().nextInt(10000));
+					}
+				}
+				
+			}.start();
+		}
+
+	}
+}
+
+class Queue3 {
+	// ������ݣ�ֻ����һ���߳���д����ݣ��������ж���߳�ͬʱ������ݡ�
+	private Object data = null;
+
+	ReadWriteLock rwl = new ReentrantReadWriteLock();
+
+	public void read() {
+		rwl.readLock().lock();
+		try {
+			System.out.println(Thread.currentThread().getName()
+					+ " Before  Read ");
+			Thread.sleep(1000);
+			System.out.println(Thread.currentThread().getName()
+					+ " After  Read " + data);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			rwl.readLock().unlock();
+		}
+	}
+
+	public void write(Object data) {
+		rwl.writeLock().lock();
+		try {
+			System.out.println(Thread.currentThread().getName()
+					+ " Before Write ");
+			Thread.sleep(1000);
+			this.data = data;
+			System.out.println(Thread.currentThread().getName()
+					+ " After  Write  " + data);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			rwl.writeLock().unlock();
+		}
+
+	}
+}
