@@ -14,8 +14,8 @@ public class LoggerUtil {
 	}
 
 	public void debug(String info) {
-		logger.debug(info);
-	}
+		logger.debug(info); // 
+	} 
 
 	public void info(String info) {
 		logger.info(info);
