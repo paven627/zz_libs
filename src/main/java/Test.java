@@ -1,4 +1,6 @@
 import java.text.SimpleDateFormat;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -7,27 +9,16 @@ import com.google.gson.GsonBuilder;
 public class Test {
 	private static SimpleDateFormat sdfSS = new SimpleDateFormat("hhmmss");
 
+	static Random r = new Random();
+	
 	public static void main(String[] args) {
-//		Gson GSON = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
-		int sourceMedia = 28;
-		int auditState = 2;
-		int uploaded = 1;
-		
-		String optStr = "";
-		if (sourceMedia == 28) {		//百度,状态审核之前不允许改
-			if (uploaded != 0 && auditState != 2) {
-				optStr += "<a href=\"javascript:uploadToAdx(' + sourceMedia + ',' + appUploadStatus + ');\">上传</a>";
-			} else {
-				optStr += "'<span style=\"color:#CCC; \">上传</span>'";
-			}
+		long t1 = System.currentTimeMillis();
+		for (int i = 0; i < 1000000; i++) {
+			int nextInt = ThreadLocalRandom.current().nextInt(100);
+			r.nextInt(100);
 		}
-		else if (uploaded != 0) {
-			optStr += "'<a href=\"javascript:uploadToAdx(' + sourceMedia + ',' + appUploadStatus + ','+auditState+','+uploaded+');\">上传</a>'";
-		}else {
-			optStr += "'<span style=\"color:#CCC; \">上传</span>'";
-		}
-
-		System.out.println(optStr);
+		long t2 = System.currentTimeMillis();
+		System.out.println(t2 - t1);
 	}
 
 }
