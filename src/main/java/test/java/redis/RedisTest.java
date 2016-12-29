@@ -1,13 +1,10 @@
 package test.java.redis;
 
-import org.apache.xalan.serialize.SerializerUtils;
-import org.springframework.data.redis.core.RedisTemplate;
-
 import redis.clients.jedis.Jedis;
 
 public class RedisTest {
 	public static void main(String[] args) {
-		Jedis jedis = new Jedis("192.168.146.128", 6379);
+		Jedis jedis = new Jedis("60.205.230.151", 6379);
 		jedis.set("test3", "test1");
 		String string = jedis.get("test");
 		System.out.println(string);
@@ -16,6 +13,7 @@ public class RedisTest {
 
 		jedis.mset("id", "1", "name", "邓斌");
 		System.out.println(jedis.mget("id","name"));
+		jedis.close();
 		
 	}
 }

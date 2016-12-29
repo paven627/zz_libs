@@ -32,7 +32,7 @@ public class ChannelTest {
 
 //		pool.getResource().subscribe(jedisPubSub, "channel1");
 		jedis.subscribe(jedisPubSub, "channel2");
-
+		jedis.close();
 	}
 
 	@Test

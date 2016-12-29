@@ -18,6 +18,8 @@ public class EventbusTest extends AbstractVerticle {
 	static Vertx vertx;
 	static EventBus eventBus;
 
+	
+	// use : curl localhost:8080 to test
 	public static void main(String[] args) {
 		createServer();
 		eventBus = vertx.eventBus();
@@ -107,18 +109,19 @@ class MyMessageCodec implements io.vertx.core.eventbus.MessageCodec<MyMessage, M
 
 	@Override
 	public void encodeToWire(Buffer buffer, MyMessage s) {
-		
+		System.out.println("encdoeToWire");
 	}
 
 	@Override
 	public MyMessage decodeFromWire(int pos, Buffer buffer) {
-		// TODO Auto-generated method stub
+		System.out.println("decodeFromWire");
 		return null;
 	}
 
 	// 本地消息,直接返回
 	@Override
 	public MyMessage transform(MyMessage s) {
+		System.out.println("transform");
 		return s;
 	}
 	

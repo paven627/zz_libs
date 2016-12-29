@@ -9,7 +9,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisSentinelPool;
 import redis.clients.jedis.SentinelCommands;
 
-public class PoolTest {
+public class SentinelPoolTest {
 	public static void main(String[] args) {
 		// Jedis jedis = new Jedis("192.168.146.129");
 		// Jedis jedis = new Jedis("192.168.146.129", 26379);

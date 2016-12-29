@@ -11,7 +11,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties> 
-		<compileSource>1.6</compileSource>
+		<compileSource>1.8</compileSource>
 		<sourceEncoding>UTF-8</sourceEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.spring>3.2.9.RELEASE</version.spring>
@@ -519,6 +519,11 @@
         	<artifactId>vertx-unit</artifactId> 
         	<version>3.2.0</version>
         </dependency>
+        <dependency>
+		    <groupId>com.aerospike</groupId>
+		    <artifactId>aerospike-client</artifactId>
+		    <version>3.3.1</version>
+		  </dependency>
 
 	</dependencies>
 	
