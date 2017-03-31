@@ -18,7 +18,7 @@
 		<version.springsecurity>3.1.0.RELEASE</version.springsecurity>
 		<version.velocity>1.7</version.velocity>
 		<version.httpcomponents>4.3</version.httpcomponents>
-		<!-- <version.httpcomponents>4.3</version.httpcomponents> 112 -->
+		<!-- <version.httpcomponents>4.3</version.httpcomponents> 1123 -->
 	</properties>
 
 <!-- 	<repositories> -->
