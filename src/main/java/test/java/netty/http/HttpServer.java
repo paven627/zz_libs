@@ -90,12 +90,12 @@ class HttpServerHandler extends ChannelInboundHandlerAdapter {
 
 		if (msg instanceof HttpRequest) {
 			request = (HttpRequest) msg;
-//			System.out.println("Uri:" + uri);
+			// System.out.println("Uri:" + uri);
 		} else {
 			System.out.println(msg);
 		}
-//		HttpMethod method = request.getMethod();
-//		System.out.println(method);
+		// HttpMethod method = request.getMethod();
+		// System.out.println(method);
 		if (msg instanceof HttpContent) {
 			HttpContent content = (HttpContent) msg;
 			ByteBuf buf = content.content();
