@@ -1,12 +1,26 @@
-class MyTest {
+import java.io.*;
+
+public class MyTest {
+	
+	public MyTest() {
+		super();
+		System.out.println("����");
+	}
 
 	public static void main(String[] args) {
-		double ceil = Math.ceil(2001 / 1000d);
-		System.out.println(ceil);
-		
+		System.out.println("�����ӽ���");
+		while (true) {
+			try {
+				String strLine = new BufferedReader(new InputStreamReader(
+						System.in)).readLine();
+				if (strLine != null) {
+					System.out.println("hi:" + strLine); // ��ȡ�����̵�����
+				} else {
+					return;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
-}
-
-class A {
-
 }

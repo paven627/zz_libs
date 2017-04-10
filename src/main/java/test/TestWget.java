@@ -11,7 +11,13 @@ public class TestWget {
 		
 //		String s = "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0";
 //		System.out.println(URLEncoder.encode(s,"utf-8"));
-		System.out.println(System.currentTimeMillis());
+//		System.out.println(System.currentTimeMillis());
+		try {
+			int i = 2/ 0;
+		} catch (Exception e) {
+			e = new NullPointerException();
+			logger.error("Unhandled exception", e);
+		}
 		
 	}
 }
