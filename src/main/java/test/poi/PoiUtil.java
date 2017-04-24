@@ -1,28 +1,44 @@
 package test.poi;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class PoiUtil {
 
-	
-	public XSSFCell createCell(XSSFRow row, int cellIndex, String cellContent) {
+	public static XSSFWorkbook readExcel(File file) throws IOException {
+		XSSFWorkbook hwb = null;
+		FileInputStream fin = null;
+		try {
+			fin = new FileInputStream(file);
+			hwb = new XSSFWorkbook(fin);
+		} finally {
+			if (fin != null) {
+				fin.close();
+			}
+		}
+		return hwb;
+	}
+
+	public static XSSFCell createCell(XSSFRow row, int cellIndex, String cellContent) {
 		XSSFCell cell = row.createCell(cellIndex, Cell.CELL_TYPE_STRING);
 		cell.setCellType(Cell.CELL_TYPE_BLANK);
 		cell.setCellValue(cellContent);
 		return cell;
 	}
-	
-	public String getExcelCellValue(XSSFSheet sheet, Cell cell) {
+
+	public static String getExcelCellValue(XSSFSheet sheet, Cell cell) {
 		String ret = "";
 		if (cell == null) {
 			ret = "";
@@ -37,11 +53,11 @@ public class PoiUtil {
 		return ret;
 	}
 
-	private boolean isMergedRegion(XSSFSheet sheet, int row, int column) {
+	public static boolean isMergedRegion(XSSFSheet sheet, int row, int column) {
 		return getMergeRegionIndex(sheet, row, column) > -1;
 	}
 
-	private int getMergeRegionIndex(XSSFSheet sheet, int row, int column) {
+	public static int getMergeRegionIndex(XSSFSheet sheet, int row, int column) {
 		int sheetMergeCount = sheet.getNumMergedRegions();
 		for (int i = 0; i < sheetMergeCount; i++) {
 			CellRangeAddress ca = (CellRangeAddress) sheet.getMergedRegion(i);
@@ -58,11 +74,11 @@ public class PoiUtil {
 		return -1;
 	}
 
-	private String getMergedRegionValue(XSSFSheet sheet, Cell cell) {
+	public static String getMergedRegionValue(XSSFSheet sheet, Cell cell) {
 		return getMergedRegionValue(sheet, cell.getRowIndex(), cell.getColumnIndex());
 	}
 
-	private String getMergedRegionValue(XSSFSheet sheet, int row, int column) {
+	public static String getMergedRegionValue(XSSFSheet sheet, int row, int column) {
 		int sheetMergeCount = sheet.getNumMergedRegions();
 		for (int i = 0; i < sheetMergeCount; i++) {
 			CellRangeAddress ca = sheet.getMergedRegion(i);
@@ -83,7 +99,7 @@ public class PoiUtil {
 		return excelCellValue;
 	}
 
-	public String getExcelCellValue(Cell cell) {
+	public static String getExcelCellValue(Cell cell) {
 		String ret = "";
 		if (cell == null) {
 			ret = "";

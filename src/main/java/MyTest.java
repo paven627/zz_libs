@@ -1,12 +1,9 @@
-class MyTest {
+import java.util.Random;
 
+public class MyTest {
 	public static void main(String[] args) {
-		double ceil = Math.ceil(2001 / 1000d);
-		System.out.println(ceil);
-		
+		Random random = new Random();
+		int index = random.nextInt(2);
+		System.out.println(index);
 	}
-}
-
-class A {
-
 }

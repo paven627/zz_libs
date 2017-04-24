@@ -4,14 +4,6 @@ import java.util.Random;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-
-/**
- * ��д�������,����3����ȡ��ȡ����߳�,3����ȡд����߳�,�������ȡ֮ǰ�߳���ͣ1��,�Ա�
- * �����߳�ִ��,���Ϊ,һ���̻߳�ȡ��ȡ��ʱ,�����߳���Ȼ���Ի�ȡ��ȡ��,�����Զ�ȡ���,
- * ��ȡд����̲߳���д���. ��д����߳���ȡ��д��֮��,�����ȡ���̺߳�д���̶߳�������
- * �������
- * 
- */
 public class ReadWriteLockTest {
 	public static void main(String[] args) {
 		final Queue3 q3 = new Queue3();
@@ -32,7 +24,7 @@ public class ReadWriteLockTest {
 						q3.write(new Random().nextInt(10000));
 					}
 				}
-				
+
 			}.start();
 		}
 
@@ -40,7 +32,6 @@ public class ReadWriteLockTest {
 }
 
 class Queue3 {
-	// ������ݣ�ֻ����һ���߳���д����ݣ��������ж���߳�ͬʱ������ݡ�
 	private Object data = null;
 
 	ReadWriteLock rwl = new ReentrantReadWriteLock();
