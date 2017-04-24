@@ -39,6 +39,7 @@ public class TcpServer {
 							pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
 							pipeline.addLast(tcpServerHandler); // 多个连接使用同一个ChannelHandler实例
 						}
+
 					});
 			ChannelFuture f = b.bind(8080).sync();
 			f.channel().closeFuture().sync();
@@ -77,6 +78,13 @@ class TcpServerHandler extends ChannelInboundHandlerAdapter {
 
 		String line = (String) msg;
 		System.out.println("第" + counter + "次请求:" + line);
+		ctx.writeAndFlush(line);
+	}
+
+	@Override
+	public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+		ctx.flush();
+		ctx.close();
 	}
 
 	@Override

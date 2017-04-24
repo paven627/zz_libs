@@ -16,7 +16,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import net.sf.json.JSONArray;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 
 public class CityMatch58 {
 
@@ -28,9 +29,21 @@ public class CityMatch58 {
 		System.out.println(sheet.getLastRowNum()); // 435
 
 		List<City> result = extract58CityCode(city, sheet);
-		System.out.println("匹配城市" + result.size());
-		writeToExcel("C:\\Users\\bin.deng\\Desktop\\城市参数2.xlsx", result);
 
+		System.out.println("匹配城市" + result.size());
+//		writeToExcel("C:\\Users\\bin.deng\\Desktop\\城市参数2.xlsx", result);
+//		writeToTxt("C:\\Users\\bin.deng\\Desktop\\城市参数2.txt", result);
+	}
+
+	private static void writeToTxt(String path, List<City> result) throws IOException {
+		File file = new File(path);
+		if (!file.exists()) {
+			file.createNewFile();
+		}
+		for (City city : result) {
+			FileUtils.writeStringToFile(file,
+					String.format("%s  %s  %s\n", city.getCityId(), city.getCityName(), city.getCode()), true);
+		}
 	}
 
 	private static List<City> extract58CityCode(List<City> citys, XSSFSheet sheet) {
@@ -44,7 +57,7 @@ public class CityMatch58 {
 			if (city != null) {
 				city.setCode(code);
 				result.add(city);
-			} else  {
+			} else {
 				System.out.println(name);
 			}
 			rownum++;
@@ -53,15 +66,56 @@ public class CityMatch58 {
 		return result;
 	}
 
+	private static City find2(String name, List<City> citys) {
+		List<City> cs = new ArrayList<>();
+		// String cityName = null;
+		for (City city : citys) {
+			if (city.getCityName().equals(name)) {
+				return city;
+			}
+			// 城市名之后是市或者县的匹配度高
+			if (city.getCityName().indexOf(name) < 0) {
+				continue;
+			}
+			String[] split = city.getCityName().split(name);
+			if (split.length == 1) {
+				// cityName = name;
+				// cs.add(city);
+				return city;
+			} else {
+				try {
+					if ((split[1].indexOf("市") >= 0 || split[1].indexOf("县") >= 0) && city.getCityId() != 0) {
+						// cs.add(city);
+						return city;
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		if (cs.size() > 1) {
+			for (City city : cs) {
+				System.out.println(city.getCityName());
+			}
+		} else if (cs.size() == 1) {
+			return cs.get(0);
+		}
+		return null;
+	}
+
 	/**
 	 * 墨迹的城市名中包含58的城市名
+	 * 
+	 * provinceId 对应上级的 fid, 不是cityId 省的 provinceId: -1 ,
+	 * 
 	 * @param name
+	 *            58的城市名
 	 * @param citys
-	 * @return
+	 *            墨迹的成绩
 	 */
 	private static City find(String name, List<City> citys) {
 		for (City city : citys) {
-			if (city.getCityName().indexOf(name) > -1) {
+			if (city.getCityName().indexOf(name) > -1 && city.getCityId() != 0) {
 				return city;
 			}
 		}
@@ -70,11 +124,16 @@ public class CityMatch58 {
 
 	private static List<City> mojiCty(File file) throws IOException {
 		String readFileToString = FileUtils.readFileToString(file);
-		JSONArray array = JSONArray.fromObject(readFileToString);
-		System.out.println(array.size());
-		List<City> list = array.toList(array, City.class);
-		System.out.println(list.size());
-		return list;
+		// JSONArray array = JSONArray.fromObject(readFileToString);
+		List<City> listCity = new ArrayList<>();
+		JSONArray jsonArr = JSON.parseArray(readFileToString);
+		for (int i = 0; i < jsonArr.size(); i++) {
+			City city = JSON.toJavaObject(jsonArr.getJSONObject(i), City.class);
+			listCity.add(city);
+		}
+
+		System.out.println(listCity.size());
+		return listCity;
 	}
 
 	private static XSSFSheet read58City() throws IOException {
@@ -93,11 +152,11 @@ public class CityMatch58 {
 		int rowIndex = 0;
 		for (City city : cities) {
 			XSSFRow row = sheet.createRow(rowIndex++);
-			PoiUtil.createCell(row, 0, city.getCityId()+"");
-			PoiUtil.createCell(row, 1, city.getFid()+"");
+			PoiUtil.createCell(row, 0, city.getCityId() + "");
+			PoiUtil.createCell(row, 1, city.getFid() + "");
 			PoiUtil.createCell(row, 2, city.getCityName());
 			PoiUtil.createCell(row, 3, city.getCode());
-			
+
 		}
 		OutputStream os = null;
 		try {

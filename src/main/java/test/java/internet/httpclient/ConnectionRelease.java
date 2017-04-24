@@ -46,8 +46,7 @@ public class ConnectionRelease {
 	public final static void main(String[] args) throws Exception {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		try {
-			HttpGet httpget = new HttpGet("http://baidu.com/");
-
+			HttpGet httpget = new HttpGet("http://localhost:8080?na=1");
 			System.out.println("Executing request " + httpget.getRequestLine());
 			CloseableHttpResponse response = httpclient.execute(httpget);
 			try {

@@ -77,6 +77,8 @@ class HttpServerHandler extends ChannelInboundHandlerAdapter {
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws UnsupportedEncodingException {
 		System.out.println("收到：" + new Date());
+//		ByteBuf bufs = (ByteBuf) msg;
+//		System.out.println(bufs);
 		if (msg instanceof HttpRequest) {
 
 			// 请求，解码器将请求转换成HttpRequest对象
@@ -114,6 +116,7 @@ class HttpServerHandler extends ChannelInboundHandlerAdapter {
 			response.headers().set(CONTENT_LENGTH, response.content().readableBytes());
 			if (HttpHeaders.isKeepAlive(request)) {
 				response.headers().set(CONNECTION, Values.KEEP_ALIVE);
+//				response.headers().set(CONNECTION, Values.CLOSE);
 			}
 			ctx.writeAndFlush(response);
 		}
@@ -124,6 +127,7 @@ class HttpServerHandler extends ChannelInboundHandlerAdapter {
 	public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
 		ctx.flush();
 		ctx.close();
+		
 		System.out.println("完成" + new Date());
 	}
 
