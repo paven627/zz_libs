@@ -58,7 +58,7 @@ public class CityMatch58 {
 				city.setCode(code);
 				result.add(city);
 			} else {
-				System.out.println(name);
+//				System.out.println(name);
 			}
 			rownum++;
 			row = sheet.getRow(rownum);
@@ -114,10 +114,18 @@ public class CityMatch58 {
 	 *            墨迹的成绩
 	 */
 	private static City find(String name, List<City> citys) {
+		List<City> cs = new ArrayList<>();
 		for (City city : citys) {
 			if (city.getCityName().indexOf(name) > -1 && city.getCityId() != 0) {
-				return city;
+//				return city;
+				cs.add(city);
 			}
+		}
+		if(cs.size() > 1) {
+			for (City city : cs) {
+				System.out.print(city.getCityName()+"   ");
+			}
+			System.out.println();
 		}
 		return null;
 	}
@@ -131,7 +139,6 @@ public class CityMatch58 {
 			City city = JSON.toJavaObject(jsonArr.getJSONObject(i), City.class);
 			listCity.add(city);
 		}
-
 		System.out.println(listCity.size());
 		return listCity;
 	}
