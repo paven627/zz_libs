@@ -32,12 +32,16 @@ public class SocketTest {
 //	static String ip = "192.168.1.67";
 //	static int port = 9093;
 	
-	static String ip = "127.0.0.1";
-	static int port = 8899;
+	static String ip = "103.17.43.217";
+//	static int port = 8899;
+	static int port = 8900;
+	
+//	static String ip = "127.0.0.1";
+//	static int port = 8899;
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		
 		Socket socket = new Socket(ip, port);
-		AdRequest and = splash(AdType.SPLASH, Platform.ANDROID, AdPosition.POS_SPLASH);
+		AdRequest and = splash(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH , 19001);
 		print(socket, and);
 		
 
@@ -105,7 +109,7 @@ public class SocketTest {
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230");
 		adc.setPkgname("com.moji.MojiWeather");
 		adc.setUid(654366087);
-		adc.setCityId(600);
+		adc.setCityId(19001);
 		adc.setPublishType("2");
 		adc.setAppVersion(1006030000);
 		adc.setScreenHeight(1136);
@@ -114,7 +118,7 @@ public class SocketTest {
 
 		adc.setChannelId(9000);
 		adc.setOsType(osType);
-		adc.setOsVersion("6.0.1");
+		adc.setOsVersion("6.1.0");
 
 		adc.setPhoneType("IPHONE 6S PLUS");
 		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
@@ -274,7 +278,7 @@ public class SocketTest {
 		}
 	}
 
-	private static AdRequest splash(AdType adType, Platform osType, AdPosition position) {
+	private static AdRequest splash(AdType adType, Platform osType, AdPosition position, int cityId) {
 		AdRequest.Builder build = AdRequest.newBuilder();
 		build.setType(adType);
 		// build.setFeedTab(0);com/moji/launchserver/main/SocketTest.java:74
@@ -298,26 +302,26 @@ public class SocketTest {
 		build.addAllPosition(adPositions);
 
 		AdRequestCommon.Builder adc = AdRequestCommon.newBuilder();
-		adc.setAndroidId("android");
+//		adc.setAndroidId("android");
 		adc.setUa(
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230");
 		adc.setPkgname("com.moji.MojiWeather");
 		adc.setUid(654366087);
-		adc.setCityId(600);
+		adc.setCityId(cityId);
 		adc.setPublishType("2");
-		adc.setAppVersion(1006030000);
+		adc.setAppVersion(1006130000);
 		adc.setScreenHeight(1136);
 		adc.setScreenWidth(640);
 		adc.setLang(Language.SIMPLIFIED_CH);
 
 		adc.setChannelId(9000);
 		adc.setOsType(osType);
-		adc.setOsVersion("6.0.1");
+		adc.setOsVersion("6.1.0");
 
 		adc.setPhoneType("IPHONE 6S PLUS");
 		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
 		adc.setWma("wma");
-		adc.setAvatarId(2);
+//		adc.setAvatarId(2);
 
 		adc.setIsWifi(true);
 		adc.setMcc(21);
@@ -325,9 +329,9 @@ public class SocketTest {
 		adc.setCarrier(CarrierType.CARRIER_MOBILE);
 
 		build.setRequestCommon(adc);
-		build.setDisplayTimes(1);
+		build.setDisplayTimes(3);
 		build.setVersion(1);
-		build.setIsDebug(true);
+//		build.setIsDebug(true);
 		AdRequest request = build.build();
 		return request;
 	}
