@@ -29,43 +29,57 @@ public class SocketTest {
 	 * f__IP__,t__TS__,r__TERM_ _,l__LBS__,h
 	 * 
 	 */
-	// static String ip = "192.168.1.67";
-	// static int port = 8080;
+	static String ip = "127.0.0.1";
+	// static String ip = "192.168.1.184";
+	// static String ip = "adlaunch.moji.com";
+	// static int port = 80;
+	// static int port = 8899;
+	// static int port = 8081;
+	// static int port = 9092;
 
 	// static String ip = "103.17.43.217";
-	// static int port = 8899;
+	static int port = 8080;
 	// static int port = 8900;
 
 	// 两个测试环境 -------------------------------
 	// static String ip = "192.168.1.184";
 	// static int port = 8080;
 
-	static String ip = "192.168.1.181";
-	static int port = 8181;
-//	 static int port = 9092; 
+	// static String ip = "192.168.1.181";
+	// static String ip = "adlaunch.moji.com";
+	// static int port = 8181;
+	// static int port = 9092;
 
-	// static String ip = "192.168.1.184";
-	// static int port = 8080;
+	// static String ip = "103.17.43.206";
+	// static int port = 8899;
 	// --------------------------------------
 
-	// static String ip = "127.0.0.1";
+	// static String ip = "192.168.1.67";
 	// static int port = 8080;
 
-	// static String ip = "103.17.43.217";
+	// static String ip = "103.17.43.210";
 	// static int port = 8899;
 	public static void main(String[] args) throws UnknownHostException, IOException {
 
-//		socket.setSoTimeout(10000);
-//		socket.setTcpNoDelay(true);
-//		for (int i = 0; i < 10; i++) {
-			
-			Socket socket = new Socket (ip, port);
-		AdRequest and = splash(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH, 600);
-		print(socket, and);
-//		}
-		// //
-		// socket = new Socket(ip, port);
-		// AdRequest ios = splash(AdType.SPLASH, Platform.ANDROID,
+		// socket.setSoTimeout(10000);
+		// socket.setTcpNoDelay(true);
+		for (int i = 0; i < 1; i++) {
+			//
+			// Socket socket = new Socket(ip, port);
+			// AdRequest and = splash(AdType.SPLASH, Platform.IOS,
+			// AdPosition.POS_SPLASH, 600);
+			// print(socket, and);
+
+		}
+
+		// 时景blocking
+		// Socket socket = new Socket(ip, port);
+		// AdRequest and = splash(AdType.TAB_TYPE, Platform.IOS,
+		// AdPosition.POS_BLOCKING_TAB_TIME_PAGE, 600);
+		// print(socket, and);
+
+		// Socket socket = new Socket(ip, port);
+		// AdRequest ios = splash(AdType.SPLASH, Platform.IOS,
 		// AdPosition.POS_SPLASH, 600);
 		// print(socket, ios);
 		//
@@ -74,21 +88,26 @@ public class SocketTest {
 		// AdPosition.POS_VOICE_BROADCAST_UNDER);
 		// Socket socketOA = new Socket(ip, port);
 		// print(socketOA, otherand);
-		//
-		// AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS,
-		// AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE);
+
+		// AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID,
+		// AdPosition.POS_BLOCKING_TAB_TIME_PAGE);
 		// Socket socketOI = new Socket(ip, port);
 		// print(socketOI, otherOI);
 
-		// AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.IOS,
-		// AdPosition.POS_INDEX_ARTICLE_UPPER_BANNER);
-		// Socket socketOA = new Socket(ip, port);
-		// print(socketOA, otherand);
-		//
 		// AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS,
-		// AdPosition.POS_INDEX_ARTICLE_UPPER_BANNER);
+		// AdPosition.POS_TIME_CITY_CLASSIFCATION);
 		// Socket socketOI = new Socket(ip, port);
 		// print(socketOI, otherOI);
+
+		// AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.ANDROID,
+		// AdPosition.POS_FEED_STREAM_MIDDLE_ARTICLE);
+		// Socket socketOA = new Socket(ip, port);
+		// print(socketOA, otherand);
+
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE,
+				AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM);
+		Socket socketOI = new Socket(ip, port);
+		print(socketOI, otherOI);
 		//
 		//
 		// //穿衣助手道具
@@ -300,7 +319,7 @@ public class SocketTest {
 		return request;
 	}
 
-	private static AdRequest other(AdType adType, Platform osType, AdPosition position) {
+	private static AdRequest other(AdType adType, Platform osType, AdPosition... position) {
 		AdRequest.Builder build = AdRequest.newBuilder();
 		build.setType(adType);
 		// build.setFeedTab(0);com/moji/launchserver/main/SocketTest.java:74
@@ -319,8 +338,9 @@ public class SocketTest {
 		build.setIsShortPrediction(IsShortPrediction.YES);
 		build.setFeedTab(20);
 		List<AdPosition> adPositions = new ArrayList<>();
-
-		adPositions.add(position);
+		for (AdPosition p : position) {
+			adPositions.add(p);
+		}
 		build.addAllPosition(adPositions);
 
 		AdRequestCommon.Builder adc = AdRequestCommon.newBuilder();
@@ -328,7 +348,7 @@ public class SocketTest {
 		adc.setUa(
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230");
 		adc.setPkgname("com.moji.MojiWeather");
-		adc.setUid(654366087);
+		adc.setUid(654366083);
 		adc.setCityId(600);
 		adc.setPublishType("2");
 		adc.setAppVersion(1006030000);
@@ -336,7 +356,7 @@ public class SocketTest {
 		adc.setScreenWidth(640);
 		adc.setLang(Language.SIMPLIFIED_CH);
 
-		adc.setChannelId(9000);
+		adc.setChannelId(5072);
 		adc.setOsType(osType);
 		adc.setOsVersion("6.0.1");
 
@@ -362,10 +382,10 @@ public class SocketTest {
 		byte type = 0;
 		byte[] endMark = { -128, -128, -128, -128, -128 };
 		byte[] req = byteMerger(type, request.toByteArray(), endMark);
-//		for (byte b : req) {
-//			System.out.print((int) b + ",");
-//		}
-//		System.out.println();
+		// for (byte b : req) {
+		// System.out.print((int) b + ",");
+		// }
+		// System.out.println();
 
 		int bodyLen = req.length;
 		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
@@ -374,9 +394,9 @@ public class SocketTest {
 		InputStream input = socket.getInputStream();
 		if (input != null) {
 			byte[] by = toByteArray(input);
-			for (byte b : by) {
-				System.out.print((char) b);
-			}
+			// for (byte b : by) {
+			// System.out.print((char) b);
+			// }
 			AdResponse adResponse = AdResponse.parseFrom(by);
 			System.out.println(adResponse.toString());
 			System.out.println(adResponse.getErrorMessage());
@@ -410,7 +430,7 @@ public class SocketTest {
 		build.addAllPosition(adPositions);
 
 		AdRequestCommon.Builder adc = AdRequestCommon.newBuilder();
-		adc.setAndroidId("android");
+		adc.setAndroidId("anxxxxx1123123");
 		adc.setUa(
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230");
 		adc.setPkgname("com.moji.MojiWeather");
@@ -439,7 +459,7 @@ public class SocketTest {
 		build.setRequestCommon(adc);
 		build.setDisplayTimes(3);
 		build.setVersion(1);
-		// build.setIsDebug(true);
+		build.setIsDebug(true);
 		AdRequest request = build.build();
 		return request;
 	}
