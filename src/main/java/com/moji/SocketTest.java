@@ -1,6 +1,5 @@
 package com.moji;
 
-import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,23 +28,23 @@ public class SocketTest {
 	 * f__IP__,t__TS__,r__TERM_ _,l__LBS__,h
 	 * 
 	 */
-	static String ip = "127.0.0.1";
-	// static String ip = "192.168.1.184";
+//	static String ip = "127.0.0.1";
+//	 static String ip = "192.168.1.184";
 	// static String ip = "adlaunch.moji.com";
 	// static int port = 80;
-	// static int port = 8899;
+//	 static int port = 8899;
 	// static int port = 8081;
 	// static int port = 9092;
 
-	// static String ip = "103.17.43.217";
+//	 static String ip = "103.249.255.147";
 	static int port = 8080;
 	// static int port = 8900;
 
 	// 两个测试环境 -------------------------------
-	// static String ip = "192.168.1.184";
+//	 static String ip = "192.168.1.184";
 	// static int port = 8080;
 
-	// static String ip = "192.168.1.181";
+	 static String ip = "192.168.1.181";
 	// static String ip = "adlaunch.moji.com";
 	// static int port = 8181;
 	// static int port = 9092;
@@ -60,6 +59,8 @@ public class SocketTest {
 	// static String ip = "103.17.43.210";
 	// static int port = 8899;
 	public static void main(String[] args) throws UnknownHostException, IOException {
+		// InetAddress add = InetAddress.getByName("adlaunch.moji.com");
+		// ip = add.getHostAddress();
 
 		// socket.setSoTimeout(10000);
 		// socket.setTcpNoDelay(true);
@@ -94,20 +95,19 @@ public class SocketTest {
 		// Socket socketOI = new Socket(ip, port);
 		// print(socketOI, otherOI);
 
-		// AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS,
-		// AdPosition.POS_TIME_CITY_CLASSIFCATION);
-		// Socket socketOI = new Socket(ip, port);
-		// print(socketOI, otherOI);
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE);
+//		Socket socketOI = new Socket(ip, port);
+//		print(socketOI, otherOI);
 
-		// AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.ANDROID,
-		// AdPosition.POS_FEED_STREAM_MIDDLE_ARTICLE);
-		// Socket socketOA = new Socket(ip, port);
-		// print(socketOA, otherand);
+		 AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.ANDROID,
+		 AdPosition.POS_FEED_STREAM_INFORMATION);
+		 Socket socketOA = new Socket(ip, port);
+		 print(socketOA, otherand);
 
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE,
-				AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM);
-		Socket socketOI = new Socket(ip, port);
-		print(socketOI, otherOI);
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE,
+//				AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM);
+//		Socket socketOI = new Socket(ip, port);
+//		print(socketOI, otherOI);
 		//
 		//
 		// //穿衣助手道具
@@ -232,7 +232,7 @@ public class SocketTest {
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230");
 		adc.setPkgname("com.moji.MojiWeather");
 		adc.setUid(654366087);
-		adc.setCityId(19001);
+		adc.setCityId(600);
 		adc.setPublishType("2");
 		adc.setAppVersion(1006030000);
 		adc.setScreenHeight(1136);
@@ -349,7 +349,7 @@ public class SocketTest {
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230");
 		adc.setPkgname("com.moji.MojiWeather");
 		adc.setUid(654366083);
-		adc.setCityId(600);
+		adc.setCityId(151);
 		adc.setPublishType("2");
 		adc.setAppVersion(1006030000);
 		adc.setScreenHeight(1136);
