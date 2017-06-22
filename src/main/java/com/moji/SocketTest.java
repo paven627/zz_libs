@@ -12,6 +12,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.moji.launchserver.AdCommonInterface.AdPosition;
 import com.moji.launchserver.AdCommonInterface.AdRequest;
 import com.moji.launchserver.AdCommonInterface.AdRequestCommon;
+import com.moji.launchserver.AdCommonInterface.AdRequestCommon.Builder;
 import com.moji.launchserver.AdCommonInterface.AdResponse;
 import com.moji.launchserver.AdCommonInterface.AdType;
 import com.moji.launchserver.AdCommonInterface.CarrierType;
@@ -28,23 +29,23 @@ public class SocketTest {
 	 * f__IP__,t__TS__,r__TERM_ _,l__LBS__,h
 	 * 
 	 */
-//	static String ip = "127.0.0.1";
-//	 static String ip = "192.168.1.184";
+	// static String ip = "127.0.0.1";
+	static String ip = "192.168.1.184";
 	// static String ip = "adlaunch.moji.com";
 	// static int port = 80;
-//	 static int port = 8899;
+	// static int port = 8899;
 	// static int port = 8081;
 	// static int port = 9092;
 
-//	 static String ip = "103.249.255.147";
+	// static String ip = "103.249.255.147";
 	static int port = 8080;
 	// static int port = 8900;
 
 	// 两个测试环境 -------------------------------
-//	 static String ip = "192.168.1.184";
+	// static String ip = "192.168.1.184";
 	// static int port = 8080;
 
-	 static String ip = "192.168.1.181";
+	// static String ip = "192.168.1.184";
 	// static String ip = "adlaunch.moji.com";
 	// static int port = 8181;
 	// static int port = 9092;
@@ -95,19 +96,22 @@ public class SocketTest {
 		// Socket socketOI = new Socket(ip, port);
 		// print(socketOI, otherOI);
 
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE);
-//		Socket socketOI = new Socket(ip, port);
-//		print(socketOI, otherOI);
+		// AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS,
+		// AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE);
+		// Socket socketOI = new Socket(ip, port);
+		// print(socketOI, otherOI);
 
-		 AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.ANDROID,
-		 AdPosition.POS_FEED_STREAM_INFORMATION);
-		 Socket socketOA = new Socket(ip, port);
-		 print(socketOA, otherand);
+		// AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.IOS,
+		// AdPosition.POS_WEATHER_HOME_INDEX_ENTRY);
+		AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_INFORMATION);
+		Socket socketOA = new Socket(ip, port);
+		print(socketOA, otherand);
 
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE,
-//				AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM);
-//		Socket socketOI = new Socket(ip, port);
-//		print(socketOI, otherOI);
+		// AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID,
+		// AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE,
+		// AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM);
+		// Socket socketOI = new Socket(ip, port);
+		// print(socketOI, otherOI);
 		//
 		//
 		// //穿衣助手道具
@@ -344,9 +348,7 @@ public class SocketTest {
 		build.addAllPosition(adPositions);
 
 		AdRequestCommon.Builder adc = AdRequestCommon.newBuilder();
-		adc.setAndroidId("android");
-		adc.setUa(
-				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230");
+
 		adc.setPkgname("com.moji.MojiWeather");
 		adc.setUid(654366083);
 		adc.setCityId(151);
@@ -358,13 +360,10 @@ public class SocketTest {
 
 		adc.setChannelId(5072);
 		adc.setOsType(osType);
-		adc.setOsVersion("6.0.1");
 
-		adc.setPhoneType("IPHONE 6S PLUS");
-		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
+		phoneParam(osType, adc);
 		adc.setWma("wma");
 		adc.setAvatarId(2);
-
 		adc.setIsWifi(true);
 		adc.setMcc(21);
 		adc.setMnc(343);
@@ -376,6 +375,31 @@ public class SocketTest {
 		build.setIsDebug(true);
 		AdRequest request = build.build();
 		return request;
+	}
+
+	private static void phoneParam(Platform osType, Builder adc) {
+		if (osType == Platform.ANDROID) {
+			android(adc);
+		} else {
+			ios(adc);
+		}
+	}
+
+	private static void ios(Builder adc) {
+		adc.setOsVersion("6.0.1");
+		adc.setPhoneType("IPHONE 6S PLUS");
+		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
+		adc.setUa(
+				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230");
+	}
+
+	private static void android(Builder adc) {
+		adc.setOsVersion("6.0.1");
+		adc.setAndroidId("android");
+		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
+		adc.setPhoneType("SM-N9150");
+		adc.setUa(
+				"Mozilla/5.0+(Linux;+Android+6.0.1;+SM-N9150+Build/MMB29M;+wv)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Version/4.0+Chrome/52.0.2743.98+Mobile+Safari/537.36mojia/1007000401");
 	}
 
 	private static void print(Socket socket, AdRequest request) throws IOException, InvalidProtocolBufferException {
