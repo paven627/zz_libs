@@ -1,51 +1,43 @@
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
-import com.moji.launchserver.thirdapi.entity.CollectMatEntity;
-
 public class MyTest {
-	static Map<String, Set<CollectMatEntity>> map = new HashMap<>();
-
-
-		public static void main(String[] args) {
-
-			Set<CollectMatEntity> set = new HashSet<>();
-			for (int i = 0; i < 10; i++) {
-				CollectMatEntity c = new CollectMatEntity();
-				c.setAdverting_id(100000013);
-				c.setMatTitle("aaaa");
-				c.setDescription("aaaa");
-				c.setImgurl("http://www.baidu.com/a.jpg"+i);
-				set.add(c);
-			}
-			System.out.println(set.size());
-			map.put("13", set);
-			
-			
-			System.out.println(map.hashCode());
-			long l1 = System.currentTimeMillis();
-			Map<String, Set<CollectMatEntity>> m = map;
-			System.out.println(m.hashCode());
-			
-			map = new HashMap<>();
-			long l2 = System.currentTimeMillis();
-			System.out.println(l2 - l1);
-			System.out.println(m.size());
-//			map =new HashMap<>();
-//			
-//			CollectMatEntity c1 = new CollectMatEntity();
-//			c1.setAdverting_id(100000014);
-//			c1.setMatTitle("bbbb");
-//			c1.setDescription("bbbbbbb");
-//			c1.setImgurl("http://www.baidu.com/b.jpg");
-//
-//			set = map.get("13");
-//			set = new HashSet<>();
-//			set.add(c1);
-//			map.put("13", set);
-//			System.out.println(map);
-//			System.out.println(m);
+	public static void main(String[] args) {
+		char s = ' ' ;
+		
+		int x = ' ';
+		
+		boolean defined = Character.isDefined(s);
+		System.out.println(defined);
+		boolean identifierIgnorable = Character.isIdentifierIgnorable(s);
+		System.out.println(identifierIgnorable);
+		boolean letterOrDigit = Character.isLetterOrDigit(s);
+		System.out.println(letterOrDigit);
+		boolean spaceChar = Character.isSpaceChar(s);
+		System.out.println(spaceChar);
+		boolean whitespace = Character.isWhitespace(s);
+		System.out.println(whitespace);
+		Character ch = s;
+		System.out.println(ch);
+		
 	}
+	
+	
+	private static void code(char c){
+		char code;  
+	    code = (char)(c + 1554 % 10);  
+	    System.out.println('4'-48);  
+	    System.out.println(code);  
+	    System.out.println((int)code);  
+	    code = 4;  
+	    System.out.println(0+Character.valueOf(code));  
+	      
+	      
+	    System.out.println((char)(0));  
+	    //强制转换，（取到低16位）4个字节的取低2个字节  
+	    char char1=(char)4;  
+	    System.out.println((char)(c+char1));  
+	      
+	      
+	      
+	    System.out.println(0+Character.valueOf((char)0));  
+	}
+	
 }
