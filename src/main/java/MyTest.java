@@ -1,19 +1,22 @@
+import java.net.UnknownHostException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MyTest {
-	public static void main(String[] args) {
-		Map a = new HashMap();
-		a.put(1, 1);
-		System.out.println(a);
+
+	// static Map<Integer, Integer> map = new ConcurrentHashMap<>();
+	static Map<Integer, Integer> map = new HashMap<>();
+	static String a = "a";
+
+	public static void main(String[] args) throws UnknownHostException {
+		System.out.println("Aa".hashCode());
+		System.out.println("BB".hashCode());
+		System.out.println("12".hashCode());
 		
-		Map b = a;
-		System.out.println(a);
-		System.out.println(b);
-		a = new HashMap();
-		System.out.println(a);
-		System.out.println(b);
 		
+		System.out.println(0x3FFFFFFF);
+		System.out.println(0x0000003D);
 	}
 
 }

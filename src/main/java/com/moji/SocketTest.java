@@ -29,8 +29,8 @@ public class SocketTest {
 	 * f__IP__,t__TS__,r__TERM_ _,l__LBS__,h
 	 * 
 	 */
-	// static String ip = "127.0.0.1";
-	static String ip = "192.168.1.184";
+//	static String ip = "127.0.0.1";
+	 static final public String ip = "192.168.1.181";
 	// static String ip = "adlaunch.moji.com";
 	// static int port = 80;
 	// static int port = 8899;
@@ -86,10 +86,9 @@ public class SocketTest {
 		// print(socket, ios);
 		//
 		// // 其他广告
-		// AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.ANDROID,
-		// AdPosition.POS_VOICE_BROADCAST_UNDER);
-		// Socket socketOA = new Socket(ip, port);
-		// print(socketOA, otherand);
+		AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_FEED_STREAM_INFORMATION);
+		Socket socketOA = new Socket(ip, port);
+		print(socketOA, otherand);
 
 		// AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID,
 		// AdPosition.POS_BLOCKING_TAB_TIME_PAGE);
@@ -103,9 +102,13 @@ public class SocketTest {
 
 		// AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.IOS,
 		// AdPosition.POS_WEATHER_HOME_INDEX_ENTRY);
-		AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_INFORMATION);
-		Socket socketOA = new Socket(ip, port);
-		print(socketOA, otherand);
+		// AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.IOS,
+		// AdPosition.POS_INDEX_ARTICLE_UPPER_BANNER);
+
+		// AdRequest otherand = other(AdType.OTHERS_TYPE, Platform.IOS,
+		// AdPosition.POS_INDEX_ARTICLE_RECOMMENDATION);
+		// Socket socketOA = new Socket(ip, port);
+		// print(socketOA, otherand);
 
 		// AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID,
 		// AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE,
