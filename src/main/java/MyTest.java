@@ -1,22 +1,44 @@
-import java.net.UnknownHostException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.DecimalFormat;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class MyTest {
+	static DecimalFormat df = new DecimalFormat("#.0000");
 
-	// static Map<Integer, Integer> map = new ConcurrentHashMap<>();
-	static Map<Integer, Integer> map = new HashMap<>();
-	static String a = "a";
+	static int pv = 3921;
+	static int clicks = 136;
 
-	public static void main(String[] args) throws UnknownHostException {
-		System.out.println("Aa".hashCode());
-		System.out.println("BB".hashCode());
-		System.out.println("12".hashCode());
-		
-		
-		System.out.println(0x3FFFFFFF);
-		System.out.println(0x0000003D);
+	
+
+	private static final Log logger = LogFactory.getLog(MyTest.class);
+
+	
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		logger.error("11111111");;
 	}
 
+	/**
+	 * 计算位数
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static int calculatePlaces(String str) {
+		int m = 0;
+		char arr[] = str.toCharArray();
+		for (int i = 0; i < arr.length; i++) {
+			char c = arr[i];
+			if ((c >= 0x0391 && c <= 0xFFE5)) // 中文字符
+			{
+				m = m + 2;
+			} else if ((c >= 0x0000 && c <= 0x00FF)) // 英文字符
+			{
+				m = m + 1;
+			}
+		}
+		return m;
+	}
 }
