@@ -33,11 +33,11 @@ public class SocketTest {
 //	 static int port = 9500;
 	
 	
-	 static String ip = "127.0.0.1";
-//	 static String ip = "192.168.1.181";
+//	 static String ip = "127.0.0.1";
+	 static String ip = "192.168.1.181";
+//	static String ip = "192.168.1.184";
 	// static String ip = "103.17.43.206";
 //	 static String ip = "192.168.1.67";
-//	static String ip = "192.168.1.184";
 
 	// static String ip = "adlaunch.moji.com";
 	// static int port = 80;
@@ -70,7 +70,7 @@ public class SocketTest {
 		// socket.setSoTimeout(10000);
 		// socket.setTcpNoDelay(true);
 
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_MIDDLE_ARTICLE, 351,
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_BELOW_CITY_SELECTION, 600,
 				4001);
 		Socket socketOI = new Socket(ip, port);
 		print(socketOI, otherOI);
@@ -107,6 +107,7 @@ public class SocketTest {
 		adc.setCityId(cityId);
 		adc.setPublishType("2");
 		adc.setAppVersion(1006030000);
+		adc.setAppVersion(1007012001);
 		adc.setScreenHeight(1136);
 		adc.setScreenWidth(640);
 		adc.setLang(Language.SIMPLIFIED_CH);

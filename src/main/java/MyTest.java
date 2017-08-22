@@ -1,6 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.HashMap;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -17,7 +18,11 @@ public class MyTest {
 
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		logger.error("11111111");;
+		HashMap<String, String> map = new HashMap<>();
+		map.put("FB", "a");
+		map.put("Ea", "b");
+		
+		System.out.println(map);
 	}
 
 	/**
