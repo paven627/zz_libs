@@ -7,7 +7,6 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class ReadWriteLockTest {
 	public static void main(String[] args) {
 		final Queue3 q3 = new Queue3();
-		// ��3�������߳�
 		for (int i = 0; i < 3; i++) {
 			new Thread() {
 				public void run() {
@@ -17,7 +16,6 @@ public class ReadWriteLockTest {
 				}
 
 			}.start();
-			// д���߳�
 			new Thread() {
 				public void run() {
 					while (true) {
@@ -39,11 +37,9 @@ class Queue3 {
 	public void read() {
 		rwl.readLock().lock();
 		try {
-			System.out.println(Thread.currentThread().getName()
-					+ " Before  Read ");
+			System.out.println(Thread.currentThread().getName() + " Before  Read ");
 			Thread.sleep(1000);
-			System.out.println(Thread.currentThread().getName()
-					+ " After  Read " + data);
+			System.out.println(Thread.currentThread().getName() + " After  Read " + data);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
@@ -54,12 +50,10 @@ class Queue3 {
 	public void write(Object data) {
 		rwl.writeLock().lock();
 		try {
-			System.out.println(Thread.currentThread().getName()
-					+ " Before Write ");
+			System.out.println(Thread.currentThread().getName() + " Before Write ");
 			Thread.sleep(1000);
 			this.data = data;
-			System.out.println(Thread.currentThread().getName()
-					+ " After  Write  " + data);
+			System.out.println(Thread.currentThread().getName() + " After  Write  " + data);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {

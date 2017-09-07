@@ -80,7 +80,7 @@ class Producer implements Runnable {
 			ss.push(wt);
 			System.out.println("�����һ����ͷ" + wt);
 			try {
-				Thread.sleep((int) Math.random() * 200);
+				Thread.sleep( ((int) Math.random()+1) * 200);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -88,7 +88,6 @@ class Producer implements Runnable {
 	}
 }
 
-/** ����� */
 class Consumer implements Runnable {
 	Consumer(SyncStack ss) {
 		this.ss = ss;

@@ -4,17 +4,24 @@ import redis.clients.jedis.Jedis;
 
 public class RedisTest {
 	public static void main(String[] args) {
-		Jedis jedis = new Jedis("60.205.230.151", 6379);
-		jedis.set("test3", "test1");
-		String string = jedis.get("test");
-		System.out.println(string);
-		Long dbSize = jedis.dbSize();
-		System.out.println(dbSize);
-
-		jedis.mset("id", "1", "name", "邓斌");
-		System.out.println(jedis.mget("id","name"));
-		jedis.close();
+		readIos();
+		readAndroid();
 		
+//		
+//		
+	}
+	static void readIos(){
+		Jedis jedis = new Jedis("192.168.1.198", 6382);
+		jedis.set("ios654366087", "{\"5\":\"1231\",\"3\":\"100\",\"11\":\"10\",\"180\":\"10\"}");
+		System.out.println(jedis.get("ios654366087"));
+		jedis.close();
+	}
+	
+	static void  readAndroid (){
+		Jedis jedis = new Jedis("192.168.1.197", 6381);
+		jedis.set("ad654366087", "{\"2\":\"111\",\"1\":\"1231\",\"8\":\"100\",\"11\":\"10\"}");
+		System.out.println(jedis.get("ad654366087"));
+		jedis.close();
 	}
 }
 
