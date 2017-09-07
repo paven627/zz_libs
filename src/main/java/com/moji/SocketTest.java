@@ -29,13 +29,12 @@ public class SocketTest {
 	 * f__IP__,t__TS__,r__TERM_ _,l__LBS__,h
 	 * 
 	 */
-//	static String ip = "103.235.239.69";  //线上调试
-//	 static int port = 9500;
-	
-	
-//	 static String ip = "127.0.0.1";
+	// static String ip = "103.235.239.69"; // 线上调试
+	// static int port = 9500;
+
+//	static String ip = "127.0.0.1";
 	 static String ip = "192.168.1.181";
-//	static String ip = "192.168.1.184";
+//	 static String ip = "192.168.1.184";
 	// static String ip = "103.17.43.206";
 //	 static String ip = "192.168.1.67";
 
@@ -59,8 +58,6 @@ public class SocketTest {
 	// static int port = 8899;
 	// --------------------------------------
 
-	// static int port = 8080;
-
 	// static String ip = "103.17.43.210";
 	// static int port = 8899;
 	public static void main(String[] args) throws UnknownHostException, IOException {
@@ -70,18 +67,33 @@ public class SocketTest {
 		// socket.setSoTimeout(10000);
 		// socket.setTcpNoDelay(true);
 
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_BELOW_CITY_SELECTION, 600,
-				4001);
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE, 23, 4004,
+//				"com.moji.aliyun",1007010001);
+		
+		
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600, 4004,
+//				"com.moji.aliyun");
+//		
+//		adc.setAppVersion(1007001000);
+//		adc.setAppVersion(1007010001);
+		
+		//广点通分界版本 1007001001
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_SPLASH, 600, 414,
+//				"com.moji.MjWeather", 1007001002);
+		
+		AdRequest otherOI = other(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH, 23, 40041,
+				"com.moji.e",50070101);
+		
 		Socket socketOI = new Socket(ip, port);
 		print(socketOI, otherOI);
-		
-		
+
 	}
 
-	private static AdRequest other(AdType adType, Platform osType, AdPosition position, int cityId, int channelId) {
+	private static AdRequest other(AdType adType, Platform osType, AdPosition position, int cityId, int channelId,
+			String packageName, int version) {
 		AdRequest.Builder build = AdRequest.newBuilder();
 		build.setType(adType);
-		// build.setFeedTab(0); 
+		// build.setFeedTab(0);
 		// build.setType(AdType.BGAVATAR);
 		// build.setType(AdType.SPLASH);
 
@@ -102,14 +114,13 @@ public class SocketTest {
 
 		AdRequestCommon.Builder adc = AdRequestCommon.newBuilder();
 
-		adc.setPkgname("com.moji.MojiWeather");
+		adc.setPkgname(packageName);
 		adc.setUid(654366082);
 		adc.setCityId(cityId);
 		adc.setPublishType("2");
-		adc.setAppVersion(1006030000);
-		adc.setAppVersion(1007012001);
-		adc.setScreenHeight(1136);
-		adc.setScreenWidth(640);
+		adc.setAppVersion(version);
+		adc.setScreenHeight(1920);
+		adc.setScreenWidth(1080);
 		adc.setLang(Language.SIMPLIFIED_CH);
 
 		adc.setChannelId(channelId);
@@ -123,9 +134,9 @@ public class SocketTest {
 		adc.setMnc(343);
 		adc.setCarrier(CarrierType.CARRIER_MOBILE);
 
-//		adc.setIsUserAvatarShow(true);
-//		adc.setIsAvatarShow(true);
-//		
+		// adc.setIsUserAvatarShow(true);
+		// adc.setIsAvatarShow(true);
+		//
 		build.setRequestCommon(adc);
 		build.setDisplayTimes(1);
 		build.setVersion(1);
@@ -152,9 +163,9 @@ public class SocketTest {
 
 	private static void android(Builder adc) {
 		adc.setOsVersion("6.0.1");
-		adc.setAndroidId("android");
-//		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
-		adc.setIdentifier("7394499b6b7f619a");
+		adc.setAndroidId("60d562786bd59675");
+		// adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
+		adc.setIdentifier("352425060557231");
 		adc.setPhoneType("SM-N9150");
 		adc.setUa(
 				"Mozilla/5.0+(Linux;+Android+6.0.1;+SM-N9150+Build/MMB29M;+wv)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Version/4.0+Chrome/52.0.2743.98+Mobile+Safari/537.36mojia/1007000401");
