@@ -1,4 +1,4 @@
-package test.java.Container;
+package test.java.container;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;

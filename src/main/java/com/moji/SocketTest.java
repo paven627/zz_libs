@@ -29,8 +29,8 @@ public class SocketTest {
 	 * f__IP__,t__TS__,r__TERM_ _,l__LBS__,h
 	 * 
 	 */
-	// static String ip = "103.235.239.69"; // 线上调试
-	// static int port = 9500;
+//	 static String ip = "103.235.239.69"; // 线上调试
+//	 static int port = 9500;
 
 //	static String ip = "127.0.0.1";
 	 static String ip = "192.168.1.181";
@@ -67,10 +67,10 @@ public class SocketTest {
 		// socket.setSoTimeout(10000);
 		// socket.setTcpNoDelay(true);
 
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE, 23, 4004,
-//				"com.moji.aliyun",1007010001);
-		
-		
+//		AdRequest otherOI = other(AdType.DISPLAY_WINDOW, Platform.IOS, AdPosition.POS_DRESS_ASSISTANT_CARD_ONE, 347, 9000,
+//				"com.moji.MojiWeather",50070104);
+//		1006010676
+//		1007001000
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600, 4004,
 //				"com.moji.aliyun");
 //		
@@ -78,11 +78,11 @@ public class SocketTest {
 //		adc.setAppVersion(1007010001);
 		
 		//广点通分界版本 1007001001
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_SPLASH, 600, 414,
-//				"com.moji.MjWeather", 1007001002);
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_DETAILS, 600, 414,
+				"com.moji.MjWeather", 1007001002);
 		
-		AdRequest otherOI = other(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH, 23, 40041,
-				"com.moji.e",50070101);
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 23, 40041,
+//				"com.moji.aliyun",1007001000);
 		
 		Socket socketOI = new Socket(ip, port);
 		print(socketOI, otherOI);
@@ -93,52 +93,50 @@ public class SocketTest {
 			String packageName, int version) {
 		AdRequest.Builder build = AdRequest.newBuilder();
 		build.setType(adType);
-		// build.setFeedTab(0);
-		// build.setType(AdType.BGAVATAR);
-		// build.setType(AdType.SPLASH);
 
-		build.setImageName("dbe90dac8e6cd0fabf6a2c7cf51bbc7f");
-		// build.setType(AdType.DISPLAY_WINDOW);
+//		build.setImageName("dbe90dac8e6cd0fabf6a2c7cf51bbc7f");
 		build.setDayOrNight(DayOrNight.DAY);
 		build.setAlreadyShowId(0l);
 		build.setVersion(1);
-		build.addLastAdIds(0l);
+//		build.addLastAdIds(0l);
 		build.setSessionId("a10000030011");
-		build.setLatitude(39.972675f);
-		build.setLongitude(116.490528f);
-		build.setIsShortPrediction(IsShortPrediction.YES);
-		build.setFeedTab(20);
+//		build.setLatitude(39.972675f);
+//		build.setLongitude(116.490528f);
+		build.setIsShortPrediction(IsShortPrediction.NO);
+		build.setFeedTab(0);
 		List<AdPosition> adPositions = new ArrayList<>();
 		adPositions.add(position);
+//		build.setExsitedAdIds(0,10008161 );
 		build.addAllPosition(adPositions);
-
+//
 		AdRequestCommon.Builder adc = AdRequestCommon.newBuilder();
-
+//
 		adc.setPkgname(packageName);
 		adc.setUid(654366082);
 		adc.setCityId(cityId);
-		adc.setPublishType("2");
+		adc.setPublishType("1");
 		adc.setAppVersion(version);
 		adc.setScreenHeight(1920);
 		adc.setScreenWidth(1080);
 		adc.setLang(Language.SIMPLIFIED_CH);
-
+//
 		adc.setChannelId(channelId);
 		adc.setOsType(osType);
-
+//
 		phoneParam(osType, adc);
-		adc.setWma("wma");
+//		adc.setWma("wma");
+		adc.setNetType("3G");
 		adc.setAvatarId(2);
-		adc.setIsWifi(true);
+		adc.setIsWifi(false);
 		adc.setMcc(21);
 		adc.setMnc(343);
 		adc.setCarrier(CarrierType.CARRIER_MOBILE);
-
-		// adc.setIsUserAvatarShow(true);
-		// adc.setIsAvatarShow(true);
-		//
+//
+//		// adc.setIsUserAvatarShow(true);
+		 adc.setIsAvatarShow(true);
+//		//
 		build.setRequestCommon(adc);
-		build.setDisplayTimes(1);
+//		build.setDisplayTimes(1);
 		build.setVersion(1);
 		build.setIsDebug(true);
 		AdRequest request = build.build();
@@ -154,7 +152,7 @@ public class SocketTest {
 	}
 
 	private static void ios(Builder adc) {
-		adc.setOsVersion("6.0.1");
+		adc.setOsVersion("9.3.1");
 		adc.setPhoneType("IPHONE 6S PLUS");
 		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
 		adc.setUa(

@@ -27,10 +27,13 @@
 
 package test.java.internet.httpclient;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.utils.HttpClientUtils;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 
 /**
  * This example demonstrates how to abort an HTTP method before its normal completion.
@@ -40,13 +43,16 @@ public class ClientAbortMethod {
     public final static void main(String[] args) throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         try {
-            HttpGet httpget = new HttpGet("http://www.apache.org/");
+            HttpGet httpget = new HttpGet("http://c.gdt.qq.com/gdt_mclick.fcg?viewid=fmfg4_WMRuggi8xfziSvr0pIA6mQwyj4GCW7U5tg7gejPvgMIDtVEOVindHbwiyBxYu81cP9ycCNkYOwl0epJpWWS_I_zKrsQMw49vBU0LxTkEfVRMU5BHdEQvoC1Vqap14RkKCYcI3eyy3cVUT2b0WX0!rKitRfq0SzaUbnBVDuvFx1WWpTdxKlooJvvX1qDGQZASQYyNATxFY78HBvoTEfX1vf6VKi&jtype=0&i=1&os=2&asi=%7B%22mf%22%3A%22SM-J7109%22%7D&acttype=1&s=%7B%22req_width%22%3A%22__REQ_WIDTH__%22%2C%22req_height%22%3A%22__REQ_HEIGHT__%22%2C%22width%22%3A%22__WIDTH__%22%2C%22height%22%3A%22__HEIGHT__%22%2C%22down_x%22%3A%22-999%22%2C%22down_y%22%3A%22-999%22%2C%22up_x%22%3A%22-999%22%2C%22up_y%22%3A%22-999%22%7D");
 
             System.out.println("Executing request " + httpget.getURI());
             CloseableHttpResponse response = httpclient.execute(httpget);
             try {
                 System.out.println("----------------------------------------");
                 System.out.println(response.getStatusLine());
+                HttpEntity entity = response.getEntity();
+                String string = EntityUtils.toString(entity);
+                System.out.println(string);
                 // Do not feel like reading the response body
                 // Call abort on the request object
                 httpget.abort();
