@@ -29,11 +29,11 @@ public class SocketTest {
 	 * f__IP__,t__TS__,r__TERM_ _,l__LBS__,h
 	 * 
 	 */
-//	 static String ip = "103.235.239.69"; // 线上调试
-//	 static int port = 9500;
+	 static String ip = "103.235.239.69"; // 线上调试
+	 static int port = 9500;
 
 //	static String ip = "127.0.0.1";
-	 static String ip = "192.168.1.181";
+//	 static String ip = "192.168.1.181";
 //	 static String ip = "192.168.1.184";
 	// static String ip = "103.17.43.206";
 //	 static String ip = "192.168.1.67";
@@ -45,7 +45,7 @@ public class SocketTest {
 	// static int port = 9092;
 
 	// static String ip = "103.249.255.147";
-	static int port = 8080;
+//	static int port = 8080;
 	// static int port = 8900;
 
 	// 两个测试环境 -------------------------------
@@ -76,14 +76,14 @@ public class SocketTest {
 //		
 //		adc.setAppVersion(1007001000);
 //		adc.setAppVersion(1007010001);
+//		50070603
 		
 		//广点通分界版本 1007001001
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_DETAILS, 600, 414,
-				"com.moji.MjWeather", 1007001002);
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_SHARE_ENTRANCE, 153140, 414,
+				"com.moji.MjWeather", 1007010001);
 		
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 23, 40041,
 //				"com.moji.aliyun",1007001000);
-		
 		Socket socketOI = new Socket(ip, port);
 		print(socketOI, otherOI);
 
@@ -160,7 +160,7 @@ public class SocketTest {
 	}
 
 	private static void android(Builder adc) {
-		adc.setOsVersion("6.0.1");
+		adc.setOsVersion("11.0");
 		adc.setAndroidId("60d562786bd59675");
 		// adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
 		adc.setIdentifier("352425060557231");
