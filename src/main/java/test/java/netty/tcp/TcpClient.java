@@ -1,24 +1,26 @@
 package test.java.netty.tcp;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
 
 public class TcpClient {
-	
-	
-	
+
 	public static void main(String[] args) throws IOException, InterruptedException {
 
 		// 3次TCP连接，每个连接发送2个请求数据
-		for (int i = 0; i < 3; i++) {
+//		for (int i = 0; i < 3; i++) {
 			Socket socket = null;
 			OutputStream out = null;
 
 			try {
 
-//				socket = new Socket("localhost", 8080);
-				socket = new Socket("60.205.230.151", 8181);
+				socket = new Socket("localhost", 8080);
+				// socket = new Socket("60.205.230.151", 8181);
 				out = socket.getOutputStream();
 
 				// 第一次请求服务器
@@ -33,12 +35,17 @@ public class TcpClient {
 				out.write(outputBytes2);
 				out.flush();
 
+				DataInputStream input = new DataInputStream(socket.getInputStream());
+
+				String ret = input.readUTF();
+				System.out.println("服务器端返回过来的是: " + ret);
+
 			} finally {
 				// 关闭连接
-				out.close();
-				socket.close();
+				// out.close();
+				// socket.close();
 			}
 
-		}
+//		}
 	}
 }

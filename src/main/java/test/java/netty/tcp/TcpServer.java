@@ -78,7 +78,7 @@ class TcpServerHandler extends ChannelInboundHandlerAdapter {
 
 		String line = (String) msg;
 		System.out.println("第" + counter + "次请求:" + line);
-		ctx.writeAndFlush(line);
+		ctx.pipeline().writeAndFlush("AAAA");
 	}
 
 	@Override
