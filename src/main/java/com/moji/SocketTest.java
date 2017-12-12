@@ -35,27 +35,27 @@ public class SocketTest {
 	 * f__IP__,t__TS__,r__TERM_ _,l__LBS__,h
 	 * 
 	 */
-	 static String ip = "103.235.239.69"; // 线上调试
-	 static int port = 9500;
+//	 static String ip = "103.235.239.69"; // 线上调试
+//	 static int port = 9500;
 
 //	static String ip = "127.0.0.1";
 //	 static String ip = "192.168.1.181";
-//	 static String ip = "192.168.1.184";
+	 static String ip = "192.168.1.184";
 	// static String ip = "103.17.43.206";
 	// static String ip = "192.168.1.67";
 
 	// static String ip = "adlaunch.moji.com";
-	// static int port = 80;
+//	 static int port = 80;
 	// static int port = 8899;
 	// static int port = 8081;
 	// static int port = 9092;
 
 	// static String ip = "103.249.255.147";
-//	static int port = 8080;
+//	static int port = 8081;
 	// static int port = 8900;
 
 	// 两个测试环境 -------------------------------
-	// static int port = 8080;
+	 static int port = 8080;
 
 	// static String ip = "adlaunch.moji.com";
 	// static int port = 8181;
@@ -88,9 +88,9 @@ public class SocketTest {
 //		50070603
 		
 		//广点通分界版本 1007001001
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_SHARE_ENTRANCE, 153140, 414,
-				"com.moji.MjWeather", 1007010001);
-		
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_TIME_VIEW_COMMENTS_LIST, 600, 1,
+				"com.moji.mjweather", 1007001000);
+//		com.moji.MjWeather
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 23, 40041,
 //				"com.moji.aliyun",1007001000);
 		Socket socketOI = new Socket(ip, port);
@@ -98,6 +98,7 @@ public class SocketTest {
 		
 //		 feedclick();
 		 
+//		com.moji.mjweather
 		// 1006010676
 		// 1007001000
 		// 50070606
@@ -264,14 +265,14 @@ public class SocketTest {
 	private static void ios(Builder adc) {
 		adc.setOsVersion("9.3.1");
 		adc.setPhoneType("IPHONE 6S PLUS");
-		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
+		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637019");
 		adc.setUa(
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230");
 	}
 
 	private static void android(Builder adc) {
 		adc.setOsVersion("11.0");
-		adc.setAndroidId("60d562786bd59675");
+		adc.setAndroidId("60d562786bd59676");
 		// adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
 		adc.setIdentifier("352425060557231");
 		adc.setPhoneType("SM-N9150");

@@ -7,12 +7,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Date;
 
 import com.alibaba.fastjson.JSONObject;
 
 public class ClickTmpParse {
 	public static void main(String[] args) throws IOException {
-		File file = new File("C:\\Users\\bin.deng\\Desktop\\click_1026.txt");
+		File file = new File("C:\\Users\\bin.deng\\Desktop\\click_1026\\click_1026.txt");
 
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 
@@ -29,6 +30,7 @@ public class ClickTmpParse {
 			JSONObject common = json.getJSONObject("common");
 			String imei = common.getString("identifier");
 			String device = common.getString("device");
+			long unix = common.getLong("unix");
 			JSONObject params = json.getJSONObject("params");
 			String index = params.getString("ad_index");
 			String down_x = params.getString("down_x");
@@ -36,7 +38,7 @@ public class ClickTmpParse {
 			String up_x = params.getString("up_x");
 			String up_y = params.getString("up_y");
 
-			writer.write(imei + "," + device + "," + index + "," + down_x + "," + down_y + "," + up_x + "," + up_y );
+			writer.write(imei + "," + device + "," + index + "," + down_x + "," + down_y + "," + up_x + "," + up_y+","+  new Date(unix).toLocaleString());
 			writer.newLine();
 		}
 		writer.close();

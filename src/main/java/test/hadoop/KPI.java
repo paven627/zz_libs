@@ -56,8 +56,7 @@ public class KPI {
 	}
 
 	public Date getTime_local_Date() throws ParseException {
-		SimpleDateFormat df = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss",
-				Locale.US);
+		SimpleDateFormat df = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss", Locale.US);
 		return df.parse(this.time_local);
 	}
 
@@ -103,8 +102,7 @@ public class KPI {
 			return http_referer;
 		}
 
-		String str = this.http_referer.replace("\"", "").replace("http://", "")
-				.replace("https://", "");
+		String str = this.http_referer.replace("\"", "").replace("http://", "").replace("https://", "");
 		return str.indexOf("/") > 0 ? str.substring(0, str.indexOf("/")) : str;
 	}
 
@@ -128,7 +126,7 @@ public class KPI {
 		this.valid = valid;
 	}
 
-	public static void main(String args[]) {
+	public static void main(String args[]) throws ParseException {
 		String line = "222.68.172.190 - - [18/Sep/2013:06:49:57 +0000] \"GET /images/my.jpg HTTP/1.1\" 200 19939 \"http://www.angularjs.cn/A00n\" \"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.66 Safari/537.36\"";
 		System.out.println(line);
 		KPI kpi = new KPI();
@@ -144,15 +142,10 @@ public class KPI {
 		kpi.setHttp_user_agent(arr[11] + " " + arr[12]);
 		System.out.println(kpi);
 
-		try {
-			SimpleDateFormat df = new SimpleDateFormat("yyyy.MM.dd:HH:mm:ss",
-					Locale.US);
-			System.out.println(df.format(kpi.getTime_local_Date()));
-			System.out.println(kpi.getTime_local_Date_hour());
-			System.out.println(kpi.getHttp_referer_domain());
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+		SimpleDateFormat df = new SimpleDateFormat("yyyy.MM.dd:HH:mm:ss", Locale.US);
+		System.out.println(df.format(kpi.getTime_local_Date()));
+		System.out.println(kpi.getTime_local_Date_hour());
+		System.out.println(kpi.getHttp_referer_domain());
 	}
 
 }

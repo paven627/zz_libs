@@ -1,52 +1,33 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-
+class Person {
+	String name;
+	int age;
+	public Person(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+//	@Override
+//	public int hashCode() {
+//	    return age;
+//	}
+}
 public class MyTest {
 
-	int i = 1;
-
-	public static String hmacsha256(byte[] data, byte[] key) {
-		try {
-			SecretKeySpec signingKey = new SecretKeySpec(key, "HmacSHA256");
-			Mac mac = Mac.getInstance("HmacSHA256");
-			mac.init(signingKey);
-			return byte2hex(mac.doFinal(data));
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		} catch (InvalidKeyException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	public static String byte2hex(byte[] b) {
-		StringBuilder hs = new StringBuilder();
-		String stmp;
-		for (int n = 0; b != null && n < b.length; n++) {
-			stmp = Integer.toHexString(b[n] & 0XFF);
-			if (stmp.length() == 1)
-				hs.append('0');
-			hs.append(stmp);
-		}
-		return hs.toString().toUpperCase();
-	}
-
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-//		hmacsha256(data, key)
-		
-		String encode = URLEncoder.encode("2017-11-21T07:49:22.371Z");
-		System.out.println(encode);
-		
-		SimpleDateFormat sdf = new SimpleDateFormat();
-		String s = sdf.format(new Date());
-		System.out.println(s);
+		 Set<Person> people = new HashSet<Person>();
+		    Person person = null;
+		    for (int i = 0; i < 3 ; i++) {
+		        person = new Person("name-" + i, i);
+		        people.add(person);
+		    }
+		    person.age = 100;
+		    System.out.println(people.contains(person));
+		    people.add(person);
+		    System.out.println(people.size());
 	}
 }
