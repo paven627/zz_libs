@@ -11,24 +11,38 @@ import java.util.Date;
 
 import com.alibaba.fastjson.JSONObject;
 
+
+/**
+ * 
+ * 解析点击日志,取个别字段到新文件
+ * 
+ * @author bin.deng
+ *
+ */
 public class ClickTmpParse {
 	public static void main(String[] args) throws IOException {
-		File file = new File("C:\\Users\\bin.deng\\Desktop\\click_1026\\click_1026.txt");
+		File file = new File("C:\\Users\\bin.deng\\Desktop\\gdt_1209click");
 
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 
 		String line = null;
 
 		BufferedWriter writer = new BufferedWriter(
-				new FileWriter(new File("C:\\Users\\bin.deng\\Desktop\\click_1026_new.txt")));
+				new FileWriter(new File("C:\\Users\\bin.deng\\Desktop\\gdt_1209click.txt")));
 		
+		StringBuilder sb = new StringBuilder("");
+		int i  = 0;
 		while ((line = reader.readLine()) != null) {
+			sb = new StringBuilder();
+			System.out.println(i);
+			i ++;
 			line = findJson(line);
 			
 			JSONObject json = JSONObject.parseObject(line);
 			// IMEI，IP地址，手机品牌，型号，广告位，点击坐标
 			JSONObject common = json.getJSONObject("common");
 			String imei = common.getString("identifier");
+			String version = common.getString("app_version");
 			String device = common.getString("device");
 			long unix = common.getLong("unix");
 			JSONObject params = json.getJSONObject("params");
@@ -38,7 +52,11 @@ public class ClickTmpParse {
 			String up_x = params.getString("up_x");
 			String up_y = params.getString("up_y");
 
-			writer.write(imei + "," + device + "," + index + "," + down_x + "," + down_y + "," + up_x + "," + up_y+","+  new Date(unix).toLocaleString());
+			writer.write(sb.append(imei).append(",").append(device).append(",").append(version).append(",").append(index).append(",").append(down_x).append(",").append(down_y)
+			.append(",").append(up_x).append(",").append(up_y).append(",").append(new Date(unix).toLocaleString()).toString());
+			
+			
+//			writer.write(imei + "," + device + ","  + index + "," + down_x + "," + down_y + "," + up_x + "," + up_y+","+  new Date(unix).toLocaleString());
 			writer.newLine();
 		}
 		writer.close();

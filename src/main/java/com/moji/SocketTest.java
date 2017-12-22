@@ -39,8 +39,8 @@ public class SocketTest {
 //	 static int port = 9500;
 
 //	static String ip = "127.0.0.1";
-//	 static String ip = "192.168.1.181";
-	 static String ip = "192.168.1.184";
+	 static String ip = "192.168.1.181";
+//	 static String ip = "192.168.1.184";
 	// static String ip = "103.17.43.206";
 	// static String ip = "192.168.1.67";
 
@@ -88,8 +88,8 @@ public class SocketTest {
 //		50070603
 		
 		//广点通分界版本 1007001001
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_TIME_VIEW_COMMENTS_LIST, 600, 1,
-				"com.moji.mjweather", 1007001000);
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_WEATHER_FRONT_PAGE_TOP, 5670, 1,
+				"com.moji.MjWeather", 50070208);
 //		com.moji.MjWeather
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 23, 40041,
 //				"com.moji.aliyun",1007001000);
