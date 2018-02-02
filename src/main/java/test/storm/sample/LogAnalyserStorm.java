@@ -25,7 +25,6 @@ public class LogAnalyserStorm {
 		LocalCluster cluster = new LocalCluster();
 		cluster.submitTopology("LogAnalyserStorm", config, builder.createTopology());
 		Thread.sleep(10000);
-
 		// Stop the topology
 
 		cluster.shutdown();

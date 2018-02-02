@@ -35,11 +35,15 @@ public class FakeCallLogReaderSpout implements IRichSpout {
 	public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
 		this.context = context;
 		this.collector = collector;
+		String componentId = context.getThisComponentId();
+		System.out.println("componentId:" + componentId);
+		List<Integer> componentTasks = context.getComponentTasks(componentId);
+		System.out.println(componentTasks);
 	}
 
 	@Override
 	public void nextTuple() {
-		if (this.idx <= 1000) {
+		if (this.idx <= 100) {
 			List<String> mobileNumbers = new ArrayList<String>();
 			mobileNumbers.add("1111111111");
 			mobileNumbers.add("2222222222");
@@ -47,7 +51,7 @@ public class FakeCallLogReaderSpout implements IRichSpout {
 			mobileNumbers.add("4444444444");
 
 			Integer localIdx = 0;
-			while (localIdx++ < 100 && this.idx++ < 1000) {
+			while (localIdx++ < 10 && this.idx++ < 100) {
 				String fromMobileNumber = mobileNumbers.get(randomGenerator.nextInt(4));
 				String toMobileNumber = mobileNumbers.get(randomGenerator.nextInt(4));
 

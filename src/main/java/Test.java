@@ -1,13 +1,28 @@
-import java.util.Arrays;
-
-import net.sf.json.JSONObject;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class Test {
 	public static void main(String[] args) {
-//		String s = "{\"url\": \"http://xxx.com/aa.jpg\",\"width\" : 240,\"height\" :360,\"ext\" : gnp,\"pm\": [\"pm1.com\", \"pm2.com\"] ,\"cm\":\"点击监测地址url\"}";
-//		System.out.println(s);
-		JSONObject obj = new JSONObject();
-		System.out.println(obj);
+		ThreadPoolExecutor threadPool = new ThreadPoolExecutor(5, 5, 1, TimeUnit.SECONDS,
+				new ArrayBlockingQueue<Runnable>(10, false), new ThreadPoolExecutor.CallerRunsPolicy());
+		for (int i = 1; i <= 5; i++) {
+			threadPool.execute(new Task());
+		}
 	}
 
+}
+
+class Task implements Runnable {
+
+	public void run() {
+		while (true) {
+			try {
+				Thread.sleep(1000);
+				System.out.println("11111");
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }

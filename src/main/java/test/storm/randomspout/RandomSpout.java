@@ -36,6 +36,7 @@ public class RandomSpout extends BaseRichSpout {
 	public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
 		this.collector = collector;
 		this.rand = new Random();
+		System.out.println("spout:open,conf:"+ conf);
 	}
 
 	/**
@@ -47,6 +48,7 @@ public class RandomSpout extends BaseRichSpout {
 	 */
 	@Override
 	public void nextTuple() {
+		System.out.println("nextTuple");
 		String toSay = sentences[rand.nextInt(sentences.length)];
 		this.collector.emit(new Values(toSay));
 		try {

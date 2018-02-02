@@ -10,6 +10,8 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sound.sampled.AudioFormat.Encoding;
+
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.moji.launchserver.AdCommonInterface.Action;
 import com.moji.launchserver.AdCommonInterface.ActionType;
@@ -39,8 +41,8 @@ public class SocketTest {
 //	 static int port = 9500;
 
 //	static String ip = "127.0.0.1";
-	 static String ip = "192.168.1.181";
-//	 static String ip = "192.168.1.184";
+//	 static String ip = "192.168.1.181";
+	 static String ip = "192.168.1.184";
 	// static String ip = "103.17.43.206";
 	// static String ip = "192.168.1.67";
 
@@ -71,7 +73,7 @@ public class SocketTest {
 		// ip = add.getHostAddress();
 
 		// socket.setSoTimeout(10000);
-		// socket.setTcpNoDelay(true);
+		// socket.setTcpNoDelay(true)
 
 		
 //		feedclick();
@@ -88,10 +90,23 @@ public class SocketTest {
 //		50070603
 		
 		//广点通分界版本 1007001001
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_WEATHER_FRONT_PAGE_TOP, 5670, 1,
-				"com.moji.MjWeather", 50070208);
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600, 204,
+//				"com.moji.mjweather", 1007030001);
+		
+		
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE, 600, 4004,
+				"com.moji.aliyun", 1007030402);
+		
+		
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_FEED_STREAM_DETAILS, 600, 204,
+//				"com.moji.mjweather", 50070304);
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_INFORMATION, 600, 204,
+//				"com.moji.mjweather", 1007030402);
+//		
+//		50070304
+//		1007030401
 //		com.moji.MjWeather
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 23, 40041,
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE, 23, 4004,
 //				"com.moji.aliyun",1007001000);
 		Socket socketOI = new Socket(ip, port);
 		print(socketOI, otherOI);
@@ -101,7 +116,7 @@ public class SocketTest {
 //		com.moji.mjweather
 		// 1006010676
 		// 1007001000
-		// 50070606
+		// 50070204
 //		50070104
 		// AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID,
 		// AdPosition.POS_WEATHER_HOME_INDEX_ENTRY, 5719, 121,
@@ -263,18 +278,18 @@ public class SocketTest {
 	}
 
 	private static void ios(Builder adc) {
-		adc.setOsVersion("9.3.1");
-		adc.setPhoneType("IPHONE 6S PLUS");
-		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637019");
+		adc.setOsVersion("11.2.1");
+		adc.setPhoneType("iPhone10,2");
+		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD647019");
 		adc.setUa(
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230");
 	}
 
 	private static void android(Builder adc) {
 		adc.setOsVersion("11.0");
-		adc.setAndroidId("60d562786bd59676");
+		adc.setAndroidId("60d562786bd59675");
 		// adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
-		adc.setIdentifier("352425060557231");
+		adc.setIdentifier("352425060557234");
 		adc.setPhoneType("SM-N9150");
 		adc.setUa(
 				"Mozilla/5.0+(Linux;+Android+6.0.1;+SM-N9150+Build/MMB29M;+wv)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Version/4.0+Chrome/52.0.2743.98+Mobile+Safari/537.36mojia/1007000401");
@@ -296,13 +311,15 @@ public class SocketTest {
 		InputStream input = socket.getInputStream();
 		if (input != null) {
 			byte[] by = toByteArray(input);
-			for (byte b : by) {
-				System.out.print((int) b);
-			}
+//			for (byte b : by) {
+//				System.out.print((int) b);
+//			}
 System.out.println();
 System.out.println();
 System.out.println();
 			AdResponse adResponse = AdResponse.parseFrom(by);
+//			System.out.println(adResponse.toByteString().toStringUtf8());
+//			System.out.println(new String(adResponse.toByteArray()));
 			System.out.println(adResponse.toString());
 			System.out.println(adResponse.getErrorMessage());
 			// System.out.println(s);

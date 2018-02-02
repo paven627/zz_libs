@@ -31,7 +31,7 @@ public class ExclaimBasicTopo {
   
             LocalCluster cluster = new LocalCluster();  
             cluster.submitTopology("test", conf, builder.createTopology());  
-            Utils.sleep(1000);  
+            Utils.sleep(5000);  
             cluster.killTopology("test");  
             cluster.shutdown();  
         }  
