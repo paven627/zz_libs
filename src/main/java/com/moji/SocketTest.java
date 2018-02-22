@@ -78,8 +78,10 @@ public class SocketTest {
 		
 //		feedclick();
 
-//		AdRequest otherOI = other(AdType.DISPLAY_WINDOW, Platform.IOS, AdPosition.POS_DRESS_ASSISTANT_CARD_ONE, 347, 9000,
-//				"com.moji.MojiWeather",50070104);
+//		AdRequest otherOI = other(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH, 600, 9000,
+//				"com.moji.MojiWeather",50070302);
+
+
 //		1006010676
 //		1007001000
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600, 4004,
@@ -90,16 +92,19 @@ public class SocketTest {
 //		50070603
 		
 		//广点通分界版本 1007001001
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600, 204,
-//				"com.moji.mjweather", 1007030001);
+//		AdRequest otherOI = other(AdType.BGAVATAR, Platform.ANDROID, AdPosition.POS_DRESS_ASSISTANT_PROPS, 600, 1211123,
+//				"com.moji.mjweather", 1007030201);
 		
 		
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE, 600, 4004,
-				"com.moji.aliyun", 1007030402);
-		
-		
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_FEED_STREAM_DETAILS, 600, 204,
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_TIME_VIEW_COMMENTS_LIST_NEW, 600, 401,
 //				"com.moji.mjweather", 50070304);
+
+
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_TIME_VIEW_COMMENTS_LIST_NEW, 600, 204,
+				"com.moji.mjweather", 1007030201);
+
+
+
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_INFORMATION, 600, 204,
 //				"com.moji.mjweather", 1007030402);
 //		
@@ -219,7 +224,7 @@ public class SocketTest {
 			String packageName, int version) {
 		AdRequest.Builder build = AdRequest.newBuilder();
 		build.setType(adType);
-
+		build.setCommentNumber(14);
 		// build.setImageName("dbe90dac8e6cd0fabf6a2c7cf51bbc7f");
 		build.setDayOrNight(DayOrNight.DAY);
 		build.setAlreadyShowId(0l);
@@ -279,7 +284,7 @@ public class SocketTest {
 
 	private static void ios(Builder adc) {
 		adc.setOsVersion("11.2.1");
-		adc.setPhoneType("iPhone10,2");
+		adc.setPhoneType("iPhone10,3");
 		adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD647019");
 		adc.setUa(
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230");

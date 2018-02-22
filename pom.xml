@@ -554,9 +554,15 @@
 		    <artifactId>kafka_2.10</artifactId>
 		    <version>0.8.1.1</version>
 		</dependency>
-		
-		
-		  
+
+		<!-- https://mvnrepository.com/artifact/org.apache.flume/flume-ng-core -->
+		<dependency>
+			<groupId>org.apache.flume</groupId>
+			<artifactId>flume-ng-core</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+
+
 
 	</dependencies>
 	
