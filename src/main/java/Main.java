@@ -7,10 +7,7 @@ import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.springframework.util.Base64Utils;
 
-import com.alibaba.fastjson.util.Base64;
-import com.moji.launchserver.util.Base64Util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

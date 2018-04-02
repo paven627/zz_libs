@@ -37,14 +37,14 @@ public class SocketTest {
 	 * f__IP__,t__TS__,r__TERM_ _,l__LBS__,h
 	 * 
 	 */
-//	 static String ip = "103.235.239.69"; // 线上调试
-//	 static int port = 9500;
+	 static String ip = "103.235.239.69"; // 线上调试
+	 static int port = 9500;
 
 //	static String ip = "127.0.0.1";
 //	 static String ip = "192.168.1.181";
-	 static String ip = "192.168.1.184";
+//	 static String ip = "192.168.1.184";
 	// static String ip = "103.17.43.206";
-	// static String ip = "192.168.1.67";
+//	 static String ip = "192.168.1.67";
 
 	// static String ip = "adlaunch.moji.com";
 //	 static int port = 80;
@@ -57,7 +57,7 @@ public class SocketTest {
 	// static int port = 8900;
 
 	// 两个测试环境 -------------------------------
-	 static int port = 8080;
+//	 static int port = 8080;
 
 	// static String ip = "adlaunch.moji.com";
 	// static int port = 8181;
@@ -100,8 +100,8 @@ public class SocketTest {
 //				"com.moji.mjweather", 50070304);
 
 
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_TIME_VIEW_COMMENTS_LIST_NEW, 600, 204,
-				"com.moji.mjweather", 1007030201);
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600, 204,
+				"com.moji.mjweather", 1007030601);
 
 
 
