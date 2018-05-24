@@ -563,7 +563,30 @@
 			<artifactId>flume-ng-core</artifactId>
 			<version>1.6.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.flume.flume-ng-channels/flume-file-channel -->
+		<dependency>
+			<groupId>org.apache.flume.flume-ng-channels</groupId>
+			<artifactId>flume-file-channel</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.flume.flume-ng-sinks/flume-ng-kafka-sink -->
+		<dependency>
+			<groupId>org.apache.flume.flume-ng-sinks</groupId>
+			<artifactId>flume-ng-kafka-sink</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.flume/flume-ng-sdk -->
+        <dependency>
+            <groupId>org.apache.flume</groupId>
+            <artifactId>flume-ng-sdk</artifactId>
+            <version>1.6.0</version>
+        </dependency>
 
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.aliyun.odps</groupId> -->
+<!-- 			<artifactId>odps-flume-plugin</artifactId> -->
+<!-- 			<version>2.0.2</version> -->
+<!-- 		</dependency> -->
 
 
 	</dependencies>

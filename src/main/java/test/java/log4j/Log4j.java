@@ -17,11 +17,11 @@ public class Log4j {
 		System.out.println(path);
 		logger = Logger.getLogger(Log4j.class);
 		PropertyConfigurator.configureAndWatch(path, 1000);
-		while (true) {
+//		while (true) {
 			System.out.println(logger.isDebugEnabled());
 			logger.info("info");
 			logger.debug("debug");
 			Thread.sleep(3000);
-		}
+//		}
 	}
 }

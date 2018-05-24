@@ -15,9 +15,7 @@ package test.java.internet;
  			while(true) {
  				Socket s1 = s.accept();
  				OutputStream os = s1.getOutputStream();
- 				//�õ�server ��outputStream ,�ͻ��˽���
  				DataOutputStream dos = new DataOutputStream(os);
- 				// �õ��ͻ��˵�IP �Ϳͻ��˵Ķ˿�
  				dos.writeUTF("hello, " + s1.getInetAddress() +" port#" +s1.getPort() +
  				"  bye-bye!");
  				dos.close();

@@ -8,15 +8,15 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class HttpServer {
-    public static final String WEB_ROOT =  "d:/webroot";
+public class HttpServerTest {
+    public static final String WEB_ROOT =  "d:/logs";
 
     private static final String SHUTDOWN_COMMAND = "/SHUTDOWN";
 
     private boolean shutdown = false;
 
     public static void main(String[] args) {
-        HttpServer server = new HttpServer();
+        HttpServerTest server = new HttpServerTest();
         server.await();
     }
 
@@ -53,15 +53,17 @@ public class HttpServer {
                 // create Response object
                 Response response = new Response(output);
                 response.setRequest(request);
-                response.sendStaticResource();
-
+                
+                
+                response.sendJson();	//返回json
+//                response.sendStaticResource(); // 发送文件内容
+                	
                 // Close the socket;
                 socket.close();
 
             } catch (IOException e) {
                 e.printStackTrace();
                 continue;
-
             }
 
         }
