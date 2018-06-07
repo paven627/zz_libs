@@ -1,9 +1,6 @@
 package test.java.concurrent.testsynchronize;
 
 public class ProducerConsumer {
-	/**
-	 * ���������� ����ͷģ��ջ�Ĳ���
-	 */
 	public static void main(String[] args) {
 		SyncStack ss = new SyncStack();
 		Producer p = new Producer(ss);
@@ -26,19 +23,11 @@ class WoTou {
 	}
 }
 
-/**
- * ����ͷ,���շŽ�ȥһ�� index++ ��û���ü�ִ��,��һ���߳�Ҳִ���ӽ�ȥ���� ����������,����,�˷���ÿ��ֻ��һ���߳���ִ��
- * ��synchronized
- */
 class SyncStack {
 	int index = 0;
 	WoTou[] arrWT = new WoTou[6];
 
-	// ��ջ����
 	public synchronized void push(WoTou wt) {
-		/**
-		 * ѭ��������while,����� if ����interruptedExceptionʱ �����������ִ��,����ѭ��ִ���ж�����
-		 */
 		while (index == arrWT.length) {
 			try {
 				this.wait();
@@ -46,12 +35,11 @@ class SyncStack {
 				e.printStackTrace();
 			}
 		}
-		// this.notify(); // ���ѵ�ǰ�����ϵ�һ���߳�
+		// this.notify();
 		arrWT[index] = wt;
 		index++;
 	}
 
-	// ��ջ����
 	public synchronized WoTou pop() {
 		while (index == 0) {
 			try {
@@ -66,7 +54,6 @@ class SyncStack {
 	}
 }
 
-/** ����� */
 class Producer implements Runnable {
 	SyncStack ss = null;
 

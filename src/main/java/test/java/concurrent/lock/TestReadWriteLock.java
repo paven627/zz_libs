@@ -7,18 +7,11 @@ import java.util.Map;
 import java.util.Vector;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-/**
- * �����ͬ��
- * д������Խ���Ϊ��ȡ��,����Ϊ,�Ȼ��д����,Ȼ���ö�ȡ��,Ȼ���ͷ�д����.����,�Ӷ�ȡ����д��������
- * 
- *  JDK ReadWriteLock ʾ��ģ��
- */
 public class TestReadWriteLock {
 	private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
 	private Map<String, String> cache = new HashMap<String, String>();
 
-	// ����� synchronized �汾����
 	public synchronized String synGet(String key) {
 		if (!cache.containsKey(key)) {
 			cache.put(key, "123");
@@ -26,7 +19,6 @@ public class TestReadWriteLock {
 		return cache.get(key);
 	}
 
-	// �������汾
 	public String lockGet(String key) {
 		lock.readLock().lock();
 		String value = null;

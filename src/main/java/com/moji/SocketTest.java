@@ -40,11 +40,11 @@ public class SocketTest {
 //	 static String ip = "103.235.239.69"; // 线上调试
 //	 static int port = 9500;
 
-	static String ip = "127.0.0.1";
+//	static String ip = "127.0.0.1";
 //	 static String ip = "192.168.1.181";
 //	 static String ip = "192.168.1.184";
 	// static String ip = "103.17.43.206";
-//	 static String ip = "192.168.1.67";
+	 static String ip = "192.168.1.67";
 
 	// static String ip = "adlaunch.moji.com";
 //	 static int port = 80;
@@ -105,8 +105,8 @@ public class SocketTest {
 
 
 
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600, 204,
-				"com.moji.mjweather", 1007040601);
+		AdRequest otherOI = other(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH, 600, 204,
+				"com.moji.mjweather", 50070402);
 //		
 //		50070306
 //		1007030601

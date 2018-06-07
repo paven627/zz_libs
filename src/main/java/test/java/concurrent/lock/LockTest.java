@@ -6,9 +6,6 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class LockTest {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		new LockTest().init();
 	}

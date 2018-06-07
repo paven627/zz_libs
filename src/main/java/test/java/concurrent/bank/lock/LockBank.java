@@ -11,7 +11,7 @@ public class LockBank {
 
 	private final double[] accounts;
 	private Lock bankLock;
-	private Condition sufficientFunds; // ����,�ֽ����
+	private Condition sufficientFunds;
 
 	public LockBank(int n, double initialBalance) {
 		accounts = new double[n];

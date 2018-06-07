@@ -1,18 +1,50 @@
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.HashMap;
-import java.util.Map;
+import org.apache.log4j.Logger;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MyTest {
-    private static String SPLIT = "||";
+    static Map<String, Object> a = new HashMap();
 
-    public static void main(String[] args) throws FileNotFoundException, IOException, URISyntaxException {
-    	FileInputStream fileInputStream = new FileInputStream("/C:/workspace/ad_launch/target/classes/ipRegion.xlsx");
+    static int timeperiod = 10;
+
+    public static void main(String[] args) throws ParseException {
+
+        ExecutorService service = Executors.newFixedThreadPool(4);
+        for (int i = 0; i < 5; i++) {
+
+
+            service.submit(new TT());
+        }
+
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        Date parse = sdf.parse("2018-06-05 16:26:37");
+//        int date = parse.getHours();
+//        long time = parse.getMinutes();
+//        System.out.println(date);
+//        System.out.println(time );
+//
+//        System.out.println("2018-06-05 16:26:37".substring(0,10));
+//
+//        System.out.println(Integer.valueOf("05"));
+
+//        for (int i = 0; i < 59; i++) {
+//            System.out.println((i / timeperiod ) * timeperiod);
+//        }
+
+        Logger.getLogger(MyTest.class).info(123);
+
     }
 
-    private static int check(String string) {
-        return Integer.parseInt(string);
+}
+
+class TT implements  Runnable {
+
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName());
     }
 }

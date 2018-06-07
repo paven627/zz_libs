@@ -1,11 +1,5 @@
 package test.java.concurrent.testsynchronize;
 
-/**
- * 
- * ����,�����̻߳�����жԷ���Ҫ�Ķ���ʱ,����Ҫ�ȴ�Է��̵߳Ľ�����ܼ�������
- * ��������ͽ�����,�����̶߳��޷�����������ȥ
- *
- */
 public class DeadLock {
 	public static void main(String[] args) {
 		S s = new S();
