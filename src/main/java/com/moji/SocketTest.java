@@ -35,7 +35,7 @@ public class SocketTest {
 	 * http://c.admaster.com.cn/c/a50231,b03753846,c3194,i0,m201,0a__OS__,
 	 * 0c__IMEI__,0d__AndroidID__,0e__DUID__,n__MAC__,o__OUID__,z__IDFA__,
 	 * f__IP__,t__TS__,r__TERM_ _,l__LBS__,h
-	 * 
+	 *
 	 */
 //	 static String ip = "103.235.239.69"; // 线上调试
 //	 static int port = 9500;
@@ -75,7 +75,7 @@ public class SocketTest {
 		// socket.setSoTimeout(10000);
 		// socket.setTcpNoDelay(true)
 
-		
+
 //		feedclick();
 
 //		AdRequest otherOI = other(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH, 600, 9000,
@@ -86,16 +86,16 @@ public class SocketTest {
 //		1007001000
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600, 4004,
 //				"com.moji.aliyun");
-//		
+//
 //		adc.setAppVersion(1007001000);
 //		adc.setAppVersion(1007010001);
 //		50070603
-		
+
 		//广点通分界版本 1007001001
 //		AdRequest otherOI = other(AdType.SPLASH, Platform.ANDROID, AdPosition.POS_SPLASH, 600, 1211123,
 //				"com.moji.mjweather", 1007030401);
-		
-		
+
+
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_FEED_STREAM_DETAILS, 600, 401,
 //				"com.moji.mjweather", 50070304);
 
@@ -105,9 +105,9 @@ public class SocketTest {
 
 
 
-		AdRequest otherOI = other(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH, 600, 204,
-				"com.moji.mjweather", 50070402);
-//		
+		AdRequest otherOI = other(AdType.BGAVATAR, Platform.IOS, AdPosition.POS_ASSIST_REPLACE, 600, 204,
+				"com.moji.MjWeather", 50070402);
+//
 //		50070306
 //		1007030601
 //		com.moji.MjWeather
@@ -118,7 +118,7 @@ public class SocketTest {
 
 		// 50070204
 //		 feedclick();
-		 
+
 //		com.moji.mjweather
 		// 1006010676
 		// 1007001000
@@ -138,8 +138,8 @@ public class SocketTest {
 		// AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID,
 		// AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 23, 40041,
 		// "com.moji.aliyun",1007001000);
-	
-	} 
+
+	}
 	static Socket socketOI;
 
 
@@ -180,7 +180,7 @@ public class SocketTest {
 		phoneParam(osType, adc);
 		// adc.setWma("wma");
 		adc.setNetType("3G");
-		adc.setAvatarId(2);
+		adc.setAvatarId(8);
 		adc.setIsWifi(false);
 		adc.setMcc(21);
 		adc.setMnc(343);
@@ -274,9 +274,9 @@ System.out.println();
 		BufferedReader in = new BufferedReader(new InputStreamReader(input));
 
 		byte[] b  = new byte[20];
-		
+
 		input.read(b);
-		
+
 		for (byte c : b) {
 			System.out.print((char)c);
 		}
