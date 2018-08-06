@@ -29,7 +29,7 @@ public class KafkaConsumerTest {
          
         Map<String, Integer> topicCountMap = new HashMap<String, Integer>();
         topicCountMap.put("moji_ad_stream26", 1);
-        topicCountMap.put("dspTest_test", 1);
+        topicCountMap.put("test", 1);
         Decoder<String> keyDecoder = new StringDecoder(new VerifiableProperties());
         Decoder<String> valueDecoder = new StringDecoder(new VerifiableProperties());
         Map<String, List<KafkaStream<String, String>>> createMessageStreams = consumer.createMessageStreams(topicCountMap, keyDecoder, valueDecoder);

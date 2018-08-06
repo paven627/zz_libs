@@ -16,6 +16,8 @@ import redis.clients.jedis.JedisPoolConfig;
 
 public class JedisPoolTest {
 
+
+
 	public static void main(String[] args) throws URISyntaxException, InterruptedException, ExecutionException {
 		ExecutorService threadPool = Executors.newFixedThreadPool(10);
 		URI uri = new URI("http", null, "60.205.230.151", 6379, null, null, null);

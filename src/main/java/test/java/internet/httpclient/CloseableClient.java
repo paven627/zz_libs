@@ -31,6 +31,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.http.HttpEntity;
+import org.apache.http.StatusLine;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -41,36 +42,32 @@ import org.apache.http.util.EntityUtils;
  * This example demonstrates the recommended way of using API to make sure the
  * underlying connection gets released back to the connection manager.
  */
-public class ConnectionRelease {
+public class CloseableClient {
 
-	public final static void main(String[] args) throws Exception {
-		CloseableHttpClient httpclient = HttpClients.createDefault();
-		try {
-			HttpGet httpget = new HttpGet("http://c.gdt.qq.com/gdt_mclick.fcg?viewid=fmfg4_WMRuggi8xfziSvr0pIA6mQwyj4GCW7U5tg7gejPvgMIDtVEOVindHbwiyBxYu81cP9ycCNkYOwl0epJpWWS_I_zKrsQMw49vBU0LxTkEfVRMU5BHdEQvoC1Vqap14RkKCYcI3eyy3cVUT2b0WX0!rKitRfq0SzaUbnBVDuvFx1WWpTdxKlooJvvX1qDGQZASQYyNATxFY78HBvoTEfX1vf6VKi&jtype=0&i=1&os=2&asi=%7B%22mf%22%3A%22SM-J7109%22%7D&acttype=1&s=%7B%22req_width%22%3A%22__REQ_WIDTH__%22%2C%22req_height%22%3A%22__REQ_HEIGHT__%22%2C%22width%22%3A%22__WIDTH__%22%2C%22height%22%3A%22__HEIGHT__%22%2C%22down_x%22%3A%22-999%22%2C%22down_y%22%3A%22-999%22%2C%22up_x%22%3A%22-999%22%2C%22up_y%22%3A%22-999%22%7D");
-			System.out.println("Executing request " + httpget.getRequestLine());
-			CloseableHttpResponse response = httpclient.execute(httpget);
-			try {
-				System.out.println("----------------------------------------");
-				System.out.println(response.getStatusLine());
+    public final static void main(String[] args) throws Exception {
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        try {
+            HttpGet httpget = new HttpGet("https://c.gdt.qq.com/gdt_mclick" +
+					".fcg?viewid" +
+					"=fmfg4_WMRuggi8xfziSvr0pIA6mQwyj4GCW7U5tg7gejPvgMIDtVEOVindHbwiyBxYu81cP9ycCNkYOwl0epJpWWS_I_zKrsQMw49vBU0LxTkEfVRMU5BHdEQvoC1Vqap14RkKCYcI3eyy3cVUT2b0WX0!rKitRfq0SzaUbnBVDuvFx1WWpTdxKlooJvvX1qDGQZASQYyNATxFY78HBvoTEfX1vf6VKi&jtype=0&i=1&os=2&asi=%7B%22mf%22%3A%22SM-J7109%22%7D&acttype=1&s=%7B%22req_width%22%3A%22__REQ_WIDTH__%22%2C%22req_height%22%3A%22__REQ_HEIGHT__%22%2C%22width%22%3A%22__WIDTH__%22%2C%22height%22%3A%22__HEIGHT__%22%2C%22down_x%22%3A%22-999%22%2C%22down_y%22%3A%22-999%22%2C%22up_x%22%3A%22-999%22%2C%22up_y%22%3A%22-999%22%7D");
+            System.out.println("Executing request " + httpget.getRequestLine());
+            CloseableHttpResponse response = httpclient.execute(httpget);
+            try {
+                System.out.println("----------------------------------------");
+                System.out.println(response.getStatusLine());
+                StatusLine statusLine = response.getStatusLine();
+                statusLine.getStatusCode();
 
-				HttpEntity entity = response.getEntity();
-				EntityUtils.consume(entity);
-				if (entity != null) {
-					InputStream instream = entity.getContent();
-					try {
-						instream.read();
-					} catch (IOException ex) {
-						throw ex;
-					} finally {
-						instream.close();
-					}
-				}
-			} finally {
-				response.close();
-			}
-		} finally {
-			httpclient.close();
-		}
-	}
+                HttpEntity entity = response.getEntity();
+                String s = EntityUtils.toString(entity);
+                System.out.println(s);
+                EntityUtils.consume(entity);
+            } finally {
+                response.close();
+            }
+        } finally {
+            httpclient.close();
+        }
+    }
 
 }

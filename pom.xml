@@ -625,11 +625,11 @@
             <version>1.6.0</version>
         </dependency>
 
-		<!--<dependency>-->
-			<!--<groupId>com.moji.ad_interface</groupId>-->
-			<!--<artifactId>launch</artifactId>-->
-			<!--<version>0.0.1</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>com.moji.ad_interface</groupId>
+			<artifactId>launch</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 
 <!-- 		<dependency> -->
 <!-- 			<groupId>com.aliyun.odps</groupId> -->
