@@ -18,7 +18,6 @@
 		<version.spring>3.2.9.RELEASE</version.spring>
 		<version.springsecurity>3.1.0.RELEASE</version.springsecurity>
 		<version.velocity>1.7</version.velocity>
-		<version.httpcomponents>4.4.1</version.httpcomponents>
 		<!-- <version.httpcomponents>4.3</version.httpcomponents> 1123 -->
 	</properties>
 	
@@ -89,7 +88,7 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId> 
-			<version>${version.httpcomponents}</version>
+			<version>4.4.1</version>
 		</dependency> 
 		<!--<dependency>-->
 			<!--<groupId>org.springframework.boot</groupId>-->
@@ -553,20 +552,17 @@
 		    <version>3.3.1</version>
 		  </dependency>
 		  
-		  <!-- https://mvnrepository.com/artifact/org.apache.storm/storm-core -->
 		<dependency>
 		    <groupId>org.apache.storm</groupId>
 		    <artifactId>storm-core</artifactId>
 		    <version>0.9.7</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.storm/storm-kafka -->
 		<dependency>
 		    <groupId>org.apache.storm</groupId>
 		    <artifactId>storm-kafka</artifactId>
 		    <version>0.9.7</version>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
 <!-- 		<dependency> -->
 <!-- 		    <groupId>org.apache.kafka</groupId> -->
 <!-- 		    <artifactId>kafka_2.10</artifactId> -->
@@ -577,7 +573,6 @@
 			<!--<artifactId>kafka_2.11</artifactId>-->
 			<!--<version>0.9.0.1</version>-->
 		<!--</dependency>-->
-		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
 			<artifactId>kafka-clients</artifactId>
@@ -600,25 +595,21 @@
 			</exclusions>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.flume/flume-ng-core -->
 		<dependency>
 			<groupId>org.apache.flume</groupId>
 			<artifactId>flume-ng-core</artifactId>
 			<version>1.6.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.flume.flume-ng-channels/flume-file-channel -->
 		<dependency>
 			<groupId>org.apache.flume.flume-ng-channels</groupId>
 			<artifactId>flume-file-channel</artifactId>
 			<version>1.6.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.flume.flume-ng-sinks/flume-ng-kafka-sink -->
 		<dependency>
 			<groupId>org.apache.flume.flume-ng-sinks</groupId>
 			<artifactId>flume-ng-kafka-sink</artifactId>
 			<version>1.6.0</version>
 		</dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.flume/flume-ng-sdk -->
         <dependency>
             <groupId>org.apache.flume</groupId>
             <artifactId>flume-ng-sdk</artifactId>
