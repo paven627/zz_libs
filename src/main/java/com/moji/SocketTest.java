@@ -13,6 +13,7 @@ import java.util.List;
 import javax.sound.sampled.AudioFormat.Encoding;
 
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.moji.launchserver.AdCommonInterface;
 import com.moji.launchserver.AdCommonInterface.Action;
 import com.moji.launchserver.AdCommonInterface.ActionType;
 import com.moji.launchserver.AdCommonInterface.AdPosition;
@@ -30,6 +31,7 @@ import com.moji.launchserver.AdCommonInterface.Language;
 import com.moji.launchserver.AdCommonInterface.Platform;
 import com.moji.launchserver.entity.AdResponseEntity;
 import com.moji.launchserver.service.WeatherRPCService;
+import com.opensymphony.module.sitemesh.tapestry.Title;
 
 public class SocketTest {
 
@@ -38,8 +40,8 @@ public class SocketTest {
 
 
 //    static String ip = "127.0.0.1";
-	 static String ip = "192.168.1.181";
-//	 static String ip = "192.168.1.184";
+//	 static String ip = "192.168.1.181";
+	 static String ip = "192.168.1.184";
 //	 static String ip = "192.168.1.67";
 
     // static String ip = "adlaunch.moji.com";
@@ -48,6 +50,7 @@ public class SocketTest {
 
     static int port = 8080;
 //	 static int port = 8081;
+//	 static int port = 8082;
 
     public static void main(String[] args) throws UnknownHostException, IOException {
         // InetAddress add = InetAddress.getByName("adlaunch.moji.com");
@@ -68,27 +71,27 @@ public class SocketTest {
 
 //        POS_MY_PAGE_DYNAMIC_MENU
 //        POS_MY_PAGE_DYNAMIC_MENU_TWO
-//        AdRequest otherOI = other(AdType.SPLASH, Platform.ANDROID, AdPosition.POS_SPLASH, 603860,
-//                204, "com.moji.mjweather", 1007040602);
+
+//        AdRequest otherOI = other(AdType.SPLASH, Platform.ANDROID, AdPosition.POS_SPLASH, 600,
+//                204, "com.moji.mjweather", 1007050601);
 
 
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_MY_PAGE_DYNAMIC_MENU_TWO, 600,
-//                204, "com.moji.MjWeather", 50070506);
+//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_FEED_STREAM_DETAILS, 600,
+//                204, "com.moji.MjWeather", 50070606);
 
-//        AdRequest otherOI = other(AdType.BGAVATAR, Platform.ANDROID, AdPosition.POS_WEATHER_BACKGROUND, 600,
-//                204, "com.moji.mjweather", 1007050602);
+//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_DETAILS, 600,
+//                204, "com.moji.mjweather", 1007060601);
 
 //        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600,
 //                204, "com.moji.MjWeather", 1007040601);
 
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_WEATHER_INDEX_COLOR_EGG, 600,
-//                204, "com.moji.mjweather", 50070506);
+        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_MY_PAGE_DYNAMIC_MENU_TWO, 600,
+                204, "com.moji.mjweather", 50070704);
 
-        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE, 600,
-                204, "com.moji.MjWeather", 1007040601);
 
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600,
-//                204, "com.moji.MjWeather", 50070406);
+//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition
+//                        .POS_MY_PAGE_DYNAMIC_MENU_RELAX, 600,
+//                9000, "com.moji.MjWeather", 50070608);
 ////
 //		50070506
 //		1007040601
@@ -109,65 +112,68 @@ public class SocketTest {
 
     private static AdRequest other(AdType adType, Platform osType, AdPosition position, int cityId, int channelId,
                                    String packageName, int version) {
-        AdRequest.Builder build = AdRequest.newBuilder();
-        build.setType(adType);
-        build.setCommentNumber(14);
-        // build.setImageName("dbe90dac8e6cd0fabf6a2c7cf51bbc7f");
-        build.setDayOrNight(DayOrNight.DAY);
-        build.setAlreadyShowId(0l);
-        build.setVersion(1);
+        AdRequest.Builder request = AdRequest.newBuilder();
+        AdRequestCommon.Builder common = AdRequestCommon.newBuilder();
 
-        build.setSessionId("a10000030011");
-        // build.setLatitude(39.972675f);
-        // build.setLongitude(116.490528f);
-        build.setIsShortPrediction(IsShortPrediction.NO);
-        build.setFeedTab(0);
+        common.setAvatarId(8);
+        request.setFeedTab(5);
+
+        request.setType(adType);
+        request.setCommentNumber(14);
+        // request.setImageName("dbe90dac8e6cd0fabf6a2c7cf51bbc7f");
+        request.setDayOrNight(DayOrNight.NIGHT);
+        request.setVersion(1);
+
+        request.setSessionId("a10000030011");
+         request.setLatitude(31.284018f);
+         request.setLongitude(121.44974f);
+        request.setIsShortPrediction(IsShortPrediction.NO);
+
         List<AdPosition> adPositions = new ArrayList<>();
         adPositions.add(position);
-//        build.addExsitedAdIds(2525);
-//        build.addExsitedAdIds(2622);
-//        build.addExsitedAdIds(2623);
+        request.addExsitedAdIds(10014107);
+//        request.addExsitedAdIds(2622);
+//        request.addExsitedAdIds(2623);
 //
-//        build.addLastAdIds(2525);
-//        build.addLastAdIds(2622);
-//        build.addLastAdIds(2623);
+        request.addLastAdIds(10014107);
+//        request.addLastAdIds(2622);
+//        request.addLastAdIds(2623);
+        request.setAlreadyShowId(200010000618l);
+
+        request.addAllPosition(adPositions);
 
 
-        build.addAllPosition(adPositions);
+        common.setPkgname(packageName);
+        common.setUid(654366082);
+        common.setCityId(cityId);
+        common.setPublishType("1");
+        common.setAppVersion(version);
+        common.setScreenWidth(414);
+        common.setScreenHeight(736);
+        common.setLang(Language.SIMPLIFIED_CH);
         //
-        AdRequestCommon.Builder adc = AdRequestCommon.newBuilder();
+        common.setChannelId(channelId);
+        common.setOsType(osType);
         //
-        adc.setPkgname(packageName);
-        adc.setUid(654366082);
-        adc.setCityId(cityId);
-        adc.setPublishType("1");
-        adc.setAppVersion(version);
-        adc.setScreenHeight(1920);
-        adc.setScreenWidth(1080);
-        adc.setLang(Language.SIMPLIFIED_CH);
+        phoneParam(osType, common);
+        // common.setWma("wma");
+        common.setNetType("wifi");
+
+        common.setIsWifi(true);
+        common.setMcc(21);
+        common.setMnc(343);
+        common.setCarrier(CarrierType.CARRIER_MOBILE);
         //
-        adc.setChannelId(channelId);
-        adc.setOsType(osType);
-        //
-        phoneParam(osType, adc);
-        // adc.setWma("wma");
-        adc.setNetType("wifi");
-        adc.setAvatarId(8);
-        adc.setIsWifi(true);
-        adc.setMcc(21);
-        adc.setMnc(343);
-        adc.setCarrier(CarrierType.CARRIER_MOBILE);
-        //
-        // // adc.setIsUserAvatarShow(true);
-        adc.setIsAvatarShow(true);
-        // //
-        build.setRequestCommon(adc);
-        // build.setDisplayTimes(1);
-//        build.setVersion(1);
-        build.setIsDebug(true);
-//		build.setIsHotLaunch(true);
-        AdRequest request = build.build();
-        return request;
+        // // common.setIsUserAvatarShow(true);
+        common.setIsAvatarShow(true);
+        common.setRegisterTime(1535024127);
+        request.setRequestCommon(common);
+        // request.setDisplayTimes(1);
+//        request.setVersion(1);
+        request.setIsDebug(true);
+//		request.setIsHotLaunch(true);
+        AdRequest r = request.build();
+        return r;
     }
 
     private static void phoneParam(Platform osType, Builder adc) {
@@ -179,9 +185,10 @@ public class SocketTest {
     }
 
     private static void ios(Builder adc) {
-        adc.setOsVersion("11.2.1");
-        adc.setPhoneType("iPhone7,2");
-        adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD647019");
+        adc.setOsVersion("11.4.1");
+        adc.setPhoneType("iPhone8,2");
+        adc.setIdentifier("3E3261FD-5894-4631-A64A-55660A259DD9");
+//        adc.setIdentifier("12C1BDA2-DFD6-4124-8352-ADBEC1EACD07");
         adc.setUa(
                 "Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) " +
 						"Mobile/13E230");
@@ -221,8 +228,15 @@ public class SocketTest {
             System.out.println();
             System.out.println();
             AdResponse adResponse = AdResponse.parseFrom(by);
-//			System.out.println(adResponse.toByteString().toStringUtf8());
-//			System.out.println(new String(adResponse.toByteArray()));
+
+            List<AdCommonInterface.AdUtilDetail> adUtilDetailList = adResponse.getAdUtilDetailList();
+            for (AdCommonInterface.AdUtilDetail adUtilDetail : adUtilDetailList) {
+                if(adUtilDetail.hasAdUtilDescription()) {
+                    AdCommonInterface.AdUtilDescription adUtilDescription = adUtilDetail.getAdUtilDescription();
+                    adUtilDescription.toBuilder().setTitle(new String(adUtilDescription.getTitle())).build();
+                }
+            }
+
             System.out.println(adResponse.toString());
             System.out.println(adResponse.getErrorMessage());
             // System.out.println(s);
