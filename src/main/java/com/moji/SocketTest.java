@@ -10,12 +10,8 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.sound.sampled.AudioFormat.Encoding;
-
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.moji.launchserver.AdCommonInterface;
-import com.moji.launchserver.AdCommonInterface.Action;
-import com.moji.launchserver.AdCommonInterface.ActionType;
 import com.moji.launchserver.AdCommonInterface.AdPosition;
 import com.moji.launchserver.AdCommonInterface.AdRequest;
 import com.moji.launchserver.AdCommonInterface.AdRequestCommon;
@@ -23,15 +19,10 @@ import com.moji.launchserver.AdCommonInterface.AdRequestCommon.Builder;
 import com.moji.launchserver.AdCommonInterface.AdResponse;
 import com.moji.launchserver.AdCommonInterface.AdType;
 import com.moji.launchserver.AdCommonInterface.CarrierType;
-import com.moji.launchserver.AdCommonInterface.ContentType;
 import com.moji.launchserver.AdCommonInterface.DayOrNight;
-import com.moji.launchserver.AdCommonInterface.FeedClick;
 import com.moji.launchserver.AdCommonInterface.IsShortPrediction;
 import com.moji.launchserver.AdCommonInterface.Language;
 import com.moji.launchserver.AdCommonInterface.Platform;
-import com.moji.launchserver.entity.AdResponseEntity;
-import com.moji.launchserver.service.WeatherRPCService;
-import com.opensymphony.module.sitemesh.tapestry.Title;
 
 public class SocketTest {
 
