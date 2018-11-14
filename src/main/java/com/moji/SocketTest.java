@@ -35,20 +35,20 @@ import com.opensymphony.module.sitemesh.tapestry.Title;
 
 public class SocketTest {
 
-//	 static String ip = "103.235.239.69"; // 线上调试
-//	 static int port = 9500;
+	 static String ip = "103.235.239.69"; // 线上调试
+	 static int port = 9500;
 
 
 //    static String ip = "127.0.0.1";
 //	 static String ip = "192.168.1.181";
-	 static String ip = "192.168.1.184";
+//	 static String ip = "192.168.1.184";
 //	 static String ip = "192.168.1.67";
 
     // static String ip = "adlaunch.moji.com";
 //	 static int port = 80;
 
 
-    static int port = 8080;
+//    static int port = 8080;
 //	 static int port = 8081;
 //	 static int port = 8082;
 
@@ -85,8 +85,8 @@ public class SocketTest {
 //        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600,
 //                204, "com.moji.MjWeather", 1007040601);
 
-        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_MY_PAGE_DYNAMIC_MENU_TWO, 600,
-                204, "com.moji.mjweather", 50070704);
+        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_WEATHER_HOME_INDEX_ENTRY, 600,
+                5222, "com.moji.mjweather", 50070704);
 
 
 //        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition
@@ -94,7 +94,7 @@ public class SocketTest {
 //                9000, "com.moji.MjWeather", 50070608);
 ////
 //		50070506
-//		1007040601
+//		1007070401
 //		com.moji.MjWeather
 
         Socket socketOI = new Socket(ip, port);

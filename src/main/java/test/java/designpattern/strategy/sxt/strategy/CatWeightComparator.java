@@ -1,6 +1,6 @@
-package test.java.test.java.designpattern.strategy.sxt.strategy;
+package test.java.designpattern.strategy.sxt.strategy;
 
-import test.java.test.java.designpattern.strategy.IComparator;
+import test.java.designpattern.strategy.IComparator;
 
 public class CatWeightComparator implements IComparator<Cat> {
 

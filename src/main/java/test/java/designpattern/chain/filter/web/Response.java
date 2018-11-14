@@ -1,4 +1,4 @@
-package test.java.test.java.designpattern.chain.filter.web;
+package test.java.designpattern.chain.filter.web;
 
 public class Response {
 	String responseStr;

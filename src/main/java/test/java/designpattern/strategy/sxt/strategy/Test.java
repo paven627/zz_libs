@@ -1,4 +1,4 @@
-package test.java.test.java.designpattern.strategy.sxt.strategy;
+package test.java.designpattern.strategy.sxt.strategy;
 
 public class Test {
 	public static void main(String[] args) {

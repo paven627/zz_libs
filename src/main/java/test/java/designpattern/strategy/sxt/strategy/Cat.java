@@ -1,4 +1,4 @@
-package test.java.test.java.designpattern.strategy.sxt.strategy;
+package test.java.designpattern.strategy.sxt.strategy;
 
 public class Cat implements java.lang.Comparable<Cat> {
 	private int height;

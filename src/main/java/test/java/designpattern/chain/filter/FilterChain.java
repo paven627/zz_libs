@@ -1,10 +1,10 @@
-package test.java.test.java.designpattern.chain.filter;
+package test.java.designpattern.chain.filter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import test.java.test.java.designpattern.chain.filter.web.Request;
-import test.java.test.java.designpattern.chain.filter.web.Response;
+import test.java.designpattern.chain.filter.web.Request;
+import test.java.designpattern.chain.filter.web.Response;
 
 /**过滤链也实现了 Filter 接口 */
 public class FilterChain implements Filter {

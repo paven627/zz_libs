@@ -1,4 +1,4 @@
-package test.java.test.java.designpattern.command;
+package test.java.designpattern.command;
 
 public class ShoppingCommand extends Command{
 

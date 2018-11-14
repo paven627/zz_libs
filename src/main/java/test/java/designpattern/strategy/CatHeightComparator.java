@@ -1,4 +1,4 @@
-package test.java.test.java.designpattern.strategy;
+package test.java.designpattern.strategy;
 
 public class CatHeightComparator implements IComparator<Cat> {
 

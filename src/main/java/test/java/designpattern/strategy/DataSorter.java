@@ -1,4 +1,4 @@
-package test.java.test.java.designpattern.strategy;
+package test.java.designpattern.strategy;
 
 /**
  * 排序,只要是实现了 Comparable 接口的对象都能传进sort方法

@@ -13,10 +13,9 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class KafkaProducerTest {
-    static String s = " - {'common': {},'params': {'city_id': %s,'property_type': 4,'ad_index_part': -1,"
-            + "'ad_index': 306,'requestId': 'PK6ck5KdX0zKIcxNccYvKxnWXdsNug4z','adverting_type': 1,'stat_value': 1," +
-            "'ad_type': 4,"
-            + "'ad_id': 400000000186,'price': '2','stat_type': 1}}";
+    static String s = " - {'common': {},'params': {'city_id': %s,'materiel_id':'0',"
+            + "'ad_index': 306, 'adverting_type':2,'stat_value': 1," +
+            "'ad_id': 400000000363,'price': '1.0','stat_type': 2}}";
     static HttpClient httpClient = new DefaultHttpClient();
 
     public static void main(String[] args) {
@@ -38,8 +37,9 @@ public class KafkaProducerTest {
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         //生产者发送消息
         String topic = "moji_ad_stream26";
+        int  count = 0;
         Producer<String, String> producer = new KafkaProducer<>(props);
-        for (int hour = 0; hour <1; hour++) {
+        for (int hour = 0; hour <23; hour++) {
             String hourStr;
             if (hour < 10) {
                 hourStr = "0" + hour;
@@ -47,25 +47,26 @@ public class KafkaProducerTest {
                 hourStr = String.valueOf(hour);
             }
 //            2018-06-06 10:19:12
-            for (int minute = 0; minute <10; minute++) {
+            for (int minute = 0; minute <60; minute++) {
                 String value;
                 if (minute < 10) {
-                    value = "2018-06-06 " + hourStr + ":0" + minute + ":12 " + String.format(s, hour);
+                    value = "2018-11-07 " + hourStr + ":0" + minute + ":12 " + String.format(s, hour);
                 } else {
-                    value = "2018-06-06 " + hourStr + ":" + minute + ":12 " + String.format(s, hour+1);
+                    value = "2018-11-07 " + hourStr + ":" + minute + ":12 " + String.format(s, hour+1);
                 }
-                Logger.getLogger(KafkaProducerTest.class).info(value);
+//                Logger.getLogger(KafkaProducerTest.class).info(value);
                 ProducerRecord<String, String> msg = new ProducerRecord<>(topic, value);
                 producer.send(msg);
+                count ++;
             }
         }
         //列出topic的相关信息
-        List<PartitionInfo> partitions = producer.partitionsFor(topic);
-        for (PartitionInfo p : partitions) {
-            System.out.println(p);
-        }
+//        List<PartitionInfo> partitions = producer.partitionsFor(topic);
+//        for (PartitionInfo p : partitions) {
+//            System.out.println(p);
+//        }
 
-        System.out.println("send message over.");
+        System.out.println("send message over." + count);
         producer.flush();
         producer.close(100, TimeUnit.MILLISECONDS);
     }

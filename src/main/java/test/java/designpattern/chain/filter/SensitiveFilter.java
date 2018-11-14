@@ -1,7 +1,7 @@
-package test.java.test.java.designpattern.chain.filter;
+package test.java.designpattern.chain.filter;
 
-import test.java.test.java.designpattern.chain.filter.web.Request;
-import test.java.test.java.designpattern.chain.filter.web.Response;
+import test.java.designpattern.chain.filter.web.Request;
+import test.java.designpattern.chain.filter.web.Response;
 
 public class SensitiveFilter implements Filter{
 	

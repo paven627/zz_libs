@@ -2,7 +2,9 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.security.MessageDigest;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -35,15 +37,34 @@ public class MyTest {
     private static String splitFilter = "  - ";
 
     public static void main(String[] args) throws Exception {
-        BigDecimal bigDecimal = new BigDecimal("10");
-        BigDecimal divide = bigDecimal.divide(new BigDecimal("3"),RoundingMode.HALF_UP);
-//        BigDecimal divide = bigDecimal.divide(new BigDecimal("3"));
+        BigDecimal price = new BigDecimal("1");
+        BigDecimal priceConvertTemp = price;
 
-        System.out.println(divide);
+        priceConvertTemp = priceConvertTemp.subtract(new BigDecimal("0.5"));
+        System.out.println(price);
+        System.out.println(priceConvertTemp);
 
-        System.out.println(new BigDecimal(new HashMap<String,String>().get("a")));
     }
 
 
+    private static String MD5(String s) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] bytes = md.digest(s.getBytes("utf-8"));
+            return toHex(bytes);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    private static String toHex(byte[] bytes) {
+
+        final char[] HEX_DIGITS = "0123456789ABCDEF".toCharArray();
+        StringBuilder ret = new StringBuilder(bytes.length * 2);
+        for (int i = 0; i < bytes.length; i++) {
+            ret.append(HEX_DIGITS[(bytes[i] >> 4) & 0x0f]);
+            ret.append(HEX_DIGITS[bytes[i] & 0x0f]);
+        }
+        return ret.toString();
+    }
 }

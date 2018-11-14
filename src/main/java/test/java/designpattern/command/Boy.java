@@ -1,4 +1,4 @@
-package test.java.test.java.designpattern.command;
+package test.java.designpattern.command;
 
 import java.util.ArrayList;
 import java.util.List;

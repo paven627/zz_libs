@@ -1,4 +1,4 @@
-package test.java.test.java.designpattern.decorator;
+package test.java.designpattern.decorator;
 
 /**
  * 原始接口的实现类

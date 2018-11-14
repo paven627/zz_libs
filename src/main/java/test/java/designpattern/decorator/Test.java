@@ -1,4 +1,4 @@
-package test.java.test.java.designpattern.decorator;
+package test.java.designpattern.decorator;
 
 public class Test {
 

@@ -25,7 +25,7 @@
  *
  */
 
-package com.moji.Tmp;
+package test.java.internet.httpclient;
 
 import javax.net.ssl.SSLContext;
 
