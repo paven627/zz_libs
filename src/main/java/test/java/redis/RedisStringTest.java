@@ -6,9 +6,15 @@ import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Pipeline;
+import redis.clients.jedis.ScanResult;
 
 public class RedisStringTest {
-	Jedis jedis = new Jedis("10.200.3.230");
+	Jedis jedis = new Jedis("192.168.1.182");
+
+	@Test
+	public void testScan(){
+		ScanResult<String> scan = jedis.scan("0");
+	}
 
 	@Test
 	public void test1Normal() {

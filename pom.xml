@@ -633,7 +633,11 @@
             <artifactId>flume-ng-sdk</artifactId>
             <version>1.6.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>27.0-jre</version>
+        </dependency>
 <!-- 		<dependency> -->
 <!-- 			<groupId>com.moji.ad_interface</groupId> -->
 <!-- 			<artifactId>launch</artifactId> -->

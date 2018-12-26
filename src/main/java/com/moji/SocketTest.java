@@ -25,9 +25,13 @@ import com.moji.launchserver.AdCommonInterface.Language;
 import com.moji.launchserver.AdCommonInterface.Platform;
 
 public class SocketTest {
-
+//	ad.api.moji.com   	 打点域名
 	 static String ip = "103.235.239.69"; // 线上调试
 	 static int port = 9500;
+
+
+//	 static String ip = "172.16.6.213"; // 线上调试
+//	 static int port = 8899;
 
 
 //    static String ip = "127.0.0.1";
@@ -76,8 +80,8 @@ public class SocketTest {
 //        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600,
 //                204, "com.moji.MjWeather", 1007040601);
 
-        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_WEATHER_HOME_INDEX_ENTRY, 600,
-                5222, "com.moji.mjweather", 50070704);
+        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_DETAILS, 600,
+				1, "com.moji.mjweather", 1007070602);
 
 
 //        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition
@@ -115,21 +119,21 @@ public class SocketTest {
         request.setDayOrNight(DayOrNight.NIGHT);
         request.setVersion(1);
 
-        request.setSessionId("a10000030011");
+        request.setSessionId("m123dddddddddddd");
          request.setLatitude(31.284018f);
          request.setLongitude(121.44974f);
         request.setIsShortPrediction(IsShortPrediction.NO);
 
         List<AdPosition> adPositions = new ArrayList<>();
         adPositions.add(position);
-        request.addExsitedAdIds(10014107);
+        request.addExsitedAdIds(100010005797l);
 //        request.addExsitedAdIds(2622);
 //        request.addExsitedAdIds(2623);
 //
-        request.addLastAdIds(10014107);
+        request.addLastAdIds(100010005797l);
 //        request.addLastAdIds(2622);
 //        request.addLastAdIds(2623);
-        request.setAlreadyShowId(200010000618l);
+        request.setAlreadyShowId(100010005797l);
 
         request.addAllPosition(adPositions);
 
