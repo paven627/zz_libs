@@ -26,24 +26,24 @@ import com.moji.launchserver.AdCommonInterface.Platform;
 
 public class SocketTest {
 //	ad.api.moji.com   	 打点域名
-	 static String ip = "103.235.239.69"; // 线上调试
-	 static int port = 9500;
+//	 static String ip = "103.235.239.69"; // 线上调试
+//	 static int port = 9500;
 
 
 //	 static String ip = "172.16.6.213"; // 线上调试
 //	 static int port = 8899;
 
 
-//    static String ip = "127.0.0.1";
-//	 static String ip = "192.168.1.181";
+//	static String ip = "127.0.0.1";
+	 static String ip = "192.168.9.76";
 //	 static String ip = "192.168.1.184";
-//	 static String ip = "192.168.1.67";
+//	 static String ip = "192.168.9.42";
 
     // static String ip = "adlaunch.moji.com";
 //	 static int port = 80;
 
 
-//    static int port = 8080;
+    static int port = 8080;
 //	 static int port = 8081;
 //	 static int port = 8082;
 
@@ -68,20 +68,20 @@ public class SocketTest {
 //        POS_MY_PAGE_DYNAMIC_MENU_TWO
 
 //        AdRequest otherOI = other(AdType.SPLASH, Platform.ANDROID, AdPosition.POS_SPLASH, 600,
-//                204, "com.moji.mjweather", 1007050601);
+//                204, "com.moji.mjweather", 1007080401);
 
 
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_FEED_STREAM_DETAILS, 600,
-//                204, "com.moji.MjWeather", 50070606);
+//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_MY_PAGE_DYNAMIC_MENU_TWO, 600,
+//                204, "com.moji.MjWeather", 50070803);
 
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_DETAILS, 600,
-//                204, "com.moji.mjweather", 1007060601);
+//        AdRequest otherOI = other(AdType, Platform.ANDROID, AdPosition.POS_MESSAGE_BOTTOM, 8,
+//				5068, "com.moji.mjweather", 1007070401);
 
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM, 600,
-//                204, "com.moji.MjWeather", 1007040601);
+        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_VOICE_BROADCAST_UNDER, 600,
+                204, "com.moji.MjWeather", 1007040601);
 
-        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_DETAILS, 600,
-				1, "com.moji.mjweather", 1007070602);
+//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_MY_PAGE_DYNAMIC_MENU, 600,
+//				1, "com.moji.mjweather", 1007070401);
 
 
 //        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition
@@ -123,7 +123,7 @@ public class SocketTest {
          request.setLatitude(31.284018f);
          request.setLongitude(121.44974f);
         request.setIsShortPrediction(IsShortPrediction.NO);
-
+		request.setIsMember(0);
         List<AdPosition> adPositions = new ArrayList<>();
         adPositions.add(position);
         request.addExsitedAdIds(100010005797l);
@@ -161,7 +161,7 @@ public class SocketTest {
         //
         // // common.setIsUserAvatarShow(true);
         common.setIsAvatarShow(true);
-        common.setRegisterTime(1535024127);
+        common.setRegisterTime(1550498362);
         request.setRequestCommon(common);
         // request.setDisplayTimes(1);
 //        request.setVersion(1);
