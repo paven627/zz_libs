@@ -3,7 +3,13 @@ import java.util.Date;
 
 public class MyTest {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
+		String s= "8.1.2".replaceAll("\\.","");
+		System.out.println( s);
+//		double v = Double.parseDouble("8.1.2");
+//		System.out.println(v);
+	}
+	public static void gongzi(String[] args) throws Exception {
 //		int month = 1;
 		int gongzi = 30000;
 		float rate = 0.03f;

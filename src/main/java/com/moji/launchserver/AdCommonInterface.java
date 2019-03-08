@@ -421,6 +421,13 @@ public final class AdCommonInterface {
     POS_SHORT_VIDEO(72, 6001),
     POS_BLOCKING_TAB_HOME_PAGE(73, 5005),
     POS_MESSAGE_BOTTOM(74, 1031),
+    POS_FEED_TOP_BANNER(75, 4010),
+    POS_MY_PAGE_OPERATE_BANNER(76, 2008),
+    POS_FIFTEEN_DAY_FORECAST_TOP_BANNER(77, 310),
+    POS_TWENTY_FOUR_FORECAST_TOP_BANNER(78, 311),
+    POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_ICON(79, 312),
+    POS_TIME_SCENE_DETAIL_ICON(80, 1032),
+    POS_MESSAGE_BOARD(81, 1033),
     ;
     
     public static final int POS_SPLASH_VALUE = 1;
@@ -498,6 +505,13 @@ public final class AdCommonInterface {
     public static final int POS_SHORT_VIDEO_VALUE = 6001;
     public static final int POS_BLOCKING_TAB_HOME_PAGE_VALUE = 5005;
     public static final int POS_MESSAGE_BOTTOM_VALUE = 1031;
+    public static final int POS_FEED_TOP_BANNER_VALUE = 4010;
+    public static final int POS_MY_PAGE_OPERATE_BANNER_VALUE = 2008;
+    public static final int POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_VALUE = 310;
+    public static final int POS_TWENTY_FOUR_FORECAST_TOP_BANNER_VALUE = 311;
+    public static final int POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_ICON_VALUE = 312;
+    public static final int POS_TIME_SCENE_DETAIL_ICON_VALUE = 1032;
+    public static final int POS_MESSAGE_BOARD_VALUE = 1033;
     
     
     public final int getNumber() { return value; }
@@ -579,6 +593,13 @@ public final class AdCommonInterface {
         case 6001: return POS_SHORT_VIDEO;
         case 5005: return POS_BLOCKING_TAB_HOME_PAGE;
         case 1031: return POS_MESSAGE_BOTTOM;
+        case 4010: return POS_FEED_TOP_BANNER;
+        case 2008: return POS_MY_PAGE_OPERATE_BANNER;
+        case 310: return POS_FIFTEEN_DAY_FORECAST_TOP_BANNER;
+        case 311: return POS_TWENTY_FOUR_FORECAST_TOP_BANNER;
+        case 312: return POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_ICON;
+        case 1032: return POS_TIME_SCENE_DETAIL_ICON;
+        case 1033: return POS_MESSAGE_BOARD;
         default: return null;
       }
     }
@@ -609,7 +630,7 @@ public final class AdCommonInterface {
     }
     
     private static final AdPosition[] VALUES = {
-      POS_SPLASH, POS_WEATHER_BACKGROUND, POS_GAME_GATE, POS_DISCOUNT_ENTRY, POS_VOICE_BROADCAST_ABOVE, POS_VOICE_BROADCAST_UNDER, POS_WEATHER_FRONT_PAGE_TOP, POS_WEATHER_FRONT_PAGE_MIDDLE, POS_WEATHER_FRONT_PAGE_BOTTOM, POS_WEATHER_HOME_INDEX_ENTRY, POS_DRESS_ASSISTANT, POS_BELOW_CITY_SELECTION, POS_LIVE_DETAILS_BOTTOM, POS_DRESSING_INDEX, POS_LOWER_DAILY_DETAILS, POS_INDEX_H5_BELOW, POS_LITTLE_INK_SISTER_TIPS, POS_AIR_INDEX_REVIEW_LIST, POS_TIME_SCENE_TOP, POS_TIME_SCENE_TOP_TWO, POS_TIME_SCENE_TOP_THREE, POS_TIME_VIEW_COMMENTS_LIST, POS_MY_PAGE_FIND_APP, POS_MY_PAGE_DYNAMIC_MENU, POS_MY_PAGE_DYNAMIC_MENU_TWO, POS_MY_PAGE_DYNAMIC_MENU_LOCAL, POS_PUSH_ARTICLE_MIDDLE, POS_OPERATING_ARTICLE_CENTRAL, POS_FEED_STREAM_MIDDLE_ARTICLE, POS_FEED_STREAM_CARD_ENTRY, POS_FEED_STREAM_CARD_CENTER_ENTRY, POS_TAB_PAGE, POS_DISCOURSE_DARD, POS_DRESS_ASSISTANT_CARD_ONE, POS_DRESS_ASSISTANT_CARD_TWO, POS_DRESS_ASSISTANT_CARD_THREE, POS_DISPLAY_WINDOW_CARD, POS_DRESS_ASSISTANT_CLOTHES, POS_DRESS_ASSISTANT_PROPS, POS_AIR_INDEX_MIDDLE_BANNER, POS_FEED_STREAM_BANNER, POS_FEED_STREAM_INFORMATION, POS_FEED_NOVEL_CARD, POS_FEED_STREAM_DETAILS, POS_BLOCKING_TAB_TIME_PAGE, POS_BLOCKING_TAB_MY_PAGE, POS_ASSIST_REPLACE, POS_AVATAR_SUIT_CLOTHES, POS_FEED_ARTICLE_STREAM, POS_AVATAR_ASSIST_LIST, POS_AVATAR_LONG_PRESS_LIST, POS_AVATAR_DOWNLOAD_STATISTICS, POS_AVATAR_STAR_RESOURCE, POS_SHARE_ENTRANCE, POS_LIVE_DETAIDLS, POS_INDEX_ARTICLE_UPPER_BANNER, POS_INDEX_ARTICLE_RECOMMENDATION, POS_TIME_SCENE_BANNER_TOP, POS_TIME_SCENE_BANNER_BOTTOM, POS_TIME_SCENE_ICON, POS_TIME_CITY_CLASSIFCATION, POS_AVATAR_SUIT_CLOTHES_ATTIRE, POS_AVATAR_SUIT_CLOTHES_PROPS, POS_AVATAR_SUIT_CLOTHES_CARD, POS_FEED_CLICK, POS_TIME_VIEW_COMMENTS_LIST_NEW, POS_WEATHER_TOP_ICON, POS_THEMATIC_COMMENT_BANNER, POS_WEATHER_INDEX_COLOR_EGG, POS_MY_PAGE_DYNAMIC_MENU_ENTERTAINMENT, POS_MY_PAGE_DYNAMIC_MENU_RELAX, POS_MY_PAGE_DYNAMIC_MENU_GAME, POS_SHORT_VIDEO, POS_BLOCKING_TAB_HOME_PAGE, POS_MESSAGE_BOTTOM, 
+      POS_SPLASH, POS_WEATHER_BACKGROUND, POS_GAME_GATE, POS_DISCOUNT_ENTRY, POS_VOICE_BROADCAST_ABOVE, POS_VOICE_BROADCAST_UNDER, POS_WEATHER_FRONT_PAGE_TOP, POS_WEATHER_FRONT_PAGE_MIDDLE, POS_WEATHER_FRONT_PAGE_BOTTOM, POS_WEATHER_HOME_INDEX_ENTRY, POS_DRESS_ASSISTANT, POS_BELOW_CITY_SELECTION, POS_LIVE_DETAILS_BOTTOM, POS_DRESSING_INDEX, POS_LOWER_DAILY_DETAILS, POS_INDEX_H5_BELOW, POS_LITTLE_INK_SISTER_TIPS, POS_AIR_INDEX_REVIEW_LIST, POS_TIME_SCENE_TOP, POS_TIME_SCENE_TOP_TWO, POS_TIME_SCENE_TOP_THREE, POS_TIME_VIEW_COMMENTS_LIST, POS_MY_PAGE_FIND_APP, POS_MY_PAGE_DYNAMIC_MENU, POS_MY_PAGE_DYNAMIC_MENU_TWO, POS_MY_PAGE_DYNAMIC_MENU_LOCAL, POS_PUSH_ARTICLE_MIDDLE, POS_OPERATING_ARTICLE_CENTRAL, POS_FEED_STREAM_MIDDLE_ARTICLE, POS_FEED_STREAM_CARD_ENTRY, POS_FEED_STREAM_CARD_CENTER_ENTRY, POS_TAB_PAGE, POS_DISCOURSE_DARD, POS_DRESS_ASSISTANT_CARD_ONE, POS_DRESS_ASSISTANT_CARD_TWO, POS_DRESS_ASSISTANT_CARD_THREE, POS_DISPLAY_WINDOW_CARD, POS_DRESS_ASSISTANT_CLOTHES, POS_DRESS_ASSISTANT_PROPS, POS_AIR_INDEX_MIDDLE_BANNER, POS_FEED_STREAM_BANNER, POS_FEED_STREAM_INFORMATION, POS_FEED_NOVEL_CARD, POS_FEED_STREAM_DETAILS, POS_BLOCKING_TAB_TIME_PAGE, POS_BLOCKING_TAB_MY_PAGE, POS_ASSIST_REPLACE, POS_AVATAR_SUIT_CLOTHES, POS_FEED_ARTICLE_STREAM, POS_AVATAR_ASSIST_LIST, POS_AVATAR_LONG_PRESS_LIST, POS_AVATAR_DOWNLOAD_STATISTICS, POS_AVATAR_STAR_RESOURCE, POS_SHARE_ENTRANCE, POS_LIVE_DETAIDLS, POS_INDEX_ARTICLE_UPPER_BANNER, POS_INDEX_ARTICLE_RECOMMENDATION, POS_TIME_SCENE_BANNER_TOP, POS_TIME_SCENE_BANNER_BOTTOM, POS_TIME_SCENE_ICON, POS_TIME_CITY_CLASSIFCATION, POS_AVATAR_SUIT_CLOTHES_ATTIRE, POS_AVATAR_SUIT_CLOTHES_PROPS, POS_AVATAR_SUIT_CLOTHES_CARD, POS_FEED_CLICK, POS_TIME_VIEW_COMMENTS_LIST_NEW, POS_WEATHER_TOP_ICON, POS_THEMATIC_COMMENT_BANNER, POS_WEATHER_INDEX_COLOR_EGG, POS_MY_PAGE_DYNAMIC_MENU_ENTERTAINMENT, POS_MY_PAGE_DYNAMIC_MENU_RELAX, POS_MY_PAGE_DYNAMIC_MENU_GAME, POS_SHORT_VIDEO, POS_BLOCKING_TAB_HOME_PAGE, POS_MESSAGE_BOTTOM, POS_FEED_TOP_BANNER, POS_MY_PAGE_OPERATE_BANNER, POS_FIFTEEN_DAY_FORECAST_TOP_BANNER, POS_TWENTY_FOUR_FORECAST_TOP_BANNER, POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_ICON, POS_TIME_SCENE_DETAIL_ICON, POS_MESSAGE_BOARD, 
     };
     
     public static AdPosition valueOf(
@@ -1575,75 +1596,6 @@ public final class AdCommonInterface {
     }
     
     // @@protoc_insertion_point(enum_scope:PageType)
-  }
-  
-  public enum MiaoZhenSDK
-      implements com.google.protobuf.ProtocolMessageEnum {
-    OFF(0, 1),
-    ON(1, 2),
-    ;
-    
-    public static final int OFF_VALUE = 1;
-    public static final int ON_VALUE = 2;
-    
-    
-    public final int getNumber() { return value; }
-    
-    public static MiaoZhenSDK valueOf(int value) {
-      switch (value) {
-        case 1: return OFF;
-        case 2: return ON;
-        default: return null;
-      }
-    }
-    
-    public static com.google.protobuf.Internal.EnumLiteMap<MiaoZhenSDK>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static com.google.protobuf.Internal.EnumLiteMap<MiaoZhenSDK>
-        internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<MiaoZhenSDK>() {
-            public MiaoZhenSDK findValueByNumber(int number) {
-              return MiaoZhenSDK.valueOf(number);
-            }
-          };
-    
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(index);
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.moji.launchserver.AdCommonInterface.getDescriptor().getEnumTypes().get(18);
-    }
-    
-    private static final MiaoZhenSDK[] VALUES = {
-      OFF, ON, 
-    };
-    
-    public static MiaoZhenSDK valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      return VALUES[desc.getIndex()];
-    }
-    
-    private final int index;
-    private final int value;
-    
-    private MiaoZhenSDK(int index, int value) {
-      this.index = index;
-      this.value = value;
-    }
-    
-    // @@protoc_insertion_point(enum_scope:MiaoZhenSDK)
   }
   
   public interface LocationRuleOrBuilder
@@ -11895,9 +11847,9 @@ public final class AdCommonInterface {
     boolean hasAdPrice();
     int getAdPrice();
     
-    // optional .MiaoZhenSDK miaoZhenSDK = 32;
-    boolean hasMiaoZhenSDK();
-    com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK();
+    // optional int32 icon_position = 32;
+    boolean hasIconPosition();
+    int getIconPosition();
   }
   public static final class ThirdAdControl extends
       com.google.protobuf.GeneratedMessage
@@ -12355,14 +12307,14 @@ public final class AdCommonInterface {
       return adPrice_;
     }
     
-    // optional .MiaoZhenSDK miaoZhenSDK = 32;
-    public static final int MIAOZHENSDK_FIELD_NUMBER = 32;
-    private com.moji.launchserver.AdCommonInterface.MiaoZhenSDK miaoZhenSDK_;
-    public boolean hasMiaoZhenSDK() {
+    // optional int32 icon_position = 32;
+    public static final int ICON_POSITION_FIELD_NUMBER = 32;
+    private int iconPosition_;
+    public boolean hasIconPosition() {
       return ((bitField0_ & 0x40000000) == 0x40000000);
     }
-    public com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK() {
-      return miaoZhenSDK_;
+    public int getIconPosition() {
+      return iconPosition_;
     }
     
     private void initFields() {
@@ -12397,7 +12349,7 @@ public final class AdCommonInterface {
       logo_ = com.moji.launchserver.AdCommonInterface.ImageInfo.getDefaultInstance();
       logoStyle_ = 0;
       adPrice_ = 0;
-      miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
+      iconPosition_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -12555,7 +12507,7 @@ public final class AdCommonInterface {
         output.writeInt32(31, adPrice_);
       }
       if (((bitField0_ & 0x40000000) == 0x40000000)) {
-        output.writeEnum(32, miaoZhenSDK_.getNumber());
+        output.writeInt32(32, iconPosition_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -12692,7 +12644,7 @@ public final class AdCommonInterface {
       }
       if (((bitField0_ & 0x40000000) == 0x40000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(32, miaoZhenSDK_.getNumber());
+          .computeInt32Size(32, iconPosition_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -12915,7 +12867,7 @@ public final class AdCommonInterface {
         bitField0_ = (bitField0_ & ~0x20000000);
         adPrice_ = 0;
         bitField0_ = (bitField0_ & ~0x40000000);
-        miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
+        iconPosition_ = 0;
         bitField0_ = (bitField0_ & ~0x80000000);
         return this;
       }
@@ -13111,7 +13063,7 @@ public final class AdCommonInterface {
         if (((from_bitField0_ & 0x80000000) == 0x80000000)) {
           to_bitField0_ |= 0x40000000;
         }
-        result.miaoZhenSDK_ = miaoZhenSDK_;
+        result.iconPosition_ = iconPosition_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -13244,8 +13196,8 @@ public final class AdCommonInterface {
         if (other.hasAdPrice()) {
           setAdPrice(other.getAdPrice());
         }
-        if (other.hasMiaoZhenSDK()) {
-          setMiaoZhenSDK(other.getMiaoZhenSDK());
+        if (other.hasIconPosition()) {
+          setIconPosition(other.getIconPosition());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -13527,14 +13479,8 @@ public final class AdCommonInterface {
               break;
             }
             case 256: {
-              int rawValue = input.readEnum();
-              com.moji.launchserver.AdCommonInterface.MiaoZhenSDK value = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(32, rawValue);
-              } else {
-                bitField0_ |= 0x80000000;
-                miaoZhenSDK_ = value;
-              }
+              bitField0_ |= 0x80000000;
+              iconPosition_ = input.readInt32();
               break;
             }
           }
@@ -14842,26 +14788,23 @@ public final class AdCommonInterface {
         return this;
       }
       
-      // optional .MiaoZhenSDK miaoZhenSDK = 32;
-      private com.moji.launchserver.AdCommonInterface.MiaoZhenSDK miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
-      public boolean hasMiaoZhenSDK() {
+      // optional int32 icon_position = 32;
+      private int iconPosition_ ;
+      public boolean hasIconPosition() {
         return ((bitField0_ & 0x80000000) == 0x80000000);
       }
-      public com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK() {
-        return miaoZhenSDK_;
+      public int getIconPosition() {
+        return iconPosition_;
       }
-      public Builder setMiaoZhenSDK(com.moji.launchserver.AdCommonInterface.MiaoZhenSDK value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+      public Builder setIconPosition(int value) {
         bitField0_ |= 0x80000000;
-        miaoZhenSDK_ = value;
+        iconPosition_ = value;
         onChanged();
         return this;
       }
-      public Builder clearMiaoZhenSDK() {
+      public Builder clearIconPosition() {
         bitField0_ = (bitField0_ & ~0x80000000);
-        miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
+        iconPosition_ = 0;
         onChanged();
         return this;
       }
@@ -15019,9 +14962,15 @@ public final class AdCommonInterface {
     com.moji.launchserver.AdCommonInterface.WeChatMiniApps getWeChatMiniApps();
     com.moji.launchserver.AdCommonInterface.WeChatMiniAppsOrBuilder getWeChatMiniAppsOrBuilder();
     
-    // optional .MiaoZhenSDK miaoZhenSDK = 34;
-    boolean hasMiaoZhenSDK();
-    com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK();
+    // repeated .SkipMode skip_mode = 34;
+    java.util.List<com.moji.launchserver.AdCommonInterface.SkipMode> 
+        getSkipModeList();
+    com.moji.launchserver.AdCommonInterface.SkipMode getSkipMode(int index);
+    int getSkipModeCount();
+    java.util.List<? extends com.moji.launchserver.AdCommonInterface.SkipModeOrBuilder> 
+        getSkipModeOrBuilderList();
+    com.moji.launchserver.AdCommonInterface.SkipModeOrBuilder getSkipModeOrBuilder(
+        int index);
   }
   public static final class AdSplashDescription extends
       com.google.protobuf.GeneratedMessage
@@ -15602,14 +15551,25 @@ public final class AdCommonInterface {
       return weChatMiniApps_;
     }
     
-    // optional .MiaoZhenSDK miaoZhenSDK = 34;
-    public static final int MIAOZHENSDK_FIELD_NUMBER = 34;
-    private com.moji.launchserver.AdCommonInterface.MiaoZhenSDK miaoZhenSDK_;
-    public boolean hasMiaoZhenSDK() {
-      return ((bitField1_ & 0x00000002) == 0x00000002);
+    // repeated .SkipMode skip_mode = 34;
+    public static final int SKIP_MODE_FIELD_NUMBER = 34;
+    private java.util.List<com.moji.launchserver.AdCommonInterface.SkipMode> skipMode_;
+    public java.util.List<com.moji.launchserver.AdCommonInterface.SkipMode> getSkipModeList() {
+      return skipMode_;
     }
-    public com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK() {
-      return miaoZhenSDK_;
+    public java.util.List<? extends com.moji.launchserver.AdCommonInterface.SkipModeOrBuilder> 
+        getSkipModeOrBuilderList() {
+      return skipMode_;
+    }
+    public int getSkipModeCount() {
+      return skipMode_.size();
+    }
+    public com.moji.launchserver.AdCommonInterface.SkipMode getSkipMode(int index) {
+      return skipMode_.get(index);
+    }
+    public com.moji.launchserver.AdCommonInterface.SkipModeOrBuilder getSkipModeOrBuilder(
+        int index) {
+      return skipMode_.get(index);
     }
     
     private void initFields() {
@@ -15646,7 +15606,7 @@ public final class AdCommonInterface {
       logoStyle_ = 0;
       downloadMonitors_ = com.moji.launchserver.AdCommonInterface.DownloadMonitors.getDefaultInstance();
       weChatMiniApps_ = com.moji.launchserver.AdCommonInterface.WeChatMiniApps.getDefaultInstance();
-      miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
+      skipMode_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -15711,6 +15671,12 @@ public final class AdCommonInterface {
       }
       if (hasLogo()) {
         if (!getLogo().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getSkipModeCount(); i++) {
+        if (!getSkipMode(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -15821,8 +15787,8 @@ public final class AdCommonInterface {
       if (((bitField1_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(33, weChatMiniApps_);
       }
-      if (((bitField1_ & 0x00000002) == 0x00000002)) {
-        output.writeEnum(34, miaoZhenSDK_.getNumber());
+      for (int i = 0; i < skipMode_.size(); i++) {
+        output.writeMessage(34, skipMode_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -15965,9 +15931,9 @@ public final class AdCommonInterface {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(33, weChatMiniApps_);
       }
-      if (((bitField1_ & 0x00000002) == 0x00000002)) {
+      for (int i = 0; i < skipMode_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(34, miaoZhenSDK_.getNumber());
+          .computeMessageSize(34, skipMode_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -16092,6 +16058,7 @@ public final class AdCommonInterface {
           getLogoFieldBuilder();
           getDownloadMonitorsFieldBuilder();
           getWeChatMiniAppsFieldBuilder();
+          getSkipModeFieldBuilder();
         }
       }
       private static Builder create() {
@@ -16194,8 +16161,12 @@ public final class AdCommonInterface {
           weChatMiniAppsBuilder_.clear();
         }
         bitField1_ = (bitField1_ & ~0x00000001);
-        miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
-        bitField1_ = (bitField1_ & ~0x00000002);
+        if (skipModeBuilder_ == null) {
+          skipMode_ = java.util.Collections.emptyList();
+          bitField1_ = (bitField1_ & ~0x00000002);
+        } else {
+          skipModeBuilder_.clear();
+        }
         return this;
       }
       
@@ -16396,10 +16367,15 @@ public final class AdCommonInterface {
         } else {
           result.weChatMiniApps_ = weChatMiniAppsBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000002) == 0x00000002)) {
-          to_bitField1_ |= 0x00000002;
+        if (skipModeBuilder_ == null) {
+          if (((bitField1_ & 0x00000002) == 0x00000002)) {
+            skipMode_ = java.util.Collections.unmodifiableList(skipMode_);
+            bitField1_ = (bitField1_ & ~0x00000002);
+          }
+          result.skipMode_ = skipMode_;
+        } else {
+          result.skipMode_ = skipModeBuilder_.build();
         }
-        result.miaoZhenSDK_ = miaoZhenSDK_;
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -16516,8 +16492,31 @@ public final class AdCommonInterface {
         if (other.hasWeChatMiniApps()) {
           mergeWeChatMiniApps(other.getWeChatMiniApps());
         }
-        if (other.hasMiaoZhenSDK()) {
-          setMiaoZhenSDK(other.getMiaoZhenSDK());
+        if (skipModeBuilder_ == null) {
+          if (!other.skipMode_.isEmpty()) {
+            if (skipMode_.isEmpty()) {
+              skipMode_ = other.skipMode_;
+              bitField1_ = (bitField1_ & ~0x00000002);
+            } else {
+              ensureSkipModeIsMutable();
+              skipMode_.addAll(other.skipMode_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.skipMode_.isEmpty()) {
+            if (skipModeBuilder_.isEmpty()) {
+              skipModeBuilder_.dispose();
+              skipModeBuilder_ = null;
+              skipMode_ = other.skipMode_;
+              bitField1_ = (bitField1_ & ~0x00000002);
+              skipModeBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getSkipModeFieldBuilder() : null;
+            } else {
+              skipModeBuilder_.addAllMessages(other.skipMode_);
+            }
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -16582,6 +16581,12 @@ public final class AdCommonInterface {
         }
         if (hasLogo()) {
           if (!getLogo().isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getSkipModeCount(); i++) {
+          if (!getSkipMode(i).isInitialized()) {
             
             return false;
           }
@@ -16817,15 +16822,10 @@ public final class AdCommonInterface {
               setWeChatMiniApps(subBuilder.buildPartial());
               break;
             }
-            case 272: {
-              int rawValue = input.readEnum();
-              com.moji.launchserver.AdCommonInterface.MiaoZhenSDK value = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(34, rawValue);
-              } else {
-                bitField1_ |= 0x00000002;
-                miaoZhenSDK_ = value;
-              }
+            case 274: {
+              com.moji.launchserver.AdCommonInterface.SkipMode.Builder subBuilder = com.moji.launchserver.AdCommonInterface.SkipMode.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addSkipMode(subBuilder.buildPartial());
               break;
             }
           }
@@ -18152,28 +18152,190 @@ public final class AdCommonInterface {
         return weChatMiniAppsBuilder_;
       }
       
-      // optional .MiaoZhenSDK miaoZhenSDK = 34;
-      private com.moji.launchserver.AdCommonInterface.MiaoZhenSDK miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
-      public boolean hasMiaoZhenSDK() {
-        return ((bitField1_ & 0x00000002) == 0x00000002);
+      // repeated .SkipMode skip_mode = 34;
+      private java.util.List<com.moji.launchserver.AdCommonInterface.SkipMode> skipMode_ =
+        java.util.Collections.emptyList();
+      private void ensureSkipModeIsMutable() {
+        if (!((bitField1_ & 0x00000002) == 0x00000002)) {
+          skipMode_ = new java.util.ArrayList<com.moji.launchserver.AdCommonInterface.SkipMode>(skipMode_);
+          bitField1_ |= 0x00000002;
+         }
       }
-      public com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK() {
-        return miaoZhenSDK_;
-      }
-      public Builder setMiaoZhenSDK(com.moji.launchserver.AdCommonInterface.MiaoZhenSDK value) {
-        if (value == null) {
-          throw new NullPointerException();
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.moji.launchserver.AdCommonInterface.SkipMode, com.moji.launchserver.AdCommonInterface.SkipMode.Builder, com.moji.launchserver.AdCommonInterface.SkipModeOrBuilder> skipModeBuilder_;
+      
+      public java.util.List<com.moji.launchserver.AdCommonInterface.SkipMode> getSkipModeList() {
+        if (skipModeBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(skipMode_);
+        } else {
+          return skipModeBuilder_.getMessageList();
         }
-        bitField1_ |= 0x00000002;
-        miaoZhenSDK_ = value;
-        onChanged();
+      }
+      public int getSkipModeCount() {
+        if (skipModeBuilder_ == null) {
+          return skipMode_.size();
+        } else {
+          return skipModeBuilder_.getCount();
+        }
+      }
+      public com.moji.launchserver.AdCommonInterface.SkipMode getSkipMode(int index) {
+        if (skipModeBuilder_ == null) {
+          return skipMode_.get(index);
+        } else {
+          return skipModeBuilder_.getMessage(index);
+        }
+      }
+      public Builder setSkipMode(
+          int index, com.moji.launchserver.AdCommonInterface.SkipMode value) {
+        if (skipModeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSkipModeIsMutable();
+          skipMode_.set(index, value);
+          onChanged();
+        } else {
+          skipModeBuilder_.setMessage(index, value);
+        }
         return this;
       }
-      public Builder clearMiaoZhenSDK() {
-        bitField1_ = (bitField1_ & ~0x00000002);
-        miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
-        onChanged();
+      public Builder setSkipMode(
+          int index, com.moji.launchserver.AdCommonInterface.SkipMode.Builder builderForValue) {
+        if (skipModeBuilder_ == null) {
+          ensureSkipModeIsMutable();
+          skipMode_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          skipModeBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
+      }
+      public Builder addSkipMode(com.moji.launchserver.AdCommonInterface.SkipMode value) {
+        if (skipModeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSkipModeIsMutable();
+          skipMode_.add(value);
+          onChanged();
+        } else {
+          skipModeBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addSkipMode(
+          int index, com.moji.launchserver.AdCommonInterface.SkipMode value) {
+        if (skipModeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSkipModeIsMutable();
+          skipMode_.add(index, value);
+          onChanged();
+        } else {
+          skipModeBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addSkipMode(
+          com.moji.launchserver.AdCommonInterface.SkipMode.Builder builderForValue) {
+        if (skipModeBuilder_ == null) {
+          ensureSkipModeIsMutable();
+          skipMode_.add(builderForValue.build());
+          onChanged();
+        } else {
+          skipModeBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addSkipMode(
+          int index, com.moji.launchserver.AdCommonInterface.SkipMode.Builder builderForValue) {
+        if (skipModeBuilder_ == null) {
+          ensureSkipModeIsMutable();
+          skipMode_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          skipModeBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllSkipMode(
+          java.lang.Iterable<? extends com.moji.launchserver.AdCommonInterface.SkipMode> values) {
+        if (skipModeBuilder_ == null) {
+          ensureSkipModeIsMutable();
+          super.addAll(values, skipMode_);
+          onChanged();
+        } else {
+          skipModeBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearSkipMode() {
+        if (skipModeBuilder_ == null) {
+          skipMode_ = java.util.Collections.emptyList();
+          bitField1_ = (bitField1_ & ~0x00000002);
+          onChanged();
+        } else {
+          skipModeBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeSkipMode(int index) {
+        if (skipModeBuilder_ == null) {
+          ensureSkipModeIsMutable();
+          skipMode_.remove(index);
+          onChanged();
+        } else {
+          skipModeBuilder_.remove(index);
+        }
+        return this;
+      }
+      public com.moji.launchserver.AdCommonInterface.SkipMode.Builder getSkipModeBuilder(
+          int index) {
+        return getSkipModeFieldBuilder().getBuilder(index);
+      }
+      public com.moji.launchserver.AdCommonInterface.SkipModeOrBuilder getSkipModeOrBuilder(
+          int index) {
+        if (skipModeBuilder_ == null) {
+          return skipMode_.get(index);  } else {
+          return skipModeBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends com.moji.launchserver.AdCommonInterface.SkipModeOrBuilder> 
+           getSkipModeOrBuilderList() {
+        if (skipModeBuilder_ != null) {
+          return skipModeBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(skipMode_);
+        }
+      }
+      public com.moji.launchserver.AdCommonInterface.SkipMode.Builder addSkipModeBuilder() {
+        return getSkipModeFieldBuilder().addBuilder(
+            com.moji.launchserver.AdCommonInterface.SkipMode.getDefaultInstance());
+      }
+      public com.moji.launchserver.AdCommonInterface.SkipMode.Builder addSkipModeBuilder(
+          int index) {
+        return getSkipModeFieldBuilder().addBuilder(
+            index, com.moji.launchserver.AdCommonInterface.SkipMode.getDefaultInstance());
+      }
+      public java.util.List<com.moji.launchserver.AdCommonInterface.SkipMode.Builder> 
+           getSkipModeBuilderList() {
+        return getSkipModeFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.moji.launchserver.AdCommonInterface.SkipMode, com.moji.launchserver.AdCommonInterface.SkipMode.Builder, com.moji.launchserver.AdCommonInterface.SkipModeOrBuilder> 
+          getSkipModeFieldBuilder() {
+        if (skipModeBuilder_ == null) {
+          skipModeBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.moji.launchserver.AdCommonInterface.SkipMode, com.moji.launchserver.AdCommonInterface.SkipMode.Builder, com.moji.launchserver.AdCommonInterface.SkipModeOrBuilder>(
+                  skipMode_,
+                  ((bitField1_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          skipMode_ = null;
+        }
+        return skipModeBuilder_;
       }
       
       // @@protoc_insertion_point(builder_scope:AdSplashDescription)
@@ -30870,9 +31032,9 @@ public final class AdCommonInterface {
     boolean hasSkipListShowMonitoring();
     String getSkipListShowMonitoring();
     
-    // optional .MiaoZhenSDK miaoZhenSDK = 69;
-    boolean hasMiaoZhenSDK();
-    com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK();
+    // optional int32 icon_position = 69;
+    boolean hasIconPosition();
+    int getIconPosition();
   }
   public static final class AdUtilDescription extends
       com.google.protobuf.GeneratedMessage
@@ -32147,14 +32309,14 @@ public final class AdCommonInterface {
       }
     }
     
-    // optional .MiaoZhenSDK miaoZhenSDK = 69;
-    public static final int MIAOZHENSDK_FIELD_NUMBER = 69;
-    private com.moji.launchserver.AdCommonInterface.MiaoZhenSDK miaoZhenSDK_;
-    public boolean hasMiaoZhenSDK() {
+    // optional int32 icon_position = 69;
+    public static final int ICON_POSITION_FIELD_NUMBER = 69;
+    private int iconPosition_;
+    public boolean hasIconPosition() {
       return ((bitField1_ & 0x80000000) == 0x80000000);
     }
-    public com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK() {
-      return miaoZhenSDK_;
+    public int getIconPosition() {
+      return iconPosition_;
     }
     
     private void initFields() {
@@ -32226,7 +32388,7 @@ public final class AdCommonInterface {
       pageType_ = com.moji.launchserver.AdCommonInterface.PageType.DOWNLOAD;
       skipMode_ = java.util.Collections.emptyList();
       skipListShowMonitoring_ = "";
-      miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
+      iconPosition_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -32521,7 +32683,7 @@ public final class AdCommonInterface {
         output.writeBytes(68, getSkipListShowMonitoringBytes());
       }
       if (((bitField1_ & 0x80000000) == 0x80000000)) {
-        output.writeEnum(69, miaoZhenSDK_.getNumber());
+        output.writeInt32(69, iconPosition_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -32806,7 +32968,7 @@ public final class AdCommonInterface {
       }
       if (((bitField1_ & 0x80000000) == 0x80000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(69, miaoZhenSDK_.getNumber());
+          .computeInt32Size(69, iconPosition_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -33133,7 +33295,7 @@ public final class AdCommonInterface {
         }
         skipListShowMonitoring_ = "";
         bitField2_ = (bitField2_ & ~0x00000008);
-        miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
+        iconPosition_ = 0;
         bitField2_ = (bitField2_ & ~0x00000010);
         return this;
       }
@@ -33508,7 +33670,7 @@ public final class AdCommonInterface {
         if (((from_bitField2_ & 0x00000010) == 0x00000010)) {
           to_bitField1_ |= 0x80000000;
         }
-        result.miaoZhenSDK_ = miaoZhenSDK_;
+        result.iconPosition_ = iconPosition_;
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -33845,8 +34007,8 @@ public final class AdCommonInterface {
         if (other.hasSkipListShowMonitoring()) {
           setSkipListShowMonitoring(other.getSkipListShowMonitoring());
         }
-        if (other.hasMiaoZhenSDK()) {
-          setMiaoZhenSDK(other.getMiaoZhenSDK());
+        if (other.hasIconPosition()) {
+          setIconPosition(other.getIconPosition());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -34363,14 +34525,8 @@ public final class AdCommonInterface {
               break;
             }
             case 552: {
-              int rawValue = input.readEnum();
-              com.moji.launchserver.AdCommonInterface.MiaoZhenSDK value = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(69, rawValue);
-              } else {
-                bitField2_ |= 0x00000010;
-                miaoZhenSDK_ = value;
-              }
+              bitField2_ |= 0x00000010;
+              iconPosition_ = input.readInt32();
               break;
             }
           }
@@ -37531,26 +37687,23 @@ public final class AdCommonInterface {
         onChanged();
       }
       
-      // optional .MiaoZhenSDK miaoZhenSDK = 69;
-      private com.moji.launchserver.AdCommonInterface.MiaoZhenSDK miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
-      public boolean hasMiaoZhenSDK() {
+      // optional int32 icon_position = 69;
+      private int iconPosition_ ;
+      public boolean hasIconPosition() {
         return ((bitField2_ & 0x00000010) == 0x00000010);
       }
-      public com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK() {
-        return miaoZhenSDK_;
+      public int getIconPosition() {
+        return iconPosition_;
       }
-      public Builder setMiaoZhenSDK(com.moji.launchserver.AdCommonInterface.MiaoZhenSDK value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+      public Builder setIconPosition(int value) {
         bitField2_ |= 0x00000010;
-        miaoZhenSDK_ = value;
+        iconPosition_ = value;
         onChanged();
         return this;
       }
-      public Builder clearMiaoZhenSDK() {
+      public Builder clearIconPosition() {
         bitField2_ = (bitField2_ & ~0x00000010);
-        miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
+        iconPosition_ = 0;
         onChanged();
         return this;
       }
@@ -69565,10 +69718,6 @@ public final class AdCommonInterface {
     // optional int32 property_type = 8;
     boolean hasPropertyType();
     int getPropertyType();
-    
-    // optional .MiaoZhenSDK miaoZhenSDK = 9;
-    boolean hasMiaoZhenSDK();
-    com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK();
   }
   public static final class AdSuitClothes extends
       com.google.protobuf.GeneratedMessage
@@ -69699,16 +69848,6 @@ public final class AdCommonInterface {
       return propertyType_;
     }
     
-    // optional .MiaoZhenSDK miaoZhenSDK = 9;
-    public static final int MIAOZHENSDK_FIELD_NUMBER = 9;
-    private com.moji.launchserver.AdCommonInterface.MiaoZhenSDK miaoZhenSDK_;
-    public boolean hasMiaoZhenSDK() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    public com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK() {
-      return miaoZhenSDK_;
-    }
-    
     private void initFields() {
       adId_ = 0L;
       isNeedClear_ = false;
@@ -69718,7 +69857,6 @@ public final class AdCommonInterface {
       adSuitAvatarCard_ = com.moji.launchserver.AdCommonInterface.AdSuitAvatarCardDescription.getDefaultInstance();
       adPublish_ = java.util.Collections.emptyList();
       propertyType_ = 0;
-      miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -69778,9 +69916,6 @@ public final class AdCommonInterface {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeInt32(8, propertyType_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeEnum(9, miaoZhenSDK_.getNumber());
-      }
       getUnknownFields().writeTo(output);
     }
     
@@ -69821,10 +69956,6 @@ public final class AdCommonInterface {
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(8, propertyType_);
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(9, miaoZhenSDK_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -69986,8 +70117,6 @@ public final class AdCommonInterface {
         }
         propertyType_ = 0;
         bitField0_ = (bitField0_ & ~0x00000080);
-        miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
-        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
       
@@ -70075,10 +70204,6 @@ public final class AdCommonInterface {
           to_bitField0_ |= 0x00000040;
         }
         result.propertyType_ = propertyType_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-          to_bitField0_ |= 0x00000080;
-        }
-        result.miaoZhenSDK_ = miaoZhenSDK_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -70141,9 +70266,6 @@ public final class AdCommonInterface {
         }
         if (other.hasPropertyType()) {
           setPropertyType(other.getPropertyType());
-        }
-        if (other.hasMiaoZhenSDK()) {
-          setMiaoZhenSDK(other.getMiaoZhenSDK());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -70249,17 +70371,6 @@ public final class AdCommonInterface {
             case 64: {
               bitField0_ |= 0x00000080;
               propertyType_ = input.readInt32();
-              break;
-            }
-            case 72: {
-              int rawValue = input.readEnum();
-              com.moji.launchserver.AdCommonInterface.MiaoZhenSDK value = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(9, rawValue);
-              } else {
-                bitField0_ |= 0x00000100;
-                miaoZhenSDK_ = value;
-              }
               break;
             }
           }
@@ -70804,30 +70915,6 @@ public final class AdCommonInterface {
       public Builder clearPropertyType() {
         bitField0_ = (bitField0_ & ~0x00000080);
         propertyType_ = 0;
-        onChanged();
-        return this;
-      }
-      
-      // optional .MiaoZhenSDK miaoZhenSDK = 9;
-      private com.moji.launchserver.AdCommonInterface.MiaoZhenSDK miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
-      public boolean hasMiaoZhenSDK() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
-      }
-      public com.moji.launchserver.AdCommonInterface.MiaoZhenSDK getMiaoZhenSDK() {
-        return miaoZhenSDK_;
-      }
-      public Builder setMiaoZhenSDK(com.moji.launchserver.AdCommonInterface.MiaoZhenSDK value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000100;
-        miaoZhenSDK_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearMiaoZhenSDK() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        miaoZhenSDK_ = com.moji.launchserver.AdCommonInterface.MiaoZhenSDK.OFF;
         onChanged();
         return this;
       }
@@ -97691,7 +97778,7 @@ public final class AdCommonInterface {
       "\022\021\n\timage_url\030\002 \002(\t\022\r\n\005width\030\003 \002(\005\022\016\n\006he" +
       "ight\030\004 \002(\005\022\014\n\004type\030\005 \002(\005\"L\n\010IconInfo\022\017\n\007" +
       "icon_id\030\001 \002(\003\022\020\n\010icon_url\030\002 \002(\t\022\r\n\005width" +
-      "\030\003 \001(\005\022\016\n\006height\030\004 \001(\005\"\335\006\n\016ThirdAdContro" +
+      "\030\003 \001(\005\022\016\n\006height\030\004 \001(\005\"\321\006\n\016ThirdAdContro" +
       "l\022\r\n\005ad_id\030\001 \002(\003\022\035\n\010partener\030\002 \002(\0162\013.AdP" +
       "artener\022\023\n\013partener_id\030\003 \002(\t\022\036\n\tshow_typ" +
       "e\030\004 \002(\0162\013.AdShowType\022\016\n\006app_id\030\005 \001(\t\022\r\n\005" +
@@ -97712,586 +97799,589 @@ public final class AdCommonInterface {
       "e\022\024\n\014module_index\030\032 \001(\005\022\024\n\014is_auto_play\030" +
       "\033 \001(\005\022\024\n\014is_show_logo\030\034 \001(\005\022\030\n\004logo\030\035 \001(" +
       "\0132\n.ImageInfo\022\022\n\nlogo_style\030\036 \001(\005\022\020\n\010ad_" +
-      "price\030\037 \001(\005\022!\n\013miaoZhenSDK\030  \001(\0162\014.MiaoZ" +
-      "henSDK\"\374\006\n\023AdSplashDescription\022\r\n\005ad_id\030" +
-      "\001 \002(\003\022\036\n\tshow_type\030\002 \002(\0162\013.AdShowType\022\021\n" +
-      "\tshow_time\030\003 \002(\005\022\021\n\tclick_url\030\004 \001(\t\022\022\n\nc" +
-      "lick_area\030\005 \001(\005\022\036\n\nimage_info\030\006 \001(\0132\n.Im",
-      "ageInfo\022\031\n\021click_statics_url\030\007 \001(\t\022\"\n\010ne" +
-      "t_type\030\010 \002(\0162\020.NetTypeDownload\022\022\n\nstart_" +
-      "time\030\t \002(\003\022\020\n\010end_time\030\n \002(\003\022\020\n\010ad_price" +
-      "\030\013 \001(\005\022\014\n\004type\030\014 \002(\005\022\030\n\020show_statics_url" +
-      "\030\r \001(\t\022\031\n\021close_statics_url\030\016 \001(\t\022\033\n\023ad_" +
-      "stat_show_params\030\017 \001(\t\022\034\n\024ad_stat_click_" +
-      "params\030\020 \001(\t\022\027\n\017is_show_ad_sign\030\021 \002(\010\022\037\n" +
-      "\013cross_image\030\022 \001(\0132\n.ImageInfo\022\"\n\016vertic" +
-      "al_image\030\023 \001(\0132\n.ImageInfo\022\030\n\020splash_sho" +
-      "w_type\030\024 \001(\005\022\021\n\tpage_type\030\025 \001(\005\022\020\n\010app_s",
-      "tar\030\026 \001(\005\022\014\n\004desc\030\027 \001(\t\022\026\n\016add_coordinat" +
-      "e\030\030 \001(\005\022$\n\rlocation_rule\030\031 \001(\0132\r.Locatio" +
-      "nRule\022\022\n\nadvertiser\030\032 \001(\t\022\026\n\016conversion_" +
-      "url\030\033 \001(\t\022\025\n\rproperty_type\030\034 \001(\005\022\024\n\014is_s" +
-      "how_logo\030\035 \001(\005\022\030\n\004logo\030\036 \001(\0132\n.ImageInfo" +
-      "\022\022\n\nlogo_style\030\037 \001(\005\022+\n\020downloadMonitors" +
-      "\030  \001(\0132\021.DownloadMonitors\022\'\n\016weChatMiniA" +
-      "pps\030! \001(\0132\017.WeChatMiniApps\022!\n\013miaoZhenSD" +
-      "K\030\" \001(\0162\014.MiaoZhenSDK\"\346\001\n\016AdSplashDetail" +
-      "\022!\n\010pos_stat\030\001 \002(\0162\017.AdPositionStat\0223\n\025a",
-      "d_splash_description\030\002 \003(\0132\024.AdSplashDes" +
-      "cription\022#\n\ncontroller\030\003 \001(\0132\017.ThirdAdCo" +
-      "ntrol\022\031\n\021is_clear_last_ids\030\004 \001(\010\022\022\n\nis_l" +
-      "oadPic\030\005 \001(\010\022\024\n\014control_time\030\006 \001(\005\022\022\n\nis" +
-      "_show_ad\030\007 \001(\010\"\325\004\n\027AdBackgroundDescripti" +
-      "on\022\036\n\tshow_type\030\001 \002(\0162\013.AdShowType\022\r\n\005ad" +
-      "_id\030\002 \002(\003\022\036\n\nimage_info\030\003 \002(\0132\n.ImageInf" +
-      "o\022#\n\017blur_image_info\030\004 \002(\0132\n.ImageInfo\022\"" +
-      "\n\010net_type\030\005 \002(\0162\020.NetTypeDownload\022\030\n\020sh" +
-      "ow_statics_url\030\006 \001(\t\022\033\n\023ad_stat_show_par",
-      "ams\030\007 \001(\t\022\034\n\024ad_stat_click_params\030\010 \001(\t\022" +
-      "\027\n\017is_show_ad_sign\030\t \002(\010\022\031\n\021click_monito" +
-      "r_url\030\n \001(\t\022\034\n\ticon_info\030\013 \001(\0132\t.IconInf" +
-      "o\022\034\n\tskip_type\030\014 \001(\0162\t.SkipType\022\021\n\tclick" +
-      "_url\030\r \001(\t\022\032\n\022ignore_monitor_url\030\016 \001(\t\022\016" +
-      "\n\006source\030\017 \001(\t\022\024\n\014is_clickable\030\020 \001(\010\022\017\n\007" +
-      "click_x\030\021 \001(\t\022\017\n\007click_y\030\022 \001(\t\022\020\n\010tag_co" +
-      "py\030\023 \001(\t\022\026\n\016add_coordinate\030\024 \001(\005\022\023\n\013mate" +
-      "riel_id\030\025 \001(\005\022\'\n\016weChatMiniApps\030\026 \001(\0132\017." +
-      "WeChatMiniApps\"\306\001\n\036AdDynamicBackGroundDe",
-      "scription\022;\n\031ad_background_description\030\001" +
-      " \001(\0132\030.AdBackgroundDescription\022\023\n\013img_zi" +
-      "p_url\030\002 \001(\t\022\020\n\010end_time\030\003 \001(\003\022\014\n\004type\030\004 " +
-      "\001(\005\022\033\n\023dynamic_img_zip_url\030\005 \001(\t\022\025\n\rprop" +
-      "erty_type\030\006 \001(\005\"\201\002\n\022AdBackgroundDetail\022!" +
-      "\n\010pos_stat\030\001 \002(\0162\017.AdPositionStat\022;\n\031ad_" +
-      "background_description\030\002 \001(\0132\030.AdBackgro" +
-      "undDescription\022J\n!ad_dynamic_background_" +
-      "description\030\003 \003(\0132\037.AdDynamicBackGroundD" +
-      "escription\022)\n\020ad_position_link\030\004 \001(\0132\017.A",
-      "dPositionLink\022\024\n\014isAvatarShow\030\005 \001(\010\"\366\001\n\010" +
-      "Sentence\022\023\n\013sentence_id\030\001 \002(\005\022\r\n\005index\030\002" +
-      " \002(\005\022\017\n\007content\030\003 \002(\t\022\020\n\010skip_url\030\004 \002(\t\022" +
-      "\034\n\tskip_type\030\005 \002(\0162\t.SkipType\022\025\n\rentry_c" +
-      "ontent\030\006 \001(\t\022\030\n\020show_statics_url\030\007 \001(\t\022\031" +
-      "\n\021click_statics_url\030\010 \001(\t\022\033\n\023ad_stat_sho" +
-      "w_params\030\t \001(\t\022\034\n\024ad_stat_click_params\030\n" +
-      " \001(\t\"\275\001\n\010Clothing\022\023\n\013clothing_id\030\001 \002(\003\022\036" +
-      "\n\nimage_info\030\002 \002(\0132\n.ImageInfo\022\030\n\020show_s" +
-      "tatics_url\030\003 \001(\t\022\033\n\023ad_stat_show_params\030",
-      "\004 \001(\t\022\034\n\024ad_stat_click_params\030\005 \001(\t\022\'\n\016w" +
-      "eChatMiniApps\030\006 \001(\0132\017.WeChatMiniApps\"\214\003\n" +
-      "\010Property\022\023\n\013property_id\030\001 \002(\005\022\017\n\007click_" +
-      "x\030\002 \002(\005\022\017\n\007click_y\030\003 \002(\005\022\017\n\007click_w\030\004 \002(" +
-      "\005\022\017\n\007click_h\030\005 \002(\005\022\020\n\010skip_url\030\006 \001(\t\022\034\n\t" +
-      "skip_type\030\007 \001(\0162\t.SkipType\022\036\n\nimage_info" +
-      "\030\010 \002(\0132\n.ImageInfo\022\r\n\005img_x\030\t \002(\005\022\r\n\005img" +
-      "_y\030\n \002(\005\022 \n\013image_level\030\013 \002(\0162\013.ImageLev" +
-      "el\022\030\n\020show_statics_url\030\014 \001(\t\022\031\n\021click_st" +
-      "atics_url\030\r \001(\t\022\033\n\023ad_stat_show_params\030\016",
-      " \001(\t\022\034\n\024ad_stat_click_params\030\017 \001(\t\022\'\n\016we" +
-      "ChatMiniApps\030\020 \001(\0132\017.WeChatMiniApps\"Y\n\016A" +
-      "nimationFrame\022\020\n\010frame_id\030\001 \002(\005\022\020\n\010frame" +
-      "_no\030\002 \002(\005\022\021\n\tframe_url\030\003 \002(\t\022\020\n\010duration" +
-      "\030\004 \002(\005\"\221\001\n\tAnimation\022\024\n\014animation_id\030\001 \002" +
-      "(\005\022\027\n\017animation_level\030\002 \002(\005\022\020\n\010interval\030" +
-      "\003 \002(\005\022)\n\020animation_frames\030\004 \003(\0132\017.Animat" +
-      "ionFrame\022\030\n\020show_statics_url\030\005 \001(\t\"\373\001\n\023A" +
-      "dAvatarDescription\022\r\n\005ad_id\030\001 \002(\003\022\036\n\tsho" +
-      "w_type\030\002 \002(\0162\013.AdShowType\022\034\n\tsentences\030\003",
-      " \003(\0132\t.Sentence\022\033\n\010clothing\030\004 \001(\0132\t.Clot" +
-      "hing\022\033\n\010property\030\005 \001(\0132\t.Property\022\035\n\tani" +
-      "mation\030\006 \001(\0132\n.Animation\022\025\n\rproperty_typ" +
-      "e\030\007 \001(\005\022\'\n\016weChatMiniApps\030\010 \001(\0132\017.WeChat" +
-      "MiniApps\"\214\001\n\016AdAvatarDetail\022!\n\010pos_stat\030" +
-      "\001 \002(\0162\017.AdPositionStat\0222\n\024adAvatar_descr" +
-      "iption\030\002 \001(\0132\024.AdAvatarDescription\022#\n\nco" +
-      "ntroller\030\003 \001(\0132\017.ThirdAdControl\"\341\r\n\021AdUt" +
-      "ilDescription\022\r\n\005ad_id\030\001 \002(\003\022\036\n\tshow_typ" +
-      "e\030\002 \002(\0162\013.AdShowType\022\035\n\010position\030\003 \002(\0162\013",
-      ".AdPosition\022\025\n\rposition_name\030\004 \002(\t\022\034\n\tsk" +
-      "ip_type\030\005 \002(\0162\t.SkipType\022\021\n\tclick_url\030\006 " +
-      "\002(\t\022\036\n\nclose_type\030\007 \001(\0162\n.CloseType\022\r\n\005t" +
-      "itle\030\010 \001(\t\022\033\n\023ad_util_description\030\t \001(\t\022" +
-      "\036\n\nimage_info\030\n \001(\0132\n.ImageInfo\022\034\n\ticon_" +
-      "info\030\013 \001(\0132\t.IconInfo\022\031\n\021click_statics_u" +
-      "rl\030\014 \001(\t\022\r\n\005index\030\r \001(\003\022\020\n\010ad_style\030\016 \001(" +
-      "\005\022\020\n\010ad_price\030\017 \001(\005\022\030\n\020show_statics_url\030" +
-      "\020 \001(\t\022\031\n\021close_statics_url\030\021 \001(\t\022\033\n\023ad_s" +
-      "tat_show_params\030\022 \001(\t\022\034\n\024ad_stat_click_p",
-      "arams\030\023 \001(\t\022\022\n\nindex_type\030\024 \001(\005\022\027\n\017is_sh" +
-      "ow_ad_sign\030\025 \002(\010\022$\n\rfeed_interval\030\026 \003(\0132" +
-      "\r.FeedInterval\022\037\n\013feed_images\030\027 \003(\0132\n.Im" +
-      "ageInfo\022\021\n\tadvert_id\030\030 \001(\003\022\014\n\004type\030\031 \001(\005" +
-      "\022\024\n\014is_auto_play\030\032 \001(\005\022$\n\020video_image_in" +
-      "fo\030\033 \001(\0132\n.ImageInfo\022\023\n\013video_title\030\034 \001(" +
-      "\t\022\022\n\nstart_time\030\035 \001(\003\022\020\n\010end_time\030\036 \001(\003\022" +
-      "\027\n\017play_valid_time\030\037 \001(\005\022\020\n\010duration\030  \001" +
-      "(\005\022\024\n\014block_height\030! \001(\005\022\027\n\006redDot\030\" \001(\013" +
-      "2\007.RedDot\022\r\n\005level\030# \001(\005\022\030\n\020active_track",
-      "_url\030$ \001(\t\022\023\n\013is_deeplink\030% \001(\010\022\024\n\014deepl" +
-      "ink_url\030& \001(\t\022\031\n\021deeplink_pkg_name\030\' \001(\t" +
-      "\022\035\n\025ad_stat_active_params\030( \001(\t\022\017\n\007addre" +
-      "ss\030) \001(\t\022\013\n\003lon\030* \001(\t\022\013\n\003lat\030+ \001(\t\022\026\n\016ad" +
-      "d_coordinate\030, \001(\005\022\027\n\017close_btn_width\030- " +
-      "\001(\005\022\030\n\020close_btn_height\030. \001(\005\022\034\n\016close_b" +
-      "tn_show\030/ \001(\010:\004true\022\022\n\nadvertiser\0300 \001(\t\022" +
-      "\026\n\016conversion_url\0301 \001(\t\022\024\n\014module_index\030" +
-      "2 \001(\005\022$\n\013native_info\0303 \003(\0132\017.CardNativeI" +
-      "nfo\022%\n\tvideoInfo\0304 \001(\0132\022.AdVideoExtendIn",
-      "fo\022\031\n\013auto_rotate\0305 \001(\010:\004true\022\036\n\nad_publ" +
-      "ish\0306 \003(\0132\n.AdPublish\022\025\n\rproperty_type\0307" +
-      " \001(\005\022\024\n\014is_show_logo\0308 \001(\005\022\030\n\004logo\0309 \001(\013" +
-      "2\n.ImageInfo\022\022\n\nlogo_style\030: \001(\005\022\016\n\006form" +
-      "at\030; \001(\005\022\027\n\017dynamic_zip_url\030< \001(\t\022\020\n\010is_" +
-      "cycle\030= \001(\005\022\024\n\014is_disappear\030> \001(\005\022+\n\020dow" +
-      "nloadMonitors\030? \001(\0132\021.DownloadMonitors\022\'" +
-      "\n\016weChatMiniApps\030@ \001(\0132\017.WeChatMiniApps\022" +
-      "\030\n\020icon_description\030A \001(\t\022\034\n\tpage_type\030B" +
-      " \001(\0162\t.PageType\022\034\n\tskip_mode\030C \003(\0132\t.Ski",
-      "pMode\022!\n\031skip_list_show_monitoring\030D \001(\t" +
-      "\022!\n\013miaoZhenSDK\030E \001(\0162\014.MiaoZhenSDK\"\244\001\n\021" +
-      "AdVideoExtendInfo\022\021\n\tfile_size\030\001 \001(\002\022!\n\r" +
-      "lastFrameIcon\030\002 \001(\0132\n.ImageInfo\022\025\n\rlastF" +
-      "rameText\030\003 \001(\t\022\031\n\021lastFrameClickUrl\030\004 \001(" +
-      "\t\022\021\n\tis_repeat\030\005 \001(\010\022\024\n\014link_content\030\006 \001" +
-      "(\t\"\323\001\n\014AdUtilDetail\022!\n\010pos_stat\030\001 \002(\0162\017." +
-      "AdPositionStat\022 \n\013position_id\030\002 \002(\0162\013.Ad" +
-      "Position\022.\n\022adUtil_description\030\003 \001(\0132\022.A" +
-      "dUtilDescription\022#\n\ncontroller\030\004 \001(\0132\017.T",
-      "hirdAdControl\022)\n\020ad_position_link\030\005 \001(\0132" +
-      "\017.AdPositionLink\"\231\001\n\013AdTabDetail\022!\n\010pos_" +
-      "stat\030\001 \002(\0162\017.AdPositionStat\022 \n\013position_" +
-      "id\030\002 \002(\0162\013.AdPosition\022,\n\021adTab_descripti" +
-      "on\030\003 \001(\0132\021.ADTabDescription\022\027\n\006redDot\030\004 " +
-      "\001(\0132\007.RedDot\"\206\004\n\020ADTabDescription\022\n\n\002id\030" +
-      "\001 \002(\003\022\021\n\tadvert_id\030\002 \002(\003\022\037\n\013nav_top_img\030" +
-      "\003 \001(\0132\n.ImageInfo\022\"\n\016nav_bottom_img\030\005 \001(" +
-      "\0132\n.ImageInfo\022\037\n\013home_select\030\007 \002(\0132\n.Ima" +
-      "geInfo\022!\n\rhome_unselect\030\010 \002(\0132\n.ImageInf",
-      "o\022\037\n\013live_select\030\t \002(\0132\n.ImageInfo\022!\n\rli" +
-      "ve_unselect\030\n \002(\0132\n.ImageInfo\022\035\n\tme_sele" +
-      "ct\030\013 \002(\0132\n.ImageInfo\022\037\n\013me_unselect\030\014 \002(" +
-      "\0132\n.ImageInfo\022\033\n\023ad_stat_show_params\030\r \001" +
-      "(\t\022\034\n\024ad_stat_click_params\030\016 \001(\t\022\031\n\021clic" +
-      "k_statics_url\030\017 \001(\t\022\030\n\020show_statics_url\030" +
-      "\020 \001(\t\022\026\n\016add_coordinate\030\021 \001(\005\022\025\n\rpropert" +
-      "y_type\030\022 \001(\005\022\'\n\016weChatMiniApps\030\023 \001(\0132\017.W" +
-      "eChatMiniApps\"D\n\006RedDot\022\020\n\010redDotID\030\001 \001(" +
-      "\005\022\026\n\016is_show_redDot\030\002 \001(\010\022\020\n\010end_time\030\003 ",
-      "\001(\005\"\236\001\n\025AdDiscourseCardDetail\022!\n\010pos_sta" +
-      "t\030\001 \002(\0162\017.AdPositionStat\022 \n\013position_id\030" +
-      "\002 \002(\0162\013.AdPosition\022@\n\033adDiscourseCard_de" +
-      "scription\030\003 \001(\0132\033.AdDiscourseCardDescrip" +
-      "tion\"\375\003\n\032AdDiscourseCardDescription\022\r\n\005a" +
-      "d_id\030\001 \002(\003\022\036\n\tshow_type\030\002 \002(\0162\013.AdShowTy" +
-      "pe\022\035\n\010position\030\003 \002(\0162\013.AdPosition\022\025\n\rpos" +
-      "ition_name\030\004 \002(\t\022\034\n\tskip_type\030\005 \002(\0162\t.Sk" +
-      "ipType\022\021\n\tclick_url\030\006 \002(\t\022\020\n\010url_name\030\007 " +
-      "\002(\t\022\r\n\005title\030\010 \001(\t\022\033\n\023ad_util_descriptio",
-      "n\030\t \001(\t\022\034\n\ticon_info\030\n \001(\0132\t.IconInfo\022\031\n" +
-      "\021click_statics_url\030\013 \001(\t\022\020\n\010ad_style\030\014 \001" +
-      "(\005\022\030\n\020show_statics_url\030\r \001(\t\022\031\n\021close_st" +
-      "atics_url\030\016 \001(\t\022\033\n\023ad_stat_show_params\030\017" +
-      " \001(\t\022\034\n\024ad_stat_click_params\030\020 \001(\t\022\020\n\010is" +
-      "_eject\030\021 \001(\010\022\025\n\rproperty_type\030\022 \001(\005\022\'\n\016w" +
-      "eChatMiniApps\030\023 \001(\0132\017.WeChatMiniApps\"\227\001\n" +
-      "\022AdAvatarCardDetail\022!\n\010pos_stat\030\001 \002(\0162\017." +
-      "AdPositionStat\022 \n\013position_id\030\002 \002(\0162\013.Ad" +
-      "Position\022<\n\032ad_avatar_card_description\030\003",
-      " \001(\0132\030.AdAvatarCardDescription\"\315\005\n\027AdAva" +
-      "tarCardDescription\022\r\n\005ad_id\030\001 \002(\003\022\021\n\tsho" +
-      "w_type\030\002 \002(\005\022\034\n\tskip_type\030\003 \002(\0162\t.SkipTy" +
-      "pe\022\021\n\tclick_url\030\004 \002(\t\022\034\n\ticon_info\030\005 \001(\013" +
-      "2\t.IconInfo\022\025\n\rwords_content\030\006 \001(\t\022\021\n\two" +
-      "rds_col\030\007 \001(\t\022\035\n\twords_img\030\010 \001(\0132\n.Image" +
-      "Info\022\026\n\016button_content\030\t \001(\t\022\036\n\nbutton_i" +
-      "mg\030\n \001(\0132\n.ImageInfo\022\022\n\nbutton_col\030\013 \001(\t" +
-      "\022\030\n\020show_statics_url\030\014 \001(\t\022\031\n\021click_stat" +
-      "ics_url\030\r \001(\t\022\033\n\023ad_stat_show_params\030\016 \001",
-      "(\t\022\034\n\024ad_stat_click_params\030\017 \001(\t\022\020\n\010is_e" +
-      "ject\030\020 \001(\010\022\025\n\rinterval_time\030\021 \001(\003\022\023\n\013is_" +
-      "carousel\030\022 \001(\010\022\026\n\016card_show_time\030\023 \001(\003\022\027" +
-      "\n\017pop_queue_start\030\024 \001(\003\022\027\n\017pop_queue_lim" +
-      "it\030\025 \001(\003\022\032\n\022manual_queue_start\030\026 \001(\003\022\032\n\022" +
-      "manual_queue_limit\030\027 \001(\003\022\022\n\nstart_time\030\030" +
-      " \001(\005\022\020\n\010end_time\030\031 \001(\005\022\026\n\016add_coordinate" +
-      "\030\032 \001(\005\022\025\n\rproperty_type\030\033 \001(\005\022\'\n\016weChatM" +
-      "iniApps\030\034 \001(\0132\017.WeChatMiniApps\"\240\001\n\025AdAva" +
-      "tarClothesDetail\022!\n\010pos_stat\030\001 \002(\0162\017.AdP",
-      "ositionStat\022 \n\013position_id\030\002 \002(\0162\013.AdPos" +
-      "ition\022B\n\035ad_avatar_clothes_description\030\003" +
-      " \001(\0132\033.AdAvatarClothesDescription\"\231\001\n\032Ad" +
-      "AvatarClothesDescription\022\r\n\005ad_id\030\001 \002(\003\022" +
-      "\036\n\nimage_info\030\002 \001(\0132\n.ImageInfo\022\030\n\020show_" +
-      "monitor_url\030\003 \001(\t\022\033\n\023ad_stat_show_params" +
-      "\030\004 \001(\t\022\025\n\rproperty_type\030\005 \001(\005\"\305\001\n\023AdAvat" +
-      "arPropsDetail\022!\n\010pos_stat\030\001 \002(\0162\017.AdPosi" +
-      "tionStat\022 \n\013position_id\030\002 \002(\0162\013.AdPositi" +
-      "on\022>\n\033ad_avatar_props_description\030\003 \001(\0132",
-      "\031.AdAvatarPropsDescription\022)\n\020ad_positio" +
-      "n_link\030\004 \001(\0132\017.AdPositionLink\"\255\003\n\030AdAvat" +
-      "arPropsDescription\022\r\n\005ad_id\030\001 \002(\003\022\022\n\nlay" +
-      "er_type\030\002 \002(\005\022\036\n\nimage_info\030\003 \002(\0132\n.Imag" +
-      "eInfo\022\034\n\tskip_type\030\004 \002(\0162\t.SkipType\022\021\n\tc" +
-      "lick_url\030\005 \002(\t\022\017\n\007layer_x\030\006 \001(\005\022\017\n\007layer" +
-      "_y\030\007 \001(\005\022\017\n\007click_x\030\010 \001(\005\022\017\n\007click_y\030\t \001" +
-      "(\005\022\023\n\013click_width\030\n \001(\005\022\024\n\014click_height\030" +
-      "\013 \001(\005\022\030\n\020show_statics_url\030\014 \001(\t\022\031\n\021click" +
-      "_statics_url\030\r \001(\t\022\033\n\023ad_stat_show_param",
-      "s\030\016 \001(\t\022\034\n\024ad_stat_click_params\030\017 \001(\t\022\025\n" +
-      "\rproperty_type\030\020 \001(\005\022\'\n\016weChatMiniApps\030\021" +
-      " \001(\0132\017.WeChatMiniApps\"\255\001\n\031AdDisplayWindo" +
-      "wCardDetail\022!\n\010pos_stat\030\001 \002(\0162\017.AdPositi" +
-      "onStat\022 \n\013position_id\030\002 \002(\0162\013.AdPosition" +
-      "\022K\n\"ad_display_window_card_description\030\003" +
-      " \001(\0132\037.AdDisplayWindowCardDescription\"\354\002" +
-      "\n\036AdDisplayWindowCardDescription\022\r\n\005ad_i" +
-      "d\030\001 \002(\003\022\021\n\ttag_index\030\002 \001(\005\022\034\n\tskip_type\030" +
-      "\003 \002(\0162\t.SkipType\022\021\n\tclick_url\030\004 \002(\t\022\036\n\ni",
-      "mage_info\030\005 \002(\0132\n.ImageInfo\022\017\n\007content\030\006" +
-      " \001(\t\022\030\n\020show_statics_url\030\007 \001(\t\022\031\n\021click_" +
-      "statics_url\030\010 \001(\t\022\033\n\023ad_stat_show_params" +
-      "\030\t \001(\t\022\034\n\024ad_stat_click_params\030\n \001(\t\022\026\n\016" +
-      "add_coordinate\030\013 \001(\005\022\025\n\rproperty_type\030\014 " +
-      "\001(\005\022\'\n\016weChatMiniApps\030\r \001(\0132\017.WeChatMini" +
-      "Apps\"\311\002\n\020AdBlockingDetail\022!\n\010pos_stat\030\001 " +
-      "\002(\0162\017.AdPositionStat\022 \n\013position_id\030\002 \002(" +
-      "\0162\013.AdPosition\022\r\n\005ad_id\030\003 \002(\003\022\025\n\rpositio" +
-      "n_name\030\004 \001(\t\022\r\n\005title\030\005 \001(\t\022\033\n\023ad_util_d",
-      "escription\030\006 \001(\t\0227\n\027ad_blocking_descript" +
-      "ion\030\007 \001(\0132\026.AdBlockingDescription\022.\n\022blo" +
-      "cking_frequency\030\010 \001(\0132\022.BlockingFrequenc" +
-      "y\022#\n\ncontroller\030\t \001(\0132\017.ThirdAdControl\022\020" +
-      "\n\010is_popup\030\n \001(\010\"\210\001\n\021BlockingFrequency\022\027" +
-      "\n\017total_frequency\030\001 \001(\005\022\027\n\017brand_frequen" +
-      "cy\030\002 \001(\005\022\025\n\rapi_frequency\030\003 \001(\005\022\025\n\rsdk_f" +
-      "requency\030\004 \001(\005\022\023\n\013position_id\030\005 \001(\005\"\230\010\n\025" +
-      "AdBlockingDescription\022\036\n\tshow_type\030\001 \002(\016" +
-      "2\013.AdShowType\022\035\n\010position\030\002 \002(\0162\013.AdPosi",
-      "tion\022\034\n\tskip_type\030\003 \002(\0162\t.SkipType\022\021\n\tcl" +
-      "ick_url\030\004 \002(\t\022\020\n\010tab_type\030\005 \001(\005\022%\n\021selec" +
-      "t_image_info\030\006 \001(\0132\n.ImageInfo\022\'\n\023unsele" +
-      "ct_image_info\030\007 \001(\0132\n.ImageInfo\022\'\n\023block" +
-      "ing_image_info\030\010 \001(\0132\n.ImageInfo\022\034\n\ticon" +
-      "_info\030\t \001(\0132\t.IconInfo\022\022\n\nicon_title\030\n \001" +
-      "(\t\022\031\n\021tab_click_monitor\030\013 \001(\t\022\030\n\020tab_sho" +
-      "w_monitor\030\014 \001(\t\022\033\n\023block_click_monitor\030\r" +
-      " \001(\t\022\032\n\022block_show_monitor\030\016 \001(\t\022\032\n\022icon" +
-      "_click_monitor\030\017 \001(\t\022\031\n\021icon_show_monito",
-      "r\030\020 \001(\t\022\031\n\021close_statics_url\030\021 \001(\t\022\037\n\027ad" +
-      "_stat_tab_show_params\030\022 \001(\t\022 \n\030ad_stat_t" +
-      "ab_click_params\030\023 \001(\t\022!\n\031ad_stat_block_s" +
-      "how_params\030\024 \001(\t\022\"\n\032ad_stat_block_click_" +
-      "params\030\025 \001(\t\022 \n\030ad_stat_icon_show_params" +
-      "\030\026 \001(\t\022!\n\031ad_stat_icon_click_params\030\027 \001(" +
-      "\t\022\027\n\017is_show_ad_sign\030\030 \002(\010\022\035\n\tanimation\030" +
-      "\031 \001(\0132\n.ImageInfo\022 \n\014close_button\030\032 \001(\0132" +
-      "\n.ImageInfo\022\035\n\025close_button_position\030\033 \001" +
-      "(\005\022\026\n\016add_coordinate\030\034 \001(\005\022\025\n\rproperty_t",
-      "ype\030\035 \001(\005\022+\n\020downloadMonitors\030\036 \001(\0132\021.Do" +
-      "wnloadMonitors\022\'\n\016weChatMiniApps\030\037 \001(\0132\017" +
-      ".WeChatMiniApps\022\022\n\nlogo_style\030  \001(\005\022\033\n\007a" +
-      "d_logo\030! \001(\0132\n.ImageInfo\022\024\n\014is_show_logo" +
-      "\030\" \001(\005\"\374\002\n\025AdAssistReplaceDetail\022!\n\010pos_" +
-      "stat\030\001 \002(\0162\017.AdPositionStat\022\r\n\005ad_id\030\002 \001" +
-      "(\003\022\035\n\010position\030\003 \002(\0162\013.AdPosition\022\021\n\tadv" +
-      "ert_id\030\004 \001(\003\022\030\n\020global_boot_text\030\005 \001(\t\022\032" +
-      "\n\022global_button_text\030\006 \001(\t\022%\n\007clothes\030\007 " +
-      "\001(\0132\024.AssistClothesAdvert\022\'\n\010sentense\030\010 ",
-      "\003(\0132\025.AssistSentenseAdvert\022$\n\rassist_det" +
-      "ail\030\t \001(\0132\r.AssistDetail\022\022\n\nreplace_id\030\n" +
-      " \003(\005\022(\n\014assist_props\030\013 \001(\0132\022.AssistProps" +
-      "Advert\022\025\n\rproperty_type\030\014 \001(\005\"l\n\023AssistC" +
-      "lothesAdvert\022\036\n\nimage_info\030\001 \001(\0132\n.Image" +
-      "Info\022\030\n\020show_monitor_url\030\002 \001(\t\022\033\n\023ad_sta" +
-      "t_show_params\030\003 \001(\t\"\315\003\n\024AssistSentenseAd" +
-      "vert\022\034\n\tskip_type\030\001 \002(\0162\t.SkipType\022\021\n\tcl" +
-      "ick_url\030\002 \002(\t\022\021\n\tshow_type\030\003 \001(\005\022\r\n\005inde" +
-      "x\030\004 \001(\005\022\034\n\010icon_img\030\005 \001(\0132\n.ImageInfo\022\025\n",
-      "\rwords_content\030\006 \001(\t\022\021\n\twords_col\030\007 \001(\t\022" +
-      "\035\n\twords_img\030\010 \001(\0132\n.ImageInfo\022\026\n\016button" +
-      "_content\030\t \001(\t\022\036\n\nbutton_img\030\n \001(\0132\n.Ima" +
-      "geInfo\022\022\n\nbutton_col\030\013 \001(\t\022\030\n\020show_stati" +
-      "cs_url\030\014 \001(\t\022\031\n\021click_statics_url\030\r \001(\t\022" +
-      "\033\n\023ad_stat_show_params\030\016 \001(\t\022\034\n\024ad_stat_" +
-      "click_params\030\017 \001(\t\022\026\n\016add_coordinate\030\020 \001" +
-      "(\005\022\'\n\016weChatMiniApps\030\021 \001(\0132\017.WeChatMiniA" +
-      "pps\"\217\003\n\021AssistPropsAdvert\022\r\n\005ad_id\030\001 \002(\003" +
-      "\022\022\n\nlayer_type\030\002 \002(\005\022\036\n\nimage_info\030\003 \002(\013",
-      "2\n.ImageInfo\022\034\n\tskip_type\030\004 \002(\0162\t.SkipTy" +
-      "pe\022\021\n\tclick_url\030\005 \002(\t\022\017\n\007layer_x\030\006 \001(\005\022\017" +
-      "\n\007layer_y\030\007 \001(\005\022\017\n\007click_x\030\010 \001(\005\022\017\n\007clic" +
-      "k_y\030\t \001(\005\022\023\n\013click_width\030\n \001(\005\022\024\n\014click_" +
-      "height\030\013 \001(\005\022\030\n\020show_statics_url\030\014 \001(\t\022\031" +
-      "\n\021click_statics_url\030\r \001(\t\022\033\n\023ad_stat_sho" +
-      "w_params\030\016 \001(\t\022\034\n\024ad_stat_click_params\030\017" +
-      " \001(\t\022\'\n\016weChatMiniApps\030\021 \001(\0132\017.WeChatMin" +
-      "iApps\"\353\002\n\014AssistDetail\022\014\n\004type\030\001 \002(\005\022\013\n\003" +
-      "sex\030\002 \002(\005\022\024\n\014content_type\030\003 \002(\005\022\017\n\007act_n",
-      "um\030\004 \002(\005\022\013\n\003num\030\005 \002(\005\022\016\n\006is_new\030\006 \002(\005\022\014\n" +
-      "\004name\030\007 \001(\t\022\r\n\005brief\030\010 \001(\t\022\014\n\004desc\030\t \001(\t" +
-      "\022\030\n\004icon\030\n \001(\0132\n.ImageInfo\022\033\n\007card_bg\030\013 " +
-      "\001(\0132\n.ImageInfo\022\037\n\013default_img\030\014 \001(\0132\n.I" +
-      "mageInfo\022\021\n\tvoice_zip\030\r \001(\t\022\026\n\016voice_aud" +
-      "ition\030\016 \001(\t\022&\n\013assist_card\030\017 \003(\0132\021.Assis" +
-      "tCardAdvert\022\r\n\005index\030\020 \001(\005\022\027\n\017is_show_ad" +
-      "_sign\030\021 \001(\010\"A\n\020AssistCardAdvert\022\r\n\005index" +
-      "\030\001 \002(\003\022\036\n\ncard_image\030\002 \001(\0132\n.ImageInfo\"\210" +
-      "\001\n\016AdPositionLink\022\017\n\007is_link\030\001 \001(\005\022\014\n\004ty",
-      "pe\030\002 \001(\005\022\022\n\nlink_ad_id\030\003 \003(\003\022\025\n\rtriggera" +
-      "ction\030\004 \001(\005\022\022\n\nlink_effet\030\005 \001(\003\022\030\n\020link_" +
-      "position_id\030\006 \001(\005\"\203\001\n\023AdSuitClothesDetai" +
-      "l\022!\n\010pos_stat\030\001 \002(\0162\017.AdPositionStat\022 \n\013" +
-      "position_id\030\002 \002(\0162\013.AdPosition\022\'\n\017ad_sui" +
-      "t_clothes\030\003 \001(\0132\016.AdSuitClothes\"\337\002\n\rAdSu" +
-      "itClothes\022\r\n\005ad_id\030\001 \002(\003\022\025\n\ris_need_clea" +
-      "r\030\002 \001(\010\022\025\n\rshow_ad_index\030\003 \001(\005\022?\n\026ad_sui" +
-      "t_avatar_clothes\030\004 \001(\0132\037.AdSuitAvatarClo" +
-      "thesDescription\022;\n\024ad_suit_avatar_props\030",
-      "\005 \001(\0132\035.AdSuitAvatarPropsDescription\0229\n\023" +
-      "ad_suit_avatar_card\030\006 \001(\0132\034.AdSuitAvatar" +
-      "CardDescription\022\036\n\nad_publish\030\007 \003(\0132\n.Ad" +
-      "Publish\022\025\n\rproperty_type\030\010 \001(\005\022!\n\013miaoZh" +
-      "enSDK\030\t \001(\0162\014.MiaoZhenSDK\"[\n\tAdPublish\022\013" +
-      "\n\003url\030\001 \001(\t\022\022\n\nstart_time\030\002 \001(\003\022\020\n\010end_t" +
-      "ime\030\003 \001(\003\022\r\n\005ad_id\030\004 \001(\003\022\014\n\004type\030\005 \001(\005\"\212" +
-      "\002\n\036AdSuitAvatarClothesDescription\022\r\n\005ad_" +
-      "id\030\001 \002(\003\022\036\n\nimage_info\030\002 \001(\0132\n.ImageInfo" +
-      "\022\030\n\020show_monitor_url\030\003 \001(\t\022\033\n\023ad_stat_sh",
-      "ow_params\030\004 \001(\t\022\035\n\010position\030\005 \001(\0162\013.AdPo" +
-      "sition\022\027\n\017dynamic_zip_url\030\006 \001(\t\022$\n\007dynam" +
-      "ic\030\007 \001(\0132\023.SuitClothesDynamic\022\022\n\nstart_t" +
-      "ime\030\010 \001(\005\022\020\n\010end_time\030\t \001(\005\"\262\001\n\022SuitClot" +
-      "hesDynamic\022\020\n\010skinname\030\001 \001(\t\022\"\n\032is_group" +
-      "_animations_repeat\030\002 \001(\005\022\027\n\017group_delayT" +
-      "ime\030\003 \001(\005\022\017\n\007is_mask\030\004 \001(\005\022\036\n\006action\030\005 \003" +
-      "(\0132\016.DynamicAction\022\034\n\005slots\030\006 \003(\0132\r.Dyna" +
-      "micSlots\"d\n\rDynamicAction\022\014\n\004name\030\001 \001(\t\022" +
-      "\016\n\006repeat\030\002 \001(\005\022\016\n\006random\030\003 \001(\005\022\022\n\nissur",
-      "prise\030\004 \001(\005\022\021\n\tdelaytime\030\005 \001(\005\"8\n\014Dynami" +
-      "cSlots\022\014\n\004skin\030\001 \001(\t\022\014\n\004slot\030\002 \001(\t\022\014\n\004na" +
-      "me\030\003 \001(\t\"\374\006\n\033AdSuitAvatarCardDescription" +
-      "\022\r\n\005ad_id\030\001 \002(\003\022\021\n\tshow_type\030\002 \002(\005\022\034\n\tsk" +
-      "ip_type\030\003 \002(\0162\t.SkipType\022\021\n\tclick_url\030\004 " +
-      "\002(\t\022\034\n\ticon_info\030\005 \001(\0132\t.IconInfo\022\025\n\rwor" +
-      "ds_content\030\006 \001(\t\022\021\n\twords_col\030\007 \001(\t\022\035\n\tw" +
-      "ords_img\030\010 \001(\0132\n.ImageInfo\022\026\n\016button_con" +
-      "tent\030\t \001(\t\022\036\n\nbutton_img\030\n \001(\0132\n.ImageIn" +
-      "fo\022\022\n\nbutton_col\030\013 \001(\t\022\030\n\020show_statics_u",
-      "rl\030\014 \001(\t\022\031\n\021click_statics_url\030\r \001(\t\022\033\n\023a" +
-      "d_stat_show_params\030\016 \001(\t\022\034\n\024ad_stat_clic" +
-      "k_params\030\017 \001(\t\022\020\n\010is_eject\030\020 \001(\010\022\025\n\rinte" +
-      "rval_time\030\021 \001(\003\022\023\n\013is_carousel\030\022 \001(\010\022\026\n\016" +
-      "card_show_time\030\023 \001(\003\022\027\n\017pop_queue_start\030" +
-      "\024 \001(\003\022\027\n\017pop_queue_limit\030\025 \001(\003\022\032\n\022manual" +
-      "_queue_start\030\026 \001(\003\022\032\n\022manual_queue_limit" +
-      "\030\027 \001(\003\022\022\n\nstart_time\030\030 \001(\005\022\020\n\010end_time\030\031" +
-      " \001(\005\022\035\n\010position\030\032 \001(\0162\013.AdPosition\022\026\n\016a" +
-      "dd_coordinate\030\033 \001(\005\022\031\n\005vedio\030\034 \001(\0132\n.Ima",
-      "geInfo\022\037\n\013vedio_cover\030\035 \001(\0132\n.ImageInfo\022" +
-      "$\n\013native_info\030\036 \003(\0132\017.CardNativeInfo\022\024\n" +
-      "\014is_auto_play\030\037 \001(\005\022\027\n\017play_valid_time\030 " +
-      " \001(\005\022\020\n\010duration\030! \001(\005\022\'\n\016weChatMiniApps" +
-      "\030\" \001(\0132\017.WeChatMiniApps\"\365\002\n\016CardNativeIn" +
-      "fo\022\014\n\004type\030\001 \002(\005\022\r\n\005index\030\002 \002(\005\022\030\n\004info\030" +
-      "\003 \001(\0132\n.ImageInfo\022\r\n\005color\030\004 \001(\t\022\014\n\004text" +
-      "\030\005 \001(\t\022\035\n\tvedio_url\030\006 \001(\0132\n.ImageInfo\022\021\n" +
-      "\tclick_url\030\007 \001(\t\022\023\n\013show_params\030\010 \001(\t\022\024\n" +
-      "\014click_params\030\t \001(\t\022\034\n\tskip_type\030\n \001(\0162\t",
-      ".SkipType\022\030\n\020show_statics_url\030\013 \001(\t\022\031\n\021c" +
-      "lick_statics_url\030\014 \001(\t\022\'\n\013advideoInfo\030\r " +
-      "\001(\0132\022.AdVideoExtendInfo\022\033\n\rrequest_focus" +
-      "\030\016 \001(\010:\004true\022\031\n\013auto_rotate\030\017 \001(\010:\004true\"" +
-      "\374\003\n\034AdSuitAvatarPropsDescription\022\r\n\005ad_i" +
-      "d\030\001 \002(\003\022\022\n\nlayer_type\030\002 \002(\005\022\036\n\nimage_inf" +
-      "o\030\003 \002(\0132\n.ImageInfo\022\034\n\tskip_type\030\004 \002(\0162\t" +
-      ".SkipType\022\021\n\tclick_url\030\005 \002(\t\022\017\n\007layer_x\030" +
-      "\006 \001(\005\022\017\n\007layer_y\030\007 \001(\005\022\017\n\007click_x\030\010 \001(\005\022" +
-      "\017\n\007click_y\030\t \001(\005\022\023\n\013click_width\030\n \001(\005\022\024\n",
-      "\014click_height\030\013 \001(\005\022\030\n\020show_statics_url\030" +
-      "\014 \001(\t\022\031\n\021click_statics_url\030\r \001(\t\022\033\n\023ad_s" +
-      "tat_show_params\030\016 \001(\t\022\034\n\024ad_stat_click_p" +
-      "arams\030\017 \001(\t\022)\n\020ad_position_link\030\020 \001(\0132\017." +
-      "AdPositionLink\022\035\n\010position\030\021 \001(\0162\013.AdPos" +
-      "ition\022\026\n\016add_coordinate\030\022 \001(\005\022\'\n\016weChatM" +
-      "iniApps\030\023 \001(\0132\017.WeChatMiniApps\"\273\001\n\025Avata" +
-      "rMergeStarDetail\022\023\n\013avatar_type\030\001 \002(\003\022 \n" +
-      "\013position_id\030\002 \002(\0162\013.AdPosition\022;\n\031avata" +
-      "r_banner_description\030\003 \003(\0132\030.AvatarBanne",
-      "rDescription\022.\n\022avatar_description\030\004 \003(\013" +
-      "2\022.AvatarDescription\"\235\001\n\027AvatarBannerDes" +
-      "cription\022\n\n\002id\030\001 \001(\005\022\021\n\tbannerUrl\030\002 \001(\t\022" +
-      "\020\n\010jumpType\030\003 \001(\005\022\017\n\007jumpUrl\030\004 \001(\t\022\020\n\010av" +
-      "atarId\030\005 \001(\005\022.\n\022avatar_description\030\006 \001(\013" +
-      "2\022.AvatarDescription\"x\n\020AvatarSuitDetail" +
-      "\022\022\n\nisShowMore\030\001 \001(\010\022 \n\013position_id\030\002 \002(" +
-      "\0162\013.AdPosition\022.\n\022avatar_description\030\003 \003" +
-      "(\0132\022.AvatarDescription\"\223\003\n\021AvatarDescrip" +
-      "tion\022\n\n\002id\030\001 \001(\005\022\021\n\tshow_type\030\002 \001(\005\022\014\n\004t",
-      "ype\030\003 \001(\005\022\014\n\004name\030\004 \001(\t\022\016\n\006prefix\030\005 \001(\t\022" +
-      "\013\n\003key\030\006 \001(\t\022\017\n\007details\030\007 \001(\t\022\017\n\007faceurl" +
-      "\030\010 \001(\t\022\014\n\004durl\030\t \001(\t\022\r\n\005bkurl\030\n \001(\t\022\017\n\007c" +
-      "ardurl\030\013 \001(\t\022\016\n\006useNum\030\014 \001(\003\022\017\n\007voiceId\030" +
-      "\r \001(\005\022\013\n\003sex\030\016 \001(\005\022\020\n\010trialUrl\030\017 \001(\t\022\020\n\010" +
-      "voiceUrl\030\020 \001(\t\022\r\n\005isNew\030\021 \001(\010\022\022\n\nrankDet" +
-      "ail\030\022 \001(\005\022\022\n\nstrartDate\030\023 \001(\t\022\017\n\007endDate" +
-      "\030\024 \001(\t\022\034\n\024cardValidTimeDetails\030\025 \001(\t\022\036\n\026" +
-      "star_voice_information\030\026 \001(\t\"\201\002\n\026AvatarV" +
-      "oiceDescription\022\n\n\002id\030\001 \001(\005\022\014\n\004type\030\002 \001(",
-      "\005\022\014\n\004name\030\003 \001(\t\022\013\n\003key\030\004 \001(\t\022\017\n\007details\030" +
-      "\005 \001(\t\022\013\n\003sex\030\006 \001(\005\022\r\n\005isNew\030\007 \001(\010\022\016\n\006img" +
-      "Url\030\010 \001(\t\022\020\n\010trialUrl\030\t \001(\t\022\020\n\010voiceUrl\030" +
-      "\n \001(\t\022\016\n\006useNum\030\013 \001(\003\022\022\n\nstrartDate\030\014 \001(" +
-      "\t\022\017\n\007endDate\030\r \001(\t\022\034\n\024cardValidTimeDetai" +
-      "ls\030\016 \001(\t\"\262\001\n\027AvataStarResourceDetail\022\020\n\010" +
-      "avatarId\030\001 \002(\005\022 \n\013position_id\030\002 \002(\0162\013.Ad" +
-      "Position\022$\n\rclothes_model\030\003 \001(\0132\r.Clothe" +
-      "sModel\022(\n\017sentenses_model\030\004 \003(\0132\017.Senten" +
-      "sesModel\022\023\n\013update_time\030\005 \001(\003\"-\n\014Clothes",
-      "Model\022\020\n\010position\030\001 \001(\005\022\013\n\003url\030\002 \001(\t\"L\n\016" +
-      "SentensesModel\022\017\n\007content\030\001 \001(\t\022\013\n\003url\030\002" +
-      " \001(\t\022\r\n\005entry\030\003 \001(\t\022\r\n\005order\030\004 \001(\005\"5\n\020Fr" +
-      "equencyControl\022\r\n\005ad_id\030\001 \001(\003\022\022\n\nshow_co" +
-      "unt\030\002 \001(\005\"\233\001\n\010SkipMode\022\034\n\tskip_type\030\001 \002(" +
-      "\0162\t.SkipType\022\021\n\tclick_url\030\002 \002(\t\022\020\n\010prior" +
-      "ity\030\003 \001(\005\022\'\n\016weChatMiniApps\030\004 \001(\0132\017.WeCh" +
-      "atMiniApps\022#\n\033click_monitoring_connectio" +
-      "n\030\005 \001(\t\"\303\010\n\nAdResponse\022\022\n\nsession_id\030\001 \002" +
-      "(\t\022\037\n\010res_stat\030\002 \002(\0162\r.ResponseStat\022\025\n\re",
-      "rror_message\030\003 \001(\t\022\030\n\007ad_type\030\004 \002(\0162\007.Ad" +
-      "Type\022)\n\020ad_splash_detail\030\005 \001(\0132\017.AdSplas" +
-      "hDetail\0222\n\025ad_back_ground_detail\030\006 \001(\0132\023" +
-      ".AdBackgroundDetail\022)\n\020as_avatar_detail\030" +
-      "\007 \001(\0132\017.AdAvatarDetail\022%\n\016ad_util_detail" +
-      "\030\010 \003(\0132\r.AdUtilDetail\022\031\n\021invalid_advert_" +
-      "id\030\t \003(\003\022#\n\rad_tab_detail\030\n \001(\0132\014.AdTabD" +
-      "etail\0228\n\030ad_discourse_card_detail\030\013 \001(\0132" +
-      "\026.AdDiscourseCardDetail\022\021\n\tbase64img\030\014 \001" +
-      "(\014\0222\n\025ad_avatar_card_detail\030\r \003(\0132\023.AdAv",
-      "atarCardDetail\0228\n\030ad_avatar_clothes_deta" +
-      "il\030\016 \001(\0132\026.AdAvatarClothesDetail\0224\n\026ad_a" +
-      "vatar_props_detail\030\017 \001(\0132\024.AdAvatarProps" +
-      "Detail\022A\n\035ad_display_window_card_detail\030" +
-      "\020 \001(\0132\032.AdDisplayWindowCardDetail\022-\n\022ad_" +
-      "blocking_detail\030\021 \003(\0132\021.AdBlockingDetail" +
-      "\0228\n\030ad_assist_replace_detail\030\022 \001(\0132\026.AdA" +
-      "ssistReplaceDetail\0224\n\026ad_suit_clothes_de" +
-      "tail\030\023 \001(\0132\024.AdSuitClothesDetail\022\033\n\023new_" +
-      "user_start_time\030\024 \001(\003\022\031\n\021new_user_end_ti",
-      "me\030\025 \001(\003\0228\n\030avatar_merge_star_detail\030\026 \001" +
-      "(\0132\026.AvatarMergeStarDetail\022-\n\022avatar_sui" +
-      "t_detail\030\027 \001(\0132\021.AvatarSuitDetail\022<\n\032ava" +
-      "ta_star_resource_detail\030\030 \001(\0132\030.AvataSta" +
-      "rResourceDetail\022,\n\021frequency_control\030\031 \003" +
-      "(\0132\021.FrequencyControl\"N\n\tFeedClick\022\027\n\006ac" +
-      "tion\030\001 \002(\0132\007.Action\022\022\n\npositionId\030\002 \002(\005\022" +
-      "\024\n\014manufacturer\030\003 \002(\t\"Y\n\006Action\022\037\n\nactio" +
-      "nType\030\001 \002(\0162\013.ActionType\022\013\n\003url\030\002 \002(\t\022!\n" +
-      "\013contentType\030\003 \002(\0162\014.ContentType\"\345\001\n\020Dow",
-      "nloadMonitors\022!\n\031ad_stat_down_start_para" +
-      "ms\030\001 \001(\t\022\"\n\032ad_stat_down_finish_params\030\002" +
-      " \001(\t\022%\n\035ad_stat_install_finish_params\030\003 " +
-      "\001(\t\022\036\n\026ad_stat_down_start_url\030\004 \001(\t\022\037\n\027a" +
-      "d_stat_down_finish_url\030\005 \001(\t\022\"\n\032ad_stat_" +
-      "install_finish_url\030\006 \001(\t\"2\n\016WeChatMiniAp" +
-      "ps\022\022\n\nmini_appid\030\001 \001(\t\022\014\n\004type\030\004 \001(\005*p\n\016" +
-      "AdPositionStat\022\022\n\016AD_UNAVAILABLE\020\001\022\024\n\020AD" +
-      "_SELF_PRIORITY\020\002\022\031\n\025AD_THIRD_SDK_PRIORIT" +
-      "Y\020\003\022\031\n\025AD_THIRD_API_PRIORITY\020\004*C\n\010Platfo",
-      "rm\022\013\n\007ANDROID\020\001\022\007\n\003IOS\020\002\022\013\n\007WINDOWS\020\003\022\n\n" +
-      "\006OTHERS\020\004\022\010\n\004IPAD\020\005*i\n\010Language\022\021\n\rSIMPL" +
-      "IFIED_CH\020\001\022\025\n\021TRADITIONAL_HK_CH\020\002\022\025\n\021TRA" +
-      "DITIONAL_TW_CH\020\004\022\013\n\007ENGLISH\020\010\022\017\n\013LANG_OT" +
-      "HERS\020\020*\243\002\n\nAdShowType\022\020\n\014SPLASH_IMAGE\020\001\022" +
-      "\020\n\014SPLASH_VIDEO\020\002\022\014\n\010BG_IMAGE\020\004\022\020\n\014BG_AN" +
-      "IMATION\020\010\022\023\n\017AVATAR_CLOTHING\020\020\022\023\n\017AVATAR" +
-      "_PROPERTY\020 \022\024\n\020AVATAR_ANIMATION\020@\022\024\n\017AVA" +
-      "TAR_SENTENCE\020\200\001\022\024\n\017UTIL_ONLY_IMAGE\020\200\002\022\025\n" +
-      "\020UTIL_IMAGE_WORDS\020\200\004\022\024\n\017UTIL_ONLY_WORDS\020",
-      "\200\010\022\023\n\016UTIL_ONLY_ICON\020\200\020\022\024\n\017UTIL_ICON_WOR" +
-      "DS\020\200 \022\r\n\010UTIL_MP3\020\200@*\261\022\n\nAdPosition\022\016\n\nP" +
-      "OS_SPLASH\020\001\022\032\n\026POS_WEATHER_BACKGROUND\020e\022" +
-      "\022\n\rPOS_GAME_GATE\020\255\002\022\027\n\022POS_DISCOUNT_ENTR" +
-      "Y\020\256\002\022\036\n\031POS_VOICE_BROADCAST_ABOVE\020\257\002\022\036\n\031" +
-      "POS_VOICE_BROADCAST_UNDER\020\260\002\022\037\n\032POS_WEAT" +
-      "HER_FRONT_PAGE_TOP\020\261\002\022\"\n\035POS_WEATHER_FRO" +
-      "NT_PAGE_MIDDLE\020\262\002\022\"\n\035POS_WEATHER_FRONT_P" +
-      "AGE_BOTTOM\020\263\002\022!\n\034POS_WEATHER_HOME_INDEX_" +
-      "ENTRY\020\264\002\022\030\n\023POS_DRESS_ASSISTANT\020\311\001\022\035\n\030PO",
-      "S_BELOW_CITY_SELECTION\020\351\007\022\034\n\027POS_LIVE_DE" +
-      "TAILS_BOTTOM\020\352\007\022\027\n\022POS_DRESSING_INDEX\020\353\007" +
-      "\022\034\n\027POS_LOWER_DAILY_DETAILS\020\354\007\022\027\n\022POS_IN" +
-      "DEX_H5_BELOW\020\355\007\022\037\n\032POS_LITTLE_INK_SISTER" +
-      "_TIPS\020\356\007\022\036\n\031POS_AIR_INDEX_REVIEW_LIST\020\357\007" +
-      "\022\027\n\022POS_TIME_SCENE_TOP\020\360\007\022\033\n\026POS_TIME_SC" +
-      "ENE_TOP_TWO\020\362\007\022\035\n\030POS_TIME_SCENE_TOP_THR" +
-      "EE\020\363\007\022 \n\033POS_TIME_VIEW_COMMENTS_LIST\020\361\007\022" +
-      "\031\n\024POS_MY_PAGE_FIND_APP\020\321\017\022\035\n\030POS_MY_PAG" +
-      "E_DYNAMIC_MENU\020\322\017\022!\n\034POS_MY_PAGE_DYNAMIC",
-      "_MENU_TWO\020\323\017\022#\n\036POS_MY_PAGE_DYNAMIC_MENU" +
-      "_LOCAL\020\324\017\022\034\n\027POS_PUSH_ARTICLE_MIDDLE\020\271\027\022" +
-      "\"\n\035POS_OPERATING_ARTICLE_CENTRAL\020\272\027\022#\n\036P" +
-      "OS_FEED_STREAM_MIDDLE_ARTICLE\020\273\027\022\037\n\032POS_" +
-      "FEED_STREAM_CARD_ENTRY\020\241\037\022&\n!POS_FEED_ST" +
-      "REAM_CARD_CENTER_ENTRY\020\242\037\022\021\n\014POS_TAB_PAG" +
-      "E\020\211\'\022\027\n\022POS_DISCOURSE_DARD\020\312\001\022!\n\034POS_DRE" +
-      "SS_ASSISTANT_CARD_ONE\020\313\001\022!\n\034POS_DRESS_AS" +
-      "SISTANT_CARD_TWO\020\314\001\022#\n\036POS_DRESS_ASSISTA" +
-      "NT_CARD_THREE\020\315\001\022\034\n\027POS_DISPLAY_WINDOW_C",
-      "ARD\020\316\001\022 \n\033POS_DRESS_ASSISTANT_CLOTHES\020\317\001" +
-      "\022\036\n\031POS_DRESS_ASSISTANT_PROPS\020\320\001\022 \n\033POS_" +
-      "AIR_INDEX_MIDDLE_BANNER\020\365\007\022\033\n\026POS_FEED_S" +
-      "TREAM_BANNER\020\243\037\022 \n\033POS_FEED_STREAM_INFOR" +
-      "MATION\020\244\037\022\030\n\023POS_FEED_NOVEL_CARD\020\246\037\022\034\n\027P" +
-      "OS_FEED_STREAM_DETAILS\020\247\037\022\037\n\032POS_BLOCKIN" +
-      "G_TAB_TIME_PAGE\020\212\'\022\035\n\030POS_BLOCKING_TAB_M" +
-      "Y_PAGE\020\213\'\022\027\n\022POS_ASSIST_REPLACE\020\322\001\022\034\n\027PO" +
-      "S_AVATAR_SUIT_CLOTHES\020\323\001\022\034\n\027POS_FEED_ART" +
-      "ICLE_STREAM\020\250\037\022\033\n\026POS_AVATAR_ASSIST_LIST",
-      "\020\324\001\022\037\n\032POS_AVATAR_LONG_PRESS_LIST\020\325\001\022#\n\036" +
-      "POS_AVATAR_DOWNLOAD_STATISTICS\020\326\001\022\035\n\030POS" +
-      "_AVATAR_STAR_RESOURCE\020\327\001\022\027\n\022POS_SHARE_EN" +
-      "TRANCE\020\265\002\022\026\n\021POS_LIVE_DETAIDLS\020\364\007\022#\n\036POS" +
-      "_INDEX_ARTICLE_UPPER_BANNER\020\367\007\022%\n POS_IN" +
-      "DEX_ARTICLE_RECOMMENDATION\020\370\007\022\036\n\031POS_TIM" +
-      "E_SCENE_BANNER_TOP\020\371\007\022!\n\034POS_TIME_SCENE_" +
-      "BANNER_BOTTOM\020\372\007\022\030\n\023POS_TIME_SCENE_ICON\020" +
-      "\373\007\022 \n\033POS_TIME_CITY_CLASSIFCATION\020\374\007\022$\n\036" +
-      "POS_AVATAR_SUIT_CLOTHES_ATTIRE\020\355\244\001\022#\n\035PO",
-      "S_AVATAR_SUIT_CLOTHES_PROPS\020\356\244\001\022\"\n\034POS_A" +
-      "VATAR_SUIT_CLOTHES_CARD\020\357\244\001\022\022\n\016POS_FEED_" +
-      "CLICK\020\t\022$\n\037POS_TIME_VIEW_COMMENTS_LIST_N" +
-      "EW\020\214\'\022\030\n\024POS_WEATHER_TOP_ICON\020f\022 \n\033POS_T" +
-      "HEMATIC_COMMENT_BANNER\020\375\007\022\037\n\033POS_WEATHER" +
-      "_INDEX_COLOR_EGG\020g\022+\n&POS_MY_PAGE_DYNAMI" +
-      "C_MENU_ENTERTAINMENT\020\325\017\022#\n\036POS_MY_PAGE_D" +
-      "YNAMIC_MENU_RELAX\020\326\017\022\"\n\035POS_MY_PAGE_DYNA" +
-      "MIC_MENU_GAME\020\327\017\022\024\n\017POS_SHORT_VIDEO\020\361.\022\037" +
-      "\n\032POS_BLOCKING_TAB_HOME_PAGE\020\215\'\022\027\n\022POS_M",
-      "ESSAGE_BOTTOM\020\207\010*]\n\013CarrierType\022\022\n\016CARRI" +
-      "ER_MOBILE\020\001\022\021\n\rCARRIER_UNION\020\002\022\023\n\017CARRIE" +
-      "R_TELECOM\020\003\022\022\n\016CARRIER_OTHERS\020\004*\206\001\n\006AdTy" +
-      "pe\022\t\n\005ERROR\020\000\022\n\n\006SPLASH\020\001\022\014\n\010BGAVATAR\020\002\022" +
-      "\017\n\013OTHERS_TYPE\020\003\022\014\n\010TAB_TYPE\020\004\022\022\n\016RESOUR" +
-      "CE_IMAGE\020\005\022\022\n\016DISPLAY_WINDOW\020\006\022\020\n\014AVATAR" +
-      "_MERGE\020\007* \n\nDayOrNight\022\007\n\003DAY\020\001\022\t\n\005NIGHT" +
-      "\020\002*$\n\021IsShortPrediction\022\006\n\002NO\020\000\022\007\n\003YES\020\001" +
-      "*#\n\010SkipType\022\n\n\006SKIPIN\020\001\022\013\n\007SKIPOUT\020\002*@\n" +
-      "\tCloseType\022\022\n\016CLOSE_WHILE_AD\020\001\022\021\n\rCLOSE_",
-      "ONE_DAY\020\002\022\014\n\010NO_CLOSE\020\003*\266\001\n\nAdPartener\022\032" +
-      "\n\rPARTENER_NONE\020\377\377\377\377\377\377\377\377\377\001\022\020\n\014PARTENER_G" +
-      "DT\020\001\022\022\n\016PARTENER_BAIDU\020\002\022\021\n\rPARTENER_TAN" +
-      "X\020\003\022\025\n\021PARTENER_MADHOUSE\020\004\022\023\n\017PARTENER_I" +
-      "CLICK\020\005\022\021\n\rPARTENER_SXYJ\020\006\022\024\n\020PARTENER_T" +
-      "OUTIAO\020\007*1\n\017NetTypeDownload\022\r\n\tONLY_WIFI" +
-      "\020\001\022\017\n\013ALL_NETTYPE\020\002*-\n\nImageLevel\022\020\n\014LEV" +
-      "EL_BOTTOM\020\001\022\r\n\tLEVEL_TOP\020\002*/\n\014ResponseSt" +
-      "at\022\017\n\013RES_SUCCESS\020\001\022\016\n\nRES_FAILED\020\002*-\n\013C" +
-      "ontentType\022\010\n\004text\020\001\022\t\n\005video\020\002\022\t\n\005audio",
-      "\020\003*/\n\nActionType\022\021\n\rcontent_click\020\001\022\016\n\nl" +
-      "ike_click\020\002*\"\n\010PageType\022\014\n\010DOWNLOAD\020\001\022\010\n" +
-      "\004HTML\020\002*\036\n\013MiaoZhenSDK\022\007\n\003OFF\020\001\022\006\n\002ON\020\002B" +
-      "*\n\025com.moji.launchserverB\021AdCommonInterf" +
-      "ace"
+      "price\030\037 \001(\005\022\025\n\ricon_position\030  \001(\005\"\367\006\n\023A" +
+      "dSplashDescription\022\r\n\005ad_id\030\001 \002(\003\022\036\n\tsho" +
+      "w_type\030\002 \002(\0162\013.AdShowType\022\021\n\tshow_time\030\003" +
+      " \002(\005\022\021\n\tclick_url\030\004 \001(\t\022\022\n\nclick_area\030\005 " +
+      "\001(\005\022\036\n\nimage_info\030\006 \001(\0132\n.ImageInfo\022\031\n\021c",
+      "lick_statics_url\030\007 \001(\t\022\"\n\010net_type\030\010 \002(\016" +
+      "2\020.NetTypeDownload\022\022\n\nstart_time\030\t \002(\003\022\020" +
+      "\n\010end_time\030\n \002(\003\022\020\n\010ad_price\030\013 \001(\005\022\014\n\004ty" +
+      "pe\030\014 \002(\005\022\030\n\020show_statics_url\030\r \001(\t\022\031\n\021cl" +
+      "ose_statics_url\030\016 \001(\t\022\033\n\023ad_stat_show_pa" +
+      "rams\030\017 \001(\t\022\034\n\024ad_stat_click_params\030\020 \001(\t" +
+      "\022\027\n\017is_show_ad_sign\030\021 \002(\010\022\037\n\013cross_image" +
+      "\030\022 \001(\0132\n.ImageInfo\022\"\n\016vertical_image\030\023 \001" +
+      "(\0132\n.ImageInfo\022\030\n\020splash_show_type\030\024 \001(\005" +
+      "\022\021\n\tpage_type\030\025 \001(\005\022\020\n\010app_star\030\026 \001(\005\022\014\n",
+      "\004desc\030\027 \001(\t\022\026\n\016add_coordinate\030\030 \001(\005\022$\n\rl" +
+      "ocation_rule\030\031 \001(\0132\r.LocationRule\022\022\n\nadv" +
+      "ertiser\030\032 \001(\t\022\026\n\016conversion_url\030\033 \001(\t\022\025\n" +
+      "\rproperty_type\030\034 \001(\005\022\024\n\014is_show_logo\030\035 \001" +
+      "(\005\022\030\n\004logo\030\036 \001(\0132\n.ImageInfo\022\022\n\nlogo_sty" +
+      "le\030\037 \001(\005\022+\n\020downloadMonitors\030  \001(\0132\021.Dow" +
+      "nloadMonitors\022\'\n\016weChatMiniApps\030! \001(\0132\017." +
+      "WeChatMiniApps\022\034\n\tskip_mode\030\" \003(\0132\t.Skip" +
+      "Mode\"\346\001\n\016AdSplashDetail\022!\n\010pos_stat\030\001 \002(" +
+      "\0162\017.AdPositionStat\0223\n\025ad_splash_descript",
+      "ion\030\002 \003(\0132\024.AdSplashDescription\022#\n\ncontr" +
+      "oller\030\003 \001(\0132\017.ThirdAdControl\022\031\n\021is_clear" +
+      "_last_ids\030\004 \001(\010\022\022\n\nis_loadPic\030\005 \001(\010\022\024\n\014c" +
+      "ontrol_time\030\006 \001(\005\022\022\n\nis_show_ad\030\007 \001(\010\"\325\004" +
+      "\n\027AdBackgroundDescription\022\036\n\tshow_type\030\001" +
+      " \002(\0162\013.AdShowType\022\r\n\005ad_id\030\002 \002(\003\022\036\n\nimag" +
+      "e_info\030\003 \002(\0132\n.ImageInfo\022#\n\017blur_image_i" +
+      "nfo\030\004 \002(\0132\n.ImageInfo\022\"\n\010net_type\030\005 \002(\0162" +
+      "\020.NetTypeDownload\022\030\n\020show_statics_url\030\006 " +
+      "\001(\t\022\033\n\023ad_stat_show_params\030\007 \001(\t\022\034\n\024ad_s",
+      "tat_click_params\030\010 \001(\t\022\027\n\017is_show_ad_sig" +
+      "n\030\t \002(\010\022\031\n\021click_monitor_url\030\n \001(\t\022\034\n\tic" +
+      "on_info\030\013 \001(\0132\t.IconInfo\022\034\n\tskip_type\030\014 " +
+      "\001(\0162\t.SkipType\022\021\n\tclick_url\030\r \001(\t\022\032\n\022ign" +
+      "ore_monitor_url\030\016 \001(\t\022\016\n\006source\030\017 \001(\t\022\024\n" +
+      "\014is_clickable\030\020 \001(\010\022\017\n\007click_x\030\021 \001(\t\022\017\n\007" +
+      "click_y\030\022 \001(\t\022\020\n\010tag_copy\030\023 \001(\t\022\026\n\016add_c" +
+      "oordinate\030\024 \001(\005\022\023\n\013materiel_id\030\025 \001(\005\022\'\n\016" +
+      "weChatMiniApps\030\026 \001(\0132\017.WeChatMiniApps\"\306\001" +
+      "\n\036AdDynamicBackGroundDescription\022;\n\031ad_b",
+      "ackground_description\030\001 \001(\0132\030.AdBackgrou" +
+      "ndDescription\022\023\n\013img_zip_url\030\002 \001(\t\022\020\n\010en" +
+      "d_time\030\003 \001(\003\022\014\n\004type\030\004 \001(\005\022\033\n\023dynamic_im" +
+      "g_zip_url\030\005 \001(\t\022\025\n\rproperty_type\030\006 \001(\005\"\201" +
+      "\002\n\022AdBackgroundDetail\022!\n\010pos_stat\030\001 \002(\0162" +
+      "\017.AdPositionStat\022;\n\031ad_background_descri" +
+      "ption\030\002 \001(\0132\030.AdBackgroundDescription\022J\n" +
+      "!ad_dynamic_background_description\030\003 \003(\013" +
+      "2\037.AdDynamicBackGroundDescription\022)\n\020ad_" +
+      "position_link\030\004 \001(\0132\017.AdPositionLink\022\024\n\014",
+      "isAvatarShow\030\005 \001(\010\"\366\001\n\010Sentence\022\023\n\013sente" +
+      "nce_id\030\001 \002(\005\022\r\n\005index\030\002 \002(\005\022\017\n\007content\030\003" +
+      " \002(\t\022\020\n\010skip_url\030\004 \002(\t\022\034\n\tskip_type\030\005 \002(" +
+      "\0162\t.SkipType\022\025\n\rentry_content\030\006 \001(\t\022\030\n\020s" +
+      "how_statics_url\030\007 \001(\t\022\031\n\021click_statics_u" +
+      "rl\030\010 \001(\t\022\033\n\023ad_stat_show_params\030\t \001(\t\022\034\n" +
+      "\024ad_stat_click_params\030\n \001(\t\"\275\001\n\010Clothing" +
+      "\022\023\n\013clothing_id\030\001 \002(\003\022\036\n\nimage_info\030\002 \002(" +
+      "\0132\n.ImageInfo\022\030\n\020show_statics_url\030\003 \001(\t\022" +
+      "\033\n\023ad_stat_show_params\030\004 \001(\t\022\034\n\024ad_stat_",
+      "click_params\030\005 \001(\t\022\'\n\016weChatMiniApps\030\006 \001" +
+      "(\0132\017.WeChatMiniApps\"\214\003\n\010Property\022\023\n\013prop" +
+      "erty_id\030\001 \002(\005\022\017\n\007click_x\030\002 \002(\005\022\017\n\007click_" +
+      "y\030\003 \002(\005\022\017\n\007click_w\030\004 \002(\005\022\017\n\007click_h\030\005 \002(" +
+      "\005\022\020\n\010skip_url\030\006 \001(\t\022\034\n\tskip_type\030\007 \001(\0162\t" +
+      ".SkipType\022\036\n\nimage_info\030\010 \002(\0132\n.ImageInf" +
+      "o\022\r\n\005img_x\030\t \002(\005\022\r\n\005img_y\030\n \002(\005\022 \n\013image" +
+      "_level\030\013 \002(\0162\013.ImageLevel\022\030\n\020show_static" +
+      "s_url\030\014 \001(\t\022\031\n\021click_statics_url\030\r \001(\t\022\033" +
+      "\n\023ad_stat_show_params\030\016 \001(\t\022\034\n\024ad_stat_c",
+      "lick_params\030\017 \001(\t\022\'\n\016weChatMiniApps\030\020 \001(" +
+      "\0132\017.WeChatMiniApps\"Y\n\016AnimationFrame\022\020\n\010" +
+      "frame_id\030\001 \002(\005\022\020\n\010frame_no\030\002 \002(\005\022\021\n\tfram" +
+      "e_url\030\003 \002(\t\022\020\n\010duration\030\004 \002(\005\"\221\001\n\tAnimat" +
+      "ion\022\024\n\014animation_id\030\001 \002(\005\022\027\n\017animation_l" +
+      "evel\030\002 \002(\005\022\020\n\010interval\030\003 \002(\005\022)\n\020animatio" +
+      "n_frames\030\004 \003(\0132\017.AnimationFrame\022\030\n\020show_" +
+      "statics_url\030\005 \001(\t\"\373\001\n\023AdAvatarDescriptio" +
+      "n\022\r\n\005ad_id\030\001 \002(\003\022\036\n\tshow_type\030\002 \002(\0162\013.Ad" +
+      "ShowType\022\034\n\tsentences\030\003 \003(\0132\t.Sentence\022\033",
+      "\n\010clothing\030\004 \001(\0132\t.Clothing\022\033\n\010property\030" +
+      "\005 \001(\0132\t.Property\022\035\n\tanimation\030\006 \001(\0132\n.An" +
+      "imation\022\025\n\rproperty_type\030\007 \001(\005\022\'\n\016weChat" +
+      "MiniApps\030\010 \001(\0132\017.WeChatMiniApps\"\214\001\n\016AdAv" +
+      "atarDetail\022!\n\010pos_stat\030\001 \002(\0162\017.AdPositio" +
+      "nStat\0222\n\024adAvatar_description\030\002 \001(\0132\024.Ad" +
+      "AvatarDescription\022#\n\ncontroller\030\003 \001(\0132\017." +
+      "ThirdAdControl\"\325\r\n\021AdUtilDescription\022\r\n\005" +
+      "ad_id\030\001 \002(\003\022\036\n\tshow_type\030\002 \002(\0162\013.AdShowT" +
+      "ype\022\035\n\010position\030\003 \002(\0162\013.AdPosition\022\025\n\rpo",
+      "sition_name\030\004 \002(\t\022\034\n\tskip_type\030\005 \002(\0162\t.S" +
+      "kipType\022\021\n\tclick_url\030\006 \002(\t\022\036\n\nclose_type" +
+      "\030\007 \001(\0162\n.CloseType\022\r\n\005title\030\010 \001(\t\022\033\n\023ad_" +
+      "util_description\030\t \001(\t\022\036\n\nimage_info\030\n \001" +
+      "(\0132\n.ImageInfo\022\034\n\ticon_info\030\013 \001(\0132\t.Icon" +
+      "Info\022\031\n\021click_statics_url\030\014 \001(\t\022\r\n\005index" +
+      "\030\r \001(\003\022\020\n\010ad_style\030\016 \001(\005\022\020\n\010ad_price\030\017 \001" +
+      "(\005\022\030\n\020show_statics_url\030\020 \001(\t\022\031\n\021close_st" +
+      "atics_url\030\021 \001(\t\022\033\n\023ad_stat_show_params\030\022" +
+      " \001(\t\022\034\n\024ad_stat_click_params\030\023 \001(\t\022\022\n\nin",
+      "dex_type\030\024 \001(\005\022\027\n\017is_show_ad_sign\030\025 \002(\010\022" +
+      "$\n\rfeed_interval\030\026 \003(\0132\r.FeedInterval\022\037\n" +
+      "\013feed_images\030\027 \003(\0132\n.ImageInfo\022\021\n\tadvert" +
+      "_id\030\030 \001(\003\022\014\n\004type\030\031 \001(\005\022\024\n\014is_auto_play\030" +
+      "\032 \001(\005\022$\n\020video_image_info\030\033 \001(\0132\n.ImageI" +
+      "nfo\022\023\n\013video_title\030\034 \001(\t\022\022\n\nstart_time\030\035" +
+      " \001(\003\022\020\n\010end_time\030\036 \001(\003\022\027\n\017play_valid_tim" +
+      "e\030\037 \001(\005\022\020\n\010duration\030  \001(\005\022\024\n\014block_heigh" +
+      "t\030! \001(\005\022\027\n\006redDot\030\" \001(\0132\007.RedDot\022\r\n\005leve" +
+      "l\030# \001(\005\022\030\n\020active_track_url\030$ \001(\t\022\023\n\013is_",
+      "deeplink\030% \001(\010\022\024\n\014deeplink_url\030& \001(\t\022\031\n\021" +
+      "deeplink_pkg_name\030\' \001(\t\022\035\n\025ad_stat_activ" +
+      "e_params\030( \001(\t\022\017\n\007address\030) \001(\t\022\013\n\003lon\030*" +
+      " \001(\t\022\013\n\003lat\030+ \001(\t\022\026\n\016add_coordinate\030, \001(" +
+      "\005\022\027\n\017close_btn_width\030- \001(\005\022\030\n\020close_btn_" +
+      "height\030. \001(\005\022\034\n\016close_btn_show\030/ \001(\010:\004tr" +
+      "ue\022\022\n\nadvertiser\0300 \001(\t\022\026\n\016conversion_url" +
+      "\0301 \001(\t\022\024\n\014module_index\0302 \001(\005\022$\n\013native_i" +
+      "nfo\0303 \003(\0132\017.CardNativeInfo\022%\n\tvideoInfo\030" +
+      "4 \001(\0132\022.AdVideoExtendInfo\022\031\n\013auto_rotate",
+      "\0305 \001(\010:\004true\022\036\n\nad_publish\0306 \003(\0132\n.AdPub" +
+      "lish\022\025\n\rproperty_type\0307 \001(\005\022\024\n\014is_show_l" +
+      "ogo\0308 \001(\005\022\030\n\004logo\0309 \001(\0132\n.ImageInfo\022\022\n\nl" +
+      "ogo_style\030: \001(\005\022\016\n\006format\030; \001(\005\022\027\n\017dynam" +
+      "ic_zip_url\030< \001(\t\022\020\n\010is_cycle\030= \001(\005\022\024\n\014is" +
+      "_disappear\030> \001(\005\022+\n\020downloadMonitors\030? \001" +
+      "(\0132\021.DownloadMonitors\022\'\n\016weChatMiniApps\030" +
+      "@ \001(\0132\017.WeChatMiniApps\022\030\n\020icon_descripti" +
+      "on\030A \001(\t\022\034\n\tpage_type\030B \001(\0162\t.PageType\022\034" +
+      "\n\tskip_mode\030C \003(\0132\t.SkipMode\022!\n\031skip_lis",
+      "t_show_monitoring\030D \001(\t\022\025\n\ricon_position" +
+      "\030E \001(\005\"\244\001\n\021AdVideoExtendInfo\022\021\n\tfile_siz" +
+      "e\030\001 \001(\002\022!\n\rlastFrameIcon\030\002 \001(\0132\n.ImageIn" +
+      "fo\022\025\n\rlastFrameText\030\003 \001(\t\022\031\n\021lastFrameCl" +
+      "ickUrl\030\004 \001(\t\022\021\n\tis_repeat\030\005 \001(\010\022\024\n\014link_" +
+      "content\030\006 \001(\t\"\323\001\n\014AdUtilDetail\022!\n\010pos_st" +
+      "at\030\001 \002(\0162\017.AdPositionStat\022 \n\013position_id" +
+      "\030\002 \002(\0162\013.AdPosition\022.\n\022adUtil_descriptio" +
+      "n\030\003 \001(\0132\022.AdUtilDescription\022#\n\ncontrolle" +
+      "r\030\004 \001(\0132\017.ThirdAdControl\022)\n\020ad_position_",
+      "link\030\005 \001(\0132\017.AdPositionLink\"\231\001\n\013AdTabDet" +
+      "ail\022!\n\010pos_stat\030\001 \002(\0162\017.AdPositionStat\022 " +
+      "\n\013position_id\030\002 \002(\0162\013.AdPosition\022,\n\021adTa" +
+      "b_description\030\003 \001(\0132\021.ADTabDescription\022\027" +
+      "\n\006redDot\030\004 \001(\0132\007.RedDot\"\206\004\n\020ADTabDescrip" +
+      "tion\022\n\n\002id\030\001 \002(\003\022\021\n\tadvert_id\030\002 \002(\003\022\037\n\013n" +
+      "av_top_img\030\003 \001(\0132\n.ImageInfo\022\"\n\016nav_bott" +
+      "om_img\030\005 \001(\0132\n.ImageInfo\022\037\n\013home_select\030" +
+      "\007 \002(\0132\n.ImageInfo\022!\n\rhome_unselect\030\010 \002(\013" +
+      "2\n.ImageInfo\022\037\n\013live_select\030\t \002(\0132\n.Imag",
+      "eInfo\022!\n\rlive_unselect\030\n \002(\0132\n.ImageInfo" +
+      "\022\035\n\tme_select\030\013 \002(\0132\n.ImageInfo\022\037\n\013me_un" +
+      "select\030\014 \002(\0132\n.ImageInfo\022\033\n\023ad_stat_show" +
+      "_params\030\r \001(\t\022\034\n\024ad_stat_click_params\030\016 " +
+      "\001(\t\022\031\n\021click_statics_url\030\017 \001(\t\022\030\n\020show_s" +
+      "tatics_url\030\020 \001(\t\022\026\n\016add_coordinate\030\021 \001(\005" +
+      "\022\025\n\rproperty_type\030\022 \001(\005\022\'\n\016weChatMiniApp" +
+      "s\030\023 \001(\0132\017.WeChatMiniApps\"D\n\006RedDot\022\020\n\010re" +
+      "dDotID\030\001 \001(\005\022\026\n\016is_show_redDot\030\002 \001(\010\022\020\n\010" +
+      "end_time\030\003 \001(\005\"\236\001\n\025AdDiscourseCardDetail",
+      "\022!\n\010pos_stat\030\001 \002(\0162\017.AdPositionStat\022 \n\013p" +
+      "osition_id\030\002 \002(\0162\013.AdPosition\022@\n\033adDisco" +
+      "urseCard_description\030\003 \001(\0132\033.AdDiscourse" +
+      "CardDescription\"\375\003\n\032AdDiscourseCardDescr" +
+      "iption\022\r\n\005ad_id\030\001 \002(\003\022\036\n\tshow_type\030\002 \002(\016" +
+      "2\013.AdShowType\022\035\n\010position\030\003 \002(\0162\013.AdPosi" +
+      "tion\022\025\n\rposition_name\030\004 \002(\t\022\034\n\tskip_type" +
+      "\030\005 \002(\0162\t.SkipType\022\021\n\tclick_url\030\006 \002(\t\022\020\n\010" +
+      "url_name\030\007 \002(\t\022\r\n\005title\030\010 \001(\t\022\033\n\023ad_util" +
+      "_description\030\t \001(\t\022\034\n\ticon_info\030\n \001(\0132\t.",
+      "IconInfo\022\031\n\021click_statics_url\030\013 \001(\t\022\020\n\010a" +
+      "d_style\030\014 \001(\005\022\030\n\020show_statics_url\030\r \001(\t\022" +
+      "\031\n\021close_statics_url\030\016 \001(\t\022\033\n\023ad_stat_sh" +
+      "ow_params\030\017 \001(\t\022\034\n\024ad_stat_click_params\030" +
+      "\020 \001(\t\022\020\n\010is_eject\030\021 \001(\010\022\025\n\rproperty_type" +
+      "\030\022 \001(\005\022\'\n\016weChatMiniApps\030\023 \001(\0132\017.WeChatM" +
+      "iniApps\"\227\001\n\022AdAvatarCardDetail\022!\n\010pos_st" +
+      "at\030\001 \002(\0162\017.AdPositionStat\022 \n\013position_id" +
+      "\030\002 \002(\0162\013.AdPosition\022<\n\032ad_avatar_card_de" +
+      "scription\030\003 \001(\0132\030.AdAvatarCardDescriptio",
+      "n\"\315\005\n\027AdAvatarCardDescription\022\r\n\005ad_id\030\001" +
+      " \002(\003\022\021\n\tshow_type\030\002 \002(\005\022\034\n\tskip_type\030\003 \002" +
+      "(\0162\t.SkipType\022\021\n\tclick_url\030\004 \002(\t\022\034\n\ticon" +
+      "_info\030\005 \001(\0132\t.IconInfo\022\025\n\rwords_content\030" +
+      "\006 \001(\t\022\021\n\twords_col\030\007 \001(\t\022\035\n\twords_img\030\010 " +
+      "\001(\0132\n.ImageInfo\022\026\n\016button_content\030\t \001(\t\022" +
+      "\036\n\nbutton_img\030\n \001(\0132\n.ImageInfo\022\022\n\nbutto" +
+      "n_col\030\013 \001(\t\022\030\n\020show_statics_url\030\014 \001(\t\022\031\n" +
+      "\021click_statics_url\030\r \001(\t\022\033\n\023ad_stat_show" +
+      "_params\030\016 \001(\t\022\034\n\024ad_stat_click_params\030\017 ",
+      "\001(\t\022\020\n\010is_eject\030\020 \001(\010\022\025\n\rinterval_time\030\021" +
+      " \001(\003\022\023\n\013is_carousel\030\022 \001(\010\022\026\n\016card_show_t" +
+      "ime\030\023 \001(\003\022\027\n\017pop_queue_start\030\024 \001(\003\022\027\n\017po" +
+      "p_queue_limit\030\025 \001(\003\022\032\n\022manual_queue_star" +
+      "t\030\026 \001(\003\022\032\n\022manual_queue_limit\030\027 \001(\003\022\022\n\ns" +
+      "tart_time\030\030 \001(\005\022\020\n\010end_time\030\031 \001(\005\022\026\n\016add" +
+      "_coordinate\030\032 \001(\005\022\025\n\rproperty_type\030\033 \001(\005" +
+      "\022\'\n\016weChatMiniApps\030\034 \001(\0132\017.WeChatMiniApp" +
+      "s\"\240\001\n\025AdAvatarClothesDetail\022!\n\010pos_stat\030" +
+      "\001 \002(\0162\017.AdPositionStat\022 \n\013position_id\030\002 ",
+      "\002(\0162\013.AdPosition\022B\n\035ad_avatar_clothes_de" +
+      "scription\030\003 \001(\0132\033.AdAvatarClothesDescrip" +
+      "tion\"\231\001\n\032AdAvatarClothesDescription\022\r\n\005a" +
+      "d_id\030\001 \002(\003\022\036\n\nimage_info\030\002 \001(\0132\n.ImageIn" +
+      "fo\022\030\n\020show_monitor_url\030\003 \001(\t\022\033\n\023ad_stat_" +
+      "show_params\030\004 \001(\t\022\025\n\rproperty_type\030\005 \001(\005" +
+      "\"\305\001\n\023AdAvatarPropsDetail\022!\n\010pos_stat\030\001 \002" +
+      "(\0162\017.AdPositionStat\022 \n\013position_id\030\002 \002(\016" +
+      "2\013.AdPosition\022>\n\033ad_avatar_props_descrip" +
+      "tion\030\003 \001(\0132\031.AdAvatarPropsDescription\022)\n",
+      "\020ad_position_link\030\004 \001(\0132\017.AdPositionLink" +
+      "\"\255\003\n\030AdAvatarPropsDescription\022\r\n\005ad_id\030\001" +
+      " \002(\003\022\022\n\nlayer_type\030\002 \002(\005\022\036\n\nimage_info\030\003" +
+      " \002(\0132\n.ImageInfo\022\034\n\tskip_type\030\004 \002(\0162\t.Sk" +
+      "ipType\022\021\n\tclick_url\030\005 \002(\t\022\017\n\007layer_x\030\006 \001" +
+      "(\005\022\017\n\007layer_y\030\007 \001(\005\022\017\n\007click_x\030\010 \001(\005\022\017\n\007" +
+      "click_y\030\t \001(\005\022\023\n\013click_width\030\n \001(\005\022\024\n\014cl" +
+      "ick_height\030\013 \001(\005\022\030\n\020show_statics_url\030\014 \001" +
+      "(\t\022\031\n\021click_statics_url\030\r \001(\t\022\033\n\023ad_stat" +
+      "_show_params\030\016 \001(\t\022\034\n\024ad_stat_click_para",
+      "ms\030\017 \001(\t\022\025\n\rproperty_type\030\020 \001(\005\022\'\n\016weCha" +
+      "tMiniApps\030\021 \001(\0132\017.WeChatMiniApps\"\255\001\n\031AdD" +
+      "isplayWindowCardDetail\022!\n\010pos_stat\030\001 \002(\016" +
+      "2\017.AdPositionStat\022 \n\013position_id\030\002 \002(\0162\013" +
+      ".AdPosition\022K\n\"ad_display_window_card_de" +
+      "scription\030\003 \001(\0132\037.AdDisplayWindowCardDes" +
+      "cription\"\354\002\n\036AdDisplayWindowCardDescript" +
+      "ion\022\r\n\005ad_id\030\001 \002(\003\022\021\n\ttag_index\030\002 \001(\005\022\034\n" +
+      "\tskip_type\030\003 \002(\0162\t.SkipType\022\021\n\tclick_url" +
+      "\030\004 \002(\t\022\036\n\nimage_info\030\005 \002(\0132\n.ImageInfo\022\017",
+      "\n\007content\030\006 \001(\t\022\030\n\020show_statics_url\030\007 \001(" +
+      "\t\022\031\n\021click_statics_url\030\010 \001(\t\022\033\n\023ad_stat_" +
+      "show_params\030\t \001(\t\022\034\n\024ad_stat_click_param" +
+      "s\030\n \001(\t\022\026\n\016add_coordinate\030\013 \001(\005\022\025\n\rprope" +
+      "rty_type\030\014 \001(\005\022\'\n\016weChatMiniApps\030\r \001(\0132\017" +
+      ".WeChatMiniApps\"\311\002\n\020AdBlockingDetail\022!\n\010" +
+      "pos_stat\030\001 \002(\0162\017.AdPositionStat\022 \n\013posit" +
+      "ion_id\030\002 \002(\0162\013.AdPosition\022\r\n\005ad_id\030\003 \002(\003" +
+      "\022\025\n\rposition_name\030\004 \001(\t\022\r\n\005title\030\005 \001(\t\022\033" +
+      "\n\023ad_util_description\030\006 \001(\t\0227\n\027ad_blocki",
+      "ng_description\030\007 \001(\0132\026.AdBlockingDescrip" +
+      "tion\022.\n\022blocking_frequency\030\010 \001(\0132\022.Block" +
+      "ingFrequency\022#\n\ncontroller\030\t \001(\0132\017.Third" +
+      "AdControl\022\020\n\010is_popup\030\n \001(\010\"\210\001\n\021Blocking" +
+      "Frequency\022\027\n\017total_frequency\030\001 \001(\005\022\027\n\017br" +
+      "and_frequency\030\002 \001(\005\022\025\n\rapi_frequency\030\003 \001" +
+      "(\005\022\025\n\rsdk_frequency\030\004 \001(\005\022\023\n\013position_id" +
+      "\030\005 \001(\005\"\230\010\n\025AdBlockingDescription\022\036\n\tshow" +
+      "_type\030\001 \002(\0162\013.AdShowType\022\035\n\010position\030\002 \002" +
+      "(\0162\013.AdPosition\022\034\n\tskip_type\030\003 \002(\0162\t.Ski",
+      "pType\022\021\n\tclick_url\030\004 \002(\t\022\020\n\010tab_type\030\005 \001" +
+      "(\005\022%\n\021select_image_info\030\006 \001(\0132\n.ImageInf" +
+      "o\022\'\n\023unselect_image_info\030\007 \001(\0132\n.ImageIn" +
+      "fo\022\'\n\023blocking_image_info\030\010 \001(\0132\n.ImageI" +
+      "nfo\022\034\n\ticon_info\030\t \001(\0132\t.IconInfo\022\022\n\nico" +
+      "n_title\030\n \001(\t\022\031\n\021tab_click_monitor\030\013 \001(\t" +
+      "\022\030\n\020tab_show_monitor\030\014 \001(\t\022\033\n\023block_clic" +
+      "k_monitor\030\r \001(\t\022\032\n\022block_show_monitor\030\016 " +
+      "\001(\t\022\032\n\022icon_click_monitor\030\017 \001(\t\022\031\n\021icon_" +
+      "show_monitor\030\020 \001(\t\022\031\n\021close_statics_url\030",
+      "\021 \001(\t\022\037\n\027ad_stat_tab_show_params\030\022 \001(\t\022 " +
+      "\n\030ad_stat_tab_click_params\030\023 \001(\t\022!\n\031ad_s" +
+      "tat_block_show_params\030\024 \001(\t\022\"\n\032ad_stat_b" +
+      "lock_click_params\030\025 \001(\t\022 \n\030ad_stat_icon_" +
+      "show_params\030\026 \001(\t\022!\n\031ad_stat_icon_click_" +
+      "params\030\027 \001(\t\022\027\n\017is_show_ad_sign\030\030 \002(\010\022\035\n" +
+      "\tanimation\030\031 \001(\0132\n.ImageInfo\022 \n\014close_bu" +
+      "tton\030\032 \001(\0132\n.ImageInfo\022\035\n\025close_button_p" +
+      "osition\030\033 \001(\005\022\026\n\016add_coordinate\030\034 \001(\005\022\025\n" +
+      "\rproperty_type\030\035 \001(\005\022+\n\020downloadMonitors",
+      "\030\036 \001(\0132\021.DownloadMonitors\022\'\n\016weChatMiniA" +
+      "pps\030\037 \001(\0132\017.WeChatMiniApps\022\022\n\nlogo_style" +
+      "\030  \001(\005\022\033\n\007ad_logo\030! \001(\0132\n.ImageInfo\022\024\n\014i" +
+      "s_show_logo\030\" \001(\005\"\374\002\n\025AdAssistReplaceDet" +
+      "ail\022!\n\010pos_stat\030\001 \002(\0162\017.AdPositionStat\022\r" +
+      "\n\005ad_id\030\002 \001(\003\022\035\n\010position\030\003 \002(\0162\013.AdPosi" +
+      "tion\022\021\n\tadvert_id\030\004 \001(\003\022\030\n\020global_boot_t" +
+      "ext\030\005 \001(\t\022\032\n\022global_button_text\030\006 \001(\t\022%\n" +
+      "\007clothes\030\007 \001(\0132\024.AssistClothesAdvert\022\'\n\010" +
+      "sentense\030\010 \003(\0132\025.AssistSentenseAdvert\022$\n",
+      "\rassist_detail\030\t \001(\0132\r.AssistDetail\022\022\n\nr" +
+      "eplace_id\030\n \003(\005\022(\n\014assist_props\030\013 \001(\0132\022." +
+      "AssistPropsAdvert\022\025\n\rproperty_type\030\014 \001(\005" +
+      "\"l\n\023AssistClothesAdvert\022\036\n\nimage_info\030\001 " +
+      "\001(\0132\n.ImageInfo\022\030\n\020show_monitor_url\030\002 \001(" +
+      "\t\022\033\n\023ad_stat_show_params\030\003 \001(\t\"\315\003\n\024Assis" +
+      "tSentenseAdvert\022\034\n\tskip_type\030\001 \002(\0162\t.Ski" +
+      "pType\022\021\n\tclick_url\030\002 \002(\t\022\021\n\tshow_type\030\003 " +
+      "\001(\005\022\r\n\005index\030\004 \001(\005\022\034\n\010icon_img\030\005 \001(\0132\n.I" +
+      "mageInfo\022\025\n\rwords_content\030\006 \001(\t\022\021\n\twords",
+      "_col\030\007 \001(\t\022\035\n\twords_img\030\010 \001(\0132\n.ImageInf" +
+      "o\022\026\n\016button_content\030\t \001(\t\022\036\n\nbutton_img\030" +
+      "\n \001(\0132\n.ImageInfo\022\022\n\nbutton_col\030\013 \001(\t\022\030\n" +
+      "\020show_statics_url\030\014 \001(\t\022\031\n\021click_statics" +
+      "_url\030\r \001(\t\022\033\n\023ad_stat_show_params\030\016 \001(\t\022" +
+      "\034\n\024ad_stat_click_params\030\017 \001(\t\022\026\n\016add_coo" +
+      "rdinate\030\020 \001(\005\022\'\n\016weChatMiniApps\030\021 \001(\0132\017." +
+      "WeChatMiniApps\"\217\003\n\021AssistPropsAdvert\022\r\n\005" +
+      "ad_id\030\001 \002(\003\022\022\n\nlayer_type\030\002 \002(\005\022\036\n\nimage" +
+      "_info\030\003 \002(\0132\n.ImageInfo\022\034\n\tskip_type\030\004 \002",
+      "(\0162\t.SkipType\022\021\n\tclick_url\030\005 \002(\t\022\017\n\007laye" +
+      "r_x\030\006 \001(\005\022\017\n\007layer_y\030\007 \001(\005\022\017\n\007click_x\030\010 " +
+      "\001(\005\022\017\n\007click_y\030\t \001(\005\022\023\n\013click_width\030\n \001(" +
+      "\005\022\024\n\014click_height\030\013 \001(\005\022\030\n\020show_statics_" +
+      "url\030\014 \001(\t\022\031\n\021click_statics_url\030\r \001(\t\022\033\n\023" +
+      "ad_stat_show_params\030\016 \001(\t\022\034\n\024ad_stat_cli" +
+      "ck_params\030\017 \001(\t\022\'\n\016weChatMiniApps\030\021 \001(\0132" +
+      "\017.WeChatMiniApps\"\353\002\n\014AssistDetail\022\014\n\004typ" +
+      "e\030\001 \002(\005\022\013\n\003sex\030\002 \002(\005\022\024\n\014content_type\030\003 \002" +
+      "(\005\022\017\n\007act_num\030\004 \002(\005\022\013\n\003num\030\005 \002(\005\022\016\n\006is_n",
+      "ew\030\006 \002(\005\022\014\n\004name\030\007 \001(\t\022\r\n\005brief\030\010 \001(\t\022\014\n" +
+      "\004desc\030\t \001(\t\022\030\n\004icon\030\n \001(\0132\n.ImageInfo\022\033\n" +
+      "\007card_bg\030\013 \001(\0132\n.ImageInfo\022\037\n\013default_im" +
+      "g\030\014 \001(\0132\n.ImageInfo\022\021\n\tvoice_zip\030\r \001(\t\022\026" +
+      "\n\016voice_audition\030\016 \001(\t\022&\n\013assist_card\030\017 " +
+      "\003(\0132\021.AssistCardAdvert\022\r\n\005index\030\020 \001(\005\022\027\n" +
+      "\017is_show_ad_sign\030\021 \001(\010\"A\n\020AssistCardAdve" +
+      "rt\022\r\n\005index\030\001 \002(\003\022\036\n\ncard_image\030\002 \001(\0132\n." +
+      "ImageInfo\"\210\001\n\016AdPositionLink\022\017\n\007is_link\030" +
+      "\001 \001(\005\022\014\n\004type\030\002 \001(\005\022\022\n\nlink_ad_id\030\003 \003(\003\022",
+      "\025\n\rtriggeraction\030\004 \001(\005\022\022\n\nlink_effet\030\005 \001" +
+      "(\003\022\030\n\020link_position_id\030\006 \001(\005\"\203\001\n\023AdSuitC" +
+      "lothesDetail\022!\n\010pos_stat\030\001 \002(\0162\017.AdPosit" +
+      "ionStat\022 \n\013position_id\030\002 \002(\0162\013.AdPositio" +
+      "n\022\'\n\017ad_suit_clothes\030\003 \001(\0132\016.AdSuitCloth" +
+      "es\"\274\002\n\rAdSuitClothes\022\r\n\005ad_id\030\001 \002(\003\022\025\n\ri" +
+      "s_need_clear\030\002 \001(\010\022\025\n\rshow_ad_index\030\003 \001(" +
+      "\005\022?\n\026ad_suit_avatar_clothes\030\004 \001(\0132\037.AdSu" +
+      "itAvatarClothesDescription\022;\n\024ad_suit_av" +
+      "atar_props\030\005 \001(\0132\035.AdSuitAvatarPropsDesc",
+      "ription\0229\n\023ad_suit_avatar_card\030\006 \001(\0132\034.A" +
+      "dSuitAvatarCardDescription\022\036\n\nad_publish" +
+      "\030\007 \003(\0132\n.AdPublish\022\025\n\rproperty_type\030\010 \001(" +
+      "\005\"[\n\tAdPublish\022\013\n\003url\030\001 \001(\t\022\022\n\nstart_tim" +
+      "e\030\002 \001(\003\022\020\n\010end_time\030\003 \001(\003\022\r\n\005ad_id\030\004 \001(\003" +
+      "\022\014\n\004type\030\005 \001(\005\"\212\002\n\036AdSuitAvatarClothesDe" +
+      "scription\022\r\n\005ad_id\030\001 \002(\003\022\036\n\nimage_info\030\002" +
+      " \001(\0132\n.ImageInfo\022\030\n\020show_monitor_url\030\003 \001" +
+      "(\t\022\033\n\023ad_stat_show_params\030\004 \001(\t\022\035\n\010posit" +
+      "ion\030\005 \001(\0162\013.AdPosition\022\027\n\017dynamic_zip_ur",
+      "l\030\006 \001(\t\022$\n\007dynamic\030\007 \001(\0132\023.SuitClothesDy" +
+      "namic\022\022\n\nstart_time\030\010 \001(\005\022\020\n\010end_time\030\t " +
+      "\001(\005\"\262\001\n\022SuitClothesDynamic\022\020\n\010skinname\030\001" +
+      " \001(\t\022\"\n\032is_group_animations_repeat\030\002 \001(\005" +
+      "\022\027\n\017group_delayTime\030\003 \001(\005\022\017\n\007is_mask\030\004 \001" +
+      "(\005\022\036\n\006action\030\005 \003(\0132\016.DynamicAction\022\034\n\005sl" +
+      "ots\030\006 \003(\0132\r.DynamicSlots\"d\n\rDynamicActio" +
+      "n\022\014\n\004name\030\001 \001(\t\022\016\n\006repeat\030\002 \001(\005\022\016\n\006rando" +
+      "m\030\003 \001(\005\022\022\n\nissurprise\030\004 \001(\005\022\021\n\tdelaytime" +
+      "\030\005 \001(\005\"8\n\014DynamicSlots\022\014\n\004skin\030\001 \001(\t\022\014\n\004",
+      "slot\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\"\374\006\n\033AdSuitAvata" +
+      "rCardDescription\022\r\n\005ad_id\030\001 \002(\003\022\021\n\tshow_" +
+      "type\030\002 \002(\005\022\034\n\tskip_type\030\003 \002(\0162\t.SkipType" +
+      "\022\021\n\tclick_url\030\004 \002(\t\022\034\n\ticon_info\030\005 \001(\0132\t" +
+      ".IconInfo\022\025\n\rwords_content\030\006 \001(\t\022\021\n\tword" +
+      "s_col\030\007 \001(\t\022\035\n\twords_img\030\010 \001(\0132\n.ImageIn" +
+      "fo\022\026\n\016button_content\030\t \001(\t\022\036\n\nbutton_img" +
+      "\030\n \001(\0132\n.ImageInfo\022\022\n\nbutton_col\030\013 \001(\t\022\030" +
+      "\n\020show_statics_url\030\014 \001(\t\022\031\n\021click_static" +
+      "s_url\030\r \001(\t\022\033\n\023ad_stat_show_params\030\016 \001(\t",
+      "\022\034\n\024ad_stat_click_params\030\017 \001(\t\022\020\n\010is_eje" +
+      "ct\030\020 \001(\010\022\025\n\rinterval_time\030\021 \001(\003\022\023\n\013is_ca" +
+      "rousel\030\022 \001(\010\022\026\n\016card_show_time\030\023 \001(\003\022\027\n\017" +
+      "pop_queue_start\030\024 \001(\003\022\027\n\017pop_queue_limit" +
+      "\030\025 \001(\003\022\032\n\022manual_queue_start\030\026 \001(\003\022\032\n\022ma" +
+      "nual_queue_limit\030\027 \001(\003\022\022\n\nstart_time\030\030 \001" +
+      "(\005\022\020\n\010end_time\030\031 \001(\005\022\035\n\010position\030\032 \001(\0162\013" +
+      ".AdPosition\022\026\n\016add_coordinate\030\033 \001(\005\022\031\n\005v" +
+      "edio\030\034 \001(\0132\n.ImageInfo\022\037\n\013vedio_cover\030\035 " +
+      "\001(\0132\n.ImageInfo\022$\n\013native_info\030\036 \003(\0132\017.C",
+      "ardNativeInfo\022\024\n\014is_auto_play\030\037 \001(\005\022\027\n\017p" +
+      "lay_valid_time\030  \001(\005\022\020\n\010duration\030! \001(\005\022\'" +
+      "\n\016weChatMiniApps\030\" \001(\0132\017.WeChatMiniApps\"" +
+      "\365\002\n\016CardNativeInfo\022\014\n\004type\030\001 \002(\005\022\r\n\005inde" +
+      "x\030\002 \002(\005\022\030\n\004info\030\003 \001(\0132\n.ImageInfo\022\r\n\005col" +
+      "or\030\004 \001(\t\022\014\n\004text\030\005 \001(\t\022\035\n\tvedio_url\030\006 \001(" +
+      "\0132\n.ImageInfo\022\021\n\tclick_url\030\007 \001(\t\022\023\n\013show" +
+      "_params\030\010 \001(\t\022\024\n\014click_params\030\t \001(\t\022\034\n\ts" +
+      "kip_type\030\n \001(\0162\t.SkipType\022\030\n\020show_static" +
+      "s_url\030\013 \001(\t\022\031\n\021click_statics_url\030\014 \001(\t\022\'",
+      "\n\013advideoInfo\030\r \001(\0132\022.AdVideoExtendInfo\022" +
+      "\033\n\rrequest_focus\030\016 \001(\010:\004true\022\031\n\013auto_rot" +
+      "ate\030\017 \001(\010:\004true\"\374\003\n\034AdSuitAvatarPropsDes" +
+      "cription\022\r\n\005ad_id\030\001 \002(\003\022\022\n\nlayer_type\030\002 " +
+      "\002(\005\022\036\n\nimage_info\030\003 \002(\0132\n.ImageInfo\022\034\n\ts" +
+      "kip_type\030\004 \002(\0162\t.SkipType\022\021\n\tclick_url\030\005" +
+      " \002(\t\022\017\n\007layer_x\030\006 \001(\005\022\017\n\007layer_y\030\007 \001(\005\022\017" +
+      "\n\007click_x\030\010 \001(\005\022\017\n\007click_y\030\t \001(\005\022\023\n\013clic" +
+      "k_width\030\n \001(\005\022\024\n\014click_height\030\013 \001(\005\022\030\n\020s" +
+      "how_statics_url\030\014 \001(\t\022\031\n\021click_statics_u",
+      "rl\030\r \001(\t\022\033\n\023ad_stat_show_params\030\016 \001(\t\022\034\n" +
+      "\024ad_stat_click_params\030\017 \001(\t\022)\n\020ad_positi" +
+      "on_link\030\020 \001(\0132\017.AdPositionLink\022\035\n\010positi" +
+      "on\030\021 \001(\0162\013.AdPosition\022\026\n\016add_coordinate\030" +
+      "\022 \001(\005\022\'\n\016weChatMiniApps\030\023 \001(\0132\017.WeChatMi" +
+      "niApps\"\273\001\n\025AvatarMergeStarDetail\022\023\n\013avat" +
+      "ar_type\030\001 \002(\003\022 \n\013position_id\030\002 \002(\0162\013.AdP" +
+      "osition\022;\n\031avatar_banner_description\030\003 \003" +
+      "(\0132\030.AvatarBannerDescription\022.\n\022avatar_d" +
+      "escription\030\004 \003(\0132\022.AvatarDescription\"\235\001\n",
+      "\027AvatarBannerDescription\022\n\n\002id\030\001 \001(\005\022\021\n\t" +
+      "bannerUrl\030\002 \001(\t\022\020\n\010jumpType\030\003 \001(\005\022\017\n\007jum" +
+      "pUrl\030\004 \001(\t\022\020\n\010avatarId\030\005 \001(\005\022.\n\022avatar_d" +
+      "escription\030\006 \001(\0132\022.AvatarDescription\"x\n\020" +
+      "AvatarSuitDetail\022\022\n\nisShowMore\030\001 \001(\010\022 \n\013" +
+      "position_id\030\002 \002(\0162\013.AdPosition\022.\n\022avatar" +
+      "_description\030\003 \003(\0132\022.AvatarDescription\"\223" +
+      "\003\n\021AvatarDescription\022\n\n\002id\030\001 \001(\005\022\021\n\tshow" +
+      "_type\030\002 \001(\005\022\014\n\004type\030\003 \001(\005\022\014\n\004name\030\004 \001(\t\022" +
+      "\016\n\006prefix\030\005 \001(\t\022\013\n\003key\030\006 \001(\t\022\017\n\007details\030",
+      "\007 \001(\t\022\017\n\007faceurl\030\010 \001(\t\022\014\n\004durl\030\t \001(\t\022\r\n\005" +
+      "bkurl\030\n \001(\t\022\017\n\007cardurl\030\013 \001(\t\022\016\n\006useNum\030\014" +
+      " \001(\003\022\017\n\007voiceId\030\r \001(\005\022\013\n\003sex\030\016 \001(\005\022\020\n\010tr" +
+      "ialUrl\030\017 \001(\t\022\020\n\010voiceUrl\030\020 \001(\t\022\r\n\005isNew\030" +
+      "\021 \001(\010\022\022\n\nrankDetail\030\022 \001(\005\022\022\n\nstrartDate\030" +
+      "\023 \001(\t\022\017\n\007endDate\030\024 \001(\t\022\034\n\024cardValidTimeD" +
+      "etails\030\025 \001(\t\022\036\n\026star_voice_information\030\026" +
+      " \001(\t\"\201\002\n\026AvatarVoiceDescription\022\n\n\002id\030\001 " +
+      "\001(\005\022\014\n\004type\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\013\n\003key\030\004" +
+      " \001(\t\022\017\n\007details\030\005 \001(\t\022\013\n\003sex\030\006 \001(\005\022\r\n\005is",
+      "New\030\007 \001(\010\022\016\n\006imgUrl\030\010 \001(\t\022\020\n\010trialUrl\030\t " +
+      "\001(\t\022\020\n\010voiceUrl\030\n \001(\t\022\016\n\006useNum\030\013 \001(\003\022\022\n" +
+      "\nstrartDate\030\014 \001(\t\022\017\n\007endDate\030\r \001(\t\022\034\n\024ca" +
+      "rdValidTimeDetails\030\016 \001(\t\"\262\001\n\027AvataStarRe" +
+      "sourceDetail\022\020\n\010avatarId\030\001 \002(\005\022 \n\013positi" +
+      "on_id\030\002 \002(\0162\013.AdPosition\022$\n\rclothes_mode" +
+      "l\030\003 \001(\0132\r.ClothesModel\022(\n\017sentenses_mode" +
+      "l\030\004 \003(\0132\017.SentensesModel\022\023\n\013update_time\030" +
+      "\005 \001(\003\"-\n\014ClothesModel\022\020\n\010position\030\001 \001(\005\022" +
+      "\013\n\003url\030\002 \001(\t\"L\n\016SentensesModel\022\017\n\007conten",
+      "t\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\r\n\005entry\030\003 \001(\t\022\r\n\005o" +
+      "rder\030\004 \001(\005\"5\n\020FrequencyControl\022\r\n\005ad_id\030" +
+      "\001 \001(\003\022\022\n\nshow_count\030\002 \001(\005\"\233\001\n\010SkipMode\022\034" +
+      "\n\tskip_type\030\001 \002(\0162\t.SkipType\022\021\n\tclick_ur" +
+      "l\030\002 \002(\t\022\020\n\010priority\030\003 \001(\005\022\'\n\016weChatMiniA" +
+      "pps\030\004 \001(\0132\017.WeChatMiniApps\022#\n\033click_moni" +
+      "toring_connection\030\005 \001(\t\"\303\010\n\nAdResponse\022\022" +
+      "\n\nsession_id\030\001 \002(\t\022\037\n\010res_stat\030\002 \002(\0162\r.R" +
+      "esponseStat\022\025\n\rerror_message\030\003 \001(\t\022\030\n\007ad" +
+      "_type\030\004 \002(\0162\007.AdType\022)\n\020ad_splash_detail",
+      "\030\005 \001(\0132\017.AdSplashDetail\0222\n\025ad_back_groun" +
+      "d_detail\030\006 \001(\0132\023.AdBackgroundDetail\022)\n\020a" +
+      "s_avatar_detail\030\007 \001(\0132\017.AdAvatarDetail\022%" +
+      "\n\016ad_util_detail\030\010 \003(\0132\r.AdUtilDetail\022\031\n" +
+      "\021invalid_advert_id\030\t \003(\003\022#\n\rad_tab_detai" +
+      "l\030\n \001(\0132\014.AdTabDetail\0228\n\030ad_discourse_ca" +
+      "rd_detail\030\013 \001(\0132\026.AdDiscourseCardDetail\022" +
+      "\021\n\tbase64img\030\014 \001(\014\0222\n\025ad_avatar_card_det" +
+      "ail\030\r \003(\0132\023.AdAvatarCardDetail\0228\n\030ad_ava" +
+      "tar_clothes_detail\030\016 \001(\0132\026.AdAvatarCloth",
+      "esDetail\0224\n\026ad_avatar_props_detail\030\017 \001(\013" +
+      "2\024.AdAvatarPropsDetail\022A\n\035ad_display_win" +
+      "dow_card_detail\030\020 \001(\0132\032.AdDisplayWindowC" +
+      "ardDetail\022-\n\022ad_blocking_detail\030\021 \003(\0132\021." +
+      "AdBlockingDetail\0228\n\030ad_assist_replace_de" +
+      "tail\030\022 \001(\0132\026.AdAssistReplaceDetail\0224\n\026ad" +
+      "_suit_clothes_detail\030\023 \001(\0132\024.AdSuitCloth" +
+      "esDetail\022\033\n\023new_user_start_time\030\024 \001(\003\022\031\n" +
+      "\021new_user_end_time\030\025 \001(\003\0228\n\030avatar_merge" +
+      "_star_detail\030\026 \001(\0132\026.AvatarMergeStarDeta",
+      "il\022-\n\022avatar_suit_detail\030\027 \001(\0132\021.AvatarS" +
+      "uitDetail\022<\n\032avata_star_resource_detail\030" +
+      "\030 \001(\0132\030.AvataStarResourceDetail\022,\n\021frequ" +
+      "ency_control\030\031 \003(\0132\021.FrequencyControl\"N\n" +
+      "\tFeedClick\022\027\n\006action\030\001 \002(\0132\007.Action\022\022\n\np" +
+      "ositionId\030\002 \002(\005\022\024\n\014manufacturer\030\003 \002(\t\"Y\n" +
+      "\006Action\022\037\n\nactionType\030\001 \002(\0162\013.ActionType" +
+      "\022\013\n\003url\030\002 \002(\t\022!\n\013contentType\030\003 \002(\0162\014.Con" +
+      "tentType\"\345\001\n\020DownloadMonitors\022!\n\031ad_stat" +
+      "_down_start_params\030\001 \001(\t\022\"\n\032ad_stat_down",
+      "_finish_params\030\002 \001(\t\022%\n\035ad_stat_install_" +
+      "finish_params\030\003 \001(\t\022\036\n\026ad_stat_down_star" +
+      "t_url\030\004 \001(\t\022\037\n\027ad_stat_down_finish_url\030\005" +
+      " \001(\t\022\"\n\032ad_stat_install_finish_url\030\006 \001(\t" +
+      "\"2\n\016WeChatMiniApps\022\022\n\nmini_appid\030\001 \001(\t\022\014" +
+      "\n\004type\030\004 \001(\005*p\n\016AdPositionStat\022\022\n\016AD_UNA" +
+      "VAILABLE\020\001\022\024\n\020AD_SELF_PRIORITY\020\002\022\031\n\025AD_T" +
+      "HIRD_SDK_PRIORITY\020\003\022\031\n\025AD_THIRD_API_PRIO" +
+      "RITY\020\004*C\n\010Platform\022\013\n\007ANDROID\020\001\022\007\n\003IOS\020\002" +
+      "\022\013\n\007WINDOWS\020\003\022\n\n\006OTHERS\020\004\022\010\n\004IPAD\020\005*i\n\010L",
+      "anguage\022\021\n\rSIMPLIFIED_CH\020\001\022\025\n\021TRADITIONA" +
+      "L_HK_CH\020\002\022\025\n\021TRADITIONAL_TW_CH\020\004\022\013\n\007ENGL" +
+      "ISH\020\010\022\017\n\013LANG_OTHERS\020\020*\243\002\n\nAdShowType\022\020\n" +
+      "\014SPLASH_IMAGE\020\001\022\020\n\014SPLASH_VIDEO\020\002\022\014\n\010BG_" +
+      "IMAGE\020\004\022\020\n\014BG_ANIMATION\020\010\022\023\n\017AVATAR_CLOT" +
+      "HING\020\020\022\023\n\017AVATAR_PROPERTY\020 \022\024\n\020AVATAR_AN" +
+      "IMATION\020@\022\024\n\017AVATAR_SENTENCE\020\200\001\022\024\n\017UTIL_" +
+      "ONLY_IMAGE\020\200\002\022\025\n\020UTIL_IMAGE_WORDS\020\200\004\022\024\n\017" +
+      "UTIL_ONLY_WORDS\020\200\010\022\023\n\016UTIL_ONLY_ICON\020\200\020\022" +
+      "\024\n\017UTIL_ICON_WORDS\020\200 \022\r\n\010UTIL_MP3\020\200@*\250\024\n",
+      "\nAdPosition\022\016\n\nPOS_SPLASH\020\001\022\032\n\026POS_WEATH" +
+      "ER_BACKGROUND\020e\022\022\n\rPOS_GAME_GATE\020\255\002\022\027\n\022P" +
+      "OS_DISCOUNT_ENTRY\020\256\002\022\036\n\031POS_VOICE_BROADC" +
+      "AST_ABOVE\020\257\002\022\036\n\031POS_VOICE_BROADCAST_UNDE" +
+      "R\020\260\002\022\037\n\032POS_WEATHER_FRONT_PAGE_TOP\020\261\002\022\"\n" +
+      "\035POS_WEATHER_FRONT_PAGE_MIDDLE\020\262\002\022\"\n\035POS" +
+      "_WEATHER_FRONT_PAGE_BOTTOM\020\263\002\022!\n\034POS_WEA" +
+      "THER_HOME_INDEX_ENTRY\020\264\002\022\030\n\023POS_DRESS_AS" +
+      "SISTANT\020\311\001\022\035\n\030POS_BELOW_CITY_SELECTION\020\351" +
+      "\007\022\034\n\027POS_LIVE_DETAILS_BOTTOM\020\352\007\022\027\n\022POS_D",
+      "RESSING_INDEX\020\353\007\022\034\n\027POS_LOWER_DAILY_DETA" +
+      "ILS\020\354\007\022\027\n\022POS_INDEX_H5_BELOW\020\355\007\022\037\n\032POS_L" +
+      "ITTLE_INK_SISTER_TIPS\020\356\007\022\036\n\031POS_AIR_INDE" +
+      "X_REVIEW_LIST\020\357\007\022\027\n\022POS_TIME_SCENE_TOP\020\360" +
+      "\007\022\033\n\026POS_TIME_SCENE_TOP_TWO\020\362\007\022\035\n\030POS_TI" +
+      "ME_SCENE_TOP_THREE\020\363\007\022 \n\033POS_TIME_VIEW_C" +
+      "OMMENTS_LIST\020\361\007\022\031\n\024POS_MY_PAGE_FIND_APP\020" +
+      "\321\017\022\035\n\030POS_MY_PAGE_DYNAMIC_MENU\020\322\017\022!\n\034POS" +
+      "_MY_PAGE_DYNAMIC_MENU_TWO\020\323\017\022#\n\036POS_MY_P" +
+      "AGE_DYNAMIC_MENU_LOCAL\020\324\017\022\034\n\027POS_PUSH_AR",
+      "TICLE_MIDDLE\020\271\027\022\"\n\035POS_OPERATING_ARTICLE" +
+      "_CENTRAL\020\272\027\022#\n\036POS_FEED_STREAM_MIDDLE_AR" +
+      "TICLE\020\273\027\022\037\n\032POS_FEED_STREAM_CARD_ENTRY\020\241" +
+      "\037\022&\n!POS_FEED_STREAM_CARD_CENTER_ENTRY\020\242" +
+      "\037\022\021\n\014POS_TAB_PAGE\020\211\'\022\027\n\022POS_DISCOURSE_DA" +
+      "RD\020\312\001\022!\n\034POS_DRESS_ASSISTANT_CARD_ONE\020\313\001" +
+      "\022!\n\034POS_DRESS_ASSISTANT_CARD_TWO\020\314\001\022#\n\036P" +
+      "OS_DRESS_ASSISTANT_CARD_THREE\020\315\001\022\034\n\027POS_" +
+      "DISPLAY_WINDOW_CARD\020\316\001\022 \n\033POS_DRESS_ASSI" +
+      "STANT_CLOTHES\020\317\001\022\036\n\031POS_DRESS_ASSISTANT_",
+      "PROPS\020\320\001\022 \n\033POS_AIR_INDEX_MIDDLE_BANNER\020" +
+      "\365\007\022\033\n\026POS_FEED_STREAM_BANNER\020\243\037\022 \n\033POS_F" +
+      "EED_STREAM_INFORMATION\020\244\037\022\030\n\023POS_FEED_NO" +
+      "VEL_CARD\020\246\037\022\034\n\027POS_FEED_STREAM_DETAILS\020\247" +
+      "\037\022\037\n\032POS_BLOCKING_TAB_TIME_PAGE\020\212\'\022\035\n\030PO" +
+      "S_BLOCKING_TAB_MY_PAGE\020\213\'\022\027\n\022POS_ASSIST_" +
+      "REPLACE\020\322\001\022\034\n\027POS_AVATAR_SUIT_CLOTHES\020\323\001" +
+      "\022\034\n\027POS_FEED_ARTICLE_STREAM\020\250\037\022\033\n\026POS_AV" +
+      "ATAR_ASSIST_LIST\020\324\001\022\037\n\032POS_AVATAR_LONG_P" +
+      "RESS_LIST\020\325\001\022#\n\036POS_AVATAR_DOWNLOAD_STAT",
+      "ISTICS\020\326\001\022\035\n\030POS_AVATAR_STAR_RESOURCE\020\327\001" +
+      "\022\027\n\022POS_SHARE_ENTRANCE\020\265\002\022\026\n\021POS_LIVE_DE" +
+      "TAIDLS\020\364\007\022#\n\036POS_INDEX_ARTICLE_UPPER_BAN" +
+      "NER\020\367\007\022%\n POS_INDEX_ARTICLE_RECOMMENDATI" +
+      "ON\020\370\007\022\036\n\031POS_TIME_SCENE_BANNER_TOP\020\371\007\022!\n" +
+      "\034POS_TIME_SCENE_BANNER_BOTTOM\020\372\007\022\030\n\023POS_" +
+      "TIME_SCENE_ICON\020\373\007\022 \n\033POS_TIME_CITY_CLAS" +
+      "SIFCATION\020\374\007\022$\n\036POS_AVATAR_SUIT_CLOTHES_" +
+      "ATTIRE\020\355\244\001\022#\n\035POS_AVATAR_SUIT_CLOTHES_PR" +
+      "OPS\020\356\244\001\022\"\n\034POS_AVATAR_SUIT_CLOTHES_CARD\020",
+      "\357\244\001\022\022\n\016POS_FEED_CLICK\020\t\022$\n\037POS_TIME_VIEW" +
+      "_COMMENTS_LIST_NEW\020\214\'\022\030\n\024POS_WEATHER_TOP" +
+      "_ICON\020f\022 \n\033POS_THEMATIC_COMMENT_BANNER\020\375" +
+      "\007\022\037\n\033POS_WEATHER_INDEX_COLOR_EGG\020g\022+\n&PO" +
+      "S_MY_PAGE_DYNAMIC_MENU_ENTERTAINMENT\020\325\017\022" +
+      "#\n\036POS_MY_PAGE_DYNAMIC_MENU_RELAX\020\326\017\022\"\n\035" +
+      "POS_MY_PAGE_DYNAMIC_MENU_GAME\020\327\017\022\024\n\017POS_" +
+      "SHORT_VIDEO\020\361.\022\037\n\032POS_BLOCKING_TAB_HOME_" +
+      "PAGE\020\215\'\022\027\n\022POS_MESSAGE_BOTTOM\020\207\010\022\030\n\023POS_" +
+      "FEED_TOP_BANNER\020\252\037\022\037\n\032POS_MY_PAGE_OPERAT",
+      "E_BANNER\020\330\017\022(\n#POS_FIFTEEN_DAY_FORECAST_" +
+      "TOP_BANNER\020\266\002\022(\n#POS_TWENTY_FOUR_FORECAS" +
+      "T_TOP_BANNER\020\267\002\022-\n(POS_FIFTEEN_DAY_FOREC" +
+      "AST_TOP_BANNER_ICON\020\270\002\022\037\n\032POS_TIME_SCENE" +
+      "_DETAIL_ICON\020\210\010\022\026\n\021POS_MESSAGE_BOARD\020\211\010*" +
+      "]\n\013CarrierType\022\022\n\016CARRIER_MOBILE\020\001\022\021\n\rCA" +
+      "RRIER_UNION\020\002\022\023\n\017CARRIER_TELECOM\020\003\022\022\n\016CA" +
+      "RRIER_OTHERS\020\004*\206\001\n\006AdType\022\t\n\005ERROR\020\000\022\n\n\006" +
+      "SPLASH\020\001\022\014\n\010BGAVATAR\020\002\022\017\n\013OTHERS_TYPE\020\003\022" +
+      "\014\n\010TAB_TYPE\020\004\022\022\n\016RESOURCE_IMAGE\020\005\022\022\n\016DIS",
+      "PLAY_WINDOW\020\006\022\020\n\014AVATAR_MERGE\020\007* \n\nDayOr" +
+      "Night\022\007\n\003DAY\020\001\022\t\n\005NIGHT\020\002*$\n\021IsShortPred" +
+      "iction\022\006\n\002NO\020\000\022\007\n\003YES\020\001*#\n\010SkipType\022\n\n\006S" +
+      "KIPIN\020\001\022\013\n\007SKIPOUT\020\002*@\n\tCloseType\022\022\n\016CLO" +
+      "SE_WHILE_AD\020\001\022\021\n\rCLOSE_ONE_DAY\020\002\022\014\n\010NO_C" +
+      "LOSE\020\003*\266\001\n\nAdPartener\022\032\n\rPARTENER_NONE\020\377" +
+      "\377\377\377\377\377\377\377\377\001\022\020\n\014PARTENER_GDT\020\001\022\022\n\016PARTENER_" +
+      "BAIDU\020\002\022\021\n\rPARTENER_TANX\020\003\022\025\n\021PARTENER_M" +
+      "ADHOUSE\020\004\022\023\n\017PARTENER_ICLICK\020\005\022\021\n\rPARTEN" +
+      "ER_SXYJ\020\006\022\024\n\020PARTENER_TOUTIAO\020\007*1\n\017NetTy",
+      "peDownload\022\r\n\tONLY_WIFI\020\001\022\017\n\013ALL_NETTYPE" +
+      "\020\002*-\n\nImageLevel\022\020\n\014LEVEL_BOTTOM\020\001\022\r\n\tLE" +
+      "VEL_TOP\020\002*/\n\014ResponseStat\022\017\n\013RES_SUCCESS" +
+      "\020\001\022\016\n\nRES_FAILED\020\002*-\n\013ContentType\022\010\n\004tex" +
+      "t\020\001\022\t\n\005video\020\002\022\t\n\005audio\020\003*/\n\nActionType\022" +
+      "\021\n\rcontent_click\020\001\022\016\n\nlike_click\020\002*\"\n\010Pa" +
+      "geType\022\014\n\010DOWNLOAD\020\001\022\010\n\004HTML\020\002B*\n\025com.mo" +
+      "ji.launchserverB\021AdCommonInterface"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -98375,7 +98465,7 @@ public final class AdCommonInterface {
           internal_static_ThirdAdControl_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ThirdAdControl_descriptor,
-              new java.lang.String[] { "AdId", "Partener", "PartenerId", "ShowType", "AppId", "Index", "IndexType", "AdPosition", "AdStyle", "AdStatShowParams", "AdStatClickParams", "Shownum", "FeedInterval", "SplashImageInfo", "ButtonImageInfoOpen", "ButtonImageInfoDownload", "SplashShowType", "IsShowAdSign", "MenuIcon", "BlockHeight", "RedDot", "AddCoordinate", "CloseBtnWidth", "CloseBtnHeight", "CloseBtnShow", "ModuleIndex", "IsAutoPlay", "IsShowLogo", "Logo", "LogoStyle", "AdPrice", "MiaoZhenSDK", },
+              new java.lang.String[] { "AdId", "Partener", "PartenerId", "ShowType", "AppId", "Index", "IndexType", "AdPosition", "AdStyle", "AdStatShowParams", "AdStatClickParams", "Shownum", "FeedInterval", "SplashImageInfo", "ButtonImageInfoOpen", "ButtonImageInfoDownload", "SplashShowType", "IsShowAdSign", "MenuIcon", "BlockHeight", "RedDot", "AddCoordinate", "CloseBtnWidth", "CloseBtnHeight", "CloseBtnShow", "ModuleIndex", "IsAutoPlay", "IsShowLogo", "Logo", "LogoStyle", "AdPrice", "IconPosition", },
               com.moji.launchserver.AdCommonInterface.ThirdAdControl.class,
               com.moji.launchserver.AdCommonInterface.ThirdAdControl.Builder.class);
           internal_static_AdSplashDescription_descriptor =
@@ -98383,7 +98473,7 @@ public final class AdCommonInterface {
           internal_static_AdSplashDescription_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AdSplashDescription_descriptor,
-              new java.lang.String[] { "AdId", "ShowType", "ShowTime", "ClickUrl", "ClickArea", "ImageInfo", "ClickStaticsUrl", "NetType", "StartTime", "EndTime", "AdPrice", "Type", "ShowStaticsUrl", "CloseStaticsUrl", "AdStatShowParams", "AdStatClickParams", "IsShowAdSign", "CrossImage", "VerticalImage", "SplashShowType", "PageType", "AppStar", "Desc", "AddCoordinate", "LocationRule", "Advertiser", "ConversionUrl", "PropertyType", "IsShowLogo", "Logo", "LogoStyle", "DownloadMonitors", "WeChatMiniApps", "MiaoZhenSDK", },
+              new java.lang.String[] { "AdId", "ShowType", "ShowTime", "ClickUrl", "ClickArea", "ImageInfo", "ClickStaticsUrl", "NetType", "StartTime", "EndTime", "AdPrice", "Type", "ShowStaticsUrl", "CloseStaticsUrl", "AdStatShowParams", "AdStatClickParams", "IsShowAdSign", "CrossImage", "VerticalImage", "SplashShowType", "PageType", "AppStar", "Desc", "AddCoordinate", "LocationRule", "Advertiser", "ConversionUrl", "PropertyType", "IsShowLogo", "Logo", "LogoStyle", "DownloadMonitors", "WeChatMiniApps", "SkipMode", },
               com.moji.launchserver.AdCommonInterface.AdSplashDescription.class,
               com.moji.launchserver.AdCommonInterface.AdSplashDescription.Builder.class);
           internal_static_AdSplashDetail_descriptor =
@@ -98479,7 +98569,7 @@ public final class AdCommonInterface {
           internal_static_AdUtilDescription_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AdUtilDescription_descriptor,
-              new java.lang.String[] { "AdId", "ShowType", "Position", "PositionName", "SkipType", "ClickUrl", "CloseType", "Title", "AdUtilDescription", "ImageInfo", "IconInfo", "ClickStaticsUrl", "Index", "AdStyle", "AdPrice", "ShowStaticsUrl", "CloseStaticsUrl", "AdStatShowParams", "AdStatClickParams", "IndexType", "IsShowAdSign", "FeedInterval", "FeedImages", "AdvertId", "Type", "IsAutoPlay", "VideoImageInfo", "VideoTitle", "StartTime", "EndTime", "PlayValidTime", "Duration", "BlockHeight", "RedDot", "Level", "ActiveTrackUrl", "IsDeeplink", "DeeplinkUrl", "DeeplinkPkgName", "AdStatActiveParams", "Address", "Lon", "Lat", "AddCoordinate", "CloseBtnWidth", "CloseBtnHeight", "CloseBtnShow", "Advertiser", "ConversionUrl", "ModuleIndex", "NativeInfo", "VideoInfo", "AutoRotate", "AdPublish", "PropertyType", "IsShowLogo", "Logo", "LogoStyle", "Format", "DynamicZipUrl", "IsCycle", "IsDisappear", "DownloadMonitors", "WeChatMiniApps", "IconDescription", "PageType", "SkipMode", "SkipListShowMonitoring", "MiaoZhenSDK", },
+              new java.lang.String[] { "AdId", "ShowType", "Position", "PositionName", "SkipType", "ClickUrl", "CloseType", "Title", "AdUtilDescription", "ImageInfo", "IconInfo", "ClickStaticsUrl", "Index", "AdStyle", "AdPrice", "ShowStaticsUrl", "CloseStaticsUrl", "AdStatShowParams", "AdStatClickParams", "IndexType", "IsShowAdSign", "FeedInterval", "FeedImages", "AdvertId", "Type", "IsAutoPlay", "VideoImageInfo", "VideoTitle", "StartTime", "EndTime", "PlayValidTime", "Duration", "BlockHeight", "RedDot", "Level", "ActiveTrackUrl", "IsDeeplink", "DeeplinkUrl", "DeeplinkPkgName", "AdStatActiveParams", "Address", "Lon", "Lat", "AddCoordinate", "CloseBtnWidth", "CloseBtnHeight", "CloseBtnShow", "Advertiser", "ConversionUrl", "ModuleIndex", "NativeInfo", "VideoInfo", "AutoRotate", "AdPublish", "PropertyType", "IsShowLogo", "Logo", "LogoStyle", "Format", "DynamicZipUrl", "IsCycle", "IsDisappear", "DownloadMonitors", "WeChatMiniApps", "IconDescription", "PageType", "SkipMode", "SkipListShowMonitoring", "IconPosition", },
               com.moji.launchserver.AdCommonInterface.AdUtilDescription.class,
               com.moji.launchserver.AdCommonInterface.AdUtilDescription.Builder.class);
           internal_static_AdVideoExtendInfo_descriptor =
@@ -98695,7 +98785,7 @@ public final class AdCommonInterface {
           internal_static_AdSuitClothes_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AdSuitClothes_descriptor,
-              new java.lang.String[] { "AdId", "IsNeedClear", "ShowAdIndex", "AdSuitAvatarClothes", "AdSuitAvatarProps", "AdSuitAvatarCard", "AdPublish", "PropertyType", "MiaoZhenSDK", },
+              new java.lang.String[] { "AdId", "IsNeedClear", "ShowAdIndex", "AdSuitAvatarClothes", "AdSuitAvatarProps", "AdSuitAvatarCard", "AdPublish", "PropertyType", },
               com.moji.launchserver.AdCommonInterface.AdSuitClothes.class,
               com.moji.launchserver.AdCommonInterface.AdSuitClothes.Builder.class);
           internal_static_AdPublish_descriptor =
