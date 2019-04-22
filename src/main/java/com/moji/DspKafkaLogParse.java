@@ -23,13 +23,15 @@ import java.util.concurrent.TimeUnit;
  * 解析dsp结算 kafka的发送 cost 和 citystat 日志
  */
 public class DspKafkaLogParse {
-    static String fileName = "824";
+    static String fileName = "400000002207";
 //    static String costFileName = "970cost";
 
 
     //    "2018-10-18 18:29:57"
     static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     static String topic = "citystat";
+	static Producer<String, String> producer;
+
 
     public static void main(String[] args) throws IOException, ParseException {
 //        initKafka(topic);
@@ -143,7 +145,6 @@ public class DspKafkaLogParse {
 //    }
 
 
-    static Producer<String, String> producer;
 
 //    private static void sendKafka(String topic, String value) {
 //        ProducerRecord<String, String> msg = new ProducerRecord<>(topic, value);

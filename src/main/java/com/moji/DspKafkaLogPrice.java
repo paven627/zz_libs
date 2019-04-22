@@ -17,24 +17,34 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class DspKafkaLogPrice {
     static Logger logger = Logger.getLogger(DspKafkaLogPrice.class);
 
-    static String fileName = "C:\\Users\\bin.deng\\Desktop\\400000000981citystat\\kafka_1025.log";
+    static String fileName = "C:\\Users\\bin.deng\\Desktop\\400000002269\\400000002269";
     //    static String fileName = "C:\\Users\\bin.deng\\Desktop\\400000000981citystat\\kafka_1026.log";
 
 //    static String fileName = "C:\\Users\\bin.deng\\Desktop\\dsp_stat_gap\\kafka.log";
-    static String adId = "400000000987";
+    static String adId = "400000002269";
     /**
      * 目标日期, 日解析该日期的数据
      */
-    static String targetDate = "2018-10-25";
+    static String targetDate = "2019-04-11";
     static SimpleDateFormat costTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     static Set<String> tableNames = new HashSet<>();
 
 
-    public static void main(String[] args) throws IOException, ParseException {
+    public static void main(String[] args) {
 
-        parseCityStat(fileName, 0, 23);
-    }
+		try {
+			parseCityStat(fileName, 0, 23);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+	//日志数据
+	static Map<Integer, Integer> logHourImps = new HashMap<>();
+	static Map<Integer, Integer> logHourClicks = new HashMap<>();
+	static BigDecimal logCost = new BigDecimal("0.0");
 
     // 解析发送的统计日志
     private static void parseCityStat(String file, int startHour, int endHour) throws
@@ -58,13 +68,16 @@ public class DspKafkaLogPrice {
         int logImps = 0;
         int logClicks = 0;
 
-        Map<Integer, Integer> costHourImps = new HashMap<>();
-        Map<Integer, Integer> costHourClicks = new HashMap<>();
-        Map<Integer, Integer> statHourImps = new HashMap<>();
-        Map<Integer, Integer> statHourClicks = new HashMap<>();
+		Map<Integer, Integer> costHourImps = new HashMap<>();
+		Map<Integer, Integer> costHourClicks = new HashMap<>();
+		Map<Integer, Integer> statHourImps = new HashMap<>();
+		Map<Integer, Integer> statHourClicks = new HashMap<>();
 
         Map<Integer, Integer> statClicksMinute = new HashMap<>();
         Map<Integer, Integer> costClicksMinute = new HashMap<>();
+
+
+
 
         while ((line = reader.readLine()) != null) {
             if (line.length() < 1) {
@@ -77,25 +90,34 @@ public class DspKafkaLogPrice {
                 isCost = true;
             } else if (line.indexOf("cityStat") > 0) {
                 isStat = true;
-            } else if (line.indexOf("time='2018-10-25") > 0 && line.indexOf("messageType=1") > 0 && line.indexOf
+            } else if (line.indexOf("time='"+targetDate) > 0 && line.indexOf("statType=1") > 0 && line.indexOf
                     (adId) > 0) {
                 logImps++;
-            } else if (line.indexOf("time='2018-10-25") > 0 && line.indexOf("messageType=2") > 0 && line.indexOf
+            } else if (line.indexOf("time='"+targetDate) > 0 && line.indexOf("statType=2") > 0 && line.indexOf
                     (adId) > 0) {
                 logClicks++;
-
             }
+			// json 开始位置
+			int startPos = line.indexOf("{");
+			int endPos = line.indexOf("}");
+			line = line.replace("=", ":");
+			String json = line.substring(startPos, endPos + 1);
 
-            if (!isCost && !isStat) {
-                continue;
-            }
-            // json 开始位置
-            int startPos = line.indexOf("{");
-            int endPos = line.indexOf("}");
-            String json = line.substring(startPos, endPos + 1);
-            JSONObject jsonObject = JSONObject.parseObject(json);
+			if (!isCost && !isStat) {
+				messageLog(json);
 
-            // 报表
+				continue;
+			}
+			JSONObject jsonObject = null;
+			if (isCost) {
+				jsonObject = convertCost(json);
+			}
+			if (isStat) {
+				jsonObject = convertCityStat(json);
+			}
+
+
+			// 报表
             if (isStat) {
                 if (!adId.equals(jsonObject.get("adId"))) {
                     continue;
@@ -167,15 +189,21 @@ public class DspKafkaLogPrice {
                 costCount++;
             }
         }
-        System.out.println("原始日志总数,曝光数:" + logImps + ", 点击数:" + logClicks);
-        System.out.println("消耗impressions:" + costImps + ",消耗clicks:" + costClicks + ",cost:" + costConsum + "\n" +
-                "报表impressions:" + statImps + ",报表clicks:" + statClicks + ",报表:" + statConsum + " ,costCount:" +
-                costCount + ",statCount:" + statCount);
+		System.out.println("原始日志总数,曝光数:" + logImps + ", 点击数:" + logClicks+",钱数:"+ logCost);
 
-        System.out.println("分小时数: \n消耗曝光:" + costHourImps + "\n" +
+		System.out.println("kafka发送出的数据数量:");
+		System.out.println("costCount:" + costCount + ",statCount:" + statCount);
+
+		System.out.println("Cost");
+		System.out.println("曝光:" + costImps + ",点击:" + costClicks + ",钱数:" + costConsum);
+		System.out.println("dspstat:");
+		System.out.println("曝光:" + statImps + ",点击:" + statClicks + ",钱数:" + statConsum);
+		System.out.println("\n分小时数:");
+		System.out.println("原始日志:曝光" + logHourImps +"\n点击"+ logHourClicks);
+		System.out.println("\n消耗曝光:" + costHourImps + "\n" +
                 "消耗点击:" + costHourClicks + "\n报表曝光:" + statHourImps +
                 "\n报表点击:" + statHourClicks);
-        System.out.println(tableNames);
+		System.out.println(tableNames);
         AtomicInteger dump = new AtomicInteger();
         timeMap.forEach((k, v) -> {
             if (v > 0) {
@@ -188,8 +216,53 @@ public class DspKafkaLogPrice {
         reader.close();
     }
 
+	private static void messageLog(String json) throws ParseException {
+		JSONObject log = convertCost(json);
+		if(!log.getString("advertId").equals(adId)  ){
 
-    static Map<String, Integer> timeMap = new HashMap<>();
+		}
+		String time = log.getString("time");
+		Date logDate = costTimeFormat.parse(time);
+		int hour = logDate.getHours();
+		Integer count = log.getInteger("count");
+		if(log.getInteger("statType") == 1){
+			Integer hourImps = logHourImps.get(hour) == null ? 0 : logHourImps.get(hour);
+			logHourImps.put(hour, hourImps += count);
+		} else if (log.getInteger("statType") == 2) {
+			Integer hourClicks = logHourClicks.get(hour) == null ? 0 : logHourClicks.get(hour);
+			logHourClicks.put(hour, hourClicks += count);
+		}
+		logCost= logCost.add(log.getBigDecimal("price"));
+	}
+
+	private static JSONObject convertCost(String json) {
+    	return  JSONObject.parseObject(json);
+	}
+
+	private static JSONObject convertCityStat(String json) {
+		String[] split = json.split(",");
+		StringBuilder sb = new StringBuilder(50);
+		for (int j = 0; j < split.length; j++) {
+			if (j == 8) {
+				continue;
+			}
+			if (j > 0) {
+				sb.append(",");
+			}
+			sb.append(split[j]);
+		}
+		json = sb.toString();
+
+		try {
+			return JSONObject.parseObject(json);
+		} catch (Exception e) {
+			System.out.println("error:" + json);
+			throw e;
+		}
+	}
+
+
+	static Map<String, Integer> timeMap = new HashMap<>();
 
     private static void parsetTime(String line) {
         int timeIndex = line.indexOf("time") + 6;

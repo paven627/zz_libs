@@ -30,22 +30,22 @@ public class SocketTest {
 //	 static int port = 9500;
 
 
-//	 static String ip = "172.16.6.213"; // 线上调试
-//	 static int port = 8899;
+//	 static String ip = "172.16.21.76"; // 线上调试
+//	 static int port = 9000;
 
 
 //		static String ip = "127.0.0.1";
-//	static String ip = "192.168.9.76";
-	 static String ip = "192.168.9.79";
+	static String ip = "192.168.9.76";
+//	 static String ip = "192.168.9.79";
 //	 static String ip = "192.168.9.42";
+
+//	static String ip = "103.17.43.219";
 
 	// static String ip = "adlaunch.moji.com";
 //	 static int port = 80;
 
 
 	static int port = 8080;
-//	 static int port = 8081;
-//	 static int port = 8082;
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		// InetAddress add = InetAddress.getByName("adlaunch.moji.com");
@@ -67,39 +67,35 @@ public class SocketTest {
 //        POS_MY_PAGE_DYNAMIC_MENU
 //        POS_MY_PAGE_DYNAMIC_MENU_TWO
 
-//        AdRequest otherOI = other(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH, 600,
-//                204, "com.moji.mjweather", 50070804);
+//        AdRequest otherOI = other(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH, 61,
+//				4999, "com.moji.mjweather", 50070803);
 
 
-//        AdRequest otherOI = other(AdType.BGAVATAR, Platform.IOS, AdPosition.POS_AVATAR_SUIT_CLOTHES, 600,
-//                204, "com.moji.MjWeather", 50070804);
-
-		//墨迹公告
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_MESSAGE_BOARD, 8,
-//				10, "com.moji.mjweather", 1007080601);
-
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_SHORT_VIDEO, 600,
-//                204, "com.moji.MjWeather", 1007080601);
+        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_DETAILS, 600,
+                204, "com.moji.mjweather", 1007090202);
 
 		// 时景详情icon
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_TIME_SCENE_DETAIL_ICON, 600,1,"com.moji.mjweather", 50070804);
+//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_TIME_SCENE_DETAIL_ICON, 600,1,"com.moji.mjweather", 1007080601);
 
         // 15天冠名
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition
-				.POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_ICON, 600,1, "com.moji.mjweather", 50070806);
-
-		//15天冠名
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition
 //				.POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_ICON, 600,1, "com.moji.mjweather", 50070806);
 
+		//15天冠名
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition
+//				.POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_ICON, 600,1, "com.moji.mjweather", 1007080601);
+
 		//中部+
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE
-//				, 600,1, "com.moji.mjweather", 1007080401);
+//				, 600,1, "com.moji.mjweather", 1007080500);
 		// 底部
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM
-//				, 600,1, "com.moji.mjweather", 1007080401);
+//				, 600,1, "com.moji.mjweather", 1007080500);
 		//每日详情中部
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_LOWER_DAILY_DETAILS
+//				, 600,1, "com.moji.mjweather", 1007080401);
+
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_DETAILS
 //				, 600,1, "com.moji.mjweather", 1007080401);
 
 ////
@@ -118,6 +114,28 @@ public class SocketTest {
 	}
 
 	static Socket socketOI;
+
+
+	private static void ios(Builder adc) {
+		adc.setOsVersion("8.1.2");
+		adc.setPhoneType("iPhone10,3");
+//		adc.setIdentifier("856779034959966");
+		adc.setIdentifier("12C1BDA2-DFD6-4124-8352-ADBEC1EACD07");
+		adc.setUa(
+				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) " +
+						"Mobile/13E230");
+	}
+
+	private static void android(Builder adc) {
+		adc.setOsVersion("28");
+		adc.setAndroidId("2465b6aa503c15bf");
+		adc.setIdentifier("865043046165746");
+//		adc.setIdentifier("123");
+		adc.setPhoneType("OPPO R7S");
+		adc.setUa(
+				"Mozilla/5.0+(Linux;+Android+6.0.1;+SM-N9150+Build/MMB29M;+wv)+AppleWebKit/537.36+(KHTML," +
+						"+like+Gecko)+Version/4.0+Chrome/52.0.2743.98+Mobile+Safari/537.36mojia/1007000401");
+	}
 
 
 	private static AdRequest other(AdType adType, Platform osType, AdPosition position, int cityId, int channelId,
@@ -141,14 +159,15 @@ public class SocketTest {
 		request.setIsMember(0);
 		List<AdPosition> adPositions = new ArrayList<>();
 		adPositions.add(position);
-		request.addExsitedAdIds(100010005797l);
-//        request.addExsitedAdIds(2622);
+		request.addExsitedAdIds(10017381);
+        request.addExsitedAdIds(10017354);
 //        request.addExsitedAdIds(2623);
 //
-		request.addLastAdIds(100010005797l);
-//        request.addLastAdIds(2622);
+		request.addLastAdIds(10017381);
+        request.addLastAdIds(10017354);
 //        request.addLastAdIds(2623);
-		request.setAlreadyShowId(100010005797l);
+		request.setAlreadyShowId(10017381);
+		request.setAlreadyShowId(10017354);
 
 		request.addAllPosition(adPositions);
 
@@ -160,8 +179,8 @@ public class SocketTest {
 
 
 		common.setAppVersion(version);
-		common.setScreenWidth(414);
-		common.setScreenHeight(736);
+		common.setScreenWidth(1080);
+		common.setScreenHeight(1920);
 		common.setLang(Language.SIMPLIFIED_CH);
 		//
 		common.setChannelId(channelId);
@@ -196,27 +215,6 @@ public class SocketTest {
 		}
 	}
 
-	private static void ios(Builder adc) {
-		adc.setOsVersion("8.1.2");
-		adc.setPhoneType("iPhone8,2");
-		adc.setIdentifier("3E3261FD-5894-4631-A64A-55660A259DD9");
-//        adc.setIdentifier("12C1BDA2-DFD6-4124-8352-ADBEC1EACD07");
-		adc.setUa(
-				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) " +
-						"Mobile/13E230");
-	}
-
-	private static void android(Builder adc) {
-		adc.setOsVersion("11.0");
-		adc.setAndroidId("60d562786bd59675");
-		// adc.setIdentifier("5F4546C3-680E-4F71-93AF-3EABCD637018");
-		adc.setIdentifier("352425060557234");
-		adc.setPhoneType("SM-N9150");
-		adc.setUa(
-				"Mozilla/5.0+(Linux;+Android+6.0.1;+SM-N9150+Build/MMB29M;+wv)+AppleWebKit/537.36+(KHTML," +
-						"+like+Gecko)" +
-						"+Version/4.0+Chrome/52.0.2743.98+Mobile+Safari/537.36mojia/1007000401");
-	}
 
 	private static void print(Socket socket, AdRequest request) throws IOException, InvalidProtocolBufferException {
 		byte type = 0;

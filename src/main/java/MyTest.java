@@ -1,13 +1,18 @@
 import java.security.MessageDigest;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MyTest {
 
-	public static void main(String[] args) {
-		String s= "8.1.2".replaceAll("\\.","");
-		System.out.println( s);
-//		double v = Double.parseDouble("8.1.2");
-//		System.out.println(v);
+	public static void main(String[] args) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd 00:00:00");
+		// Apr 10, 2019 11:30:00 PM
+		Date d = sdf.parse("2019-04-10 00:00:00");
+		System.out.println(d);
+
 	}
 	public static void gongzi(String[] args) throws Exception {
 //		int month = 1;
