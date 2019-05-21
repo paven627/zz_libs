@@ -638,7 +638,13 @@
             <artifactId>guava</artifactId>
             <version>27.0-jre</version>
         </dependency>
-<!-- 		<dependency> -->
+<!--        <dependency>-->
+<!--            <groupId>com.moji.ad_interface</groupId>-->
+<!--            <artifactId>launch</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
+        <!-- 		<dependency> -->
 <!-- 			<groupId>com.moji.ad_interface</groupId> -->
 <!-- 			<artifactId>launch</artifactId> -->
 <!-- 			<version>0.0.1</version> -->

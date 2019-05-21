@@ -30,12 +30,12 @@ public class SocketTest {
 //	 static int port = 9500;
 
 
-//	 static String ip = "172.16.21.76"; // 线上调试
-//	 static int port = 9000;
+	 static String ip = "172.16.21.76"; // 线上调试
+	 static int port = 9000;
 
 
 //		static String ip = "127.0.0.1";
-	static String ip = "192.168.9.76";
+//	static String ip = "192.168.9.76";
 //	 static String ip = "192.168.9.79";
 //	 static String ip = "192.168.9.42";
 
@@ -45,7 +45,7 @@ public class SocketTest {
 //	 static int port = 80;
 
 
-	static int port = 8080;
+//	static int port = 8080;
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		// InetAddress add = InetAddress.getByName("adlaunch.moji.com");
@@ -67,12 +67,12 @@ public class SocketTest {
 //        POS_MY_PAGE_DYNAMIC_MENU
 //        POS_MY_PAGE_DYNAMIC_MENU_TWO
 
-//        AdRequest otherOI = other(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH, 61,
-//				4999, "com.moji.mjweather", 50070803);
+//        AdRequest otherOI = other(AdType.SPLASH, Platform.ANDROID, AdPosition.POS_SPLASH, 61,
+//				4999, "com.moji.mjweather", 1007080601);
 
 
-        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_DETAILS, 600,
-                204, "com.moji.mjweather", 1007090202);
+//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_FEED_STREAM_DETAILS, 600,
+//                204, "com.moji.mjweather", 5007080600l);
 
 		// 时景详情icon
 //        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_TIME_SCENE_DETAIL_ICON, 600,1,"com.moji.mjweather", 1007080601);
@@ -81,22 +81,21 @@ public class SocketTest {
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition
 //				.POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_ICON, 600,1, "com.moji.mjweather", 50070806);
 
-		//15天冠名
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition
-//				.POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_ICON, 600,1, "com.moji.mjweather", 1007080601);
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition
+				.POS_FEED_STREAM_DETAILS, 600,1, "com.moji.mjweather", 5007080600l);
 
 		//中部+
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE
-//				, 600,1, "com.moji.mjweather", 1007080500);
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE
+//				, 600,10, "com.moji.mjweather", 50070806l);
 		// 底部
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM
-//				, 600,1, "com.moji.mjweather", 1007080500);
+//				, 600,1, "com.moji.mjweather", 1007090401);
 		//每日详情中部
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_LOWER_DAILY_DETAILS
 //				, 600,1, "com.moji.mjweather", 1007080401);
 
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_DETAILS
-//				, 600,1, "com.moji.mjweather", 1007080401);
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_FEED_STREAM_DETAILS
+//				, 600,1, "com.moji.mjweather", 5007080300l);
 
 ////
 //		50070506
@@ -120,7 +119,7 @@ public class SocketTest {
 		adc.setOsVersion("8.1.2");
 		adc.setPhoneType("iPhone10,3");
 //		adc.setIdentifier("856779034959966");
-		adc.setIdentifier("12C1BDA2-DFD6-4124-8352-ADBEC1EACD07");
+		adc.setIdentifier("91A4ACB4-8F2B-481C-A93B-3BC05A67B2C0");
 		adc.setUa(
 				"Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) " +
 						"Mobile/13E230");
@@ -139,7 +138,7 @@ public class SocketTest {
 
 
 	private static AdRequest other(AdType adType, Platform osType, AdPosition position, int cityId, int channelId,
-								   String packageName, int version) {
+								   String packageName, long version) {
 		AdRequest.Builder request = AdRequest.newBuilder();
 		AdRequestCommon.Builder common = AdRequestCommon.newBuilder();
 
@@ -177,7 +176,6 @@ public class SocketTest {
 		common.setCityId(cityId);
 		common.setPublishType("1");
 
-
 		common.setAppVersion(version);
 		common.setScreenWidth(1080);
 		common.setScreenHeight(1920);
@@ -197,7 +195,7 @@ public class SocketTest {
 		//
 		// // common.setIsUserAvatarShow(true);
 		common.setIsAvatarShow(true);
-		common.setRegisterTime(1550498362);
+		common.setRegisterTime(1557484511);
 		request.setRequestCommon(common);
 		// request.setDisplayTimes(1);
 //        request.setVersion(1);
@@ -253,8 +251,8 @@ public class SocketTest {
 			System.out.println(adResponse.toString());
 			System.out.println(adResponse.getErrorMessage());
 			// System.out.println(s);
-//			out.close();
-//			input.close();
+			out.close();
+			input.close();
 		}
 	}
 
