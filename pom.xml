@@ -225,23 +225,19 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>3.6</version>
-			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.6</version>
-			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-contrib</artifactId>
-			<version>3.6</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.apache.poi</groupId>-->
+<!--			<artifactId>poi-contrib</artifactId>-->
+<!--			<version>3.6</version>-->
+<!--			<type>jar</type>-->
+<!--			<scope>compile</scope>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
@@ -263,14 +259,12 @@
 			<artifactId>struts2-spring-plugin</artifactId>
 			<version>2.3.15.1</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-sitemesh-plugin</artifactId>
 			<version>2.3.15.1</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -281,7 +275,6 @@
 			<!--<groupId>org.slf4j</groupId>-->
 			<!--<artifactId>slf4j-api</artifactId>-->
 			<!--<version>1.5.11</version>-->
-			<!--<scope>compile</scope>-->
 			<!--<exclusions>-->
 				<!--<exclusion>-->
 					<!--<artifactId>slf4j-api</artifactId>-->
@@ -293,7 +286,6 @@
 			<!--<groupId>org.slf4j</groupId>-->
 			<!--<artifactId>slf4j-log4j12</artifactId>-->
 			<!--<version>1.5.11</version>-->
-			<!--<scope>compile</scope>-->
 		<!--</dependency>-->
 		<!--<dependency>-->
 			<!--<groupId>org.slf4j</groupId>-->
@@ -310,34 +302,29 @@
 			<artifactId>commons-lang</artifactId>
 			<version>2.5</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>opensymphony</groupId>
-			<artifactId>sitemesh</artifactId>
-			<version>2.4.2</version>
-			<scope>compile</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>opensymphony</groupId>-->
+<!--			<artifactId>sitemesh</artifactId>-->
+<!--			<version>2.4.2</version>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 			<version>1.8.3</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4.1</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -432,50 +419,43 @@
 			<version>2.3</version>
 			<type>jar</type>
 			<classifier>jdk15</classifier>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>xalan</groupId>
 			<artifactId>xalan</artifactId>
 			<version>2.7.1</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>xerces</groupId>
 			<artifactId>xercesImpl</artifactId>
 			<version>2.9.1</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.quartz-scheduler</groupId>
 			<artifactId>quartz</artifactId>
 			<version>1.8.3</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.jmock</groupId>
 			<artifactId>jmock-legacy</artifactId>
 			<version>2.5.1</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.2</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.objenesis</groupId>
-			<artifactId>objenesis</artifactId>
-			<version>1.2</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.objenesis</groupId>-->
+<!--			<artifactId>objenesis</artifactId>-->
+<!--			<version>1.2</version>-->
+<!--			<type>jar</type>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
@@ -487,40 +467,24 @@
 			<version>1.4</version>
 			<type>jar</type>
 		</dependency>
-		<dependency>
-			<groupId>javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.12.1.GA</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>javassist</groupId>-->
+<!--			<artifactId>javassist</artifactId>-->
+<!--			<version>3.12.1.GA</version>-->
+<!--			<type>jar</type>-->
+<!--			<scope>compile</scope>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>aopalliance</groupId>
 			<artifactId>aopalliance</artifactId>
 			<version>1.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-all</artifactId>
-			<version>5.9.1</version>
-			<exclusions> <!-- exclude掉过时的log依赖 -->
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>log4j-over-slf4j</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.velocity</groupId>
-			<artifactId>velocity</artifactId>
-			<version>${version.velocity}</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.apache.velocity</groupId>-->
+<!--			<artifactId>velocity</artifactId>-->
+<!--			<version>${version.velocity}</version>-->
+<!--		</dependency>-->
 		<!-- <dependency> -->
 		<!-- <groupId>org.apache.velocity</groupId> -->
 		<!-- <artifactId>velocity-tools</artifactId> -->
@@ -541,9 +505,9 @@
             <artifactId>vertx-web</artifactId>
             <version>3.2.0</version>
         </dependency>
-        <dependency> 
-        	<groupId>io.vertx</groupId> 
-        	<artifactId>vertx-unit</artifactId> 
+        <dependency>
+        	<groupId>io.vertx</groupId>
+        	<artifactId>vertx-unit</artifactId>
         	<version>3.2.0</version>
         </dependency>
         <dependency>
@@ -636,9 +600,15 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>27.0-jre</version>
+            <version>28.0-jre</version>
         </dependency>
-<!--        <dependency>-->
+        <dependency>
+            <groupId>com.moji.ad_interface</groupId>
+            <artifactId>launch</artifactId>
+            <version>0.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--        <dependency>-->
 <!--            <groupId>com.moji.ad_interface</groupId>-->
 <!--            <artifactId>launch</artifactId>-->
 <!--            <version>0.0.1</version>-->

@@ -30,14 +30,15 @@ public class SocketTest {
 //	 static int port = 9500;
 
 
-	 static String ip = "172.16.21.76"; // 线上调试
-	 static int port = 9000;
+//	 static String ip = "172.16.21.76"; // 线上调试
+//	 static int port = 9000;
 
+//	static String ip = "192.168.42.24";
 
 //		static String ip = "127.0.0.1";
-//	static String ip = "192.168.9.76";
+	static String ip = "192.168.9.76";
 //	 static String ip = "192.168.9.79";
-//	 static String ip = "192.168.9.42";
+//	 static String ip = "192.168.9.31";
 
 //	static String ip = "103.17.43.219";
 
@@ -45,7 +46,7 @@ public class SocketTest {
 //	 static int port = 80;
 
 
-//	static int port = 8080;
+	static int port = 8080;
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		// InetAddress add = InetAddress.getByName("adlaunch.moji.com");
@@ -67,11 +68,11 @@ public class SocketTest {
 //        POS_MY_PAGE_DYNAMIC_MENU
 //        POS_MY_PAGE_DYNAMIC_MENU_TWO
 
-//        AdRequest otherOI = other(AdType.SPLASH, Platform.ANDROID, AdPosition.POS_SPLASH, 61,
-//				4999, "com.moji.mjweather", 1007080601);
+//        AdRequest otherOI = other(AdType.SPLASH, Platform.ANDROID, AdPosition.POS_SPLASH, 600,
+//				4999, "com.moji.mjweather", 1007080601l);
 
 
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_FEED_STREAM_DETAILS, 600,
+//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_SHARE_ENTRANCE, 600,
 //                204, "com.moji.mjweather", 5007080600l);
 
 		// 时景详情icon
@@ -81,21 +82,22 @@ public class SocketTest {
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition
 //				.POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_ICON, 600,1, "com.moji.mjweather", 50070806);
 
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition
-				.POS_FEED_STREAM_DETAILS, 600,1, "com.moji.mjweather", 5007080600l);
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition
+//				.POS_FEED_STREAM_DETAILS, 600,1, "com.moji.mjweather", 1007080601);
 
 		//中部+
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE
-//				, 600,10, "com.moji.mjweather", 50070806l);
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE
+				, 600,10, "com.moji.mjweather", 1007080600l);
+
 		// 底部
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM
 //				, 600,1, "com.moji.mjweather", 1007090401);
 		//每日详情中部
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_LOWER_DAILY_DETAILS
-//				, 600,1, "com.moji.mjweather", 1007080401);
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_TIME_VIEW_COMMENTS_LIST
+//				, 600,1, "com.moji.mjweather", 1007090601);
 
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_FEED_STREAM_DETAILS
-//				, 600,1, "com.moji.mjweather", 5007080300l);
+//		AdRequest otherOI = other(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH
+//				, 600,1, "com.moji.mjweather", 5007080600l);
 
 ////
 //		50070506
@@ -151,7 +153,7 @@ public class SocketTest {
 		request.setDayOrNight(DayOrNight.NIGHT);
 		request.setVersion(1);
 
-		request.setSessionId("m123dddddddddddd");
+		request.setSessionId("m1ba23dddddddddddd");
 		request.setLatitude(31.284018f);
 		request.setLongitude(121.44974f);
 		request.setIsShortPrediction(IsShortPrediction.NO);
@@ -177,8 +179,10 @@ public class SocketTest {
 		common.setPublishType("1");
 
 		common.setAppVersion(version);
-		common.setScreenWidth(1080);
-		common.setScreenHeight(1920);
+		common.setScreenWidth(375);
+		common.setScreenHeight(812);
+//		common.setScreenWidth(1080);
+//		common.setScreenHeight(1920);
 		common.setLang(Language.SIMPLIFIED_CH);
 		//
 		common.setChannelId(channelId);
@@ -243,6 +247,8 @@ public class SocketTest {
 				if (adUtilDetail.hasAdUtilDescription()) {
 					AdCommonInterface.AdUtilDescription adUtilDescription = adUtilDetail.getAdUtilDescription();
 					adUtilDescription.toBuilder().setTitle(new String(adUtilDescription.getTitle())).build();
+
+					System.out.println(adUtilDescription.getMonitorSend());
 				}
 //				adUtilDetail.
 			}

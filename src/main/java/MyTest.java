@@ -1,43 +1,68 @@
-import com.moji.launchserver.AdCommonInterface;
-import com.moji.launchserver.entity.ThirdResponseData;
-import com.moji.launchserver.entity.ThirdResponseEntity;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MyTest {
 
-	public static void main(String[] args) {
-
-		for (int i = 0; i <50; i++) {
-			System.out.println("get /kafka/ad_kafka/partition_" + i);
-		}
-//		List<ThirdResponseEntity> listResponse = new ArrayList<>();
-//		ThirdResponseEntity e = new ThirdResponseEntity();
-//		List<ThirdResponseData> datas = new ArrayList<>();
-//		ThirdResponseData d= new ThirdResponseData();
-//		d.setImgurl("a");
-//		datas.add(d);
-//		e.setData(datas);
-//		listResponse.add(e);
-//		System.out.println(listResponse);
-//		for (Iterator<ThirdResponseEntity> iterator = listResponse.iterator(); iterator.hasNext(); ) {
-//			ThirdResponseEntity entity =  iterator.next();
-//			for (ThirdResponseData data : entity.getData()) {
-//				if (data.getImgurl() == null || data.getImgurl().equals("")) {
-//					iterator.remove();
+	// 从文件读到内存
+	private static void setValueFromFilePath()
+			throws Throwable {
+//
+//		List<String> list = new ArrayList<>();
+//		for (String s : words) {
+//			list.add(s);
+//		}
+//		String s = "小姨欺负哑巴窝囊，谁知他竟是装哑十年！只待十年一到便可";
+//		long l1 = System.currentTimeMillis();
+//		for (int i = 0; i < 10000; i++) {
+//			for (String s1 : list) {
+//				int i1 = s.indexOf(s1);
+//				if (i1 >= 0) {
+//					System.out.println();
 //				}
 //			}
 //		}
-//		System.out.println(listResponse);
+//		long l2 = System.currentTimeMillis();
+//		System.out.println(l2 - l1);
 	}
 
 
+	static String[] keys = new String[]{"id"};
+	static Class cls;
 
+	//生成map结构的缓存结构
+
+	public static void main(String[] args) throws Throwable {
+//		setValueFromFilePath("C:\\workspace\\resource\\181\\otherAdPlatform.properties");
+//		setValueFromFilePath();
+
+		boolean b = positionApiFlowControl("1");
+		System.out.println(b);
+	}
+
+	private static boolean positionApiFlowControl(String posPercentStr) {
+		if (posPercentStr == null) {
+			return commonApiFlowControl();
+		}
+		int posPercent = Integer.parseInt(posPercentStr);
+		if (posPercent >= 100) {
+			return true;
+		}
+		if (posPercent == 0) {
+			return false;
+		}
+		return ThreadLocalRandom.current().nextInt(100) < posPercent;
+	}
+
+	//  通用API流量控制 , true 请求, false 不请求
+	private static boolean commonApiFlowControl() {
+		int dsp_request_percent = 60;
+		if (dsp_request_percent >= 100) {
+			return true;
+		}
+		if (dsp_request_percent == 0) {
+			return false;
+		}
+		return ThreadLocalRandom.current().nextInt(100) < dsp_request_percent;
+	}
 
 	public static void gongzi(String[] args) throws Exception {
 //		int month = 1;
