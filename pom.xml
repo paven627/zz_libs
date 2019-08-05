@@ -59,8 +59,8 @@
 		  <dependency>
 			<groupId>io.netty</groupId> 
 			<artifactId>netty-all</artifactId>
-			<version>4.0.34.Final</version>
-<!-- 			<version>4.1.Final</version> -->
+			<version>4.0.56.Final</version>
+<!-- 			<version>4.1.37.Final</version>-->
 		</dependency>
   
 		<dependency>  
@@ -150,7 +150,7 @@
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
-			<version>6.0</version>
+			<version>8.0</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -399,7 +399,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.6</version>
+			<version>1.2.58</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jmock</groupId>
@@ -542,7 +542,16 @@
 			<artifactId>kafka-clients</artifactId>
 			<version>0.9.0.1</version>
 		</dependency>
-
+        <dependency>
+            <groupId>com.aliyun.odps</groupId>
+            <artifactId>odps-sdk-core</artifactId>
+            <version>0.31.5-public</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.odps</groupId>
+            <artifactId>odps-sdk-udf</artifactId>
+            <version>0.31.5-public</version>
+        </dependency>
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
 			<artifactId>kafka_2.11</artifactId>
@@ -558,25 +567,30 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-<dependency>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
-          <version>1.2.15</version>
-          <exclusions> 
-             <exclusion>               
-                <groupId>javax.jms</groupId> 
-                <artifactId>jms</artifactId> 
-             </exclusion> 
-             <exclusion>                
-                 <groupId>com.sun.jdmk</groupId>           
-                  <artifactId>jmxtools</artifactId> 
-             </exclusion> 
-             <exclusion>             
-                  <groupId>com.sun.jmx</groupId> 
-                  <artifactId>jmxri</artifactId> 
-             </exclusion>
-          </exclusions>
-    </dependency>
+<!--<dependency>-->
+<!--          <groupId>log4j</groupId>-->
+<!--          <artifactId>log4j</artifactId>-->
+<!--          <version>1.2.15</version>-->
+<!--          <exclusions> -->
+<!--             <exclusion>               -->
+<!--                <groupId>javax.jms</groupId> -->
+<!--                <artifactId>jms</artifactId> -->
+<!--             </exclusion> -->
+<!--             <exclusion>                -->
+<!--                 <groupId>com.sun.jdmk</groupId>           -->
+<!--                  <artifactId>jmxtools</artifactId> -->
+<!--             </exclusion> -->
+<!--             <exclusion>             -->
+<!--                  <groupId>com.sun.jmx</groupId> -->
+<!--                  <artifactId>jmxri</artifactId> -->
+<!--             </exclusion>-->
+<!--          </exclusions>-->
+<!--    </dependency>-->
+            <dependency>
+                <groupId>net.ipip</groupId>
+                <artifactId>ipdb</artifactId>
+                <version>1.1.2</version>
+            </dependency>
 		<dependency>
 			<groupId>org.apache.flume</groupId>
 			<artifactId>flume-ng-core</artifactId>

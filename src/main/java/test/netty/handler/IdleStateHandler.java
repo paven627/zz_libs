@@ -1,6 +1,8 @@
 package test.netty.handler;
 
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -13,6 +15,8 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
+
+import java.nio.ByteBuffer;
 
 /**
  * IdleStateHandler用法,如果读取或写出超时,会出发用户自己定义的事件处理方法
@@ -31,8 +35,8 @@ public class IdleStateHandler {
 						@Override
 						public void initChannel(SocketChannel ch) throws Exception {
 							ChannelPipeline pipeline = ch.pipeline();
-							pipeline.addLast(new HttpServerCodec());
-							pipeline.addLast(new io.netty.handler.timeout.IdleStateHandler(30, 10, 10));
+//							pipeline.addLast(new HttpServerCodec());
+							pipeline.addLast(new io.netty.handler.timeout.IdleStateHandler(10, 10, 10));
 							ch.pipeline().addLast(new HttpServerHandler());
 						}
 					});
@@ -54,8 +58,10 @@ class HttpServerHandler extends ChannelInboundHandlerAdapter {
 			if (e.state() == IdleState.READER_IDLE) {
 				ctx.close();
 			} else if (e.state() == IdleState.WRITER_IDLE) {
-				ctx.writeAndFlush("");
+				ctx.writeAndFlush(Unpooled.copiedBuffer("AAAA".getBytes()));
 			}
+		} else {
+			super.userEventTriggered(ctx, evt);
 		}
 	}
 }

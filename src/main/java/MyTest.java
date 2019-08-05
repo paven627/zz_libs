@@ -2,28 +2,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MyTest {
 
-	// 从文件读到内存
-	private static void setValueFromFilePath()
-			throws Throwable {
-//
-//		List<String> list = new ArrayList<>();
-//		for (String s : words) {
-//			list.add(s);
-//		}
-//		String s = "小姨欺负哑巴窝囊，谁知他竟是装哑十年！只待十年一到便可";
-//		long l1 = System.currentTimeMillis();
-//		for (int i = 0; i < 10000; i++) {
-//			for (String s1 : list) {
-//				int i1 = s.indexOf(s1);
-//				if (i1 >= 0) {
-//					System.out.println();
-//				}
-//			}
-//		}
-//		long l2 = System.currentTimeMillis();
-//		System.out.println(l2 - l1);
-	}
-
 
 	static String[] keys = new String[]{"id"};
 	static Class cls;
@@ -34,8 +12,13 @@ public class MyTest {
 //		setValueFromFilePath("C:\\workspace\\resource\\181\\otherAdPlatform.properties");
 //		setValueFromFilePath();
 
-		boolean b = positionApiFlowControl("1");
-		System.out.println(b);
+//		boolean b = positionApiFlowControl("1");
+//		System.out.println(b);
+
+		for (int i = 0; i <30; i++) {
+			int i1 = ThreadLocalRandom.current().nextInt(10);
+			System.out.println(i1);
+		}
 	}
 
 	private static boolean positionApiFlowControl(String posPercentStr) {

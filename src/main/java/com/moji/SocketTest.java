@@ -5,6 +5,10 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.Authenticator;
+import java.net.InetSocketAddress;
+import java.net.PasswordAuthentication;
+import java.net.Proxy;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -23,20 +27,18 @@ import com.moji.launchserver.AdCommonInterface.DayOrNight;
 import com.moji.launchserver.AdCommonInterface.IsShortPrediction;
 import com.moji.launchserver.AdCommonInterface.Language;
 import com.moji.launchserver.AdCommonInterface.Platform;
+import com.moji.launchserver.util.AdStatUtil;
 
 public class SocketTest {
 //	ad.api.moji.com   	 打点域名
-//	 static String ip = "103.235.239.69"; // 线上调试
-//	 static int port = 9500;
 
-
-//	 static String ip = "172.16.21.76"; // 线上调试
-//	 static int port = 9000;
+	 static String ip = "172.16.21.76"; // 线上调试
+	 static int port = 9000;
 
 //	static String ip = "192.168.42.24";
 
-//		static String ip = "127.0.0.1";
-	static String ip = "192.168.9.76";
+	//		static String ip = "127.0.0.1";
+//	static String ip = "192.168.9.76";
 //	 static String ip = "192.168.9.79";
 //	 static String ip = "192.168.9.31";
 
@@ -46,7 +48,9 @@ public class SocketTest {
 //	 static int port = 80;
 
 
-	static int port = 8080;
+//		static int port = 8080;
+//	static int port = 8080;
+	static String sessionid ="aaaaaaaaaaaaa";
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		// InetAddress add = InetAddress.getByName("adlaunch.moji.com");
@@ -65,46 +69,46 @@ public class SocketTest {
 
 		//广点通分界版本 1007001001
 
-//        POS_MY_PAGE_DYNAMIC_MENU
-//        POS_MY_PAGE_DYNAMIC_MENU_TWO
-
-//        AdRequest otherOI = other(AdType.SPLASH, Platform.ANDROID, AdPosition.POS_SPLASH, 600,
-//				4999, "com.moji.mjweather", 1007080601l);
-
-
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition.POS_SHARE_ENTRANCE, 600,
-//                204, "com.moji.mjweather", 5007080600l);
 
 		// 时景详情icon
-//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_TIME_SCENE_DETAIL_ICON, 600,1,"com.moji.mjweather", 1007080601);
-
-        // 15天冠名
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.IOS, AdPosition
-//				.POS_FIFTEEN_DAY_FORECAST_TOP_BANNER_ICON, 600,1, "com.moji.mjweather", 50070806);
+//        AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_TIME_SCENE_DETAIL_ICON, 600,
+//        1,"com.moji.mjweather", 1007080601);
 
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition
-//				.POS_FEED_STREAM_DETAILS, 600,1, "com.moji.mjweather", 1007080601);
+//				.POS_FIFTEEN_DAY_FORECAST_TOP_BANNER, 600,1, "com.moji.mjweather", 1007080601);
 
-		//中部+
-		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_MIDDLE
-				, 600,10, "com.moji.mjweather", 1007080600l);
 
-		// 底部
-//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_WEATHER_FRONT_PAGE_BOTTOM
-//				, 600,1, "com.moji.mjweather", 1007090401);
+		//上方
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition
+//				.POS_VOICE_BROADCAST_ABOVE, 600,1, "com.moji.mjweather", 1007080601);
+
+		//下方+
+//		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_VOICE_BROADCAST_UNDER
+//				, 400, 10, "com.moji.mjweather", 1007080600l);
+
+		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_FEED_STREAM_DETAILS
+				, 600,1, "com.moji.mjweather", 1007080600l);
+
 		//每日详情中部
 //		AdRequest otherOI = other(AdType.OTHERS_TYPE, Platform.ANDROID, AdPosition.POS_TIME_VIEW_COMMENTS_LIST
 //				, 600,1, "com.moji.mjweather", 1007090601);
 
-//		AdRequest otherOI = other(AdType.SPLASH, Platform.IOS, AdPosition.POS_SPLASH
-//				, 600,1, "com.moji.mjweather", 5007080600l);
+//		AdRequest otherOI = other(AdType.SPLASH, Platform.ANDROID, AdPosition.POS_SPLASH
+//				, 3175,1, "com.moji.mjweather", 1007090601);
 
 ////
 //		50070506
 //		1007070401
 //		com.moji.MjWeather
 
-		Socket socketOI = new Socket(ip, port);
+//		Proxy proxy = createProxy("127.0.0.1", 1080);
+//		Socket socketOI = new Socket(proxy);
+//		socketOI.connect(new InetSocketAddress(ip, port));
+
+
+
+
+		socketOI = new Socket(ip, port);
 		print(socketOI, otherOI);
 
 		// 50070204
@@ -112,6 +116,20 @@ public class SocketTest {
 
 //		com.moji.mjweather
 
+	}
+
+	private static Proxy createProxy(String proxyAddr, int proxyPort) {
+		// 设置认证
+//		Authenticator.setDefault(new Authenticator() {
+//			protected PasswordAuthentication getPasswordAuthentication() {
+//				return new PasswordAuthentication("username", "password"
+//						.toCharArray());
+//			}
+//		});
+//		// 设置HTTP代理
+		Proxy proxy = new Proxy(Proxy.Type.SOCKS,
+				new InetSocketAddress(proxyAddr, proxyPort));
+		return proxy;
 	}
 
 	static Socket socketOI;
@@ -144,6 +162,7 @@ public class SocketTest {
 		AdRequest.Builder request = AdRequest.newBuilder();
 		AdRequestCommon.Builder common = AdRequestCommon.newBuilder();
 
+		common.setRegisterChannelId("100");
 		common.setAvatarId(8);
 		request.setFeedTab(0);
 
@@ -153,7 +172,8 @@ public class SocketTest {
 		request.setDayOrNight(DayOrNight.NIGHT);
 		request.setVersion(1);
 
-		request.setSessionId("m1ba23dddddddddddd");
+//		request.setSessionId("m1ba23dddddddddddd");
+		request.setSessionId(sessionid);
 		request.setLatitude(31.284018f);
 		request.setLongitude(121.44974f);
 		request.setIsShortPrediction(IsShortPrediction.NO);
@@ -161,11 +181,11 @@ public class SocketTest {
 		List<AdPosition> adPositions = new ArrayList<>();
 		adPositions.add(position);
 		request.addExsitedAdIds(10017381);
-        request.addExsitedAdIds(10017354);
+		request.addExsitedAdIds(10017354);
 //        request.addExsitedAdIds(2623);
 //
 		request.addLastAdIds(10017381);
-        request.addLastAdIds(10017354);
+		request.addLastAdIds(10017354);
 //        request.addLastAdIds(2623);
 		request.setAlreadyShowId(10017381);
 		request.setAlreadyShowId(10017354);
@@ -243,57 +263,21 @@ public class SocketTest {
 			AdResponse adResponse = AdResponse.parseFrom(by);
 
 			List<AdCommonInterface.AdUtilDetail> adUtilDetailList = adResponse.getAdUtilDetailList();
-			for (AdCommonInterface.AdUtilDetail adUtilDetail : adUtilDetailList) {
-				if (adUtilDetail.hasAdUtilDescription()) {
-					AdCommonInterface.AdUtilDescription adUtilDescription = adUtilDetail.getAdUtilDescription();
-					adUtilDescription.toBuilder().setTitle(new String(adUtilDescription.getTitle())).build();
-
-					System.out.println(adUtilDescription.getMonitorSend());
-				}
-//				adUtilDetail.
-			}
+			List<AdCommonInterface.AdUtilDetail> l = new ArrayList<>();
+//			for (AdCommonInterface.AdUtilDetail detail : adUtilDetailList) {
+//				System.out.println(System.identityHashCode(adUtilDetail));
+//			}
 
 
+//			System.out.println(l);
 			System.out.println(adResponse.toString());
-			System.out.println(adResponse.getErrorMessage());
+//			System.out.println(adResponse.getErrorMessage());
 			// System.out.println(s);
 			out.close();
 			input.close();
 		}
 	}
 
-	private static void print2(Socket socket, AdRequest request) throws IOException, InvalidProtocolBufferException {
-		byte type = 0;
-		byte[] endMark = {-128, -128, -128, -128, -128};
-		byte[] req = byteMerger(type, request.toByteArray(), endMark);
-		// for (byte b : req) {
-		// System.out.print( b);
-		// }
-		System.out.println();
-
-		int bodyLen = req.length;
-		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-		out.write(req, 0, bodyLen);
-
-		InputStream input = socket.getInputStream();
-
-		BufferedReader in = new BufferedReader(new InputStreamReader(input));
-
-		byte[] b = new byte[20];
-
-		input.read(b);
-
-		for (byte c : b) {
-			System.out.print((char) c);
-		}
-//		while ((line = in.readLine()) != null) {
-//			System.out.println(line);
-//		}
-//		out.close();
-//		input.close();
-//		in.close();
-//		socket.close();
-	}
 
 	public static byte[] intToBytes(int n) {
 		byte[] b = new byte[4];
