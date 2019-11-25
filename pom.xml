@@ -16,7 +16,7 @@
 		<sourceEncoding>UTF-8</sourceEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.spring>3.2.9.RELEASE</version.spring>
-		<version.springsecurity>3.1.0.RELEASE</version.springsecurity>
+		<version.springsecurity>5.2.1.RELEASE</version.springsecurity>
 		<version.velocity>1.7</version.velocity>
 		<!-- <version.httpcomponents>4.3</version.httpcomponents> 1123 -->
 	</properties>
