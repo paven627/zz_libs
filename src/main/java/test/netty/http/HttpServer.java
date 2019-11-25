@@ -8,6 +8,8 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
@@ -21,14 +23,8 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.http.DefaultFullHttpResponse;
-import io.netty.handler.codec.http.FullHttpResponse;
-import io.netty.handler.codec.http.HttpContent;
-import io.netty.handler.codec.http.HttpHeaders;
+import io.netty.handler.codec.http.*;
 import io.netty.handler.codec.http.HttpHeaders.Values;
-import io.netty.handler.codec.http.HttpRequest;
-import io.netty.handler.codec.http.HttpServerCodec;
-import io.netty.handler.codec.http.QueryStringDecoder;
 import io.netty.util.concurrent.EventExecutor;
 
 /**
@@ -50,15 +46,17 @@ public class HttpServer {
 					.childHandler(new ChannelInitializer<SocketChannel>() {
 						@Override
 						public void initChannel(SocketChannel ch) throws Exception {
-							ChannelPipeline pipeline = ch.pipeline();
-							pipeline.addLast(new HttpServerCodec());
+//							ChannelPipeline pipeline = ch.pipeline();
+//							pipeline.addLast(new HttpServerCodec());
 							// 使用 serverCodec 和 自己添加 requestDecoder与
 							// responseEncoder效果一样
 
 							// ch.pipeline().addLast(new HttpResponseEncoder());
 							// server端接收到的是httpRequest，所以要使用HttpRequestDecoder进行解码
-							// ch.pipeline().addLast(new HttpRequestDecoder());
-							ch.pipeline().addLast(new HttpServerHandler());
+                            // ch.pipeline().addLast(new HttpRequestDecoder());
+
+//							ch.pipeline().addLast(new HttpServerHandler());
+                            ch.pipeline().addLast(new MyChannelInitializer());
 						}
 					});
 			ChannelFuture f = b.bind(8080).sync(); // 绑定端口 ,等待绑定成功
@@ -69,10 +67,22 @@ public class HttpServer {
 		}
 	}
 }
+class MyChannelInitializer extends io.netty.channel.ChannelInitializer <SocketChannel> {
+
+    @Override
+    protected void initChannel(SocketChannel ch) throws Exception {
+        ChannelPipeline p = ch.pipeline();
+        p.addLast(new HttpServerCodec());
+        p.addLast(new HttpObjectAggregator(1024*1024));
+        p.addLast(new HttpServerHandler());
+    }
+}
+
 
 class HttpServerHandler extends ChannelInboundHandlerAdapter {
 
 	private HttpRequest request;
+
 
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws UnsupportedEncodingException {
@@ -84,10 +94,10 @@ class HttpServerHandler extends ChannelInboundHandlerAdapter {
 			// 请求，解码器将请求转换成HttpRequest对象
 			HttpRequest request = (HttpRequest) msg;
 
-			// 获取请求参数
+			// 获取请求参数, 只能解析get参数
 			QueryStringDecoder queryStringDecoder = new QueryStringDecoder(request.getUri());
-			String name = queryStringDecoder.parameters().get("name").get(0);
-			System.out.println("name=" + name);
+            Map<String, List<String>> parameters = queryStringDecoder.parameters();
+            System.out.println(parameters);
 		}
 
 		if (msg instanceof HttpRequest) {
