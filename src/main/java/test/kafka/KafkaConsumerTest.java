@@ -20,7 +20,7 @@ import kafka.utils.VerifiableProperties;
 public class KafkaConsumerTest {
 	private void execMsgConsume() {
         Properties props = new Properties();
-        props.put("zookeeper.connect", "192.168.1.17:4180/kafka");
+            props.put("zookeeper.connect", "dev-kafka.apuscn.com:9092");
         props.put("group.id", "group-1");
         props.put("serializer.class", "kafka.serializer.StringEncoder");
          
@@ -28,7 +28,7 @@ public class KafkaConsumerTest {
         ConsumerConnector consumer =  Consumer.createJavaConsumerConnector(config);
          
         Map<String, Integer> topicCountMap = new HashMap<String, Integer>();
-        topicCountMap.put("moji_ad_stream26", 1);
+        topicCountMap.put("test_dsp_rquest_log_topic", 1);
         topicCountMap.put("test", 1);
         Decoder<String> keyDecoder = new StringDecoder(new VerifiableProperties());
         Decoder<String> valueDecoder = new StringDecoder(new VerifiableProperties());

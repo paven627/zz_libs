@@ -3,11 +3,14 @@ package test.java.redis;
 import redis.clients.jedis.Jedis;
 
 public class RedisTest {
-	static Jedis jedis = new Jedis("192.168.1.182", 6379);
+	static Jedis jedis = new Jedis("test", 6379);
 
 	public static void main(String[] args) {
 //		readIos();
 //		readAndroid();
+        String a = jedis.get("a");
+        System.out.println(a);
+        System.out.println(jedis.get("test"));
 
 
 //		incrTest();

@@ -10,18 +10,25 @@ import java.util.List;
 import java.util.concurrent.*;
 
 public class JedisPool {
-    static redis.clients.jedis.JedisPool pool = new redis.clients.jedis.JedisPool("192.168.1.182", 6379);
+
+    static redis.clients.jedis.JedisPool pool = new redis.clients.jedis.JedisPool("127.0.0.1", 6379);
 
     public static void main(String[] args) throws URISyntaxException, InterruptedException, ExecutionException {
 
+        Jedis resource = pool.getResource();
+        System.out.println(resource);
+        long l = System.currentTimeMillis();
 
-        Jedis jedis = pool.getResource();
-
-        while (true) {
-            List<String> brpop = jedis.brpop(10, "alist", "blist");
-            System.out.println(brpop);
+        for (int i = 0; i < 1000000; i++) {
+            resource.set("dsp_test1", "1000");
         }
+        System.out.println(System.currentTimeMillis() - l);
 
+        l = System.currentTimeMillis();
+        for (int i = 0; i < 1000000; i++) {
+            resource.hset("dsp_test2", "123", "1000");
+        }
+        System.out.println(System.currentTimeMillis() - l);
 
 
     }
