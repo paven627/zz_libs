@@ -1,4 +1,4 @@
-package test.java.rabbitmq.p2p;
+package test.java.rabbitmq.queue1;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -9,7 +9,7 @@ import java.util.concurrent.TimeoutException;
 
 public class Producer {
 
-    private static final String QUEUE_NAME="test_queue";
+    private static final String QUEUE_NAME="dsp-creative-day-calibration-offline";
 
     public static void main(String[] args) throws IOException, TimeoutException, InterruptedException {
         //获取连接
@@ -25,13 +25,13 @@ public class Producer {
          * 参数4：队列不再使用时是否自动删除（没有连接，并且没有未处理的消息)
          * 参数5：建立队列时的其他参数
          */
-        channel.queueDeclare(QUEUE_NAME,false,false,false,null);
+        channel.queueDeclare(QUEUE_NAME,true,false,false,null);
         String message = "Hello World!";
-        for (int i = 0; i < 20; i++) {
-            message = message + i;
+//        for (int i = 0; i < 20; i++) {
+//            message = message + i;
             channel.basicPublish("",QUEUE_NAME,null,message.getBytes());
             Thread.sleep(1000);
-        }
+//        }
         System.out.println("生产者 send ："+message);
         channel.close();
         connection.close();

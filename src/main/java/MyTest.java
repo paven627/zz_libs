@@ -1,25 +1,41 @@
-import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.net.Socket;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
+import org.apache.log4j.Logger;
+
 import java.util.Comparator;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.TimeUnit;
 
 public class MyTest {
+    static Logger logger = Logger.getLogger(MyTest.class);
 
-    static long i = System.currentTimeMillis();
 
-    public static void main(String[] args)  {
-        System.out.println(10 - 20 );
-        System.out.println(10 - 5);
+    public static void main(String[] args) {
+        int i = 1;
+        System.out.println(1 + (i++));
 
+        int i1 = 1;
+        System.out.println(1 + (++i1));
+
+
+
+//        int i1 = ++i;
+//        System.out.println(i1);
+//        System.out.println(1 + i1);
+
+//        JedisPoolConfig config = new JedisPoolConfig();
+////        config.setMaxWaitMillis(10000);
+//        JedisPool pool = new JedisPool(config, "10.11.8.41");
+//        long maxBorrowWaitTimeMillis = pool.getMaxBorrowWaitTimeMillis();
+//        System.out.println(maxBorrowWaitTimeMillis);
+//        Jedis resource = null;
+//        try {
+//            logger.info(System.currentTimeMillis());
+//            resource = pool.getResource();
+//        } catch (Exception e) {
+//            logger.info(System.currentTimeMillis());
+//        }
+//        logger.info(resource);
+//        resource.close();
     }
 
     private TreeSet<Integer> getSetForOrderByPrice(List<Integer> list) {

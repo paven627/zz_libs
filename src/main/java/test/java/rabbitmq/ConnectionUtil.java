@@ -16,13 +16,20 @@ public class ConnectionUtil {
 //    rabbit.mq.password=dev123
 //    rabbit.mq.virtualHost=dev
 
-    private static final String RABBIT_HOST = "dev-rabbitmq.apuscn.com";
+//    private static final String RABBIT_HOST = "dev-rabbitmq.apuscn.com";
+//private static final String RABBIT_USERNAME = "dev_consumer";
+//    private static final String RABBIT_PASSWORD = "dev123";
+//static String vhost = "dev";
+//    private static final int port = 6672;
 
-    private static final String RABBIT_USERNAME = "dev_consumer";
+    private static final String RABBIT_HOST = "test-rabbitmq.apuscn.com";
 
-    private static final String RABBIT_PASSWORD = "dev123";
-    static String vhost = "dev";
-    private static final int port = 6672;
+    private static final String RABBIT_USERNAME = "test_producer";
+    private static final String RABBIT_PASSWORD = "test123";
+    static String vhost = "test";
+    private static final int port = 6673;
+
+
     private static Connection connection = null;
 
     public static Connection getConnection() {

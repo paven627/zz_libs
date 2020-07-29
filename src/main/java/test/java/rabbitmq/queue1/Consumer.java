@@ -1,4 +1,4 @@
-package test.java.rabbitmq.p2p;
+package test.java.rabbitmq.queue1;
 
  import com.rabbitmq.client.AMQP.BasicProperties;
  import com.rabbitmq.client.Channel;
@@ -11,12 +11,12 @@ package test.java.rabbitmq.p2p;
  
  public class Consumer {
  
-     private static final String QUEUE_NAME = "test_queue";
+     private static final String QUEUE_NAME = "dsp-creative-day-calibration-offline";
  
      public static void main(String[] args) throws IOException {
          Connection connection = ConnectionUtil.getConnection();
          Channel channel = connection.createChannel(1);
-         channel.queueDeclare(QUEUE_NAME,false,false,false,null);
+//         channel.queueDeclare(QUEUE_NAME,true,false,false,null);
          StringBuffer message = new StringBuffer();
          //自4.0+ 版本后无法再使用QueueingConsumer，而官方推荐使用DefaultConsumer
          com.rabbitmq.client.Consumer consumer = new DefaultConsumer(channel) {
