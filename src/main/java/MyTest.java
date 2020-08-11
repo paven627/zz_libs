@@ -1,5 +1,8 @@
 import org.apache.log4j.Logger;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.List;
 import java.util.TreeSet;
@@ -7,35 +10,25 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MyTest {
     static Logger logger = Logger.getLogger(MyTest.class);
+    public static final DateTimeFormatter DEFAULT_DATE_HOUR_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMddH");
 
 
     public static void main(String[] args) {
-        int i = 1;
-        System.out.println(1 + (i++));
+        BigDecimal bigDecimal1 = new BigDecimal(1.5);
+        BigDecimal bigDecimal2 = new BigDecimal(100);
 
-        int i1 = 1;
-        System.out.println(1 + (++i1));
-
-
-
-//        int i1 = ++i;
-//        System.out.println(i1);
-//        System.out.println(1 + i1);
-
-//        JedisPoolConfig config = new JedisPoolConfig();
-////        config.setMaxWaitMillis(10000);
-//        JedisPool pool = new JedisPool(config, "10.11.8.41");
-//        long maxBorrowWaitTimeMillis = pool.getMaxBorrowWaitTimeMillis();
-//        System.out.println(maxBorrowWaitTimeMillis);
-//        Jedis resource = null;
-//        try {
-//            logger.info(System.currentTimeMillis());
-//            resource = pool.getResource();
-//        } catch (Exception e) {
-//            logger.info(System.currentTimeMillis());
+        BigDecimal rate = bigDecimal1.divide(bigDecimal2, 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100));
+        System.out.println(rate.doubleValue());
+//        for (int i = 0; i < 24; i++) {
+//            LocalDateTime date = LocalDateTime.of(2020, Month.AUGUST, 10, i, 0, 0);
+//            int hour = date.getHour();
+//            System.out.println(hour);
+//            System.out.println(date);
+//            System.out.println(date.format(DEFAULT_DATE_HOUR_FORMATTER));
+//            System.out.println();
 //        }
-//        logger.info(resource);
-//        resource.close();
+
+
     }
 
     private TreeSet<Integer> getSetForOrderByPrice(List<Integer> list) {

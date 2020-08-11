@@ -1,12 +1,12 @@
 package test.java.Resilience4j.test;
 
 
-import com.test.circuitbreak.CircuitBreakService;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.vavr.control.Try;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import test.java.Resilience4j.test.circuitbreak.CircuitBreakService;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
