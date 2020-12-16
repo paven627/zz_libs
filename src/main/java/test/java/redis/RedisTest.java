@@ -1,21 +1,52 @@
 package test.java.redis;
 
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Pipeline;
+import redis.clients.jedis.Response;
+import redis.clients.jedis.params.SetParams;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RedisTest {
-	static Jedis jedis = new Jedis("test", 6379);
+//	static Jedis jedis = new Jedis("test-redis-zz.apuscn.com", 6379);
+	static Jedis jedis = new Jedis("10.11.8.40", 6379);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 //		readIos();
 //		readAndroid();
-        String a = jedis.get("a");
-        System.out.println(a);
-        System.out.println(jedis.get("test"));
 
+//        List<String> mget = jedis.hmget("key1", "f1", "f3");
+//        System.out.println(mget);
+//        System.out.println(mget.get(0));
+//        System.out.println(mget.get(1));
 
 //		incrTest();
 
-	}
+//        pipelinetest();
+
+        SetParams nx = SetParams.setParams().nx().ex(15);
+        String set = jedis.set("test", "value", nx);
+        System.out.println(set);
+        Thread.sleep(2000);
+        Long test = jedis.ttl("test");
+        System.out.println(test);
+
+
+    }
+
+	private static void pipelinetest(){
+        Pipeline pipelined = jedis.pipelined();
+        List<Response<List<String>>> resls = new ArrayList<>();
+        resls.add(pipelined.hmget("key1", "f1"));
+        resls.add(pipelined.hmget("key1", "f2"));
+        resls.add(pipelined.hmget("key1", "f3"));
+        pipelined.sync();
+        for (Response<List<String>> resl : resls) {
+            List<String> strings = resl.get();
+            System.out.println(strings);
+        }
+    }
 
 	private static void incrTest() {
 		long l = System.currentTimeMillis();

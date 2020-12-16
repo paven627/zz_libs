@@ -20,7 +20,8 @@ public class GrpcServerTest {
 
     public static void serverStart() throws IOException, InterruptedException {
         int port = 50051;
-        Server server = ServerBuilder.forPort(port)
+        ServerBuilder<?> serverBuilder = ServerBuilder.forPort(port);
+        Server server = serverBuilder
                 .addService(new PredictionServiceGrpc.PredictionServiceImplBase() {
                     @Override
                     public void predict(Adsort.Request request, StreamObserver<Adsort.Response> responseObserver) {
@@ -32,17 +33,17 @@ public class GrpcServerTest {
                         b.setAdCreativeId("1014");
                         r.addResults(b);
 
-                        b=Adsort.Result.newBuilder();
-                        b.setAdCreativeId("1012");
-                        r.addResults(b);
-
-                        b=Adsort.Result.newBuilder();
-                        b.setAdCreativeId("1013");
-                        r.addResults(b);
-
-                        b=Adsort.Result.newBuilder();
-                        b.setAdCreativeId("1067");
-                        r.addResults(b);
+//                        b=Adsort.Result.newBuilder();
+//                        b.setAdCreativeId("1012");
+//                        r.addResults(b);
+//
+//                        b=Adsort.Result.newBuilder();
+//                        b.setAdCreativeId("1013");
+//                        r.addResults(b);
+//
+//                        b=Adsort.Result.newBuilder();
+//                        b.setAdCreativeId("1067");
+//                        r.addResults(b);
 
 //                        try {
 //                            Thread.sleep(50);

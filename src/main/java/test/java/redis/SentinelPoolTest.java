@@ -7,7 +7,6 @@ import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisSentinelPool;
-import redis.clients.jedis.SentinelCommands;
 
 public class SentinelPoolTest {
 	public static void main(String[] args) {

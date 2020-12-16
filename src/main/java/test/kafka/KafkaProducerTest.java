@@ -5,8 +5,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.PartitionInfo;
 
 import java.text.ParseException;
+import java.util.List;
 import java.util.Properties;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -53,22 +55,22 @@ public class KafkaProducerTest {
         String topic = "topic.cloud.service.bigdata.dsp.imp_clk";
         int count = 0;
         Producer<String, String> producer = new KafkaProducer<>(props);
-
-        for (int i = 0; i < 1; i++) {
+//
+        for (int i = 0; i < 10; i++) {
             String uuid = UUID.randomUUID().toString();
             System.out.println(uuid);
             String value = String.format(KafkaProducerTest.s, uuid);
             System.out.println(value);
-            ProducerRecord<String, String> msg = new ProducerRecord<>(topic, value);
+            ProducerRecord<String, String> msg = new ProducerRecord<>(topic, 1,"0", value);
             producer.send(msg);
             count++;
         }
 
 //		列出topic的相关信息
-//        List<PartitionInfo> partitions = producer.partitionsFor(topic);
-//        for (PartitionInfo p : partitions) {
-//            System.out.println(p);
-//        }
+        List<PartitionInfo> partitions = producer.partitionsFor(topic);
+        for (PartitionInfo p : partitions) {
+            System.out.println(p);
+        }
 
         System.out.println("send message over." + count);
 

@@ -1,13 +1,11 @@
 package test.java.redis;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
-
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisSentinelPool;
-import redis.clients.jedis.SentinelCommands;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class PoolTest {
 	public static void main(String[] args) {

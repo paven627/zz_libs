@@ -1,73 +1,98 @@
+import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
-import java.util.List;
-import java.util.TreeSet;
 import java.util.concurrent.ThreadLocalRandom;
+
+class Ad implements Comparator<Ad> {
+    private int price;
+    private String name;
+
+    public Ad(int price, String name) {
+        this.price = price;
+        this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Ad{" +
+                "price=" + price +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    //    @Override
+//    public int compareTo(Ad o) {
+//        return this.price - o.getPrice();
+//    }
+//    @Override
+//    public int compareTo(Ad o) {
+//        return o.getPrice() - this.price;
+//    }
+
+    @Override
+    public int compare(Ad o1, Ad o2) {
+        return o1.price - o2.price;
+    }
+}
 
 public class MyTest {
     static Logger logger = Logger.getLogger(MyTest.class);
-    public static final DateTimeFormatter DEFAULT_DATE_HOUR_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMddH");
+    public static final BigDecimal MINUTEOFHOUR = new BigDecimal(60);
 
+    private static KafkaConsumer<String, String> consumer;
+    private static String topic = "apus_dsp";
 
     public static void main(String[] args) {
-        BigDecimal bigDecimal1 = new BigDecimal(1.5);
-        BigDecimal bigDecimal2 = new BigDecimal(100);
-
-        BigDecimal rate = bigDecimal1.divide(bigDecimal2, 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100));
-        System.out.println(rate.doubleValue());
-//        for (int i = 0; i < 24; i++) {
-//            LocalDateTime date = LocalDateTime.of(2020, Month.AUGUST, 10, i, 0, 0);
-//            int hour = date.getHour();
-//            System.out.println(hour);
-//            System.out.println(date);
-//            System.out.println(date.format(DEFAULT_DATE_HOUR_FORMATTER));
-//            System.out.println();
-//        }
+        for (int i = 0; i < 30; i++) {
+            int a = ThreadLocalRandom.current().nextInt(3);
+            System.out.println(a);
+        }
 
 
+//        Properties props = new Properties();
+//        props.put("bootstrap.servers", "dev-kafka.apuscn.com:9092");
+//        props.put("group.id", "datasync1");
+//        props.put("enable.auto.commit", "false");
+//        props.put("auto.commit.interval.ms", "1000");
+//        props.put("session.timeout.ms", "30000");
+//        props.put("auto.offset.reset", "latest");
+//        props.put("key.deserializer", StringDeserializer.class.getName());
+//        props.put("value.deserializer", StringDeserializer.class.getName());
+//
+//        consumer = new KafkaConsumer<String, String>(props);
+//        List<PartitionInfo> partitionInfos = consumer.partitionsFor(topic);
+//        System.out.println(partitionInfos);
+//        consumer.assign(Arrays.asList(new TopicPartition("kafka.wshare.match_meta_data.topic", 0)));
+//
+//
+//        List<TopicPartition> partitions = partitionInfos.stream().map(new Function<PartitionInfo,
+//                TopicPartition>() {
+//            @Override
+//            public TopicPartition apply(PartitionInfo partitionInfo) {
+//                return new TopicPartition(partitionInfo.topic(), partitionInfo.partition());
+//            }
+//        }).collect(Collectors.toList());
+//        System.out.println(partitions);
     }
 
-    private TreeSet<Integer> getSetForOrderByPrice(List<Integer> list) {
-        TreeSet<Integer> set = new TreeSet<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-//                if(StringUtils.isNotBlank(args.getDealId())) {
-//                    // deal id匹配
-//                    if (args.getDealId().equalsIgnoreCase(o1.getDealid())) {
-//                        return -1;
-//                    }
-//                }
-
-//                double b1 = getBidPrice(o1,args);
-//                double b2 = getBidPrice(o2,args);
-//                if (b2 > b1) {
-//                    return 1;
-//                } else if (b2 < b1) {
-//                    return -1;
-//                }
-                return 1;
-            }
-        });
-        return set;
-    }
-
-    private static boolean positionApiFlowControl(String posPercentStr) {
-        if (posPercentStr == null) {
-            return commonApiFlowControl();
-        }
-        int posPercent = Integer.parseInt(posPercentStr);
-        if (posPercent >= 100) {
-            return true;
-        }
-        if (posPercent == 0) {
-            return false;
-        }
-        return ThreadLocalRandom.current().nextInt(100) < posPercent;
-    }
 
     //  通用API流量控制 , true 请求, false 不请求
     private static boolean commonApiFlowControl() {

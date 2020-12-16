@@ -1,15 +1,9 @@
 package test.java.redis;
 
+import redis.clients.jedis.JedisShardInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
-
-import redis.clients.jedis.JedisShardInfo;
-import redis.clients.jedis.ShardedJedis;
-import redis.clients.jedis.ShardedJedisPool;
-import redis.clients.util.Hashing;
-import redis.clients.util.Sharded;
 
 public class ShardRedis {
 	public static void main(String[] args) {
@@ -30,8 +24,8 @@ public class ShardRedis {
 		shards.add(si);
 
 		// 池对象
-		ShardedJedisPool pool = new ShardedJedisPool(new GenericObjectPoolConfig(), shards, Hashing.MURMUR_HASH,
-				Sharded.DEFAULT_KEY_TAG_PATTERN);
+//		ShardedJedisPool pool = new ShardedJedisPool(new GenericObjectPoolConfig(), shards, Hashing.MURMUR_HASH,
+//				Sharded.DEFAULT_KEY_TAG_PATTERN);
 
 		// for (int i = 0; i < 20; i++) {
 		// ShardedJedis jedis = pool.getResource();
@@ -44,14 +38,14 @@ public class ShardRedis {
 		// System.out.println(jedis.get(i + ""));
 		// jedis.close();
 		// }
-		ShardedJedis jedis = pool.getResource();
+//		ShardedJedis jedis = pool.getResource();
 //		jedis.set("an654366087", "{\"1\":\"111\",\"5\":\"1231\"}");
 //		
-		String string = jedis.get("an654366087");
-		System.out.println(string);
+//		String string = jedis.get("an654366087");
+//		System.out.println(string);
 		
-		pool.destroy();
-		pool.close();
+//		pool.destroy();
+//		pool.close();
 	}
 
 }
