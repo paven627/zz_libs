@@ -2,7 +2,9 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 class Ad implements Comparator<Ad> {
@@ -61,11 +63,23 @@ public class MyTest {
     private static String topic = "apus_dsp";
 
     public static void main(String[] args) {
-        for (int i = 0; i < 30; i++) {
-            int a = ThreadLocalRandom.current().nextInt(3);
-            System.out.println(a);
-        }
+        Boolean b = false;
+        System.out.println(!b);
 
+
+        List<Integer> l1 = new ArrayList<>();
+        l1.add(1);
+        l1.add(2);
+        l1.add(3);
+
+        List<Integer> l2 = new ArrayList<>();
+        l2.add(2);
+        l2.add(3);
+
+        for (Integer integer : l2) {
+            boolean contains = l1.contains(integer);
+            System.out.println(contains +":"+ integer);
+        }
 
 //        Properties props = new Properties();
 //        props.put("bootstrap.servers", "dev-kafka.apuscn.com:9092");

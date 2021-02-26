@@ -1,0 +1,85 @@
+Manifest-Version: 1.0
+Main-Class: AES
+Class-Path: aspectjweaver-1.6.8.jar clj-time-0.4.1.jar commons-lang-2.5.
+ jar resilience4j-core-1.5.0.jar commons-httpclient-3.1.jar fastjson-1.2
+ .58.jar byte-buddy-1.9.13.jar spring-security-config-3.1.0.RELEASE.jar 
+ scala-parser-combinators_2.11-1.0.4.jar tools.macro-0.1.0.jar dom4j-1.6
+ .1.jar flume-ng-core-1.7.0.jar httpasyncclient-4.1.1.jar mina-core-2.0.
+ 4.jar netty-resolver-4.1.36.Final.jar spring-context-support-3.2.9.RELE
+ ASE.jar jackson-core-asl-1.9.13.jar netty-codec-http-4.1.36.Final.jar j
+ sr173_api-1.0.jar chill-java-0.3.5.jar jboss-marshalling-2.0.10.Final.j
+ ar spring-webmvc-3.2.9.RELEASE.jar lz4-1.2.0.jar jboss-marshalling-rive
+ r-2.0.10.Final.jar canal.common-1.1.0.jar commons-collections-3.2.1.jar
+  grpc-netty-shaded-1.28.0.jar spring-security-crypto-5.1.5.RELEASE.jar 
+ carbonite-1.4.0.jar reflectasm-1.07-shaded.jar jackson-core-2.9.9.jar j
+ line-0.9.94.jar Memcached-Java-Client-3.0.2.jar spring-security-core-3.
+ 1.0.RELEASE.jar xercesImpl-2.9.1.jar jaxb-impl-2.2.7.jar resilience4j-b
+ ulkhead-1.5.0.jar mysql-connector-java-5.1.18.jar jaxb-api-2.3.1.jar sp
+ ring-boot-2.1.6.RELEASE.jar spring-beans-5.1.8.RELEASE.jar math.numeric
+ -tower-0.0.1.jar jodd-core-5.1.6.jar tomcat-jsp-api-9.0.21.jar odps-sdk
+ -commons-0.31.5-public.jar kafka-clients-0.9.0.1.jar vertx-unit-3.2.0.j
+ ar resilience4j-timelimiter-1.5.0.jar guava-28.0-jre.jar netty-codec-dn
+ s-4.1.36.Final.jar amqp-client-4.0.2.jar clj-stacktrace-0.2.2.jar jacks
+ on-mapper-asl-1.9.13.jar reactive-streams-1.0.2.jar ring-core-1.1.5.jar
+  netty-codec-4.1.36.Final.jar tools.logging-0.2.3.jar proto-google-comm
+ on-protos-1.17.0.jar resilience4j-all-1.5.0.jar tomcat-annotations-api-
+ 9.0.21.jar servlet-api-2.5-20110124.jar commons-cli-1.2.jar commons-cod
+ ec-1.4.jar zookeeper-3.3.4.jar stax-api-1.0.1.jar spring-context-3.2.9.
+ RELEASE.jar scala-xml_2.11-1.0.4.jar cache-api-1.1.1.jar commons-io-2.4
+ .jar failureaccess-1.0.1.jar javax.activation-api-1.2.0.jar httpcore-ni
+ o-4.4.11.jar xmlbeans-2.3.0.jar odps-sdk-udf-0.31.5-public.jar jopt-sim
+ ple-3.2.jar minlog-1.2.jar jaxb-core-2.2.7.jar compojure-1.1.3.jar stor
+ m-core-0.9.7.jar perfmark-api-0.19.0.jar ring-servlet-0.3.11.jar annota
+ tions-4.1.1.4.jar reactor-core-3.2.10.RELEASE.jar spring-jms-3.2.9.RELE
+ ASE.jar grpc-context-1.28.0.jar mapdb-0.9.9.jar poi-ooxml-3.6.jar poi-o
+ oxml-schemas-3.6.jar avro-ipc-1.7.4.jar tools.cli-0.2.4.jar spring-tx-5
+ .1.8.RELEASE.jar jcl-over-slf4j-1.7.26.jar disruptor-2.10.4.jar snakeya
+ ml-1.23.jar grpc-api-1.28.0.jar commons-pool-1.5.5.jar vavr-0.10.2.jar 
+ jsr305-3.0.2.jar animal-sniffer-annotations-1.17.jar javacsv-2.0.jar ha
+ mcrest-core-1.3.jar spring-jcl-5.1.8.RELEASE.jar servlet-api-2.5.jar st
+ orm-kafka-0.9.7.jar flume-ng-auth-1.7.0.jar vertx-core-3.2.0.jar zkclie
+ nt-0.7.jar poi-3.10-FINAL.jar assertj-core-3.9.1.jar vertx-auth-common-
+ 3.2.0.jar listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.ja
+ r vavr-match-0.10.2.jar rxjava-3.0.7.jar json-simple-1.1.jar redisson-3
+ .14.0.jar tomcat-el-api-9.0.21.jar jackson-databind-2.9.9.jar netty-3.9
+ .4.Final.jar aspectjrt-1.9.4.jar grpc-protobuf-1.28.0.jar jta-1.1.jar a
+ erospike-client-3.3.1.jar istack-commons-runtime-2.16.jar clout-1.0.1.j
+ ar clojure-1.5.1.jar flume-ng-configuration-1.7.0.jar gnu-crypto-2.0.1.
+ jar aopalliance-1.0.jar snappy-java-1.1.1.7.jar geronimo-stax-api_1.0_s
+ pec-1.0.jar junit-4.13.1.jar paranamer-2.3.jar spring-expression-5.1.8.
+ RELEASE.jar grpc-protobuf-lite-1.28.0.jar xml-apis-1.4.01.jar netty-han
+ dler-4.1.36.Final.jar commons-fileupload-1.2.1.jar ring-jetty-adapter-0
+ .3.11.jar spring-web-5.1.8.RELEASE.jar protobuf-java-3.11.1.jar javaee-
+ api-8.0.jar resilience4j-ratelimiter-1.5.0.jar tomcat-util-8.0.36.jar c
+ hecker-qual-2.8.1.jar spring-core-5.1.8.RELEASE.jar commons-compress-1.
+ 4.1.jar tomcat-util-scan-8.0.36.jar jodd-bean-5.1.6.jar flume-ng-sdk-1.
+ 6.0.jar commons-dbcp-1.4.jar spring-data-redis-1.3.5.RELEASE.jar kryo-2
+ .21.jar commons-logging-1.0.4.jar ring-devel-0.3.11.jar spring-security
+ -web-3.1.0.RELEASE.jar netty-all-4.1.36.Final.jar flume-file-channel-1.
+ 6.0.jar kafka_2.10-0.8.1.1.jar protobuf-java-format-1.2.jar netty-trans
+ port-4.1.36.Final.jar commons-exec-1.1.jar netty-resolver-dns-4.1.36.Fi
+ nal.jar hiccup-0.3.6.jar tomcat-catalina-8.0.36.jar asm-4.0.jar spring-
+ aop-5.1.8.RELEASE.jar spring-boot-autoconfigure-2.1.6.RELEASE.jar jgrap
+ ht-core-0.9.0.jar curator-client-2.5.0.jar jackson-annotations-2.9.0.ja
+ r xalan-2.7.1.jar slf4j-api-1.7.26.jar velocity-1.7.jar jackson-datafor
+ mat-yaml-2.9.9.jar metrics-core-2.2.0.jar logback-core-1.2.3.jar serial
+ izer-2.7.1.jar core.incubator-0.1.0.jar commons-pool2-2.4.2.jar tomcat-
+ api-8.0.36.jar xz-1.0.jar httpcore-4.4.11.jar spring-security-acl-5.1.5
+ .RELEASE.jar spring-orm-3.2.9.RELEASE.jar curator-framework-2.5.0.jar n
+ etty-common-4.1.36.Final.jar resilience4j-retry-1.5.0.jar resilience4j-
+ circuitbreaker-1.5.0.jar httpclient-4.4.1.jar ezmorph-1.0.6.jar spring-
+ jdbc-5.1.8.RELEASE.jar spring-security-taglibs-3.1.0.RELEASE.jar ipdb-1
+ .1.2.jar flume-ng-kafka-sink-1.6.0.jar logback-classic-1.2.3.jar jetty-
+ 6.1.26.jar tomcat-juli-8.0.36.jar commons-beanutils-1.8.3.jar javax.mai
+ l-1.6.2.jar libthrift-0.9.0.jar odps-sdk-core-0.31.5-public.jar kafka_2
+ .11-0.9.0.1.jar avro-1.7.4.jar log4j-1.2.17.jar canal.protocol-1.1.0.ja
+ r spring-test-3.2.9.RELEASE.jar j2objc-annotations-1.3.jar scala-librar
+ y-2.11.7.jar grpc-stub-1.28.0.jar canal.client-1.1.0.jar error_prone_an
+ notations-2.3.2.jar tomcat-coyote-8.0.36.jar jedis-3.1.0.jar luaj-jse-3
+ .0.jar c3p0-0.9.1.2.jar tomcat-jni-8.0.36.jar quartz-1.8.3.jar gson-2.2
+ .4.jar grpc-core-1.28.0.jar mail-1.4.7.jar netty-buffer-4.1.36.Final.ja
+ r joda-time-2.10.2.jar objenesis-1.2.jar json-lib-2.3-jdk15.jar jetty-u
+ til-6.1.26.jar vertx-web-3.2.0.jar FastInfoset-1.2.12.jar jbcrypt-0.3m.
+ jar resilience4j-cache-1.5.0.jar activation-1.1.jar tomcat-servlet-api-
+ 8.0.36.jar
+

@@ -3,7 +3,6 @@ import org.apache.commons.codec.binary.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import java.math.BigDecimal;
-import java.net.URLDecoder;
 
 public class AES {
     private static String sKey = "yrhd6bcouir0t5uk";
@@ -31,29 +30,44 @@ public class AES {
         return new String(original, "utf-8");
     }
 
+//    public static void main(String[] args) throws Exception {
+//
+//        // 解密
+//        //price=lySZA_o2SohSRSask_ptRQ&secondprice=U8_J3-FJ9SOY_q2HOvSiu    0, 0
+//
+//        //price=9qUSlvKQH9nzkJEQaClcDw&secondprice=U8_J3-FJ9SOY_q2HOvSiuA
+//        //Le9PRS28Cs8sIlzG_ra0wQ&secondprice=FFr8_Rtr_aD9o_Gfq0KQ9_n-j1atO5rGYtUwKSvCzaw
+//        String price = "af3VxASih0yEbhGHDRYG2A";
+//        String secondprice= "U8_J3-FJ9SOY_q2HOvSiuA";
+//        String settlePrice = "dSbbvKMLg3UpZOL_Cscyiw";
+//        settlePrice = URLDecoder.decode(settlePrice, "UTF-8");
+//
+//        String price1 = AES.Decrypt(price);
+//        System.out.println("price:" + price1);
+//        String price2 = AES.Decrypt(secondprice);
+//        System.out.println("secondprice:" + price2);
+//        String price3 = AES.Decrypt(settlePrice);
+//        System.out.println("settlePrice:" + price3);
+//
+//        String encrypt = Encrypt(price1);
+//        System.out.println(encrypt);
+//
+//        BigDecimal p = findPrice(new BigDecimal(price1), new BigDecimal(price2), "true", new BigDecimal(price3)
+//                , "1");
+//        System.out.println(p);
+//    }
+
     public static void main(String[] args) throws Exception {
-
-        // 解密
-        //price=lySZA_o2SohSRSask_ptRQ&secondprice=U8_J3-FJ9SOY_q2HOvSiu    0, 0
-
-        //price=9qUSlvKQH9nzkJEQaClcDw&secondprice=U8_J3-FJ9SOY_q2HOvSiuA
-        //Le9PRS28Cs8sIlzG_ra0wQ&secondprice=FFr8_Rtr_aD9o_Gfq0KQ9_n-j1atO5rGYtUwKSvCzaw
-        String price = "kMbSsnj_a-AnWBuGo5yEiw";
-        String secondprice= "U8_J3-FJ9SOY_q2HOvSiuA";
-        String settlePrice = "0A8xG3sLNAJ13eXHbpnMmQ";
-        settlePrice = URLDecoder.decode(settlePrice, "UTF-8");
-
-        String price1 = AES.Decrypt(price);
-        System.out.println("price:" + price1);
-        String price2 = AES.Decrypt(secondprice);
-        System.out.println("secondprice:" + price2);
-        String price3 = AES.Decrypt(settlePrice);
-        System.out.println("settlePrice:" + price3);
-
-        BigDecimal p = findPrice(new BigDecimal(price1), new BigDecimal(price2), "false", new BigDecimal(price3)
-                , "1");
-        System.out.println(p);
+        args = new String[]{"yKaxVEUZUGs0c9aDRb6eBA", "0A8xG3sLNAJ13eXHbpnMmQ","kMbSsnj_a-AnWBuGo5yEiw"};
+        if (args != null && args.length != 0) {
+            for (int i = 0; i < args.length; i++) {
+                String price1 = AES.Decrypt(args[i]);
+                System.out.println(args[i] +":   " + price1);
+            }
+        }
     }
+
+
     private static BigDecimal centOfYuan = BigDecimal.valueOf(1);
 
     private static BigDecimal findPrice(BigDecimal price, BigDecimal secondpriceDecimal, String isDeal,
