@@ -58,7 +58,7 @@ public class AES {
 //    }
 
     public static void main(String[] args) throws Exception {
-        args = new String[]{"yKaxVEUZUGs0c9aDRb6eBA", "0A8xG3sLNAJ13eXHbpnMmQ","kMbSsnj_a-AnWBuGo5yEiw"};
+        args = new String[]{"Vixz%2BOE0iKzd6oynEPSoEA", "0A8xG3sLNAJ13eXHbpnMmQ","kMbSsnj_a-AnWBuGo5yEiw"};
         if (args != null && args.length != 0) {
             for (int i = 0; i < args.length; i++) {
                 String price1 = AES.Decrypt(args[i]);

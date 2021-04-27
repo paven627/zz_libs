@@ -3,7 +3,6 @@ package test.java.redis;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Pipeline;
 import redis.clients.jedis.Response;
-import redis.clients.jedis.params.SetParams;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +24,15 @@ public class RedisTest {
 
 //        pipelinetest();
 
-        SetParams nx = SetParams.setParams().nx().ex(15);
-        String set = jedis.set("test", "value", nx);
-        System.out.println(set);
-        Thread.sleep(2000);
-        Long test = jedis.ttl("test");
-        System.out.println(test);
+
+        jedis.set("a", "a");
+        jedis.set("b", "b");
+
+        Boolean hexists = jedis.hexists("dsp_creative_1", "firstimp");
+        System.out.println(hexists);
+
+        hexists = jedis.hexists("dsp_creative_1", "firstimp1");
+        System.out.println(hexists);
 
 
     }

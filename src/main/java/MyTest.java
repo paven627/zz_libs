@@ -1,26 +1,34 @@
+import com.alibaba.fastjson.JSONObject;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.log4j.Logger;
 
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.text.DecimalFormat;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 class Ad implements Comparator<Ad> {
-    private int price;
+    private Integer price;
     private String name;
 
-    public Ad(int price, String name) {
+    public Ad(Integer price, String name) {
         this.price = price;
         this.name = name;
     }
+    public Ad() {
+    }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
@@ -55,6 +63,68 @@ class Ad implements Comparator<Ad> {
     }
 }
 
+class Prize {
+    private int id;//奖品id
+    private String prize_name;//奖品名称
+    private int prize_amount;//奖品（剩余）数量
+    private int prize_weight;//奖品权重
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Prize prize = (Prize) o;
+        return id == prize.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getPrize_name() {
+        return prize_name;
+    }
+
+    public void setPrize_name(String prize_name) {
+        this.prize_name = prize_name;
+    }
+
+    public int getPrize_amount() {
+        return prize_amount;
+    }
+
+    public void setPrize_amount(int prize_amount) {
+        this.prize_amount = prize_amount;
+    }
+
+    public int getPrize_weight() {
+        return prize_weight;
+    }
+
+    public void setPrize_weight(int prize_weight) {
+        this.prize_weight = prize_weight;
+    }
+}
+class Father {
+    public void dosomething(HashMap hashmap){
+        System.out.println("father");
+    }
+}
+class Son extends  Father {
+    public void dosomething(Map map) {
+        System.out.println("son");
+    }
+}
+
 public class MyTest {
     static Logger logger = Logger.getLogger(MyTest.class);
     public static final BigDecimal MINUTEOFHOUR = new BigDecimal(60);
@@ -62,49 +132,66 @@ public class MyTest {
     private static KafkaConsumer<String, String> consumer;
     private static String topic = "apus_dsp";
 
-    public static void main(String[] args) {
-        Boolean b = false;
-        System.out.println(!b);
+    public int getPrizeIndex(List<Prize> prizes) {
+        DecimalFormat df = new DecimalFormat("######0.00");
+        int random = -1;
+        try {
+            //计算总权重
+            double sumWeight = 0;
+            for (Prize p : prizes) {
+                sumWeight += p.getPrize_weight();
+            }
 
+            //产生随机数
+            double randomNumber = Math.random();
 
-        List<Integer> l1 = new ArrayList<>();
-        l1.add(1);
-        l1.add(2);
-        l1.add(3);
-
-        List<Integer> l2 = new ArrayList<>();
-        l2.add(2);
-        l2.add(3);
-
-        for (Integer integer : l2) {
-            boolean contains = l1.contains(integer);
-            System.out.println(contains +":"+ integer);
+            //根据随机数在所有奖品分布的区域并确定所抽奖品
+            double d1 = 0;
+            double d2 = 0;
+            for (int i = 0; i < prizes.size(); i++) {
+                d2 += Double.parseDouble(String.valueOf(prizes.get(i).getPrize_weight())) / sumWeight;
+                if (i == 0) {
+                    d1 = 0;
+                } else {
+                    d1 += Double.parseDouble(String.valueOf(prizes.get(i - 1).getPrize_weight())) / sumWeight;
+                }
+                if (randomNumber >= d1 && randomNumber <= d2) {
+                    random = i;
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("生成抽奖随机数出错，出错原因：" + e.getMessage());
         }
+        return random;
+    }
 
-//        Properties props = new Properties();
-//        props.put("bootstrap.servers", "dev-kafka.apuscn.com:9092");
-//        props.put("group.id", "datasync1");
-//        props.put("enable.auto.commit", "false");
-//        props.put("auto.commit.interval.ms", "1000");
-//        props.put("session.timeout.ms", "30000");
-//        props.put("auto.offset.reset", "latest");
-//        props.put("key.deserializer", StringDeserializer.class.getName());
-//        props.put("value.deserializer", StringDeserializer.class.getName());
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        String s = JSONObject.toJSONString(null);
+        System.out.println(s);
+        LinkedList list = new LinkedList();
+        Object first = list.getFirst();
+        list.add("a");
+//        Set<Prize> set =new HashSet();
+//        Prize p = new Prize();
+//        p.setPrize_name("test");
+//        p.setId(1);
 //
-//        consumer = new KafkaConsumer<String, String>(props);
-//        List<PartitionInfo> partitionInfos = consumer.partitionsFor(topic);
-//        System.out.println(partitionInfos);
-//        consumer.assign(Arrays.asList(new TopicPartition("kafka.wshare.match_meta_data.topic", 0)));
+//        boolean add1 = set.add(p);
+//        System.out.println(add1);
+//        System.out.println(System.identityHashCode(p));
 //
+//        p = new Prize();
+//        p.setId(1);
+//        boolean add = set.add(p);
+//        System.out.println(add);
 //
-//        List<TopicPartition> partitions = partitionInfos.stream().map(new Function<PartitionInfo,
-//                TopicPartition>() {
-//            @Override
-//            public TopicPartition apply(PartitionInfo partitionInfo) {
-//                return new TopicPartition(partitionInfo.topic(), partitionInfo.partition());
-//            }
-//        }).collect(Collectors.toList());
-//        System.out.println(partitions);
+//        System.out.println(System.identityHashCode(p));
+//
+//        Prize next = set.iterator().next();
+//        System.out.println(next.getPrize_name());
+//        System.out.println(System.identityHashCode(next));
+
     }
 
 

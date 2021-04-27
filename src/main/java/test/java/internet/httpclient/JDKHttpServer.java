@@ -34,12 +34,12 @@ class JsonHandler implements HttpHandler {
                     String x = new String(request);
                     System.out.println(x);
 
-                    String response = "{\"usergrowth_dhh_delivery_ask_response\":{\"result\":true,\"task_id\":\"1\"," +
-                            "\"errcode\":0,\"task_id_list\":{\"string\":[\"2\",\"1\",\"3\"]}}}";
-
+//                    String response = "{\"usergrowth_dhh_delivery_ask_response\":{\"result\":true,\"task_id\":\"1\"," +
+//                            "\"errcode\":0,\"task_id_list\":{\"string\":[\"2\",\"1\",\"34\"]}}}";
+                    String response = "{\"errorCode\": 0, \"resultCode\": 0, \"acIds\" : [1161,3,4,5]}";
 
 //                    if(x.indexOf("advertising_space_id=1012") > 1) {
-                        Thread.sleep(500);
+                        Thread.sleep(10000);
 //                    }
 
 
