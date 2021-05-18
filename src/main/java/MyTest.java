@@ -1,4 +1,3 @@
-import com.alibaba.fastjson.JSONObject;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.log4j.Logger;
 
@@ -7,7 +6,6 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -166,34 +164,11 @@ public class MyTest {
         return random;
     }
 
+
     public static void main(String[] args) throws UnsupportedEncodingException {
-        String s = JSONObject.toJSONString(null);
-        System.out.println(s);
-        LinkedList list = new LinkedList();
-        Object first = list.getFirst();
-        list.add("a");
-//        Set<Prize> set =new HashSet();
-//        Prize p = new Prize();
-//        p.setPrize_name("test");
-//        p.setId(1);
-//
-//        boolean add1 = set.add(p);
-//        System.out.println(add1);
-//        System.out.println(System.identityHashCode(p));
-//
-//        p = new Prize();
-//        p.setId(1);
-//        boolean add = set.add(p);
-//        System.out.println(add);
-//
-//        System.out.println(System.identityHashCode(p));
-//
-//        Prize next = set.iterator().next();
-//        System.out.println(next.getPrize_name());
-//        System.out.println(System.identityHashCode(next));
+        System.out.println(Long.MAX_VALUE);
 
     }
-
 
     //  通用API流量控制 , true 请求, false 不请求
     private static boolean commonApiFlowControl() {

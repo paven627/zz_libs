@@ -13,6 +13,7 @@ public class Main {
         System.out.println(i);
     }
 
+
     public static int binerySearch(int[] arr, int searchNum) {
         // 初始化左侧索引
         int leftIndex = 0;

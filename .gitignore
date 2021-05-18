@@ -6,6 +6,7 @@
 .project
 .metadata
 bin/
+logs/
 tmp/
 *.iml
 *.tmp

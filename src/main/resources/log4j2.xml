@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN" monitorInterval="100">
+    <Properties>
+        <Property name="logDir">logs</Property>
+    </Properties>
+
+    <appenders>
+        <console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%p] %d{HH:mm:ss:SSS} - %m - %l%n"/>
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+        </console>
+
+        <RollingFile name="debug" fileName="${logDir}/system.log"
+                     filePattern="${logDir}/system.log.%d{yyyy-MM-dd}.gz">
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="[%p] %d{HH:mm:ss:SSS} - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="infoLog" fileName="${logDir}/system.log"
+                     filePattern="${logDir}/system.log.%d{yyyy-MM-dd}.gz">
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="[%p] %d{HH:mm:ss:SSS} - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <!--  测试threadConotext 打印特定内容 -->
+        <RollingFile name="threadContext" fileName="${logDir}/system.log"
+                     filePattern="${logDir}/system.log.%d{yyyy-MM-dd}.gz">
+            <!--            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>-->
+            <PatternLayout pattern="[%p] %X{id} %x %d{HH:mm:ss:SSS} - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+
+        <RollingFile name="dynamic" fileName="${logDir}/system.log"
+                     filePattern="${logDir}/system.log.%d{yyyy-MM-dd}.gz">
+            <filters>
+<!--                <DynamicThresholdFilter key="level" defaultThreshold="info" onMatch="ACCEPT" onMismatch="DENY">-->
+<!--                <DynamicThresholdFilter key="level"  onMatch="ACCEPT" onMismatch="DENY">-->
+<!--                    <KeyValuePair key="debug" value="debug"/>-->
+<!--                    <KeyValuePair key="info" value="no"/>-->
+<!--                </DynamicThresholdFilter>-->
+
+                <DynamicThresholdFilter key="debugMode" onMatch="ACCEPT" onMismatch="DENY">
+                    <KeyValuePair key="true" value="DEBUG"/>
+                    <KeyValuePair key="false" value="INFO"/>
+                    <KeyValuePair key="off" value="OFF"/>
+                </DynamicThresholdFilter>
+
+            </filters>
+            <PatternLayout pattern="[%p] %X{id} %X{debugMode} %X{name}  %d{HH:mm:ss:SSS} - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+    </appenders>
+
+    <loggers>
+        <root level="INFO">
+            <appender-ref ref="console"/>
+        </root>
+
+        <logger name="threadContext" level="info" additivity="false">
+            <appender-ref ref="threadContext"/>
+        </logger>
+
+        <logger name="debug" level="debug" additivity="false">
+            <appender-ref ref="debug"/>
+        </logger>
+
+        <logger name="infoLog" level="debug" additivity="false">
+            <appender-ref ref="infoLog"/>
+        </logger>
+
+        <logger name="dynamic" level="debug" additivity="false">
+            <appender-ref ref="dynamic"/>
+        </logger>
+    </loggers>
+</configuration>
