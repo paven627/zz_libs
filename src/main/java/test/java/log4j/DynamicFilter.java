@@ -15,7 +15,7 @@ public class DynamicFilter implements Runnable {
     }
 
     public static void main(String[] args) {
-        for (int i = 1; i < 1000; i++) {
+        for (int i = 1; i < 20; i++) {
             DynamicFilter t = new DynamicFilter(i);
             new Thread(t).start();
         }
@@ -25,13 +25,13 @@ public class DynamicFilter implements Runnable {
     @Override
     public void run() {
         String debugMode = ThreadContext.get("debugMode");
-
+        System.out.println(count +" ," + debugMode);
         ThreadContext.put("id", count + "");
         ThreadContext.put("name",Thread.currentThread().getName());
-        if (this.count % 1000 == 0) {
+        if (this.count % 2 == 1) {
             ThreadContext.put("debugMode", "true");
         } else {
-            ThreadContext.put("debugMode", "false");
+//            ThreadContext.put("debugMode", "false");
         }
 
         logger.debug("dynamic debug");

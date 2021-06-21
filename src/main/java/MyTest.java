@@ -4,11 +4,7 @@ import org.apache.log4j.Logger;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 class Ad implements Comparator<Ad> {
@@ -166,7 +162,10 @@ public class MyTest {
 
 
     public static void main(String[] args) throws UnsupportedEncodingException {
-        System.out.println(Long.MAX_VALUE);
+        BitSet b = new BitSet(1);
+        System.out.println(b.length());
+        b.set(1000);
+        System.out.println(b.length());
 
     }
 
