@@ -7,9 +7,11 @@ public class ArrayBlockingQueueTest {
 	public static void main(String[] args) throws InterruptedException {
 		BlockingQueue<String> queue = new ArrayBlockingQueue<String>(10);
 		queue.add("a");
-//		queue.put("a");
+		queue.put("b");
+		System.out.println(queue);
 		String poll = queue.poll();
 		System.out.println(poll);
+		System.out.println(queue.poll());
 
 	}
 }

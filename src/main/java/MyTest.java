@@ -1,10 +1,10 @@
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.log4j.Logger;
 
-import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.*;
+import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ThreadLocalRandom;
 
 class Ad implements Comparator<Ad> {
@@ -15,6 +15,7 @@ class Ad implements Comparator<Ad> {
         this.price = price;
         this.name = name;
     }
+
     public Ad() {
     }
 
@@ -108,12 +109,14 @@ class Prize {
         this.prize_weight = prize_weight;
     }
 }
+
 class Father {
-    public void dosomething(HashMap hashmap){
+    public void dosomething(HashMap hashmap) {
         System.out.println("father");
     }
 }
-class Son extends  Father {
+
+class Son extends Father {
     public void dosomething(Map map) {
         System.out.println("son");
     }
@@ -160,13 +163,38 @@ public class MyTest {
         return random;
     }
 
+    static int student = 1;
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
-        BitSet b = new BitSet(1);
-        System.out.println(b.length());
-        b.set(1000);
-        System.out.println(b.length());
+    public static void main(String[] args) throws Exception {
+        List<Integer>  list = new ArrayList<>();
+        PriorityBlockingQueue<Integer> queue = new PriorityBlockingQueue<>(11, (o1, o2) -> {
+//            System.out.println(o1 + " , " + o2);
+//            return o2 - o1;
+            return o1 - o2;
+        });
 
+        for (int i = 0; i < 10; i++) {
+            queue.add(new Random().nextInt(10));
+        }
+
+        System.out.println(queue);
+        queue.drainTo(list);
+
+        Integer poll = queue.poll();
+        System.out.println(poll);
+        System.out.println(list);
+    }
+
+    static class User {
+        String addr;
+
+        public String getAddr() {
+            return addr;
+        }
+
+        public void setAddr(String addr) {
+            this.addr = addr;
+        }
     }
 
     //  通用API流量控制 , true 请求, false 不请求

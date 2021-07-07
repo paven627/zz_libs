@@ -1,11 +1,5 @@
 package test.java.internet.asyncClient;
 
-import java.io.IOException;
-import java.nio.CharBuffer;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.concurrent.FutureCallback;
@@ -16,6 +10,12 @@ import org.apache.http.nio.client.methods.AsyncCharConsumer;
 import org.apache.http.nio.client.methods.HttpAsyncMethods;
 import org.apache.http.nio.protocol.HttpAsyncRequestProducer;
 import org.apache.http.protocol.HttpContext;
+
+import java.io.IOException;
+import java.nio.CharBuffer;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 public class LatchDown {
 	public static void main(String[] args) throws InterruptedException,
@@ -111,8 +111,12 @@ public class LatchDown {
 						}
 
 					});
+			System.out.println(Thread.currentThread());
+			System.out.println(Thread.currentThread().getState());
 			latch2.await();
 
+			System.out.println(Thread.currentThread());
+			System.out.println(Thread.currentThread().getState());
 		} finally {
 			httpclient.close();
 		}
